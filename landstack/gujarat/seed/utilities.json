@@ -1,0 +1,126 @@
+{
+  "electricity": [
+    {
+      "utility_id": "ELEC-GJ-008",
+      "ulpin": "68159324074638",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJMOCK0089021",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-009",
+      "ulpin": "53947216082571",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJMOCK0099021",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-010",
+      "ulpin": "10768425391052",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJMOCK0109021",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-011",
+      "ulpin": "86423051794816",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJMOCK0119021",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-012",
+      "ulpin": "27351480692137",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "DGVCL",
+      "consumer_account_no": "GJMOCK0129021",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-013",
+      "ulpin": "71860543912796",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJMOCK0139021",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-015",
+      "ulpin": "97641820583714",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJMOCK0159021",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    }
+  ],
+  "water": [
+    {
+      "utility_id": "WATER-GJ-008",
+      "ulpin": "68159324074638",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ008771",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-009",
+      "ulpin": "53947216082571",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ009771",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-010",
+      "ulpin": "10768425391052",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ010771",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-011",
+      "ulpin": "86423051794816",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ011771",
+      "connection_status": "pending",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-012",
+      "ulpin": "27351480692137",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ012771",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    }
+  ]
+}

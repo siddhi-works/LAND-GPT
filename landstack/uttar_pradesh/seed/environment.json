@@ -1,0 +1,26 @@
+[
+  {
+    "environment_id": "ENV-UP-006",
+    "ulpin": "81527460391852",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "Flood-buffer sensitivity",
+    "zone_name": "Synthetic Flood Buffer A",
+    "status": "review"
+  },
+  {
+    "environment_id": "ENV-UP-014",
+    "ulpin": "45039182764025",
+    "source_authority": "Uttar Pradesh environmental/forest authority (Synthetic)",
+    "restriction_type": "River/wetland proximity review",
+    "zone_name": "Synthetic Eco Buffer B",
+    "status": "active"
+  },
+  {
+    "environment_id": "ENV-UP-015",
+    "ulpin": "96274310582614",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  }
+]

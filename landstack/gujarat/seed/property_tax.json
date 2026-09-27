@@ -1,0 +1,68 @@
+[
+  {
+    "property_tax_id": "ULB-TAX-GJ-008",
+    "ulpin": "68159324074638",
+    "local_body": "Gandhinagar Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 1800000,
+    "tax_demand": 7200.0,
+    "amount_paid": 7200.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_tax_id": "ULB-TAX-GJ-009",
+    "ulpin": "53947216082571",
+    "local_body": "Ahmedabad Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 3200000,
+    "tax_demand": 12800.0,
+    "amount_paid": 12800.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_tax_id": "ULB-TAX-GJ-010",
+    "ulpin": "10768425391052",
+    "local_body": "Vadodara Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 2800000,
+    "tax_demand": 11200.0,
+    "amount_paid": 11200.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_tax_id": "ULB-TAX-GJ-011",
+    "ulpin": "86423051794816",
+    "local_body": "Rajkot Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 2500000,
+    "tax_demand": 10000.0,
+    "amount_paid": 10000.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_tax_id": "ULB-TAX-GJ-012",
+    "ulpin": "27351480692137",
+    "local_body": "Surat Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 4100000,
+    "tax_demand": 16400.0,
+    "amount_paid": 11480.0,
+    "outstanding_amount": 4920.0,
+    "status": "partially_paid"
+  },
+  {
+    "property_tax_id": "ULB-TAX-GJ-013",
+    "ulpin": "71860543912796",
+    "local_body": "Kutch Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 950000,
+    "tax_demand": 3800.0,
+    "amount_paid": 3800.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  }
+]

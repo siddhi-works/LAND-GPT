@@ -1,0 +1,448 @@
+{
+  "vf7_12": [
+    {
+      "ulpin": "63821470593146",
+      "district": "Ahmedabad",
+      "taluka": "Daskroi",
+      "village": "Aslali",
+      "survey_no": "142",
+      "sub_division": "2",
+      "record_of_rights_no": "00124",
+      "khatedar_name_gu": "સંદીપ પટેલ",
+      "khatedar_name_en": "Sandeep Patel",
+      "area_value": 1.82,
+      "area_unit": "hectare",
+      "land_class_gu": "કૃષિ",
+      "land_class_en": "Agricultural",
+      "assessment": 2738.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "75293610481725",
+      "district": "Vadodara",
+      "taluka": "Savli",
+      "village": "Manjusar",
+      "survey_no": "56",
+      "sub_division": "1",
+      "record_of_rights_no": "00218",
+      "khatedar_name_gu": "હિતેશ પરમાર",
+      "khatedar_name_en": "Hitesh Parmar",
+      "area_value": 2.4,
+      "area_unit": "hectare",
+      "land_class_gu": "કૃષિ",
+      "land_class_en": "Agricultural",
+      "assessment": 3260.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "21468053912745",
+      "district": "Rajkot",
+      "taluka": "Gondal",
+      "village": "Biliya",
+      "survey_no": "87",
+      "sub_division": "3",
+      "record_of_rights_no": "00341",
+      "khatedar_name_gu": "મીના જોશી",
+      "khatedar_name_en": "Meena Joshi",
+      "area_value": 1.15,
+      "area_unit": "hectare",
+      "land_class_gu": "કૃષિ",
+      "land_class_en": "Agricultural",
+      "assessment": 2135.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "90573146280914",
+      "district": "Surat",
+      "taluka": "Choryasi",
+      "village": "Vesu",
+      "survey_no": "213",
+      "sub_division": null,
+      "record_of_rights_no": "00406",
+      "khatedar_name_gu": "કિરણ શાહ",
+      "khatedar_name_en": "Kiran Shah",
+      "area_value": 0.96,
+      "area_unit": "hectare",
+      "land_class_gu": "કૃષિ",
+      "land_class_en": "Agricultural",
+      "assessment": 1964.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "48152793068421",
+      "district": "Mehsana",
+      "taluka": "Visnagar",
+      "village": "Gunjala",
+      "survey_no": "31",
+      "sub_division": "2",
+      "record_of_rights_no": "00532",
+      "khatedar_name_gu": "જયેશ પટેલ",
+      "khatedar_name_en": "Jayesh Patel",
+      "area_value": 3.1,
+      "area_unit": "hectare",
+      "land_class_gu": "કૃષિ",
+      "land_class_en": "Agricultural",
+      "assessment": 3890.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "82741635092851",
+      "district": "Anand",
+      "taluka": "Anand",
+      "village": "Lambhvel",
+      "survey_no": "119",
+      "sub_division": "1",
+      "record_of_rights_no": "00617",
+      "khatedar_name_gu": "રીના દેસાઈ",
+      "khatedar_name_en": "Reena Desai",
+      "area_value": 1.72,
+      "area_unit": "hectare",
+      "land_class_gu": "કૃષિ",
+      "land_class_en": "Agricultural",
+      "assessment": 2648.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "39680521473162",
+      "district": "Bhavnagar",
+      "taluka": "Ghogha",
+      "village": "Nari",
+      "survey_no": "64",
+      "sub_division": "4",
+      "record_of_rights_no": "00705",
+      "khatedar_name_gu": "મહેશ રાઠોડ",
+      "khatedar_name_en": "Mahesh Rathod",
+      "area_value": 2.05,
+      "area_unit": "hectare",
+      "land_class_gu": "કૃષિ",
+      "land_class_en": "Agricultural",
+      "assessment": 2945.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "68159324074638",
+      "district": "Gandhinagar",
+      "taluka": "Kalol",
+      "village": "Santej",
+      "survey_no": "402",
+      "sub_division": "1",
+      "record_of_rights_no": "00883",
+      "khatedar_name_gu": "પૂજા જોશી",
+      "khatedar_name_en": "Pooja Joshi",
+      "area_value": 0.74,
+      "area_unit": "hectare",
+      "land_class_gu": "રહેણાંક",
+      "land_class_en": "Residential",
+      "assessment": 1766.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "86423051794816",
+      "district": "Rajkot",
+      "taluka": "Rajkot",
+      "village": "Mavdi",
+      "survey_no": "225",
+      "sub_division": "2",
+      "record_of_rights_no": "01142",
+      "khatedar_name_gu": "રાહુલ પટેલ",
+      "khatedar_name_en": "Rahul Patel",
+      "area_value": 0.62,
+      "area_unit": "hectare",
+      "land_class_gu": "રહેણાંક",
+      "land_class_en": "Residential",
+      "assessment": 1658.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "27351480692137",
+      "district": "Surat",
+      "taluka": "Choryasi",
+      "village": "Palanpur",
+      "survey_no": "98",
+      "sub_division": "3",
+      "record_of_rights_no": "01231",
+      "khatedar_name_gu": "મિહિર શાહ",
+      "khatedar_name_en": "Mihir Shah",
+      "area_value": 0.41,
+      "area_unit": "hectare",
+      "land_class_gu": "વાણિજ્યિક",
+      "land_class_en": "Commercial",
+      "assessment": 1469.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "71860543912796",
+      "district": "Kutch",
+      "taluka": "Bhuj",
+      "village": "Madhapar",
+      "survey_no": "17",
+      "sub_division": "1",
+      "record_of_rights_no": "01308",
+      "khatedar_name_gu": "સુરેશ જાડેજા",
+      "khatedar_name_en": "Suresh Jadeja",
+      "area_value": 1.3,
+      "area_unit": "hectare",
+      "land_class_gu": "કૃષિ",
+      "land_class_en": "Agricultural",
+      "assessment": 2270.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "45293178064528",
+      "district": "Panchmahal",
+      "taluka": "Godhra",
+      "village": "Vavdi",
+      "survey_no": "144",
+      "sub_division": "2",
+      "record_of_rights_no": "01455",
+      "khatedar_name_gu": "વિજય રાઠવા",
+      "khatedar_name_en": "Vijay Rathva",
+      "area_value": 1.58,
+      "area_unit": "hectare",
+      "land_class_gu": "કૃષિ",
+      "land_class_en": "Agricultural",
+      "assessment": 2522.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "97641820583714",
+      "district": "Banaskantha",
+      "taluka": "Palanpur",
+      "village": "Chitrasani",
+      "survey_no": "118",
+      "sub_division": "1",
+      "record_of_rights_no": "01519",
+      "khatedar_name_gu": "નીલમ ચૌધરી",
+      "khatedar_name_en": "Neelam Chaudhary",
+      "area_value": 2.2,
+      "area_unit": "hectare",
+      "land_class_gu": "કૃષિ",
+      "land_class_en": "Agricultural",
+      "assessment": 3080.0,
+      "other_rights_note": null,
+      "record_status": "active"
+    }
+  ],
+  "vf8a": [
+    {
+      "ulpin": "63821470593146",
+      "record_of_rights_no": "00124",
+      "holder_name_gu": "સંદીપ પટેલ",
+      "holder_name_en": "Sandeep Patel",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "142",
+          "sub_division": "2"
+        }
+      ],
+      "total_holding_area": 1.82,
+      "area_unit": "hectare",
+      "land_revenue": 1564.4,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "75293610481725",
+      "record_of_rights_no": "00218",
+      "holder_name_gu": "હિતેશ પરમાર",
+      "holder_name_en": "Hitesh Parmar",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "56",
+          "sub_division": "1"
+        }
+      ],
+      "total_holding_area": 2.4,
+      "area_unit": "hectare",
+      "land_revenue": 1808.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "21468053912745",
+      "record_of_rights_no": "00341",
+      "holder_name_gu": "મીના જોશી",
+      "holder_name_en": "Meena Joshi",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "87",
+          "sub_division": "3"
+        }
+      ],
+      "total_holding_area": 1.15,
+      "area_unit": "hectare",
+      "land_revenue": 1283.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "90573146280914",
+      "record_of_rights_no": "00406",
+      "holder_name_gu": "કિરણ શાહ",
+      "holder_name_en": "Kiran Shah",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "213",
+          "sub_division": null
+        }
+      ],
+      "total_holding_area": 0.96,
+      "area_unit": "hectare",
+      "land_revenue": 1203.2,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "48152793068421",
+      "record_of_rights_no": "00532",
+      "holder_name_gu": "જયેશ પટેલ",
+      "holder_name_en": "Jayesh Patel",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "31",
+          "sub_division": "2"
+        }
+      ],
+      "total_holding_area": 3.1,
+      "area_unit": "hectare",
+      "land_revenue": 2102.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "82741635092851",
+      "record_of_rights_no": "00617",
+      "holder_name_gu": "રીના દેસાઈ",
+      "holder_name_en": "Reena Desai",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "119",
+          "sub_division": "1"
+        }
+      ],
+      "total_holding_area": 1.72,
+      "area_unit": "hectare",
+      "land_revenue": 1522.4,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "39680521473162",
+      "record_of_rights_no": "00705",
+      "holder_name_gu": "મહેશ રાઠોડ",
+      "holder_name_en": "Mahesh Rathod",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "64",
+          "sub_division": "4"
+        }
+      ],
+      "total_holding_area": 2.05,
+      "area_unit": "hectare",
+      "land_revenue": 1661.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "68159324074638",
+      "record_of_rights_no": "00883",
+      "holder_name_gu": "પૂજા જોશી",
+      "holder_name_en": "Pooja Joshi",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "402",
+          "sub_division": "1"
+        }
+      ],
+      "total_holding_area": 0.74,
+      "area_unit": "hectare",
+      "land_revenue": 1110.8,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "86423051794816",
+      "record_of_rights_no": "01142",
+      "holder_name_gu": "રાહુલ પટેલ",
+      "holder_name_en": "Rahul Patel",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "225",
+          "sub_division": "2"
+        }
+      ],
+      "total_holding_area": 0.62,
+      "area_unit": "hectare",
+      "land_revenue": 1060.4,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "27351480692137",
+      "record_of_rights_no": "01231",
+      "holder_name_gu": "મિહિર શાહ",
+      "holder_name_en": "Mihir Shah",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "98",
+          "sub_division": "3"
+        }
+      ],
+      "total_holding_area": 0.48,
+      "area_unit": "hectare",
+      "land_revenue": 1001.6,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "71860543912796",
+      "record_of_rights_no": "01308",
+      "holder_name_gu": "સુરેશ જાડેજા",
+      "holder_name_en": "Suresh Jadeja",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "17",
+          "sub_division": "1"
+        }
+      ],
+      "total_holding_area": 1.3,
+      "area_unit": "hectare",
+      "land_revenue": 1346.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "45293178064528",
+      "record_of_rights_no": "01455",
+      "holder_name_gu": "વિજય રાઠવા",
+      "holder_name_en": "Vijay Rathva",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "144",
+          "sub_division": "2"
+        }
+      ],
+      "total_holding_area": 1.58,
+      "area_unit": "hectare",
+      "land_revenue": 1463.6,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "97641820583714",
+      "record_of_rights_no": "01519",
+      "holder_name_gu": "નીલમ ચૌધરી",
+      "holder_name_en": "Neelam Chaudhary",
+      "land_measurement_numbers": [
+        {
+          "survey_no": "118",
+          "sub_division": "1"
+        }
+      ],
+      "total_holding_area": 2.2,
+      "area_unit": "hectare",
+      "land_revenue": 1724.0,
+      "record_status": "active"
+    }
+  ]
+}

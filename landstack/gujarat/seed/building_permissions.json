@@ -1,0 +1,57 @@
+[
+  {
+    "approval_no": "BP-GJ-008-2025",
+    "ulpin": "68159324074638",
+    "application_no": "BPAPP-GJ-008",
+    "department_or_authority": "Development Authority / Local Planning Authority",
+    "service": "Building Plan Approval",
+    "building_use": "Residential",
+    "built_up_area_sqm": 420,
+    "approval_date": "2025-08-09",
+    "status": "approved"
+  },
+  {
+    "approval_no": "BP-GJ-009-2025",
+    "ulpin": "53947216082571",
+    "application_no": "BPAPP-GJ-009",
+    "department_or_authority": "Development Authority / Local Planning Authority",
+    "service": "Building Plan Approval",
+    "building_use": "Residential",
+    "built_up_area_sqm": 420,
+    "approval_date": "2025-08-10",
+    "status": "approved"
+  },
+  {
+    "approval_no": "BP-GJ-010-2025",
+    "ulpin": "10768425391052",
+    "application_no": "BPAPP-GJ-010",
+    "department_or_authority": "Development Authority / Local Planning Authority",
+    "service": "Building Plan Approval",
+    "building_use": "Residential",
+    "built_up_area_sqm": 420,
+    "approval_date": "2025-08-11",
+    "status": "approved"
+  },
+  {
+    "approval_no": "BP-GJ-011-2025",
+    "ulpin": "86423051794816",
+    "application_no": "BPAPP-GJ-011",
+    "department_or_authority": "Development Authority / Local Planning Authority",
+    "service": "Building Plan Approval",
+    "building_use": "Residential",
+    "built_up_area_sqm": 420,
+    "approval_date": "2025-08-12",
+    "status": "approved"
+  },
+  {
+    "approval_no": "BP-GJ-012-2025",
+    "ulpin": "27351480692137",
+    "application_no": "BPAPP-GJ-012",
+    "department_or_authority": "Development Authority / Local Planning Authority",
+    "service": "Building Plan Approval",
+    "building_use": "Commercial",
+    "built_up_area_sqm": 900,
+    "approval_date": "2025-08-13",
+    "status": "approved"
+  }
+]

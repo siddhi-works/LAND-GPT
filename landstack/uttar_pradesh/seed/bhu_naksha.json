@@ -1,0 +1,257 @@
+[
+  {
+    "map_ref": "BN-0001",
+    "ulpin": "58427193061584",
+    "district": "Lucknow",
+    "tehsil": "Mohanlalganj",
+    "village": "Bani",
+    "plot_no": "142",
+    "sub_division": "2",
+    "map_area": 1.82,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0002",
+    "ulpin": "74130652819473",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "plot_no": "56",
+    "sub_division": "1",
+    "map_area": 2.4,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0003",
+    "ulpin": "21684570319265",
+    "district": "Prayagraj",
+    "tehsil": "Soraon",
+    "village": "अरूआंव",
+    "plot_no": "87",
+    "sub_division": "3",
+    "map_area": 1.15,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0004",
+    "ulpin": "93051726480139",
+    "district": "Agra",
+    "tehsil": "Kiraoli",
+    "village": "Achhnera",
+    "plot_no": "213",
+    "sub_division": null,
+    "map_area": 0.96,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0005",
+    "ulpin": "46792130584716",
+    "district": "Meerut",
+    "tehsil": "Sardhana",
+    "village": "Daurala",
+    "plot_no": "31",
+    "sub_division": "2",
+    "map_area": 3.1,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0006",
+    "ulpin": "81527460391852",
+    "district": "Gorakhpur",
+    "tehsil": "Sahjanwa",
+    "village": "अकुआपार",
+    "plot_no": "119",
+    "sub_division": "1",
+    "map_area": 1.72,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0007",
+    "ulpin": "39261584027361",
+    "district": "Kanpur Nagar",
+    "tehsil": "Bilhaur",
+    "village": "Bilhaur",
+    "plot_no": "64",
+    "sub_division": "4",
+    "map_area": 2.05,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0008",
+    "ulpin": "67430291854637",
+    "district": "Ayodhya",
+    "tehsil": "Sadar",
+    "village": "Deokali",
+    "plot_no": "402",
+    "sub_division": "1",
+    "map_area": 0.74,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0009",
+    "ulpin": "52847160392586",
+    "district": "Gautam Buddha Nagar",
+    "tehsil": "Dadri",
+    "village": "Barola",
+    "plot_no": "184",
+    "sub_division": "2",
+    "map_area": 0.18,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0010",
+    "ulpin": "10382654971064",
+    "district": "Ghaziabad",
+    "tehsil": "Loni",
+    "village": "Mandola",
+    "plot_no": "318",
+    "sub_division": "1",
+    "map_area": 0.12,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0011",
+    "ulpin": "84650723190428",
+    "district": "Lucknow",
+    "tehsil": "Bakshi Ka Talab",
+    "village": "Itaunja",
+    "plot_no": "225",
+    "sub_division": "2",
+    "map_area": 0.62,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0012",
+    "ulpin": "27541896372051",
+    "district": "Mathura",
+    "tehsil": "Chhata",
+    "village": "Kosi Kalan",
+    "plot_no": "98",
+    "sub_division": "3",
+    "map_area": 0.47,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0013",
+    "ulpin": "71960432851792",
+    "district": "Saharanpur",
+    "tehsil": "Behat",
+    "village": "Chilkana",
+    "plot_no": "17",
+    "sub_division": "1",
+    "map_area": 1.3,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0014",
+    "ulpin": "45039182764025",
+    "district": "Jhansi",
+    "tehsil": "Moth",
+    "village": "Mau",
+    "plot_no": "144",
+    "sub_division": "2",
+    "map_area": 1.58,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  },
+  {
+    "map_ref": "BN-0015",
+    "ulpin": "96274310582614",
+    "district": "Moradabad",
+    "tehsil": "Thakurdwara",
+    "village": "Surjan Nagar",
+    "plot_no": "118",
+    "sub_division": "1",
+    "map_area": 2.2,
+    "area_unit": "hectare",
+    "map_status": "geo-referenced",
+    "layers": [
+      "vertices",
+      "border_length",
+      "labels"
+    ]
+  }
+]

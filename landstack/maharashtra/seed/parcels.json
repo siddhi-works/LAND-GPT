@@ -1,0 +1,1112 @@
+[
+  {
+    "prototype_ref": "P001",
+    "ulpin": "58310472961538",
+    "state": "Maharashtra",
+    "context": "rural",
+    "district": "Pune",
+    "taluka": "Mulshi",
+    "village": "Shivapur",
+    "native_identifier_type": "GAT_NO",
+    "native_identifier": "142",
+    "native_part": "2",
+    "khata_no": "38",
+    "geometry_ref": "synthetic-p001",
+    "centroid": {
+      "lat": 18.5144,
+      "lon": 73.8447
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.8455553,
+            18.5144648
+          ],
+          [
+            73.8452223,
+            18.5149433
+          ],
+          [
+            73.8447295,
+            18.5150095
+          ],
+          [
+            73.8441123,
+            18.5149607
+          ],
+          [
+            73.8438989,
+            18.5143604
+          ],
+          [
+            73.8441844,
+            18.5139502
+          ],
+          [
+            73.8446316,
+            18.513632
+          ],
+          [
+            73.8452117,
+            18.5139444
+          ],
+          [
+            73.8455553,
+            18.5144648
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.82,
+    "land_record_area_hectare": 1.82,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P002",
+    "ulpin": "74192830516427",
+    "state": "Maharashtra",
+    "context": "rural",
+    "district": "Nashik",
+    "taluka": "Sinnar",
+    "village": "Khadak",
+    "native_identifier_type": "GAT_NO",
+    "native_identifier": "56",
+    "native_part": "1",
+    "khata_no": "21",
+    "geometry_ref": "synthetic-p002",
+    "centroid": {
+      "lat": 19.9975,
+      "lon": 73.7858
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.7867932,
+            19.9975889
+          ],
+          [
+            73.7862954,
+            19.9981044
+          ],
+          [
+            73.7856126,
+            19.998286
+          ],
+          [
+            73.7848683,
+            19.9978784
+          ],
+          [
+            73.7850265,
+            19.9971827
+          ],
+          [
+            73.7855029,
+            19.9967319
+          ],
+          [
+            73.7863606,
+            19.9968186
+          ],
+          [
+            73.7867932,
+            19.9975889
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.4,
+    "land_record_area_hectare": 2.4,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P003",
+    "ulpin": "21650789432165",
+    "state": "Maharashtra",
+    "context": "rural",
+    "district": "Ahilyanagar",
+    "taluka": "Rahata",
+    "village": "Loni",
+    "native_identifier_type": "GAT_NO",
+    "native_identifier": "87",
+    "native_part": "3",
+    "khata_no": "44",
+    "geometry_ref": "synthetic-p003",
+    "centroid": {
+      "lat": 19.1008,
+      "lon": 74.752
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            74.7526995,
+            19.1007946
+          ],
+          [
+            74.7524279,
+            19.1011449
+          ],
+          [
+            74.7519972,
+            19.1014091
+          ],
+          [
+            74.75155,
+            19.1012015
+          ],
+          [
+            74.7514596,
+            19.1008314
+          ],
+          [
+            74.7515055,
+            19.1003613
+          ],
+          [
+            74.7520567,
+            19.1002099
+          ],
+          [
+            74.7523888,
+            19.1004755
+          ],
+          [
+            74.7526995,
+            19.1007946
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.15,
+    "land_record_area_hectare": 1.15,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P004",
+    "ulpin": "93041857264019",
+    "state": "Maharashtra",
+    "context": "rural",
+    "district": "Kolhapur",
+    "taluka": "Karveer",
+    "village": "Kale",
+    "native_identifier_type": "GAT_NO",
+    "native_identifier": "213",
+    "native_part": null,
+    "khata_no": "67",
+    "geometry_ref": "synthetic-p004",
+    "centroid": {
+      "lat": 16.699,
+      "lon": 74.2553
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            74.2558619,
+            16.698977
+          ],
+          [
+            74.2556408,
+            16.699409
+          ],
+          [
+            74.255132,
+            16.6995715
+          ],
+          [
+            74.2548541,
+            16.6992305
+          ],
+          [
+            74.2548011,
+            16.698818
+          ],
+          [
+            74.2551818,
+            16.6983949
+          ],
+          [
+            74.2556498,
+            16.6986495
+          ],
+          [
+            74.2558619,
+            16.698977
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.96,
+    "land_record_area_hectare": 0.96,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P005",
+    "ulpin": "46721590384726",
+    "state": "Maharashtra",
+    "context": "rural",
+    "district": "Nagpur",
+    "taluka": "Hingna",
+    "village": "Wadi",
+    "native_identifier_type": "KHASRA_NO",
+    "native_identifier": "31",
+    "native_part": "2",
+    "khata_no": "12",
+    "geometry_ref": "synthetic-p005",
+    "centroid": {
+      "lat": 21.1458,
+      "lon": 79.0762
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            79.0771699,
+            21.1457624
+          ],
+          [
+            79.0769441,
+            21.1465568
+          ],
+          [
+            79.0761984,
+            21.1467868
+          ],
+          [
+            79.0756574,
+            21.1464061
+          ],
+          [
+            79.0751096,
+            21.1458074
+          ],
+          [
+            79.0754745,
+            21.1449929
+          ],
+          [
+            79.0762168,
+            21.1449836
+          ],
+          [
+            79.0769066,
+            21.1450716
+          ],
+          [
+            79.0771699,
+            21.1457624
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 3.1,
+    "land_record_area_hectare": 3.1,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P006",
+    "ulpin": "81563027491853",
+    "state": "Maharashtra",
+    "context": "rural",
+    "district": "Satara",
+    "taluka": "Phaltan",
+    "village": "Nimbhore",
+    "native_identifier_type": "GAT_NO",
+    "native_identifier": "119",
+    "native_part": "1",
+    "khata_no": "53",
+    "geometry_ref": "synthetic-p006",
+    "centroid": {
+      "lat": 17.6885,
+      "lon": 74.0143
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            74.0150344,
+            17.688527
+          ],
+          [
+            74.0148079,
+            17.6891742
+          ],
+          [
+            74.0141866,
+            17.6891604
+          ],
+          [
+            74.0137201,
+            17.6888057
+          ],
+          [
+            74.0135387,
+            17.688095
+          ],
+          [
+            74.0141614,
+            17.6877913
+          ],
+          [
+            74.0146971,
+            17.6879713
+          ],
+          [
+            74.0150344,
+            17.688527
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.72,
+    "land_record_area_hectare": 1.72,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P007",
+    "ulpin": "39284610573621",
+    "state": "Maharashtra",
+    "context": "rural",
+    "district": "Solapur",
+    "taluka": "Barshi",
+    "village": "Pangri",
+    "native_identifier_type": "GAT_NO",
+    "native_identifier": "64",
+    "native_part": "4",
+    "khata_no": "29",
+    "geometry_ref": "synthetic-p007",
+    "centroid": {
+      "lat": 17.6559,
+      "lon": 75.9104
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            75.9112271,
+            17.6559692
+          ],
+          [
+            75.9110193,
+            17.6565055
+          ],
+          [
+            75.9104253,
+            17.6565468
+          ],
+          [
+            75.9098055,
+            17.6564291
+          ],
+          [
+            75.9094743,
+            17.6558618
+          ],
+          [
+            75.9098378,
+            17.65544
+          ],
+          [
+            75.9103431,
+            17.6551479
+          ],
+          [
+            75.9110065,
+            17.6553814
+          ],
+          [
+            75.9112271,
+            17.6559692
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.05,
+    "land_record_area_hectare": 2.05,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P008",
+    "ulpin": "67419382054736",
+    "state": "Maharashtra",
+    "context": "rural_mixed",
+    "district": "Chhatrapati Sambhajinagar",
+    "taluka": "Paithan",
+    "village": "Bidkin",
+    "native_identifier_type": "GAT_NO",
+    "native_identifier": "402",
+    "native_part": "1",
+    "khata_no": "71",
+    "geometry_ref": "synthetic-p008",
+    "centroid": {
+      "lat": 19.8782,
+      "lon": 75.3553
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            75.3558452,
+            19.8782302
+          ],
+          [
+            75.3556128,
+            19.8785613
+          ],
+          [
+            75.3551889,
+            19.8785946
+          ],
+          [
+            75.3547833,
+            19.878401
+          ],
+          [
+            75.3548187,
+            19.8780134
+          ],
+          [
+            75.3551456,
+            19.8778049
+          ],
+          [
+            75.3556236,
+            19.8778291
+          ],
+          [
+            75.3558452,
+            19.8782302
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.74,
+    "land_record_area_hectare": 0.74,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P009",
+    "ulpin": "52876041392584",
+    "state": "Maharashtra",
+    "context": "urban",
+    "district": "Pune",
+    "taluka": "Haveli",
+    "village": "Wagholi",
+    "native_identifier_type": "CTS_NO",
+    "native_identifier": "1842",
+    "native_part": null,
+    "khata_no": null,
+    "geometry_ref": "synthetic-p009",
+    "centroid": {
+      "lat": 18.5284,
+      "lon": 73.8447
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.8449837,
+            18.5283921
+          ],
+          [
+            73.8448632,
+            18.5285453
+          ],
+          [
+            73.8446878,
+            18.5286181
+          ],
+          [
+            73.8445093,
+            18.5285762
+          ],
+          [
+            73.8444769,
+            18.528419
+          ],
+          [
+            73.8445235,
+            18.5282406
+          ],
+          [
+            73.8447196,
+            18.5281537
+          ],
+          [
+            73.8448442,
+            18.5282676
+          ],
+          [
+            73.8449837,
+            18.5283921
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.18,
+    "land_record_area_hectare": 0.18,
+    "available_source_systems": [
+      "registration",
+      "property_card",
+      "planning",
+      "building",
+      "property_tax",
+      "utilities"
+    ],
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P010",
+    "ulpin": "10395762841075",
+    "state": "Maharashtra",
+    "context": "urban",
+    "district": "Thane",
+    "taluka": "Thane",
+    "village": "Kopri",
+    "native_identifier_type": "CTS_NO",
+    "native_identifier": "318",
+    "native_part": null,
+    "khata_no": null,
+    "geometry_ref": "synthetic-p010",
+    "centroid": {
+      "lat": 19.2143,
+      "lon": 72.9741
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            72.9743135,
+            19.2142936
+          ],
+          [
+            72.9742022,
+            19.21444
+          ],
+          [
+            72.9740387,
+            19.2144954
+          ],
+          [
+            72.9739203,
+            19.214397
+          ],
+          [
+            72.9739303,
+            19.2142406
+          ],
+          [
+            72.9740592,
+            19.214097
+          ],
+          [
+            72.9742274,
+            19.2141627
+          ],
+          [
+            72.9743135,
+            19.2142936
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.12,
+    "land_record_area_hectare": 0.12,
+    "available_source_systems": [
+      "registration",
+      "property_card",
+      "planning",
+      "building",
+      "property_tax",
+      "utilities"
+    ],
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P011",
+    "ulpin": "84621573902841",
+    "state": "Maharashtra",
+    "context": "rural",
+    "district": "Pune",
+    "taluka": "Baramati",
+    "village": "Malegaon",
+    "native_identifier_type": "GAT_NO",
+    "native_identifier": "144",
+    "native_part": "2",
+    "khata_no": "34",
+    "geometry_ref": "synthetic-p011",
+    "centroid": {
+      "lat": 18.5244,
+      "lon": 73.8607
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.8614346,
+            18.5243935
+          ],
+          [
+            73.8611786,
+            18.5248959
+          ],
+          [
+            73.8607308,
+            18.5251462
+          ],
+          [
+            73.8602966,
+            18.5248643
+          ],
+          [
+            73.8600093,
+            18.5243823
+          ],
+          [
+            73.8601604,
+            18.5237958
+          ],
+          [
+            73.8606968,
+            18.5237802
+          ],
+          [
+            73.8611653,
+            18.5239371
+          ],
+          [
+            73.8614346,
+            18.5243935
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.58,
+    "land_record_area_hectare": 1.58,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "messy",
+    "issue": "OWNER_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P012",
+    "ulpin": "27590468153720",
+    "state": "Maharashtra",
+    "context": "urban_mixed",
+    "district": "Nashik",
+    "taluka": "Nashik",
+    "village": "Makhmalabad",
+    "native_identifier_type": "GAT_NO",
+    "native_identifier": "225",
+    "native_part": "2",
+    "khata_no": "81",
+    "geometry_ref": "synthetic-p012",
+    "centroid": {
+      "lat": 20.0075,
+      "lon": 73.8018
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.8022398,
+            20.0075273
+          ],
+          [
+            73.8021099,
+            20.0078784
+          ],
+          [
+            73.801736,
+            20.0079469
+          ],
+          [
+            73.8014596,
+            20.0076681
+          ],
+          [
+            73.8013662,
+            20.007265
+          ],
+          [
+            73.8016938,
+            20.0070311
+          ],
+          [
+            73.8020371,
+            20.0071963
+          ],
+          [
+            73.8022398,
+            20.0075273
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.62,
+    "land_record_area_hectare": 0.62,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "messy",
+    "issue": "AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P013",
+    "ulpin": "71934820561493",
+    "state": "Maharashtra",
+    "context": "rural",
+    "district": "Satara",
+    "taluka": "Karad",
+    "village": "Umbraj",
+    "native_identifier_type": "GAT_NO",
+    "native_identifier": "211",
+    "native_part": "2",
+    "khata_no": "48",
+    "geometry_ref": "synthetic-p013",
+    "centroid": {
+      "lat": 17.6785,
+      "lon": 74.0063
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            74.0068501,
+            17.6785346
+          ],
+          [
+            74.0067795,
+            17.6789266
+          ],
+          [
+            74.0063193,
+            17.6790045
+          ],
+          [
+            74.0059101,
+            17.6788295
+          ],
+          [
+            74.005621,
+            17.6784814
+          ],
+          [
+            74.0058619,
+            17.6781419
+          ],
+          [
+            74.0062851,
+            17.6780044
+          ],
+          [
+            74.0067656,
+            17.6781121
+          ],
+          [
+            74.0068501,
+            17.6785346
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.05,
+    "land_record_area_hectare": 1.05,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "messy",
+    "issue": "PENDING_MUTATION",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P014",
+    "ulpin": "45082719365028",
+    "state": "Maharashtra",
+    "context": "rural_coastal",
+    "district": "Ratnagiri",
+    "taluka": "Dapoli",
+    "village": "Harnai",
+    "native_identifier_type": "GAT_NO",
+    "native_identifier": "17",
+    "native_part": "1",
+    "khata_no": "9",
+    "geometry_ref": "synthetic-p014",
+    "centroid": {
+      "lat": 16.9942,
+      "lon": 73.308
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.3086791,
+            16.9942053
+          ],
+          [
+            73.3084691,
+            16.9947172
+          ],
+          [
+            73.3078511,
+            16.9947093
+          ],
+          [
+            73.3073841,
+            16.9944446
+          ],
+          [
+            73.3073125,
+            16.9939331
+          ],
+          [
+            73.3078227,
+            16.9936636
+          ],
+          [
+            73.3084222,
+            16.99374
+          ],
+          [
+            73.3086791,
+            16.9942053
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.3,
+    "land_record_area_hectare": 1.3,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "encumbrance",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "messy",
+    "issue": "ENCUMBRANCE_LITIGATION",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P015",
+    "ulpin": "96253174082615",
+    "state": "Maharashtra",
+    "context": "rural",
+    "district": "Nagpur",
+    "taluka": "Kalmeshwar",
+    "village": "Saoner Road",
+    "native_identifier_type": "KHASRA_NO",
+    "native_identifier": "118",
+    "native_part": "1",
+    "khata_no": "35",
+    "geometry_ref": "synthetic-p015",
+    "centroid": {
+      "lat": 21.1558,
+      "lon": 79.0922
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            79.0932222,
+            21.1557544
+          ],
+          [
+            79.0928249,
+            21.1564037
+          ],
+          [
+            79.0921273,
+            21.1565245
+          ],
+          [
+            79.0914926,
+            21.1564655
+          ],
+          [
+            79.0912664,
+            21.1558776
+          ],
+          [
+            79.091599,
+            21.1552526
+          ],
+          [
+            79.0922426,
+            21.1548993
+          ],
+          [
+            79.092748,
+            21.1552475
+          ],
+          [
+            79.0932222,
+            21.1557544
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.46,
+    "land_record_area_hectare": 2.2,
+    "available_source_systems": [
+      "bhulekh",
+      "eferfar",
+      "registration",
+      "planning",
+      "property_tax",
+      "utilities",
+      "environment"
+    ],
+    "quality_class": "messy",
+    "issue": "GIS_AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  }
+]

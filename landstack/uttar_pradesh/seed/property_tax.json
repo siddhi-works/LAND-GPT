@@ -1,0 +1,68 @@
+[
+  {
+    "property_tax_id": "ULB-TAX-008",
+    "ulpin": "67430291854637",
+    "local_body": "Ayodhya Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 1800000,
+    "tax_demand": 7200.0,
+    "amount_paid": 7200.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_tax_id": "ULB-TAX-009",
+    "ulpin": "52847160392586",
+    "local_body": "Gautam Buddha Nagar Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 3200000,
+    "tax_demand": 12800.0,
+    "amount_paid": 12800.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_tax_id": "ULB-TAX-010",
+    "ulpin": "10382654971064",
+    "local_body": "Ghaziabad Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 2800000,
+    "tax_demand": 11200.0,
+    "amount_paid": 11200.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_tax_id": "ULB-TAX-011",
+    "ulpin": "84650723190428",
+    "local_body": "Lucknow Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 2500000,
+    "tax_demand": 10000.0,
+    "amount_paid": 10000.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_tax_id": "ULB-TAX-012",
+    "ulpin": "27541896372051",
+    "local_body": "Mathura Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 4100000,
+    "tax_demand": 16400.0,
+    "amount_paid": 11480.0,
+    "outstanding_amount": 4920.0,
+    "status": "partially_paid"
+  },
+  {
+    "property_tax_id": "ULB-TAX-013",
+    "ulpin": "71960432851792",
+    "local_body": "Saharanpur Urban Local Body (Synthetic)",
+    "assessment_year": "2025-26",
+    "assessed_value": 950000,
+    "tax_demand": 3800.0,
+    "amount_paid": 3800.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  }
+]

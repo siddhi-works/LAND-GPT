@@ -1,0 +1,964 @@
+[
+  {
+    "prototype_ref": "P001",
+    "ulpin": "63821470593146",
+    "state": "Gujarat",
+    "context": "rural",
+    "district": "Ahmedabad",
+    "taluka": "Daskroi",
+    "village": "Aslali",
+    "survey_no": "142",
+    "sub_division": "2",
+    "record_of_rights_no": "00124",
+    "geometry_ref": "synthetic-p001",
+    "centroid": {
+      "lat": 23.0236,
+      "lon": 72.5697
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            72.5705402,
+            23.0235869
+          ],
+          [
+            72.5702342,
+            23.0239891
+          ],
+          [
+            72.5697162,
+            23.0244009
+          ],
+          [
+            72.5690863,
+            23.0241096
+          ],
+          [
+            72.5690131,
+            23.0236104
+          ],
+          [
+            72.5690978,
+            23.0230648
+          ],
+          [
+            72.5697713,
+            23.022863
+          ],
+          [
+            72.5702708,
+            23.0231326
+          ],
+          [
+            72.5705402,
+            23.0235869
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.82,
+    "land_record_area_hectare": 1.82,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P002",
+    "ulpin": "75293610481725",
+    "state": "Gujarat",
+    "context": "rural",
+    "district": "Vadodara",
+    "taluka": "Savli",
+    "village": "Manjusar",
+    "survey_no": "56",
+    "sub_division": "1",
+    "record_of_rights_no": "00218",
+    "geometry_ref": "synthetic-p002",
+    "centroid": {
+      "lat": 22.3094,
+      "lon": 73.1778
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.1786931,
+            22.3093378
+          ],
+          [
+            73.1784007,
+            22.3099929
+          ],
+          [
+            73.1775492,
+            22.3103252
+          ],
+          [
+            73.1770418,
+            22.3097465
+          ],
+          [
+            73.1770013,
+            22.3090723
+          ],
+          [
+            73.1776439,
+            22.3084676
+          ],
+          [
+            73.1784072,
+            22.3088271
+          ],
+          [
+            73.1786931,
+            22.3093378
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.4,
+    "land_record_area_hectare": 2.4,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P003",
+    "ulpin": "21468053912745",
+    "state": "Gujarat",
+    "context": "rural",
+    "district": "Rajkot",
+    "taluka": "Gondal",
+    "village": "Biliya",
+    "survey_no": "87",
+    "sub_division": "3",
+    "record_of_rights_no": "00341",
+    "geometry_ref": "synthetic-p003",
+    "centroid": {
+      "lat": 22.3072,
+      "lon": 70.7971
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            70.7976551,
+            22.3071613
+          ],
+          [
+            70.7975522,
+            22.3076325
+          ],
+          [
+            70.7970916,
+            22.307808
+          ],
+          [
+            70.7967333,
+            22.3075917
+          ],
+          [
+            70.7964271,
+            22.3072037
+          ],
+          [
+            70.7966988,
+            22.3067425
+          ],
+          [
+            70.7971225,
+            22.306698
+          ],
+          [
+            70.7975794,
+            22.3066977
+          ],
+          [
+            70.7976551,
+            22.3071613
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.15,
+    "land_record_area_hectare": 1.15,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P004",
+    "ulpin": "90573146280914",
+    "state": "Gujarat",
+    "context": "mixed",
+    "district": "Surat",
+    "taluka": "Choryasi",
+    "village": "Vesu",
+    "survey_no": "213",
+    "sub_division": null,
+    "record_of_rights_no": "00406",
+    "geometry_ref": "synthetic-p004",
+    "centroid": {
+      "lat": 21.1746,
+      "lon": 72.8311
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            72.8316579,
+            21.1745943
+          ],
+          [
+            72.831491,
+            21.1750713
+          ],
+          [
+            72.8310233,
+            21.1750939
+          ],
+          [
+            72.8306253,
+            21.1748447
+          ],
+          [
+            72.8305361,
+            21.1742857
+          ],
+          [
+            72.8310336,
+            21.1741033
+          ],
+          [
+            72.8314322,
+            21.1741826
+          ],
+          [
+            72.8316579,
+            21.1745943
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.96,
+    "land_record_area_hectare": 0.96,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P005",
+    "ulpin": "48152793068421",
+    "state": "Gujarat",
+    "context": "rural",
+    "district": "Mehsana",
+    "taluka": "Visnagar",
+    "village": "Gunjala",
+    "survey_no": "31",
+    "sub_division": "2",
+    "record_of_rights_no": "00532",
+    "geometry_ref": "synthetic-p005",
+    "centroid": {
+      "lat": 23.5935,
+      "lon": 72.3676
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            72.3686204,
+            23.5935676
+          ],
+          [
+            72.3683338,
+            23.5941943
+          ],
+          [
+            72.3676471,
+            23.5943206
+          ],
+          [
+            72.366784,
+            23.5942157
+          ],
+          [
+            72.3664606,
+            23.5934339
+          ],
+          [
+            72.3669665,
+            23.5929699
+          ],
+          [
+            72.3675243,
+            23.5925536
+          ],
+          [
+            72.368422,
+            23.5928025
+          ],
+          [
+            72.3686204,
+            23.5935676
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 3.1,
+    "land_record_area_hectare": 3.1,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P006",
+    "ulpin": "82741635092851",
+    "state": "Gujarat",
+    "context": "rural",
+    "district": "Anand",
+    "taluka": "Anand",
+    "village": "Lambhvel",
+    "survey_no": "119",
+    "sub_division": "1",
+    "record_of_rights_no": "00617",
+    "geometry_ref": "synthetic-p006",
+    "centroid": {
+      "lat": 22.5711,
+      "lon": 72.9255
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            72.9263449,
+            22.571136
+          ],
+          [
+            72.9259782,
+            22.5715963
+          ],
+          [
+            72.9253584,
+            22.5717352
+          ],
+          [
+            72.9246557,
+            22.5714146
+          ],
+          [
+            72.9248098,
+            22.5707924
+          ],
+          [
+            72.9253032,
+            22.5705152
+          ],
+          [
+            72.9260284,
+            22.5705008
+          ],
+          [
+            72.9263449,
+            22.571136
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.72,
+    "land_record_area_hectare": 1.72,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P007",
+    "ulpin": "39680521473162",
+    "state": "Gujarat",
+    "context": "rural",
+    "district": "Bhavnagar",
+    "taluka": "Ghogha",
+    "village": "Nari",
+    "survey_no": "64",
+    "sub_division": "4",
+    "record_of_rights_no": "00705",
+    "geometry_ref": "synthetic-p007",
+    "centroid": {
+      "lat": 21.7722,
+      "lon": 72.1468
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            72.1477302,
+            21.7721695
+          ],
+          [
+            72.1473403,
+            21.7726323
+          ],
+          [
+            72.1467759,
+            21.7729817
+          ],
+          [
+            72.1461005,
+            21.772807
+          ],
+          [
+            72.1460631,
+            21.7722399
+          ],
+          [
+            72.146226,
+            21.7716801
+          ],
+          [
+            72.1468768,
+            21.7713662
+          ],
+          [
+            72.1473618,
+            21.7717033
+          ],
+          [
+            72.1477302,
+            21.7721695
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.05,
+    "land_record_area_hectare": 2.05,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P008",
+    "ulpin": "68159324074638",
+    "state": "Gujarat",
+    "context": "mixed",
+    "district": "Gandhinagar",
+    "taluka": "Kalol",
+    "village": "Santej",
+    "survey_no": "402",
+    "sub_division": "1",
+    "record_of_rights_no": "00883",
+    "geometry_ref": "synthetic-p008",
+    "centroid": {
+      "lat": 23.2244,
+      "lon": 72.6369
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            72.6374323,
+            23.2243669
+          ],
+          [
+            72.6371821,
+            23.2247137
+          ],
+          [
+            72.6367524,
+            23.2249063
+          ],
+          [
+            72.6364293,
+            23.2246331
+          ],
+          [
+            72.6364849,
+            23.2242366
+          ],
+          [
+            72.6368188,
+            23.2238994
+          ],
+          [
+            72.6372492,
+            23.2240523
+          ],
+          [
+            72.6374323,
+            23.2243669
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.74,
+    "land_record_area_hectare": 0.74,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P009",
+    "ulpin": "53947216082571",
+    "state": "Gujarat",
+    "context": "urban",
+    "district": "Ahmedabad",
+    "taluka": "Ahmedabad City",
+    "village": "Navrangpura",
+    "survey_no": "184",
+    "sub_division": null,
+    "record_of_rights_no": null,
+    "geometry_ref": "synthetic-p009",
+    "centroid": {
+      "lat": 23.0324,
+      "lon": 72.5697
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            72.5699254,
+            23.0323902
+          ],
+          [
+            72.5698569,
+            23.0325503
+          ],
+          [
+            72.5697076,
+            23.0326474
+          ],
+          [
+            72.5695578,
+            23.0325564
+          ],
+          [
+            72.5694689,
+            23.0323932
+          ],
+          [
+            72.5695371,
+            23.0322133
+          ],
+          [
+            72.5697042,
+            23.0322017
+          ],
+          [
+            72.5698725,
+            23.0322264
+          ],
+          [
+            72.5699254,
+            23.0323902
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.165,
+    "land_record_area_hectare": 0.165,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P010",
+    "ulpin": "10768425391052",
+    "state": "Gujarat",
+    "context": "urban",
+    "district": "Vadodara",
+    "taluka": "Vadodara City",
+    "village": "Akota",
+    "survey_no": "318",
+    "sub_division": null,
+    "record_of_rights_no": null,
+    "geometry_ref": "synthetic-p010",
+    "centroid": {
+      "lat": 22.3182,
+      "lon": 73.1778
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.1779925,
+            22.3182027
+          ],
+          [
+            73.1779413,
+            22.318358
+          ],
+          [
+            73.1777766,
+            22.3183973
+          ],
+          [
+            73.17764,
+            22.3182777
+          ],
+          [
+            73.1776103,
+            22.3180885
+          ],
+          [
+            73.1777685,
+            22.3180038
+          ],
+          [
+            73.1779137,
+            22.3180597
+          ],
+          [
+            73.1779925,
+            22.3182027
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.12,
+    "land_record_area_hectare": 0.12,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P011",
+    "ulpin": "86423051794816",
+    "state": "Gujarat",
+    "context": "mixed",
+    "district": "Rajkot",
+    "taluka": "Rajkot",
+    "village": "Mavdi",
+    "survey_no": "225",
+    "sub_division": "2",
+    "record_of_rights_no": "01142",
+    "geometry_ref": "synthetic-p011",
+    "centroid": {
+      "lat": 22.316,
+      "lon": 70.7971
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            70.7975139,
+            22.3160224
+          ],
+          [
+            70.7974577,
+            22.3163111
+          ],
+          [
+            70.7971222,
+            22.3163927
+          ],
+          [
+            70.7967626,
+            22.3162793
+          ],
+          [
+            70.7965716,
+            22.3159736
+          ],
+          [
+            70.7967939,
+            22.3157467
+          ],
+          [
+            70.7970833,
+            22.3156111
+          ],
+          [
+            70.7974961,
+            22.3156729
+          ],
+          [
+            70.7975139,
+            22.3160224
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.62,
+    "land_record_area_hectare": 0.62,
+    "quality_class": "messy",
+    "issue": "OWNER_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P012",
+    "ulpin": "27351480692137",
+    "state": "Gujarat",
+    "context": "mixed",
+    "district": "Surat",
+    "taluka": "Choryasi",
+    "village": "Palanpur",
+    "survey_no": "98",
+    "sub_division": "3",
+    "record_of_rights_no": "01231",
+    "geometry_ref": "synthetic-p012",
+    "centroid": {
+      "lat": 21.1834,
+      "lon": 72.8311
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            72.8314926,
+            21.1833996
+          ],
+          [
+            72.8313686,
+            21.1836643
+          ],
+          [
+            72.831028,
+            21.1836962
+          ],
+          [
+            72.8307171,
+            21.183541
+          ],
+          [
+            72.8307273,
+            21.1832382
+          ],
+          [
+            72.8310162,
+            21.1831159
+          ],
+          [
+            72.8313586,
+            21.1831235
+          ],
+          [
+            72.8314926,
+            21.1833996
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.41,
+    "land_record_area_hectare": 0.41,
+    "quality_class": "messy",
+    "issue": "AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P013",
+    "ulpin": "71860543912796",
+    "state": "Gujarat",
+    "context": "rural",
+    "district": "Kutch",
+    "taluka": "Bhuj",
+    "village": "Madhapar",
+    "survey_no": "17",
+    "sub_division": "1",
+    "record_of_rights_no": "01308",
+    "geometry_ref": "synthetic-p013",
+    "centroid": {
+      "lat": 23.748,
+      "lon": 69.858
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            69.8587332,
+            23.7479632
+          ],
+          [
+            69.8584437,
+            23.7483899
+          ],
+          [
+            69.8579543,
+            23.7485607
+          ],
+          [
+            69.8574305,
+            23.7485066
+          ],
+          [
+            69.8573398,
+            23.748045
+          ],
+          [
+            69.8575844,
+            23.7476233
+          ],
+          [
+            69.8580451,
+            23.7473337
+          ],
+          [
+            69.8584511,
+            23.7475659
+          ],
+          [
+            69.8587332,
+            23.7479632
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.3,
+    "land_record_area_hectare": 1.3,
+    "quality_class": "messy",
+    "issue": "PENDING_VF6",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P014",
+    "ulpin": "45293178064528",
+    "state": "Gujarat",
+    "context": "rural",
+    "district": "Panchmahal",
+    "taluka": "Godhra",
+    "village": "Vavdi",
+    "survey_no": "144",
+    "sub_division": "2",
+    "record_of_rights_no": "01455",
+    "geometry_ref": "synthetic-p014",
+    "centroid": {
+      "lat": 22.7942,
+      "lon": 73.6048
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            73.6056104,
+            22.7941607
+          ],
+          [
+            73.605168,
+            22.7946681
+          ],
+          [
+            73.6045982,
+            22.7948802
+          ],
+          [
+            73.6040508,
+            22.7945887
+          ],
+          [
+            73.6041909,
+            22.7939561
+          ],
+          [
+            73.6046868,
+            22.793539
+          ],
+          [
+            73.6053079,
+            22.7936402
+          ],
+          [
+            73.6056104,
+            22.7941607
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.58,
+    "land_record_area_hectare": 1.58,
+    "quality_class": "messy",
+    "issue": "ENCUMBRANCE_LITIGATION",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P015",
+    "ulpin": "97641820583714",
+    "state": "Gujarat",
+    "context": "rural",
+    "district": "Banaskantha",
+    "taluka": "Palanpur",
+    "village": "Chitrasani",
+    "survey_no": "118",
+    "sub_division": "1",
+    "record_of_rights_no": "01519",
+    "geometry_ref": "synthetic-p015",
+    "centroid": {
+      "lat": 24.1877,
+      "lon": 72.4329
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            72.433866,
+            24.1876909
+          ],
+          [
+            72.4334563,
+            24.1882284
+          ],
+          [
+            72.4329625,
+            24.1886453
+          ],
+          [
+            72.4322781,
+            24.1883618
+          ],
+          [
+            72.4320785,
+            24.1876514
+          ],
+          [
+            72.4322549,
+            24.1869971
+          ],
+          [
+            72.4328859,
+            24.1868576
+          ],
+          [
+            72.4335286,
+            24.1871017
+          ],
+          [
+            72.433866,
+            24.1876909
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.46,
+    "land_record_area_hectare": 2.2,
+    "quality_class": "messy",
+    "issue": "GIS_AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  }
+]

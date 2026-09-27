@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "records": 15,
+  "clean": 10,
+  "messy": 5,
+  "row_counts": {
+    "parcels": 15,
+    "vf7_12": 13,
+    "vf8a": 13,
+    "vf6": 15,
+    "registrations": 15,
+    "property_cards": 3,
+    "planning": 9,
+    "building": 5,
+    "encumbrances": 2,
+    "property_tax": 6,
+    "electricity": 7,
+    "water": 5,
+    "environment": 3
+  },
+  "fixes": [
+    "P010 unit/geometry corrected to 1,200 sqm = 0.12 ha",
+    "P012 classified mixed so 7/12↔8A mismatch is represented",
+    "Gujarati spelling normalized for Joshi"
+  ]
+}

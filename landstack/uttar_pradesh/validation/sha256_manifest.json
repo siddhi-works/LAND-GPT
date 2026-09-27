@@ -1,0 +1,19 @@
+{
+  "README.md": "1d0ff1f1feb4b258e1afb9fe3acbc9a7c3828e38f31259c5fa08bc7726c39d6c",
+  "generator/generate_uttar_pradesh.py": "3ba33dc71f376f5a4494a0fc999aa8aa00fdc2a8af049b405881ba6d20500d8b",
+  "research.md": "5b5c35c05c9b68fc3f85ac001a01c29270adcddd5ed3ae082fa245134fbf4219",
+  "schema/uttar_pradesh_schema.sql": "df1b39e34a271d72bac05aa5a4cd48e2c6fbcc926dd9a51c0474d7adf3669e55",
+  "seed/bhu_naksha.json": "ccabbbefb582f6c56f05daec53cd7b82488d469aa7f35b5207dd0825ed0e44c8",
+  "seed/building_permissions.json": "ce87d758022ecc40a7bf017bd514756c996c72d9949e992914e5b3ea2013cc18",
+  "seed/encumbrances.json": "dc8ffb43a199890b39f8109d5df8c9b3f609d0d98d98063e838fde061c8074c4",
+  "seed/environment.json": "ba80b42895f5348bec0b34029277e61589fc88833eaa8caa77625dc0ee2d9208",
+  "seed/land_records.json": "175246e8c6e2bd3098126e20bd943f87d03d64c7bb6e4ec0d0cb7dab5ec57f20",
+  "seed/mutations.json": "aeb15b7c61610405411b2e47961587f64d625d75a0b6eb73908effe128448b58",
+  "seed/parcels.json": "be01b145a22dcec93ed0fa2f05d1aabc7b5d7b35d9870b50751354347479450d",
+  "seed/planning.json": "e9712696d9b887354303f0e20478e97d185ac1e8f66a99eb87352a1d004912fe",
+  "seed/property_tax.json": "c2c0b5668b7ce2d7612dac4cbc3f145e5edca07a6543cdb78f15bae9945e03ee",
+  "seed/registrations.json": "e2a2b10bda74ba027ee5ed6095e89bbbc4876f5ad94dbe3cf71e4a40eaf0e3a7",
+  "seed/utilities.json": "0590412b22dc76d65ad58d6c56df504ab9cde1d5e839c2c6de4f3e5448c8fe99",
+  "seed/uttar_pradesh_seed.sql": "c756d86808abb33a87e74f1be17f447ae36407e39f8ffea7125197028916b355",
+  "validation/validation_report.json": "1880fb75194b33ca6be190cc9ae59e9e16e715f1c2876e0e8b506a49f2bbc2a8"
+}

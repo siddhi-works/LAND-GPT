@@ -1,0 +1,30 @@
+[
+  {
+    "property_uid": "48392017461",
+    "ulpin": "52876041392584",
+    "cts_no": "1842",
+    "district": "Pune",
+    "city_survey_office": "Haveli City Survey Office",
+    "village_peth": "Wagholi",
+    "holder_name_mr": "नेहा कुलकर्णी",
+    "holder_name_en": "Neha Kulkarni",
+    "area_value": 1800,
+    "area_unit": "sqm",
+    "tenure_type": "Occupancy Class I",
+    "record_status": "active"
+  },
+  {
+    "property_uid": "71563820497",
+    "ulpin": "10395762841075",
+    "cts_no": "318",
+    "district": "Thane",
+    "city_survey_office": "Thane City Survey Office",
+    "village_peth": "Kopri",
+    "holder_name_mr": "आशा नाईक",
+    "holder_name_en": "Asha Naik",
+    "area_value": 1200,
+    "area_unit": "sqm",
+    "tenure_type": "Occupancy Class I",
+    "record_status": "active"
+  }
+]

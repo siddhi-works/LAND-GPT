@@ -1,0 +1,44 @@
+[
+  {
+    "utility_id": "UTIL-MH-008",
+    "ulpin": "67419382054736",
+    "electricity_status": "connected",
+    "water_status": "available",
+    "road_access": "yes"
+  },
+  {
+    "utility_id": "UTIL-MH-009",
+    "ulpin": "52876041392584",
+    "electricity_status": "connected",
+    "water_status": "connected",
+    "road_access": "yes"
+  },
+  {
+    "utility_id": "UTIL-MH-010",
+    "ulpin": "10395762841075",
+    "electricity_status": "connected",
+    "water_status": "connected",
+    "road_access": "yes"
+  },
+  {
+    "utility_id": "UTIL-MH-012",
+    "ulpin": "27590468153720",
+    "electricity_status": "connected",
+    "water_status": "available",
+    "road_access": "yes"
+  },
+  {
+    "utility_id": "UTIL-MH-013",
+    "ulpin": "71934820561493",
+    "electricity_status": "connected",
+    "water_status": "not_available",
+    "road_access": "yes"
+  },
+  {
+    "utility_id": "UTIL-MH-014",
+    "ulpin": "45082719365028",
+    "electricity_status": "connected",
+    "water_status": "available",
+    "road_access": "limited"
+  }
+]

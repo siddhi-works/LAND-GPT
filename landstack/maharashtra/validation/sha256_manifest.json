@@ -1,0 +1,20 @@
+{
+  "README.md": "17a94f126ab6291231793e2bf121a086b3357a094206ae205039503016e50513",
+  "generator/generate_maharashtra.py": "fa606cf0350619ed4b5ce07033abb7c8c953a49257ebf3a320cd89eaaa774f6f",
+  "research.md": "a40071c7f43aad086be096f6036ae421c3c9bcb0494d48fadfec07240006c83d",
+  "schema/maharashtra_schema.sql": "b6e7ee5994eba66c7770f880154ef2cd7094ed4fb928a0aaacc760828934e599",
+  "seed/building_permissions.json": "533822744fd26b1880b5a683db6d9fbeeabb180d7a3238028e314b177f570a5e",
+  "seed/encumbrances.json": "5ad297639edd84a624b9b927cdb3d4ee5a2a5afdc8551ca34190adddbce4de24",
+  "seed/environment.json": "34b6ae07bc332f236badb67b045701021a585352c18d4992329d77c103e961f5",
+  "seed/land_records.json": "45bc157a2e026a1f99e14e2b43f8de3785bb95d9d241b389fa06cfd5c047f2da",
+  "seed/maharashtra_seed.sql": "1bb435e092085eded4b123d8cb3392999d558e611380e467e71d37477d64bec3",
+  "seed/mutations.json": "f867fc9544f5026e55d4cdacde528665a485f78e3edf37f1e958ede9b7e63bcb",
+  "seed/parcels.json": "67ee08297b9573252f57f4f5bc5f64970dbe64dd146dff6078695345c4f22cdb",
+  "seed/planning.json": "49d6327c66f551885cadbcc66a662055663e1ec8f5e156b6bc1a3e24fe3ea84e",
+  "seed/property_cards.json": "3ce28f033ee1ef88e28cab8e7ef548a4f290f5d723541d2d4b35c6e58baf6584",
+  "seed/property_tax.json": "fee166330b4f3c9b4124f958d3237e46863899dbcf2f8bdaa1d0aa4a50ec4c80",
+  "seed/registrations.json": "aba4b9056874b4a4c0b5c143c4dd8fed93a0d2ccc6a1fa7de51deff8855355a8",
+  "seed/utilities.json": "858c6b956b2944801a502acb45d3acac8c8100f42a3c685e79b5fd46d0f8c50a",
+  "validation/field_summary.json": "620a6461129427742d92b126d5376cde95aacfb8ded10ef23b2d49064d69e17f",
+  "validation/validation_report.json": "24e22a074da2191ed14c0a5f9f1162d50b5e299e8ede10422df3eb2e81529f7c"
+}

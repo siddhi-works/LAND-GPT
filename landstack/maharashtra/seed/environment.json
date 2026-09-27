@@ -1,0 +1,23 @@
+[
+  {
+    "environment_id": "ENV-MH-014",
+    "ulpin": "45082719365028",
+    "restriction_type": "Coastal regulation related restriction",
+    "zone_name": "Synthetic Coastal Zone A",
+    "status": "review_required"
+  },
+  {
+    "environment_id": "ENV-MH-007",
+    "ulpin": "39284610573621",
+    "restriction_type": "Seasonal watercourse buffer",
+    "zone_name": "Synthetic Buffer Zone B",
+    "status": "active"
+  },
+  {
+    "environment_id": "ENV-MH-015",
+    "ulpin": "96253174082615",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  }
+]

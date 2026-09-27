@@ -1,0 +1,26 @@
+[
+  {
+    "encumbrance_id": "ENC-GJ-005",
+    "ulpin": "48152793068421",
+    "encumbrance_type_gu": "બોજો",
+    "encumbrance_type_en": "Charge",
+    "reference_no": "MTG-GJ-005",
+    "holder_name_gu": "સિન્થેટિક બેંક",
+    "holder_name_en": "Synthetic Bank",
+    "status": "released",
+    "litigation_flag": false,
+    "court_case_reference": null
+  },
+  {
+    "encumbrance_id": "ENC-GJ-014",
+    "ulpin": "45293178064528",
+    "encumbrance_type_gu": "ગીરો / બોજો",
+    "encumbrance_type_en": "Mortgage / Charge",
+    "reference_no": "MTG-GJ-014",
+    "holder_name_gu": "સિન્થેટિક બેંક",
+    "holder_name_en": "Synthetic Bank",
+    "status": "active",
+    "litigation_flag": true,
+    "court_case_reference": "MOCK-RCCMS-GJ-014"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "property_card_no": "PC-AHD-1842",
+    "ulpin": "53947216082571",
+    "city_survey_no": "1842",
+    "district": "Ahmedabad",
+    "taluka": "Ahmedabad City",
+    "ward_no": "12",
+    "sheet_no": "A-4",
+    "holder_name_gu": "મનન દેસાઈ",
+    "holder_name_en": "Manan Desai",
+    "area_value": 1650,
+    "area_unit": "sqm",
+    "record_status": "active"
+  },
+  {
+    "property_card_no": "PC-VAD-318",
+    "ulpin": "10768425391052",
+    "city_survey_no": "318",
+    "district": "Vadodara",
+    "taluka": "Vadodara City",
+    "ward_no": "7",
+    "sheet_no": "V-2",
+    "holder_name_gu": "આશા ઠક્કર",
+    "holder_name_en": "Asha Thakkar",
+    "area_value": 1200,
+    "area_unit": "sqm",
+    "record_status": "active"
+  },
+  {
+    "property_card_no": "PC-SRT-225",
+    "ulpin": "27351480692137",
+    "city_survey_no": "225",
+    "district": "Surat",
+    "taluka": "Choryasi",
+    "ward_no": "19",
+    "sheet_no": "S-7",
+    "holder_name_gu": "મિહિર શાહ",
+    "holder_name_en": "Mihir Shah",
+    "area_value": 4100,
+    "area_unit": "sqm",
+    "record_status": "active"
+  }
+]

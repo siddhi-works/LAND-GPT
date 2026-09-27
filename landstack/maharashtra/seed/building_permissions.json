@@ -1,0 +1,52 @@
+[
+  {
+    "permission_no": "BP-MH-008-2025",
+    "ulpin": "67419382054736",
+    "application_no": "BPAPP-MH-008",
+    "authority": "Chhatrapati Sambhajinagar Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 520,
+    "approval_date": "2025-11-17",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-009-2025",
+    "ulpin": "52876041392584",
+    "application_no": "BPAPP-MH-009",
+    "authority": "Pune Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 520,
+    "approval_date": "2025-12-04",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-010-2025",
+    "ulpin": "10395762841075",
+    "application_no": "BPAPP-MH-010",
+    "authority": "Thane Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 520,
+    "approval_date": "2025-12-21",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-012-2025",
+    "ulpin": "27590468153720",
+    "application_no": "BPAPP-MH-012",
+    "authority": "Nashik Local Planning Authority",
+    "building_use": "Commercial",
+    "built_up_area_sqm": 900,
+    "approval_date": "2026-01-24",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-013-2025",
+    "ulpin": "71934820561493",
+    "application_no": "BPAPP-MH-013",
+    "authority": "Satara Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 520,
+    "approval_date": "2026-02-10",
+    "status": "approved"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "ulpin": "63821470593146",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "75293610481725",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "90573146280914",
+    "planning_authority": "Surat Planning Authority",
+    "plan_reference": "Surat Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "68159324074638",
+    "planning_authority": "Gandhinagar Planning Authority",
+    "plan_reference": "Gandhinagar Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "53947216082571",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "10768425391052",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "27351480692137",
+    "planning_authority": "Surat Planning Authority",
+    "plan_reference": "Surat Development/Regional Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_gu": "વાણિજ્યિક ઝોન",
+    "zone_name_en": "Commercial Zone",
+    "permitted_use": "Commercial",
+    "restriction_status": "road-reservation"
+  },
+  {
+    "ulpin": "45293178064528",
+    "planning_authority": "Panchmahal Planning Authority",
+    "plan_reference": "Panchmahal Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "environment-review"
+  },
+  {
+    "ulpin": "97641820583714",
+    "planning_authority": "Banaskantha Planning Authority",
+    "plan_reference": "Banaskantha Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  }
+]

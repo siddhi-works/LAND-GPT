@@ -1,0 +1,26 @@
+[
+  {
+    "encumbrance_id": "ENC-UP-005",
+    "ulpin": "46792130584716",
+    "encumbrance_type_hi": "बंधक",
+    "encumbrance_type_en": "Mortgage",
+    "reference_no": "MTG-UP-005",
+    "holder_name_hi": "सिंथेटिक बैंक",
+    "holder_name_en": "Synthetic Bank",
+    "status": "released",
+    "litigation_flag": false,
+    "court_case_reference": null
+  },
+  {
+    "encumbrance_id": "ENC-UP-014",
+    "ulpin": "45039182764025",
+    "encumbrance_type_hi": "बंधक / भार",
+    "encumbrance_type_en": "Mortgage / Charge",
+    "reference_no": "MTG-UP-014",
+    "holder_name_hi": "सिंथेटिक बैंक",
+    "holder_name_en": "Synthetic Bank",
+    "status": "active",
+    "litigation_flag": true,
+    "court_case_reference": "MOCK-RCCMS-014"
+  }
+]

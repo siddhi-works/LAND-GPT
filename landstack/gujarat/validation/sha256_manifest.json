@@ -1,0 +1,18 @@
+{
+  "README.md": "ebde81a77d2eaa891e8c57fe1da9aa948156688f5f3e6c45a53579da7c30165b",
+  "generator/generate_gujarat.py": "29105368383cf987d6ff31bfdf48b7c1f4bddb954d00fa6dcc537042c9621b18",
+  "schema/gujarat_schema.sql": "ca50c49ba528cb9101acd6cfd8c4abbde871e42868abe08603602cb68bfc8413",
+  "seed/building_permissions.json": "041e2fa58d908194efd4cdc62d330b47fb226ad4b889e780bf7ef4e40e0be804",
+  "seed/encumbrances.json": "14e91e19c1ecd4003b70ad50d270ca8d474195f6b1297db986f3f2b7546d9ec9",
+  "seed/environment.json": "951fc733b3e9d62cb18705600080ab18558af7f5cb031c3357d0d5abca743461",
+  "seed/gujarat_seed.sql": "66ba9da6fb11417e17e458fd442a1e25fe99e9e0abc0d7826473832111b72eb4",
+  "seed/land_records.json": "eab53a352d10d6aae9308ef604ec5d67365cc1196647b0b90e2595e73da4ac57",
+  "seed/mutations.json": "a8d11ff10aa7c472a26b74dafcf6988f1e00c24aba4f1aeaf999d79d354a5b7d",
+  "seed/parcels.json": "5bfa2793638fb5d8e326527f088c73ab70f4193ac4f28081ba01bf2a90627cf3",
+  "seed/planning.json": "6b5406e7c4eb54c6cd9fec65c93d1bde2e798ec9e169e06f623115468f07dd43",
+  "seed/property_cards.json": "39db7a659862524af564a753019f21e2a8b4067670139a5a2dfc8d0701421f14",
+  "seed/property_tax.json": "3acd1234a5ae836a1df1f4dced87f787e2caf1c356757040688c2236761c847e",
+  "seed/registrations.json": "0428d3b5a15b1731520ae6b919cff29b726c869b0d42025515cb5a71584693e6",
+  "seed/utilities.json": "c9f186c1fd338bbaee08e91ea08126b11689cbf07833156f51eceb51523f9e36",
+  "validation/validation_report.json": "298fabb4b533b50365b6bfb13ad2c11709ba765326b871212234b19c85a80947"
+}

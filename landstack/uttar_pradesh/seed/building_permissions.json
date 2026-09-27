@@ -1,0 +1,62 @@
+[
+  {
+    "approval_no": "BP-UP-008-2025",
+    "ulpin": "67430291854637",
+    "application_no": "BPAPP-UP-008",
+    "department": "Housing Department",
+    "approving_authority": "Ayodhya Development Authority",
+    "service": "Building Plan Approval",
+    "building_use": "Residential",
+    "built_up_area_sqm": 420,
+    "approval_date": "2025-09-09",
+    "status": "approved"
+  },
+  {
+    "approval_no": "BP-UP-009-2025",
+    "ulpin": "52847160392586",
+    "application_no": "BPAPP-UP-009",
+    "department": "Housing Department",
+    "approving_authority": "Gautam Buddha Nagar Development Authority",
+    "service": "Building Plan Approval",
+    "building_use": "Residential",
+    "built_up_area_sqm": 420,
+    "approval_date": "2025-09-10",
+    "status": "approved"
+  },
+  {
+    "approval_no": "BP-UP-010-2025",
+    "ulpin": "10382654971064",
+    "application_no": "BPAPP-UP-010",
+    "department": "Housing Department",
+    "approving_authority": "Ghaziabad Development Authority",
+    "service": "Building Plan Approval",
+    "building_use": "Residential",
+    "built_up_area_sqm": 420,
+    "approval_date": "2025-09-11",
+    "status": "approved"
+  },
+  {
+    "approval_no": "BP-UP-011-2025",
+    "ulpin": "84650723190428",
+    "application_no": "BPAPP-UP-011",
+    "department": "Housing Department",
+    "approving_authority": "Lucknow Development Authority",
+    "service": "Building Plan Approval",
+    "building_use": "Residential",
+    "built_up_area_sqm": 420,
+    "approval_date": "2025-09-12",
+    "status": "approved"
+  },
+  {
+    "approval_no": "BP-UP-012-2025",
+    "ulpin": "27541896372051",
+    "application_no": "BPAPP-UP-012",
+    "department": "Housing Department",
+    "approving_authority": "Mathura Development Authority",
+    "service": "Building Plan Approval",
+    "building_use": "Commercial",
+    "built_up_area_sqm": 860,
+    "approval_date": "2025-09-13",
+    "status": "approved"
+  }
+]

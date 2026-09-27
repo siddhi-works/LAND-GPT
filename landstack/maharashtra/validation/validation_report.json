@@ -1,0 +1,37 @@
+{
+  "validation_status": "PASS",
+  "record_count": 15,
+  "clean": 10,
+  "messy": 5,
+  "messy_cases": [
+    {
+      "prototype_ref": "P011",
+      "type": "OWNER_MISMATCH"
+    },
+    {
+      "prototype_ref": "P012",
+      "type": "AREA_MISMATCH"
+    },
+    {
+      "prototype_ref": "P013",
+      "type": "PENDING_MUTATION"
+    },
+    {
+      "prototype_ref": "P014",
+      "type": "ENCUMBRANCE_LITIGATION"
+    },
+    {
+      "prototype_ref": "P015",
+      "type": "GIS_AREA_MISMATCH"
+    }
+  ],
+  "relational_checks": [
+    "unique ULPIN",
+    "all foreign ULPIN references exist",
+    "clean 7/12↔8A owner",
+    "clean 7/12↔8A area",
+    "clean registration↔owner",
+    "clean Ferfar status",
+    "intentional messy-case detection"
+  ]
+}

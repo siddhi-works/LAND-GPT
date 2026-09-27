@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "records": 15,
+  "clean": 10,
+  "messy": 5,
+  "messy_cases": [
+    {
+      "P011": "owner mismatch"
+    },
+    {
+      "P012": "Khatauni vs BhuNaksha area mismatch"
+    },
+    {
+      "P013": "registration completed; Namantaran pending"
+    },
+    {
+      "P014": "active encumbrance + litigation"
+    },
+    {
+      "P015": "GIS/geometry area differs from land record"
+    }
+  ]
+}

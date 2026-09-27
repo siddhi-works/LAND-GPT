@@ -1,0 +1,26 @@
+[
+  {
+    "environment_id": "ENV-GJ-008",
+    "ulpin": "68159324074638",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "Water-body buffer",
+    "zone_name": "Synthetic Buffer A",
+    "status": "review"
+  },
+  {
+    "environment_id": "ENV-GJ-014",
+    "ulpin": "45293178064528",
+    "source_authority": "Gujarat environmental/forest authority (Synthetic)",
+    "restriction_type": "Eco-sensitive review",
+    "zone_name": "Synthetic Eco Buffer B",
+    "status": "active"
+  },
+  {
+    "environment_id": "ENV-GJ-015",
+    "ulpin": "97641820583714",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  }
+]

@@ -1,0 +1,362 @@
+{
+  "version": "1.0.0",
+  "description": "Deterministic semantic glossary connecting Maharashtra, Uttar Pradesh and Gujarat land-system terminology to the canonical Land Stack concepts. Resolution is exact-match only (Unicode NFKC + casefold + whitespace collapse) on either the English/transliterated value or the native-script value. No fuzzy or model-based matching. State '*' entries apply to every state and are consulted only after state-specific entries.",
+  "concepts": {
+    "parcel": {"label": "Parcel", "definition": "A unit of land identified by a ULPIN, located in a state jurisdiction and known natively by a survey/gat/khasra/CTS number.", "canonical_record": "ParcelIdentity", "endpoints": ["/v1/registry/ulpin/{ulpin}", "/v1/parcels/{ulpin}"]},
+    "ownership": {"label": "Ownership", "definition": "A claim of a party over a parcel: recorded holder (khatedar/holder in a record of rights or property card) or registered transferee/transferor in a registered instrument.", "canonical_record": "OwnershipClaim", "endpoints": ["/v1/parcels/{ulpin}/ownership"]},
+    "land_record": {"label": "Land record", "definition": "A revenue or survey record describing rights, holding, area and use of a parcel (record of rights, holding account, plot register, urban property record).", "canonical_record": "LandRecord", "endpoints": ["/v1/parcels/{ulpin}/land-records", "/v1/parcels/{ulpin}/profile"]},
+    "registration": {"label": "Registration", "definition": "An instrument registered with a Sub-Registrar (sale deed, gift deed, ...), recording parties, consideration and dates.", "canonical_record": "Registration", "endpoints": ["/v1/parcels/{ulpin}/registration"]},
+    "mutation": {"label": "Mutation", "definition": "A revenue entry that changes the record of rights following a transfer, succession, charge or order.", "canonical_record": "Mutation", "endpoints": ["/v1/parcels/{ulpin}/mutation"]},
+    "encumbrance": {"label": "Encumbrance", "definition": "A charge, mortgage or other liability registered against a parcel.", "canonical_record": "Encumbrance", "endpoints": ["/v1/parcels/{ulpin}/encumbrance"]},
+    "litigation": {"label": "Litigation", "definition": "A court/revenue case flagged against a parcel. In the supplied data this is only available as a flag and case reference on encumbrance records.", "canonical_record": "Litigation", "endpoints": ["/v1/parcels/{ulpin}/encumbrance"]},
+    "land_use": {"label": "Land use", "definition": "The use class recorded for the parcel in the land record (agricultural, residential, commercial).", "canonical_record": "LandUse", "endpoints": ["/v1/parcels/{ulpin}/planning"]},
+    "planning": {"label": "Planning", "definition": "Zoning/permitted use under a regional or development plan and any planning restriction.", "canonical_record": "PlanningRecord", "endpoints": ["/v1/parcels/{ulpin}/planning"]},
+    "building_permission": {"label": "Building permission", "definition": "Approval of a building plan by a planning/development authority.", "canonical_record": "BuildingPermission", "endpoints": ["/v1/parcels/{ulpin}/building"]},
+    "property_tax": {"label": "Property tax", "definition": "Municipal/local-body property tax assessment, demand and payment.", "canonical_record": "PropertyTax", "endpoints": ["/v1/parcels/{ulpin}/tax"]},
+    "utilities": {"label": "Utilities", "definition": "Electricity, water and road-access service status linked to the parcel.", "canonical_record": "UtilityService", "endpoints": ["/v1/parcels/{ulpin}/utilities"]},
+    "environmental_restriction": {"label": "Environmental restriction", "definition": "An environmental control (buffer, coastal, eco-sensitive) applying to the parcel.", "canonical_record": "EnvironmentalRestriction", "endpoints": ["/v1/parcels/{ulpin}/planning"]},
+    "geometry": {"label": "Geometry", "definition": "Cadastral boundary polygon of the parcel and any cadastral-map record describing it.", "canonical_record": "CadastralGeometry / CadastralMapRecord", "endpoints": ["/v1/parcels/{ulpin}/gis"]}
+  },
+  "terms": [
+    {"id": "ALL.term.ulpin", "state": "*", "term": "ULPIN", "aliases": ["Unique Land Parcel Identification Number", "Bhu-Aadhaar"], "concept": "parcel", "canonical_class": "parcel_key", "source_table": "core.parcel_registry", "description": "14-digit parcel identifier; the common linkage key across all state systems. Synthetic values in this prototype."},
+
+    {"id": "MH.term.satbara", "state": "MH", "term": "7/12", "aliases": ["Satbara", "Satbara Utara", "7/12 extract"], "native_script": "सातबारा उतारा", "language": "mr", "concept": "land_record", "canonical_class": "record_of_rights", "source_system": "Mahabhulekh", "source_table": "bhulekh.record_712", "description": "Village Form VII-XII: parcel-wise record of rights with khatedar, area, land use and assessment."},
+    {"id": "MH.term.8a", "state": "MH", "term": "8A", "aliases": ["Village Form 8A", "Khata extract"], "native_script": "गाव नमुना ८-अ", "language": "mr", "concept": "land_record", "canonical_class": "holding_account", "source_system": "Mahabhulekh", "source_table": "bhulekh.record_8a", "description": "Khata (holding account) listing a holder's land by land-measurement number with land revenue and cultivable/non-cultivable area."},
+    {"id": "MH.term.ferfar", "state": "MH", "term": "Ferfar", "aliases": ["e-Ferfar", "Ferfar entry", "Mutation entry"], "native_script": "फेरफार", "language": "mr", "concept": "mutation", "canonical_class": "mutation_entry", "source_system": "e-Ferfar", "source_table": "eferfar.ferfar", "description": "Mutation entry that, once disposed, updates 7/12 and 8A."},
+    {"id": "MH.term.e_hakk", "state": "MH", "term": "e-Hakk", "aliases": ["e_hakk"], "language": "mr", "concept": "mutation", "canonical_class": "citizen_application", "source_system": "e-Ferfar", "source_table": "eferfar.ferfar", "description": "Citizen-initiated mutation application channel (value of mutation_source_type)."},
+    {"id": "MH.term.property_card", "state": "MH", "term": "Property Card", "aliases": ["CTS Property Card"], "native_script": "मिळकत पत्रिका", "language": "mr", "concept": "land_record", "canonical_class": "urban_property_record", "source_system": "City Survey / Property Card", "source_table": "property_card.record", "description": "Urban (city survey) record of holder, area and tenure keyed by CTS number."},
+    {"id": "MH.term.gat_no", "state": "MH", "term": "Gat No.", "aliases": ["GAT_NO", "Gat Number"], "native_script": "गट क्रमांक", "language": "mr", "concept": "parcel", "canonical_class": "revenue_survey_number", "description": "Consolidated survey (gat) number used as native parcel identifier."},
+    {"id": "MH.term.khasra_no", "state": "MH", "term": "Khasra No.", "aliases": ["KHASRA_NO"], "language": "mr", "concept": "parcel", "canonical_class": "revenue_survey_number", "description": "Khasra number used as native parcel identifier (Vidarbha)."},
+    {"id": "MH.term.cts_no", "state": "MH", "term": "CTS No.", "aliases": ["CTS_NO", "City Survey Number"], "language": "mr", "concept": "parcel", "canonical_class": "city_survey_number", "description": "City Survey number identifying urban parcels."},
+    {"id": "MH.term.khata_no", "state": "MH", "term": "Khata No.", "aliases": ["KHATA_NO"], "native_script": "खाते क्रमांक", "language": "mr", "concept": "land_record", "canonical_class": "holding_account_number", "description": "Account number of the 8A holding."},
+    {"id": "MH.term.khatedar", "state": "MH", "term": "Khatedar", "native_script": "खातेदार", "language": "mr", "concept": "ownership", "canonical_class": "recorded_holder", "description": "Holder recorded on 7/12 and 8A."},
+    {"id": "MH.term.taluka", "state": "MH", "term": "Taluka", "native_script": "तालुका", "language": "mr", "concept": "parcel", "canonical_class": "sub_district", "description": "Revenue sub-district."},
+    {"id": "MH.term.boja", "state": "MH", "term": "Boja", "native_script": "बोजा", "language": "mr", "concept": "encumbrance", "canonical_class": "charge", "description": "Charge/encumbrance on land; also a Ferfar mutation type."},
+    {"id": "MH.term.registered_document", "state": "MH", "term": "Registered document", "concept": "registration", "canonical_class": "registered_instrument", "source_system": "Registration & Stamps (Maharashtra)", "source_table": "registration.document", "description": "Document registered at a Sub Registrar Office."},
+    {"id": "MH.term.encumbrance_record", "state": "MH", "term": "Encumbrance record", "concept": "encumbrance", "canonical_class": "encumbrance_register_entry", "source_system": "Encumbrance register", "source_table": "encumbrance.record", "description": "Charge/mortgage entry with holder, status and litigation flag."},
+    {"id": "MH.term.litigation_flag", "state": "MH", "term": "Court case reference", "aliases": ["litigation_flag"], "concept": "litigation", "canonical_class": "litigation_flag", "source_system": "Encumbrance register", "source_table": "encumbrance.record", "description": "Litigation flag and court case reference carried on encumbrance records."},
+    {"id": "MH.term.planning_record", "state": "MH", "term": "Regional / Development Plan zoning", "concept": "planning", "canonical_class": "zoning_record", "source_system": "Planning authority records", "source_table": "planning.record", "description": "Zone code, zone name and permitted use under a regional/development plan."},
+    {"id": "MH.term.building_permission", "state": "MH", "term": "Building permission", "concept": "building_permission", "canonical_class": "building_plan_approval", "source_system": "Local planning authority", "source_table": "building.permission", "description": "Building permission issued by a local planning authority."},
+    {"id": "MH.term.property_tax", "state": "MH", "term": "Property tax", "concept": "property_tax", "canonical_class": "property_tax_account", "source_system": "Municipal property tax", "source_table": "property_tax.record", "description": "Property tax assessment and payment."},
+    {"id": "MH.term.utilities", "state": "MH", "term": "Utility connection", "concept": "utilities", "canonical_class": "utility_status_record", "source_system": "Utility services", "source_table": "utilities.connection", "description": "Single row holding electricity, water and road-access status."},
+    {"id": "MH.term.environment", "state": "MH", "term": "Environmental restriction", "concept": "environmental_restriction", "canonical_class": "environmental_control", "source_system": "Environmental restrictions", "source_table": "environment.restriction", "description": "Environmental control applying to a parcel."},
+    {"id": "MH.term.cadastral_polygon", "state": "MH", "term": "Cadastral parcel polygon", "concept": "geometry", "canonical_class": "cadastral_polygon", "source_system": "Synthetic cadastral layer", "source_table": "spatial.cadastral_parcels", "description": "Synthetic cadastral-style GeoJSON polygon (spatial/cadastral_parcels.geojson)."},
+    {"id": "MH.term.parcel_registry", "state": "MH", "term": "Parcel registry", "concept": "parcel", "canonical_class": "parcel_registry_entry", "source_system": "Land Stack core registry", "source_table": "core.parcel_registry", "description": "Core ULPIN registry row with jurisdiction, native identifier and areas."},
+
+    {"id": "UP.term.khatauni", "state": "UP", "term": "Khatauni", "aliases": ["Real Time Khatauni"], "native_script": "खतौनी", "language": "hi", "concept": "land_record", "canonical_class": "record_of_rights", "source_system": "UP Bhulekh", "authority": "Board of Revenue, Uttar Pradesh", "source_table": "revenue_land_records.khatauni", "description": "Account-wise record of rights listing khatedar, gata/khasra, area and land class."},
+    {"id": "UP.term.khasra", "state": "UP", "term": "Khasra", "native_script": "खसरा", "language": "hi", "concept": "land_record", "canonical_class": "plot_register", "source_system": "UP Bhulekh", "authority": "Board of Revenue, Uttar Pradesh", "source_table": "revenue_land_records.khasra", "description": "Plot-wise field register with area and crop status."},
+    {"id": "UP.term.namantaran", "state": "UP", "term": "Namantaran", "aliases": ["Mutation"], "native_script": "नामान्तरण", "language": "hi", "concept": "mutation", "canonical_class": "mutation_entry", "source_system": "Revenue mutation services", "authority": "Board of Revenue, Uttar Pradesh", "source_table": "revenue_mutation.namantaran", "description": "Revenue mutation case updating the Khatauni after a transfer."},
+    {"id": "UP.term.varasat", "state": "UP", "term": "Varasat", "native_script": "वरासत", "language": "hi", "concept": "mutation", "canonical_class": "succession_mutation", "source_system": "Revenue mutation services", "authority": "Board of Revenue, Uttar Pradesh", "source_table": "revenue_mutation.namantaran", "description": "Succession (inheritance) mutation; stored in the same register as Namantaran."},
+    {"id": "UP.term.bhunaksha", "state": "UP", "term": "BhuNaksha", "native_script": "भू-नक्शा", "language": "hi", "concept": "geometry", "canonical_class": "cadastral_map", "source_system": "BhuNaksha", "authority": "Government of Uttar Pradesh", "source_table": "revenue_cadastral.bhu_naksha", "description": "Cadastral map record (District > Tehsil > Village > Plot No.) with map area and layers."},
+    {"id": "UP.term.igrsup_deed", "state": "UP", "term": "IGRSUP deed", "aliases": ["IGRSUP"], "concept": "registration", "canonical_class": "registered_instrument", "source_system": "IGRSUP", "authority": "Stamp & Registration Department, Uttar Pradesh", "source_table": "stamps_registration.deed", "description": "Deed registered at a Sub-Registrar office including stamp duty and registration fee."},
+    {"id": "UP.term.gata_no", "state": "UP", "term": "Gata/Khasra No.", "aliases": ["GATA_KHASRA_NO", "gatta_khasra_no", "Plot No."], "native_script": "गाटा संख्या", "language": "hi", "concept": "parcel", "canonical_class": "revenue_survey_number", "description": "Plot (gata/khasra) number; BhuNaksha plot_no uses the same numbering."},
+    {"id": "UP.term.khata_no", "state": "UP", "term": "Khata No.", "aliases": ["KHATA_NO"], "native_script": "खाता संख्या", "language": "hi", "concept": "land_record", "canonical_class": "holding_account_number", "description": "Khatauni account number."},
+    {"id": "UP.term.khatedar", "state": "UP", "term": "Khatedar", "native_script": "खातेदार", "language": "hi", "concept": "ownership", "canonical_class": "recorded_holder", "description": "Holder recorded in the Khatauni."},
+    {"id": "UP.term.tehsil", "state": "UP", "term": "Tehsil", "native_script": "तहसील", "language": "hi", "concept": "parcel", "canonical_class": "sub_district", "description": "Revenue sub-district."},
+    {"id": "UP.term.encumbrance", "state": "UP", "term": "Rights & liabilities encumbrance", "aliases": ["Bandhak"], "native_script": "बंधक", "language": "hi", "concept": "encumbrance", "canonical_class": "encumbrance_register_entry", "source_system": "Rights & liabilities", "source_table": "rights_liabilities.encumbrance", "description": "Mortgage/charge entry with holder, status and litigation flag."},
+    {"id": "UP.term.litigation_flag", "state": "UP", "term": "Court case reference", "aliases": ["litigation_flag"], "concept": "litigation", "canonical_class": "litigation_flag", "source_system": "Rights & liabilities", "source_table": "rights_liabilities.encumbrance", "description": "Litigation flag and case reference carried on encumbrance records."},
+    {"id": "UP.term.planning", "state": "UP", "term": "Development Authority zoning", "concept": "planning", "canonical_class": "zoning_record", "source_system": "Urban planning (Development Authority)", "source_table": "urban_planning.record", "description": "Zone and permitted use under a Development Authority plan."},
+    {"id": "UP.term.building_plan_approval", "state": "UP", "term": "Building Plan Approval", "concept": "building_permission", "canonical_class": "building_plan_approval", "source_system": "Nivesh Mitra / building approvals", "authority": "Housing Department / development authorities", "source_table": "housing_authority.building_plan_approval", "description": "Building plan approval by a development authority."},
+    {"id": "UP.term.property_tax", "state": "UP", "term": "Urban local body property tax", "concept": "property_tax", "canonical_class": "property_tax_account", "source_system": "Urban local body services", "authority": "Urban development / local bodies", "source_table": "urban_local_body.property_tax", "description": "ULB property-tax demand and payment."},
+    {"id": "UP.term.electricity", "state": "UP", "term": "UPPCL electricity connection", "aliases": ["UPPCL", "DISCOM"], "concept": "utilities", "canonical_class": "utility_connection", "source_system": "UPPCL", "authority": "Uttar Pradesh Power Corporation Limited", "source_table": "power_distribution.electricity_connection", "description": "Consumer account with a UPPCL DISCOM."},
+    {"id": "UP.term.water", "state": "UP", "term": "Urban water connection", "concept": "utilities", "canonical_class": "utility_connection", "source_system": "Urban water supply / local body", "source_table": "water_services.connection", "description": "Local-body water connection."},
+    {"id": "UP.term.environment", "state": "UP", "term": "Environmental control", "concept": "environmental_restriction", "canonical_class": "environmental_control", "source_system": "Environmental controls", "authority": "UP environmental/forest/related authorities", "source_table": "environmental_controls.restriction", "description": "Environmental restriction with source authority."},
+    {"id": "UP.term.cadastral_polygon", "state": "UP", "term": "Cadastral parcel polygon", "concept": "geometry", "canonical_class": "cadastral_polygon", "source_system": "Synthetic cadastral layer", "source_table": "spatial.cadastral_parcels", "description": "Synthetic cadastral-style GeoJSON polygon (spatial/cadastral_parcels.geojson)."},
+    {"id": "UP.term.parcel_registry", "state": "UP", "term": "Parcel registry", "concept": "parcel", "canonical_class": "parcel_registry_entry", "source_system": "Land Stack core registry", "source_table": "core.parcel_registry", "description": "Core ULPIN registry row with jurisdiction, gata/khasra number and areas."},
+
+    {"id": "GJ.term.vf7_12", "state": "GJ", "term": "VF 7/12", "aliases": ["Village Form 7/12", "7/12"], "native_script": "ગામ નમૂના નં. ૭/૧૨", "language": "gu", "concept": "land_record", "canonical_class": "record_of_rights", "source_system": "e-Dhara", "source_table": "e_dhara.vf7_12", "description": "Parcel-wise record of rights with khatedar, area, land class, assessment and other-rights note."},
+    {"id": "GJ.term.vf8a", "state": "GJ", "term": "VF 8A", "aliases": ["Village Form 8A", "8A"], "native_script": "ગામ નમૂના નં. ૮-અ", "language": "gu", "concept": "land_record", "canonical_class": "holding_account", "source_system": "e-Dhara", "source_table": "e_dhara.vf8a", "description": "Holding account listing a holder's survey numbers and land revenue."},
+    {"id": "GJ.term.vf6", "state": "GJ", "term": "VF 6", "aliases": ["Village Form 6", "Hakk Patrak", "VF6"], "native_script": "ગામ નમૂના નં. ૬ (હક્ક પત્રક)", "language": "gu", "concept": "mutation", "canonical_class": "mutation_entry", "source_system": "e-Dhara", "source_table": "e_dhara.vf6_mutation", "description": "Mutation register entry; certified entries update VF 7/12 and VF 8A."},
+    {"id": "GJ.term.property_card", "state": "GJ", "term": "Property Card", "aliases": ["City Survey Property Card"], "language": "gu", "concept": "land_record", "canonical_class": "urban_property_record", "source_system": "City Survey", "source_table": "city_survey.property_card", "description": "Urban city-survey record with ward/sheet, holder and area."},
+    {"id": "GJ.term.survey_no", "state": "GJ", "term": "Survey No.", "aliases": ["SURVEY_NO"], "native_script": "સર્વે નંબર", "language": "gu", "concept": "parcel", "canonical_class": "revenue_survey_number", "description": "Revenue survey number used as native parcel identifier."},
+    {"id": "GJ.term.city_survey_no", "state": "GJ", "term": "City Survey No.", "aliases": ["CITY_SURVEY_NO"], "language": "gu", "concept": "parcel", "canonical_class": "city_survey_number", "description": "City survey number used on Property Cards; a numbering scheme distinct from the revenue survey number."},
+    {"id": "GJ.term.ror_no", "state": "GJ", "term": "Record of Rights No.", "aliases": ["ROR_NO", "record_of_rights_no"], "language": "gu", "concept": "land_record", "canonical_class": "holding_account_number", "description": "Holding/record-of-rights account number linking VF 7/12, VF 8A and VF 6."},
+    {"id": "GJ.term.khatedar", "state": "GJ", "term": "Khatedar", "native_script": "ખાતેદાર", "language": "gu", "concept": "ownership", "canonical_class": "recorded_holder", "description": "Holder recorded on VF 7/12 and VF 8A."},
+    {"id": "GJ.term.taluka", "state": "GJ", "term": "Taluka", "native_script": "તાલુકો", "language": "gu", "concept": "parcel", "canonical_class": "sub_district", "description": "Revenue sub-district."},
+    {"id": "GJ.term.other_rights", "state": "GJ", "term": "Other rights note", "aliases": ["other_rights_note"], "language": "gu", "concept": "encumbrance", "canonical_class": "ror_encumbrance_annotation", "source_system": "e-Dhara", "source_table": "e_dhara.vf7_12", "description": "Other-rights column of VF 7/12 where charges/liabilities are annotated."},
+    {"id": "GJ.term.registered_document", "state": "GJ", "term": "Registered document", "concept": "registration", "canonical_class": "registered_instrument", "source_system": "Registration & Stamps (Gujarat)", "source_table": "registration_stamps.document", "description": "Document registered at a Sub-Registrar office."},
+    {"id": "GJ.term.encumbrance", "state": "GJ", "term": "Rights & liabilities encumbrance", "aliases": ["Bojo"], "native_script": "બોજો", "language": "gu", "concept": "encumbrance", "canonical_class": "encumbrance_register_entry", "source_system": "Rights & liabilities", "source_table": "rights_liabilities.encumbrance", "description": "Charge/mortgage entry with holder, status and litigation flag."},
+    {"id": "GJ.term.litigation_flag", "state": "GJ", "term": "Court case reference", "aliases": ["litigation_flag"], "concept": "litigation", "canonical_class": "litigation_flag", "source_system": "Rights & liabilities", "source_table": "rights_liabilities.encumbrance", "description": "Litigation flag and case reference carried on encumbrance records."},
+    {"id": "GJ.term.planning", "state": "GJ", "term": "Development / Regional Plan zoning", "concept": "planning", "canonical_class": "zoning_record", "source_system": "Planning", "source_table": "planning.record", "description": "Zone and permitted use under a development/regional plan."},
+    {"id": "GJ.term.building_approval", "state": "GJ", "term": "Building Plan Approval", "concept": "building_permission", "canonical_class": "building_plan_approval", "source_system": "Building Approval", "authority": "Development / local planning authority", "source_table": "building_approval.plan_permission", "description": "Building plan approval by a development/local planning authority."},
+    {"id": "GJ.term.property_tax", "state": "GJ", "term": "Urban local body property tax", "concept": "property_tax", "canonical_class": "property_tax_account", "source_system": "Urban Local Body", "source_table": "urban_local_body.property_tax", "description": "ULB property-tax demand and payment."},
+    {"id": "GJ.term.electricity", "state": "GJ", "term": "Power distribution connection", "concept": "utilities", "canonical_class": "utility_connection", "source_system": "Power Distribution", "source_table": "power_distribution.connection", "description": "Consumer account with a Gujarat distribution company."},
+    {"id": "GJ.term.water", "state": "GJ", "term": "Water services connection", "concept": "utilities", "canonical_class": "utility_connection", "source_system": "Water Services", "source_table": "water_services.connection", "description": "Local-body water connection."},
+    {"id": "GJ.term.environment", "state": "GJ", "term": "Environmental control", "concept": "environmental_restriction", "canonical_class": "environmental_control", "source_system": "Environmental Controls", "source_table": "environmental_controls.restriction", "description": "Environmental restriction with source authority."},
+    {"id": "GJ.term.cadastral_polygon", "state": "GJ", "term": "Cadastral parcel polygon", "concept": "geometry", "canonical_class": "cadastral_polygon", "source_system": "Synthetic cadastral layer", "source_table": "spatial.cadastral_parcels", "description": "Synthetic cadastral-style GeoJSON polygon (spatial/cadastral_parcels.geojson)."},
+    {"id": "GJ.term.parcel_registry", "state": "GJ", "term": "Parcel registry", "concept": "parcel", "canonical_class": "parcel_registry_entry", "source_system": "Land Stack core registry", "source_table": "core.parcel_registry", "description": "Core ULPIN registry row with jurisdiction, survey number and areas."}
+  ],
+  "vocabularies": {
+    "mutation_kind": {
+      "concept": "mutation",
+      "description": "Nature of the change recorded by a mutation entry.",
+      "canonical_values": {
+        "transfer": "Transfer of rights between parties (unspecified instrument).",
+        "transfer_sale": "Transfer of rights by registered sale (narrower than transfer).",
+        "succession": "Devolution of rights on death (heirship/inheritance/varasat).",
+        "charge_creation": "Entry of a charge/encumbrance on the record.",
+        "charge_release": "Removal of a charge/encumbrance from the record.",
+        "agreement_entry": "Entry of an agreement (ikrar) on the record."
+      },
+      "broader": {"transfer_sale": "transfer"},
+      "entries": [
+        {"id": "MH.mutation_kind.charge", "state": "MH", "en": "Charge / Encumbrance", "native": "बोजा", "canonical": "charge_creation"},
+        {"id": "MH.mutation_kind.registered_sale", "state": "MH", "en": "Registered Sale", "native": "खरेदीखत", "canonical": "transfer_sale"},
+        {"id": "MH.mutation_kind.charge_release", "state": "MH", "en": "Charge Release", "native": "बोजा कमी करणे", "canonical": "charge_release"},
+        {"id": "MH.mutation_kind.agreement", "state": "MH", "en": "Agreement Entry", "native": "इकरार", "canonical": "agreement_entry"},
+        {"id": "MH.mutation_kind.heirship", "state": "MH", "en": "Heirship Entry", "native": "वारस नोंद", "canonical": "succession"},
+        {"id": "UP.mutation_kind.namantaran", "state": "UP", "en": "Namantaran", "native": "नामान्तरण", "canonical": "transfer"},
+        {"id": "UP.mutation_kind.varasat", "state": "UP", "en": "Varasat", "native": "वरासत", "canonical": "succession"},
+        {"id": "GJ.mutation_kind.right_transfer", "state": "GJ", "en": "Right Transfer", "native": "હક હસ્તાંતરણ", "canonical": "transfer"},
+        {"id": "GJ.mutation_kind.inheritance", "state": "GJ", "en": "Inheritance", "native": "વારસાઈ", "canonical": "succession"}
+      ]
+    },
+    "mutation_status": {
+      "concept": "mutation",
+      "description": "Lifecycle state of a mutation entry.",
+      "canonical_values": {"pending": "Applied for, not yet decided.", "finalized": "Decided and applied to the record of rights (disposed/certified)."},
+      "entries": [
+        {"id": "MH.mutation_status.disposed", "state": "MH", "en": "Disposed", "native": "निकाली", "canonical": "finalized"},
+        {"id": "MH.mutation_status.pending", "state": "MH", "en": "Pending", "native": "प्रलंबित", "canonical": "pending"},
+        {"id": "UP.mutation_status.disposed", "state": "UP", "en": "Disposed", "native": "निस्तारित", "canonical": "finalized"},
+        {"id": "UP.mutation_status.pending", "state": "UP", "en": "Pending", "native": "लंबित", "canonical": "pending"},
+        {"id": "GJ.mutation_status.certified", "state": "GJ", "en": "Certified", "native": "પ્રમાણિત", "canonical": "finalized"},
+        {"id": "GJ.mutation_status.pending", "state": "GJ", "en": "Pending", "native": "બાકી", "canonical": "pending"}
+      ]
+    },
+    "mutation_basis": {
+      "concept": "mutation",
+      "description": "What initiated the mutation (Maharashtra e-Ferfar mutation_source_type).",
+      "canonical_values": {"registered_document": "Initiated from a registered document.", "revenue_order": "Initiated by an order.", "citizen_application": "Initiated by a citizen application (e-Hakk)."},
+      "entries": [
+        {"id": "MH.mutation_basis.registered_document", "state": "MH", "en": "registered_document", "canonical": "registered_document"},
+        {"id": "MH.mutation_basis.order", "state": "MH", "en": "order", "canonical": "revenue_order"},
+        {"id": "MH.mutation_basis.e_hakk", "state": "MH", "en": "e_hakk", "canonical": "citizen_application"}
+      ]
+    },
+    "document_type": {
+      "concept": "registration",
+      "description": "Type of registered instrument.",
+      "canonical_values": {"sale_deed": "Conveyance by sale.", "gift_deed": "Conveyance by gift.", "mortgage_deed": "Instrument creating a mortgage/charge.", "release_deed": "Instrument releasing a mortgage/charge."},
+      "entries": [
+        {"id": "ALL.document_type.sale_deed", "state": "*", "en": "Sale Deed", "canonical": "sale_deed"},
+        {"id": "ALL.document_type.gift_deed", "state": "*", "en": "Gift Deed", "canonical": "gift_deed"},
+        {"id": "UP.document_type.sale_deed", "state": "UP", "en": "Sale Deed", "native": "विक्रय विलेख", "canonical": "sale_deed"},
+        {"id": "UP.document_type.gift_deed", "state": "UP", "en": "Gift Deed", "native": "दान विलेख", "canonical": "gift_deed"},
+        {"id": "GJ.document_type.sale_deed", "state": "GJ", "en": "Sale Deed", "native": "વેચાણ દસ્તાવેજ", "canonical": "sale_deed"},
+        {"id": "GJ.document_type.gift_deed", "state": "GJ", "en": "Gift Deed", "native": "ભેટ દસ્તાવેજ", "canonical": "gift_deed"}
+      ]
+    },
+    "transaction_type": {
+      "concept": "registration",
+      "description": "Nature of the registered transaction.",
+      "canonical_values": {"sale": "Sale for consideration.", "gift": "Gift."},
+      "entries": [
+        {"id": "ALL.transaction_type.sale", "state": "*", "en": "Sale", "canonical": "sale"},
+        {"id": "ALL.transaction_type.gift", "state": "*", "en": "Gift", "canonical": "gift"}
+      ]
+    },
+    "registration_status": {
+      "concept": "registration",
+      "description": "Status of the registered instrument.",
+      "canonical_values": {"registered": "Registration completed."},
+      "entries": [{"id": "ALL.registration_status.registered", "state": "*", "en": "registered", "canonical": "registered"}]
+    },
+    "land_use": {
+      "concept": "land_use",
+      "description": "Use class of land; shared by land-record land use, planning permitted use and building use.",
+      "canonical_values": {"agricultural": "Agricultural use.", "residential": "Residential use.", "commercial": "Commercial use."},
+      "entries": [
+        {"id": "ALL.land_use.agricultural", "state": "*", "en": "Agricultural", "canonical": "agricultural"},
+        {"id": "ALL.land_use.residential", "state": "*", "en": "Residential", "canonical": "residential"},
+        {"id": "ALL.land_use.commercial", "state": "*", "en": "Commercial", "canonical": "commercial"},
+        {"id": "MH.land_use.sheti", "state": "MH", "en": "Agricultural", "native": "शेती", "canonical": "agricultural"},
+        {"id": "MH.land_use.niwasi", "state": "MH", "en": "Residential", "native": "निवासी", "canonical": "residential"},
+        {"id": "MH.land_use.vyavsayik", "state": "MH", "en": "Commercial", "native": "व्यावसायिक", "canonical": "commercial"},
+        {"id": "UP.land_use.krishi", "state": "UP", "en": "Agricultural", "native": "कृषि", "canonical": "agricultural"},
+        {"id": "UP.land_use.awasiya", "state": "UP", "en": "Residential", "native": "आवासीय", "canonical": "residential"},
+        {"id": "UP.land_use.vyavsayik", "state": "UP", "en": "Commercial", "native": "व्यावसायिक", "canonical": "commercial"},
+        {"id": "GJ.land_use.krushi", "state": "GJ", "en": "Agricultural", "native": "કૃષિ", "canonical": "agricultural"},
+        {"id": "GJ.land_use.rahenank", "state": "GJ", "en": "Residential", "native": "રહેણાંક", "canonical": "residential"},
+        {"id": "GJ.land_use.vanijyik", "state": "GJ", "en": "Commercial", "native": "વાણિજ્યિક", "canonical": "commercial"}
+      ]
+    },
+    "zone_class": {
+      "concept": "planning",
+      "description": "Planning zone named in a regional/development plan, classified by use.",
+      "canonical_values": {"agricultural": "Agricultural zone.", "residential": "Residential zone.", "commercial": "Commercial zone."},
+      "entries": [
+        {"id": "MH.zone_class.agricultural", "state": "MH", "en": "Agricultural", "native": "शेती", "canonical": "agricultural"},
+        {"id": "MH.zone_class.residential", "state": "MH", "en": "Residential", "native": "निवासी", "canonical": "residential"},
+        {"id": "MH.zone_class.commercial", "state": "MH", "en": "Commercial", "native": "व्यावसायिक", "canonical": "commercial"},
+        {"id": "UP.zone_class.agricultural", "state": "UP", "en": "Agricultural Zone", "native": "कृषि क्षेत्र", "canonical": "agricultural"},
+        {"id": "UP.zone_class.residential", "state": "UP", "en": "Residential Zone", "native": "आवासीय क्षेत्र", "canonical": "residential"},
+        {"id": "UP.zone_class.commercial", "state": "UP", "en": "Commercial Zone", "native": "व्यावसायिक क्षेत्र", "canonical": "commercial"},
+        {"id": "GJ.zone_class.agricultural", "state": "GJ", "en": "Agricultural Zone", "native": "કૃષિ ઝોન", "canonical": "agricultural"},
+        {"id": "GJ.zone_class.residential", "state": "GJ", "en": "Residential Zone", "native": "રહેણાંક ઝોન", "canonical": "residential"},
+        {"id": "GJ.zone_class.commercial", "state": "GJ", "en": "Commercial Zone", "native": "વાણિજ્યિક ઝોન", "canonical": "commercial"}
+      ]
+    },
+    "planning_restriction": {
+      "concept": "planning",
+      "description": "Restriction noted on the planning record.",
+      "canonical_values": {"none": "No restriction.", "building_control": "Ordinary building-control regulations apply.", "road_reservation": "Part of the parcel is reserved for road widening/road.", "coastal_review": "Coastal regulation review required.", "environmental_review": "Environmental review required."},
+      "entries": [
+        {"id": "ALL.planning_restriction.none", "state": "*", "en": "none", "canonical": "none"},
+        {"id": "ALL.planning_restriction.building_control", "state": "*", "en": "building-control", "canonical": "building_control"},
+        {"id": "MH.planning_restriction.road_widening", "state": "MH", "en": "road-widening-reservation", "canonical": "road_reservation"},
+        {"id": "ALL.planning_restriction.road_reservation", "state": "*", "en": "road-reservation", "canonical": "road_reservation"},
+        {"id": "MH.planning_restriction.coastal_review", "state": "MH", "en": "coastal-review", "canonical": "coastal_review"},
+        {"id": "ALL.planning_restriction.environment_review", "state": "*", "en": "environment-review", "canonical": "environmental_review"}
+      ]
+    },
+    "encumbrance_type": {
+      "concept": "encumbrance",
+      "description": "Nature of the encumbrance.",
+      "canonical_values": {"charge": "Charge on land (boja/bojo/bhar).", "mortgage": "Mortgage (possibly with charge)."},
+      "entries": [
+        {"id": "MH.encumbrance_type.boja", "state": "MH", "en": "Charge", "native": "बोजा", "canonical": "charge"},
+        {"id": "MH.encumbrance_type.mortgage_charge", "state": "MH", "en": "Mortgage / Charge", "native": "गहाणखत / बोजा", "canonical": "mortgage"},
+        {"id": "UP.encumbrance_type.bandhak", "state": "UP", "en": "Mortgage", "native": "बंधक", "canonical": "mortgage"},
+        {"id": "UP.encumbrance_type.bandhak_bhar", "state": "UP", "en": "Mortgage / Charge", "native": "बंधक / भार", "canonical": "mortgage"},
+        {"id": "GJ.encumbrance_type.bojo", "state": "GJ", "en": "Charge", "native": "બોજો", "canonical": "charge"},
+        {"id": "GJ.encumbrance_type.giro_bojo", "state": "GJ", "en": "Mortgage / Charge", "native": "ગીરો / બોજો", "canonical": "mortgage"}
+      ]
+    },
+    "encumbrance_status": {
+      "concept": "encumbrance",
+      "description": "Whether the encumbrance is subsisting.",
+      "canonical_values": {"active": "Subsisting.", "released": "Released/discharged."},
+      "entries": [
+        {"id": "ALL.encumbrance_status.active", "state": "*", "en": "active", "canonical": "active"},
+        {"id": "ALL.encumbrance_status.released", "state": "*", "en": "released", "canonical": "released"}
+      ]
+    },
+    "record_status": {
+      "concept": "land_record",
+      "description": "Status of a land record.",
+      "canonical_values": {"active": "Current record."},
+      "entries": [{"id": "ALL.record_status.active", "state": "*", "en": "active", "canonical": "active"}]
+    },
+    "crop_status": {
+      "concept": "land_record",
+      "description": "Crop entry status on the UP Khasra.",
+      "canonical_values": {"crops_recorded": "Seasonal crops recorded.", "not_applicable": "Crop detail not applicable (non-agricultural)."},
+      "entries": [
+        {"id": "UP.crop_status.recorded", "state": "UP", "en": "Kharif/Rabi recorded", "native": "खरीफ/रबी दर्ज", "canonical": "crops_recorded"},
+        {"id": "UP.crop_status.not_applicable", "state": "UP", "en": "Crop detail not applicable", "native": "फसल विवरण लागू नहीं", "canonical": "not_applicable"}
+      ]
+    },
+    "map_status": {
+      "concept": "geometry",
+      "description": "Status of a cadastral map record.",
+      "canonical_values": {"georeferenced": "Map is geo-referenced."},
+      "entries": [{"id": "UP.map_status.georeferenced", "state": "UP", "en": "geo-referenced", "canonical": "georeferenced"}]
+    },
+    "building_status": {
+      "concept": "building_permission",
+      "description": "Status of a building permission.",
+      "canonical_values": {"approved": "Approved."},
+      "entries": [{"id": "ALL.building_status.approved", "state": "*", "en": "approved", "canonical": "approved"}]
+    },
+    "tax_status": {
+      "concept": "property_tax",
+      "description": "Payment status of the tax demand.",
+      "canonical_values": {"paid": "Demand fully paid.", "partially_paid": "Demand partly paid; balance outstanding."},
+      "entries": [
+        {"id": "ALL.tax_status.paid", "state": "*", "en": "paid", "canonical": "paid"},
+        {"id": "ALL.tax_status.partially_paid", "state": "*", "en": "partially_paid", "canonical": "partially_paid"}
+      ]
+    },
+    "utility_status": {
+      "concept": "utilities",
+      "description": "Status of a utility service for the parcel.",
+      "canonical_values": {"connected": "Connection in place.", "available": "Service available at the parcel but not stated as connected.", "not_available": "Service not available.", "pending": "Connection applied for.", "limited": "Limited access."},
+      "entries": [
+        {"id": "ALL.utility_status.connected", "state": "*", "en": "connected", "canonical": "connected"},
+        {"id": "ALL.utility_status.available", "state": "*", "en": "available", "canonical": "available"},
+        {"id": "ALL.utility_status.not_available", "state": "*", "en": "not_available", "canonical": "not_available"},
+        {"id": "ALL.utility_status.pending", "state": "*", "en": "pending", "canonical": "pending"},
+        {"id": "MH.utility_status.road_yes", "state": "MH", "en": "yes", "canonical": "available"},
+        {"id": "MH.utility_status.road_limited", "state": "MH", "en": "limited", "canonical": "limited"}
+      ]
+    },
+    "environmental_restriction_type": {
+      "concept": "environmental_restriction",
+      "description": "Category of environmental control.",
+      "canonical_values": {"none": "No restriction.", "coastal_regulation": "Coastal regulation.", "water_body_buffer": "Buffer around a water body/watercourse.", "flood_buffer": "Flood buffer.", "wetland_buffer": "River/wetland proximity.", "eco_sensitive_zone": "Eco-sensitive zone."},
+      "entries": [
+        {"id": "ALL.env_type.none", "state": "*", "en": "None", "canonical": "none"},
+        {"id": "MH.env_type.coastal", "state": "MH", "en": "Coastal regulation related restriction", "canonical": "coastal_regulation"},
+        {"id": "MH.env_type.watercourse", "state": "MH", "en": "Seasonal watercourse buffer", "canonical": "water_body_buffer"},
+        {"id": "UP.env_type.flood", "state": "UP", "en": "Flood-buffer sensitivity", "canonical": "flood_buffer"},
+        {"id": "UP.env_type.wetland", "state": "UP", "en": "River/wetland proximity review", "canonical": "wetland_buffer"},
+        {"id": "GJ.env_type.water_body", "state": "GJ", "en": "Water-body buffer", "canonical": "water_body_buffer"},
+        {"id": "GJ.env_type.eco", "state": "GJ", "en": "Eco-sensitive review", "canonical": "eco_sensitive_zone"}
+      ]
+    },
+    "environmental_status": {
+      "concept": "environmental_restriction",
+      "description": "State of the environmental control.",
+      "canonical_values": {"active": "Restriction in force.", "under_review": "Review pending/required.", "clear": "No restriction applies."},
+      "entries": [
+        {"id": "ALL.env_status.active", "state": "*", "en": "active", "canonical": "active"},
+        {"id": "ALL.env_status.clear", "state": "*", "en": "clear", "canonical": "clear"},
+        {"id": "MH.env_status.review_required", "state": "MH", "en": "review_required", "canonical": "under_review"},
+        {"id": "ALL.env_status.review", "state": "*", "en": "review", "canonical": "under_review"}
+      ]
+    },
+    "area_unit": {
+      "concept": "land_record",
+      "description": "Unit of an area value; 'factor_to_hectare' converts to hectares.",
+      "canonical_values": {"hectare": "Hectare (factor 1).", "square_metre": "Square metre (factor 0.0001)."},
+      "factor_to_hectare": {"hectare": 1.0, "square_metre": 0.0001},
+      "entries": [
+        {"id": "ALL.area_unit.hectare", "state": "*", "en": "hectare", "canonical": "hectare"},
+        {"id": "ALL.area_unit.sqm", "state": "*", "en": "sqm", "canonical": "square_metre"}
+      ]
+    },
+    "parcel_identifier_scheme": {
+      "concept": "parcel",
+      "description": "Native identifier schemes and the canonical class they belong to. Values of different schemes are never compared with each other.",
+      "canonical_values": {"revenue_survey_number": "Rural/revenue survey numbering (gat, khasra, gata, survey no.).", "city_survey_number": "Urban city-survey numbering (CTS, city survey no.).", "holding_account_number": "Holding/account numbering (khata, record-of-rights no.)."},
+      "entries": [
+        {"id": "MH.scheme.gat_no", "state": "MH", "en": "GAT_NO", "canonical": "revenue_survey_number"},
+        {"id": "MH.scheme.khasra_no", "state": "MH", "en": "KHASRA_NO", "canonical": "revenue_survey_number"},
+        {"id": "MH.scheme.cts_no", "state": "MH", "en": "CTS_NO", "canonical": "city_survey_number"},
+        {"id": "MH.scheme.khata_no", "state": "MH", "en": "KHATA_NO", "canonical": "holding_account_number"},
+        {"id": "UP.scheme.gata_khasra_no", "state": "UP", "en": "GATA_KHASRA_NO", "canonical": "revenue_survey_number"},
+        {"id": "UP.scheme.khata_no", "state": "UP", "en": "KHATA_NO", "canonical": "holding_account_number"},
+        {"id": "GJ.scheme.survey_no", "state": "GJ", "en": "SURVEY_NO", "canonical": "revenue_survey_number"},
+        {"id": "GJ.scheme.city_survey_no", "state": "GJ", "en": "CITY_SURVEY_NO", "canonical": "city_survey_number"},
+        {"id": "GJ.scheme.ror_no", "state": "GJ", "en": "ROR_NO", "canonical": "holding_account_number"}
+      ]
+    }
+  },
+  "compatibility": {
+    "mutation_kind_document_type": {
+      "description": "Which registered document types can legitimately be the basis of a mutation of a given kind. Kinds listed in 'not_evaluated' are not checked because the relationship is not determinable from the supplied data.",
+      "left_vocabulary": "mutation_kind",
+      "right_vocabulary": "document_type",
+      "matrix": {
+        "transfer": ["sale_deed", "gift_deed"],
+        "transfer_sale": ["sale_deed"],
+        "succession": [],
+        "charge_creation": ["mortgage_deed"],
+        "charge_release": ["release_deed"]
+      },
+      "not_evaluated": ["agreement_entry"]
+    },
+    "zone_use_building_use": {
+      "description": "Building uses permitted within a zone's permitted use.",
+      "left_vocabulary": "land_use",
+      "right_vocabulary": "land_use",
+      "matrix": {
+        "agricultural": ["agricultural"],
+        "residential": ["residential"],
+        "commercial": ["commercial", "residential"]
+      },
+      "not_evaluated": []
+    }
+  }
+}

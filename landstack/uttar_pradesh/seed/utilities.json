@@ -1,0 +1,104 @@
+{
+  "electricity_uppcl": [
+    {
+      "utility_id": "ELEC-008",
+      "ulpin": "67430291854637",
+      "provider": "UPPCL",
+      "discom": "Madhyanchal Vidyut Vitran Nigam Ltd.",
+      "consumer_account_no": "MOCKE0089021",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-009",
+      "ulpin": "52847160392586",
+      "provider": "UPPCL",
+      "discom": "Paschimanchal Vidyut Vitran Nigam Ltd.",
+      "consumer_account_no": "MOCKE0099021",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-010",
+      "ulpin": "10382654971064",
+      "provider": "UPPCL",
+      "discom": "Paschimanchal Vidyut Vitran Nigam Ltd.",
+      "consumer_account_no": "MOCKE0109021",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-011",
+      "ulpin": "84650723190428",
+      "provider": "UPPCL",
+      "discom": "Madhyanchal Vidyut Vitran Nigam Ltd.",
+      "consumer_account_no": "MOCKE0119021",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-012",
+      "ulpin": "27541896372051",
+      "provider": "UPPCL",
+      "discom": "Dakshinanchal Vidyut Vitran Nigam Ltd.",
+      "consumer_account_no": "MOCKE0129021",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-013",
+      "ulpin": "71960432851792",
+      "provider": "UPPCL",
+      "discom": "Paschimanchal Vidyut Vitran Nigam Ltd.",
+      "consumer_account_no": "MOCKE0139021",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-015",
+      "ulpin": "96274310582614",
+      "provider": "UPPCL",
+      "discom": "Paschimanchal Vidyut Vitran Nigam Ltd.",
+      "consumer_account_no": "MOCKE0159021",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    }
+  ],
+  "water_local_body": [
+    {
+      "water_connection_id": "WAT-008",
+      "ulpin": "67430291854637",
+      "provider": "Urban Water Supply / Local Body",
+      "connection_status": "connected",
+      "connection_number": "MOCKW008771"
+    },
+    {
+      "water_connection_id": "WAT-009",
+      "ulpin": "52847160392586",
+      "provider": "Urban Water Supply / Local Body",
+      "connection_status": "connected",
+      "connection_number": "MOCKW009771"
+    },
+    {
+      "water_connection_id": "WAT-010",
+      "ulpin": "10382654971064",
+      "provider": "Urban Water Supply / Local Body",
+      "connection_status": "connected",
+      "connection_number": "MOCKW010771"
+    },
+    {
+      "water_connection_id": "WAT-011",
+      "ulpin": "84650723190428",
+      "provider": "Urban Water Supply / Local Body",
+      "connection_status": "pending",
+      "connection_number": "MOCKW011771"
+    },
+    {
+      "water_connection_id": "WAT-012",
+      "ulpin": "27541896372051",
+      "provider": "Urban Water Supply / Local Body",
+      "connection_status": "connected",
+      "connection_number": "MOCKW012771"
+    }
+  ]
+}
