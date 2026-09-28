@@ -17,6 +17,7 @@ from fastapi.staticfiles import StaticFiles
 
 from ..analytics import data_quality
 from ..assistant import AssistantUnavailable
+from ..chat import ChatError
 from ..config import REPO_ROOT
 from ..workflow import AuthError, Workflow
 from .portal_routes import portal_router
@@ -106,6 +107,10 @@ def create_app(service: LandStackService | None = None) -> FastAPI:
     async def _assistant_unavailable(_: Request, exc: AssistantUnavailable):
         return UTF8JSONResponse(status_code=503, content={"error": {"code": "ASSISTANT_UNAVAILABLE", "message": str(exc),
                                                                     "required_env": "ANTHROPIC_API_KEY"}})
+
+    @app.exception_handler(ChatError)
+    async def _chat_error(_: Request, exc: ChatError):
+        return UTF8JSONResponse(status_code=400, content={"error": {"code": "BAD_CHAT_REQUEST", "message": str(exc)}})
 
     # -- service ------------------------------------------------------------------------
     # The web portal is served at "/" (see the StaticFiles mount below); the API index lives at /v1.
@@ -359,4 +364,13 @@ def create_app(service: LandStackService | None = None) -> FastAPI:
     frontend = Path(os.environ.get("LANDSTACK_FRONTEND_DIR", str(REPO_ROOT / "frontend")))
     if frontend.is_dir():
         app.mount("/", StaticFiles(directory=frontend, html=True), name="portal")
+
+        # Portal files: make the browser revalidate on every load (cheap 304s via ETag), so an update
+        # never leaves it running a mix of cached old and new ES modules (which renders a blank page).
+        @app.middleware("http")
+        async def _portal_no_stale_cache(request: Request, call_next):
+            response = await call_next(request)
+            if not request.url.path.startswith(f"/{API_VERSION}"):
+                response.headers["Cache-Control"] = "no-cache"
+            return response
     return app

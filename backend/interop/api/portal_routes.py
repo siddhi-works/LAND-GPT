@@ -4,7 +4,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Header, Query
 from pydantic import BaseModel, Field
 
-from .. import assistant, portal
+from .. import assistant, chat, portal
 from ..config import API_VERSION
 from ..service import LandStackService
 from ..workflow import AuthError, Workflow
@@ -25,6 +25,17 @@ class ActionRequest(BaseModel):
 class AskRequest(BaseModel):
     ulpin: str
     question: str = Field(min_length=3, max_length=1000)
+
+
+class ChatMessage(BaseModel):
+    role: str
+    content: str = Field(max_length=4000)
+
+
+class ChatRequest(BaseModel):
+    messages: list[ChatMessage] = Field(min_length=1, max_length=40)
+    context: dict | None = None
+    lang: str = "en"
 
 
 def portal_router(svc: LandStackService, wf: Workflow) -> APIRouter:
@@ -124,6 +135,17 @@ def portal_router(svc: LandStackService, wf: Workflow) -> APIRouter:
     @r.post("/assistant/ask", tags=["assistant"])
     def assistant_ask(body: AskRequest):
         return assistant.ask(svc, body.ulpin, body.question)
+
+    # -- LandGPT chat (provider chosen server-side; demo mode when none is configured) ------------
+    @r.get("/chat/status", tags=["assistant"])
+    def chat_status():
+        return chat.status()
+
+    @r.post("/chat", tags=["assistant"])
+    def chat_reply(body: ChatRequest):
+        """One assistant turn. `context` names what the user is viewing (page, state, district,
+        sub_district, village, ulpin); records are looked up server-side from that."""
+        return chat.reply(svc, [m.model_dump() for m in body.messages], body.context, body.lang)
 
     return r
 

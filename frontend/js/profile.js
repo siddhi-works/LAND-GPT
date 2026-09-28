@@ -1,9 +1,9 @@
 import { api } from "./api.js";
-import { assistantPanel } from "./assistant.js";
+import { setContext } from "./context.js";
 import { createMap } from "./map.js";
 import { t, localText } from "./i18n.js";
 import { STATES } from "./states.js";
-import { citizenHeader, bindLang, disclaimer, esc, fmtHa, fmtInr, fmtUlpin, fmtDate, icon, statusBadge, sev, loading, errorBox, title } from "./ui.js";
+import { citizenHeader, bindLang, disclaimer, esc, fmtHa, fmtInr, fmtUlpin, fmtDate, icon, statusBadge, sev, errorBox, title, riskStatus, siteFooter, skeleton, toast } from "./ui.js";
 
 export function parcelSvg(ring, w = 132, h = 92, stroke = "#0b3d91", fill = "#e3ecfa") {
   const xs = ring.map(c => c[0]), ys = ring.map(c => c[1]);
@@ -45,11 +45,13 @@ function section(id, heading, terms, concept, concepts, body) {
     <div class="body">${body || `<div class="empty">${esc(supported ? t("notRecorded") : t("notConnected"))}</div>`}</div></section>`;
 }
 
-export function renderProfile(root, rerender, { ulpin }) {
-  root.innerHTML = `<div class="page">${citizenHeader("map")}<main class="page-main" id="main">${loading()}</main>${disclaimer()}</div>`;
+export function renderProfile(root, rerender, { ulpin, section: jump }) {
+  root.innerHTML = `<div class="page">${citizenHeader("map")}<main class="page-main" id="main"><div class="dossier-skel">${skeleton(3)}${skeleton(5)}</div></main>${siteFooter()}${disclaimer()}</div>`;
   bindLang(root, rerender);
-  let ctl = null;
+  setContext({ page: "profile", ulpin }, { replace: true });
+  let ctl = null, gone = false;
   Promise.all([api.profile(ulpin), api.gis(ulpin), api.parcels()]).then(([pf, gis, fc]) => {
+    if (gone) return;                             // user navigated away while the records were loading
     const b = pf.canonical, reg = pf.registry, ver = pf.verification, st = b.identity.state_code, S = STATES[st];
     const ring = b.geometry[0]?.geometry.coordinates[0];
     const ror = b.land_records.find(l => l.record_class === "record_of_rights") || b.land_records.find(l => l.record_class === "urban_property_record");
@@ -105,7 +107,17 @@ export function renderProfile(root, rerender, { ulpin }) {
           <p>${esc(reg.native_identifiers.map(i => `${i.scheme.replaceAll("_", " ")} ${i.value}${i.part ? "/" + i.part : ""}`).join(" · "))} · ${esc(b.identity.jurisdiction.village)}, ${esc(t(b.identity.jurisdiction.sub_district_type))} ${esc(b.identity.jurisdiction.sub_district)}, ${esc(b.identity.jurisdiction.district)} · ${esc(S.name)}</p></div>
         <div class="title-side">${statusBadge(ver.risk_level)}<span class="muted">${esc(S.system)}</span></div>
       </div>
-      <section class="panel"><header><h2>${esc(t("connectedRecords"))}</h2><span class="terms">${esc(t("storyParcel"))} → ULPIN → ${esc(t("storyRecords"))} → ${esc(t("storyProfile"))}</span></header>${flowHtml(reg, ring, ac.computed_gis_area?.value_ha)}</section>
+      <div class="profile-actions">
+        <button class="btn" id="pa-copy">${icon.copy} ${esc(t("copyUlpin"))}</button>
+        <a class="btn" href="#/map/${ulpin}">${icon.map} ${esc(t("viewOnMap"))}</a>
+        <button class="btn primary" data-chat="${esc(t("qExplain"))}">${icon.spark} ${esc(t("askAboutParcel"))}</button>
+        <a class="btn" href="#/state/${st}">${icon.search} ${esc(t("backToSearch"))}</a>
+        <button class="btn ghost" id="pa-print">${icon.register} ${esc(t("print"))}</button>
+      </div>
+      ${dossierHtml(b, reg, ver, ac, S, st)}
+      <section class="panel" id="sec-records"><header><h2>${icon.link} ${esc(t("connectedRecords"))}</h2><span class="terms">${esc(t("hubHint"))}</span></header>
+        ${hubHtml(b, ver, C, ring, terms)}</section>
+      ${timelineHtml(b, ver, st)}
       <nav class="toc" aria-label="Sections">${[["land", t("secLand")], ["registration", t("secRegistration")], ["mutation", t("secMutation")], ["gis", t("secGis")], ["landuse", t("secLandUse")], ["planning", t("secPlanning")], ["building", t("secBuilding")], ["encumbrance", t("secEncumbrance")], ["tax", t("secTax")], ["utilities", t("secUtilities")], ["environment", t("secEnvironment")], ["checks", t("secChecks")]].map(([k, l]) => `<a href="#sec-${k}" data-jump="sec-${k}">${esc(l)}</a>`).join("")}</nav>
       <div class="profile-grid">
         <div class="stack">
@@ -128,16 +140,104 @@ export function renderProfile(root, rerender, { ulpin }) {
             ${findings || `<div class="notice ok">${icon.check}<span>All cross-record checks passed.</span></div>`}
             <p class="fine">Validation engine ${esc(ver.engine_version)} · glossary ${esc(ver.glossary_version)} · as of ${fmtDate(ver.as_of)}</p>
           </div></section>
-          <section class="panel" id="assist"></section>
+          <section class="panel ask-card" id="assist"><header><h2>${icon.spark} ${esc(t("askAboutParcel"))}</h2></header><div class="body">
+            <p class="fine">${esc(t("askCardD"))}</p>
+            <div class="chips">${["qIsVerified", "qConnected", "qOwner", "qAreaDiff"].map((k) => `<button class="chip btn-chip" data-chat="${esc(t(k))}">${esc(t(k))}</button>`).join("")}</div>
+            <button class="btn primary" data-chat="${esc(t("qExplain"))}">${icon.spark} ${esc(t("qExplain"))}</button>
+            <details class="grounding"><summary>${esc(t("groundingData"))}</summary><pre id="as-ctx">…</pre></details>
+          </div></section>
         </aside>
       </div>`;
     root.querySelectorAll("[data-jump]").forEach(a => a.onclick = (e) => { e.preventDefault(); root.querySelector("#" + a.dataset.jump)?.scrollIntoView({ behavior: "smooth", block: "start" }); });
-    assistantPanel(root.querySelector("#assist"), ulpin);
+    root.querySelector("#pa-copy").onclick = () => { navigator.clipboard?.writeText(ulpin); toast(`${t("copied")}: ${fmtUlpin(ulpin)}`, "ok"); };
+    root.querySelector("#pa-print").onclick = () => window.print();
+    root.querySelectorAll("[data-node]").forEach((n) => n.onclick = () => root.querySelector("#sec-" + n.dataset.node)?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    root.querySelector(".grounding").addEventListener("toggle", async (e) => {
+      const pre = root.querySelector("#as-ctx");
+      if (!e.target.open || pre.dataset.loaded) return;
+      try { pre.textContent = JSON.stringify(await api.assistantContext(ulpin), null, 2); pre.dataset.loaded = "1"; } catch (err) { pre.textContent = err.message; }
+    });
+    toast(t("recordLoaded"), "ok");
+    if (jump) setTimeout(() => root.querySelector("#sec-" + jump)?.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
     ctl = createMap(root.querySelector("#mini"), { features: fc, basemap: "sat" });
     ctl.select(ulpin);
     ctl.map.fitBounds(L.polygon(ring.map(([x, y]) => [y, x])).getBounds().pad(0.9), { animate: false });
-  }).catch((e) => { root.querySelector("#main").innerHTML = `<a class="back" href="#/map">${icon.chevron}${esc(t("backToMap"))}</a>${errorBox(e)}`; });
-  return () => ctl?.destroy();
+  }).catch((e) => {
+    if (gone) return;
+    if (!e.status) console.error("Profile render failed:", e);
+    root.querySelector("#main").innerHTML = `<a class="back" href="#/map">${icon.chevron}${esc(t("backToMap"))}</a>${errorBox(e.status === 404 || e.status === 422 ? e : { message: t("dataUnavailable") })}
+      ${e.status === 404 || e.status === 422 ? "" : `<button class="btn" id="pf-retry">${esc(t("retry"))}</button>`}`;
+    root.querySelector("#pf-retry")?.addEventListener("click", rerender);
+  });
+  return () => { gone = true; ctl?.destroy(); };
+}
+
+// ---------------------------------------------------------------------------------------------
+// dossier summary, connected-records hub, record timeline (all from the loaded profile)
+// ---------------------------------------------------------------------------------------------
+
+function dossierHtml(b, reg, ver, ac, S, st) {
+  const j = b.identity.jurisdiction;
+  const ror = b.land_records.find((l) => l.record_class === "record_of_rights") || b.land_records.find((l) => l.record_class === "urban_property_record") || b.land_records[0];
+  const rs = riskStatus(ver.risk_level);
+  const tag = (kind, label) => `<span class="dz-tag ${kind}">${esc(label)}</span>`;
+  const unavailable = tag("na", t("stUnavailable"));
+  const areaOk = ac.relative_difference == null ? null : ac.within_tolerance;
+  const card = (ic, label, body, status) => `<div class="dz-card">${status || ""}<div class="dz-l">${icon[ic]}${esc(label)}</div><div class="dz-v">${body}</div></div>`;
+  return `<div class="dossier">
+    ${card("register", t("dzIdentity"), `<b class="mono">${fmtUlpin(b.identity.ulpin)}</b><small>${reg.native_identifiers.map((i) => esc(`${i.scheme.replaceAll("_", " ")} ${i.value}${i.part ? "/" + i.part : ""}`)).join(" · ")}</small>`)}
+    ${card("pin", t("location"), `<b>${esc(j.village)}</b><small>${esc(t(j.sub_district_type))} ${esc(j.sub_district)} › ${esc(j.district)} › ${esc(S.name)}</small>`)}
+    ${card("area", t("area"), ac.record_area ? `<b>${fmtHa(ac.record_area.value_ha)}</b><small>${esc(t("mapped"))}: ${fmtHa(ac.computed_gis_area?.value_ha)}</small>` : "—",
+      areaOk == null ? unavailable : areaOk ? tag("ok", t("stVerified")) : tag("warn", t("stNeedsReview")))}
+    ${card("layers", t("landUse"), ror?.land_use_label ? `<b>${esc(localText(ror.land_use_label, st))}</b><small>${esc(ror.native_record_type)}</small>` : "—", ror?.land_use_label ? "" : unavailable)}
+    ${card("home", t("owner"), ror?.holders.length ? `<b>${ror.holders.map((h) => esc(localText(h, st))).join(", ")}</b><small>${esc(ror.native_record_type)}</small>` : "—", ror?.holders.length ? "" : unavailable)}
+    ${card("shield", t("verification"), `<b>${ver.summary.checks.pass} ${esc(t("checksPassed"))}</b><small>${ver.findings.length} ${esc(t("findings"))} · ${esc(t("risk"))} ${esc(ver.risk_level)}</small>`,
+      tag(rs, { ok: t("stVerified"), warn: t("stNeedsReview"), bad: t("stWarning") }[rs]))}
+  </div>`;
+}
+
+const HUB = [
+  ["land", "secLand", (b) => b.land_records.length, "land_record"],
+  ["registration", "secRegistration", (b) => b.registrations.length, "registration"],
+  ["mutation", "secMutation", (b) => b.mutations.length, "mutation"],
+  ["gis", "secGis", (b) => b.geometry.length + b.cadastral_maps.length, "geometry"],
+  ["landuse", "secLandUse", (b) => b.land_use.length, "land_use"],
+  ["planning", "secPlanning", (b) => b.planning.length, "planning"],
+  ["building", "secBuilding", (b) => b.building_permissions.length, "building_permission"],
+  ["encumbrance", "secEncumbrance", (b) => b.encumbrances.length, "encumbrance"],
+  ["tax", "secTax", (b) => b.property_tax.length, "property_tax"],
+  ["utilities", "secUtilities", (b) => b.utilities.length, "utilities"],
+  ["environment", "secEnvironment", (b) => b.environmental_restrictions.length, "environmental_restriction"],
+];
+
+function hubHtml(b, ver, C, ring, terms) {
+  const nodes = HUB.map(([id, key, count, concept]) => {
+    const n = count(b), supported = C[concept]?.supported !== false;
+    return { id, label: t(key), n, sub: n ? terms(concept) : supported ? t("hubNone") : t("hubNotConnected"), cls: n ? "has" : supported ? "none" : "na" };
+  });
+  nodes.push({ id: "checks", label: t("secChecks"), n: ver.findings.length, sub: `${ver.summary.checks.pass} ${t("checksPassed")}`, cls: `check ${riskStatus(ver.risk_level)}` });
+  const N = nodes.length;
+  const pos = nodes.map((_, i) => { const a = (i / N) * 2 * Math.PI - Math.PI / 2; return [50 + 40 * Math.cos(a), 50 + 38 * Math.sin(a)]; });
+  return `<div class="hub">
+    <svg class="hub-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${pos.map(([x, y], i) =>
+      `<line x1="50" y1="50" x2="${x.toFixed(2)}" y2="${y.toFixed(2)}" class="${nodes[i].cls.split(" ")[0]}"/>`).join("")}</svg>
+    <div class="hub-center">${ring ? parcelSvg(ring, 96, 66) : ""}<div class="eyebrow">ULPIN</div><b class="mono">${fmtUlpin(b.identity.ulpin)}</b></div>
+    ${nodes.map((nd, i) => `<button class="hub-node ${nd.cls}" data-node="${nd.id}" style="left:${pos[i][0].toFixed(2)}%;top:${pos[i][1].toFixed(2)}%">
+      <b>${esc(nd.label)}</b><small>${nd.n ? `<span class="hn-count">${nd.n}</span>` : ""}${esc(nd.sub)}</small></button>`).join("")}
+  </div>`;
+}
+
+function timelineHtml(b, ver, st) {
+  const lt = (v) => localText(v, st);
+  const ev = [];
+  for (const r of b.registrations) if (r.registration_date) ev.push({ d: r.registration_date, kind: "reg", title: `${t("tlRegistered")} · ${r.document_no}`, sub: `${lt(r.document_type_label)} · ${r.sub_registrar_office || ""}` });
+  for (const m of b.mutations) if (m.application_date) ev.push({ d: m.application_date, kind: m.status === "pending" ? "warn" : "mut", title: `${m.register_name} ${m.mutation_no} · ${lt(m.kind_label)}`, sub: `${t("applied")} · ${lt(m.status_label)}` });
+  for (const p of b.building_permissions) if (p.approval_date) ev.push({ d: p.approval_date, kind: "bld", title: `${t("secBuilding")} · ${p.permission_no}`, sub: p.authority || "" });
+  if (!ev.length) return "";
+  ev.sort((x, y) => String(x.d).localeCompare(String(y.d)));
+  ev.push({ d: ver.as_of, kind: `now ${riskStatus(ver.risk_level)}`, title: t("tlVerification"), sub: `${ver.summary.checks.pass} ${t("checksPassed")} · ${ver.findings.length} ${t("findings")}` });
+  return `<section class="panel" id="sec-timeline"><header><h2>${icon.work} ${esc(t("timeline"))}</h2><span class="terms">${esc(t("timelineD"))}</span></header>
+    <ol class="rtl">${ev.map((e) => `<li class="${e.kind}"><time>${esc(fmtDate(e.d))}</time><b>${esc(e.title)}</b><small>${esc(e.sub)}</small></li>`).join("")}</ol></section>`;
 }
 
 export function findingHtml(f, { detailed = false } = {}) {

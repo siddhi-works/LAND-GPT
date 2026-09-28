@@ -5,7 +5,7 @@ import { esc, icon } from "./ui.js";
 const SUGGESTED = ["Why is this parcel flagged?", "What records are connected to this ULPIN?", "Why does the GIS area differ?", "Summarize this verification case."];
 
 // Minimal, safe rendering of the assistant's plain-text answer (paragraphs, bullet lines, citations).
-function renderAnswer(text) {
+export function renderAnswer(text) {
   return esc(text).split(/\n{2,}/).map(block => {
     const lines = block.split("\n");
     if (lines.every(l => /^\s*[-*•]\s+/.test(l))) return `<ul>${lines.map(l => `<li>${l.replace(/^\s*[-*•]\s+/, "")}</li>`).join("")}</ul>`;
