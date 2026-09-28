@@ -2,7 +2,8 @@ import { api } from "./api.js";
 import { createMap, Z } from "./map.js";
 import { t, localText } from "./i18n.js";
 import { STATES } from "./states.js";
-import { citizenHeader, bindLang, disclaimer, esc, fmtHa, fmtUlpin, icon, statusBadge, toast, loading, sev } from "./ui.js";
+import { citizenHeader, bindLang, disclaimer, esc, fmtHa, fmtUlpin, icon, statusBadge, toast, loading, sev, emptyState } from "./ui.js";
+import { setContext } from "./context.js";
 
 // Persist the view across language re-renders and back-navigation from the profile.
 const view = { tab: "nav", state: "", district: "", sub: "", village: "", selected: null, basemap: "map", center: null, zoom: null, panel: true };
@@ -35,6 +36,7 @@ export function renderCitizen(root, rerender, params = {}) {
         <button id="zin" title="${esc(t("zoomIn"))}">${icon.plus}</button>
         <button id="zout" title="${esc(t("zoomOut"))}">${icon.minus}</button>
         <button id="full" title="${esc(t("fullExtent"))}">${icon.globe}</button>
+        <button id="locate" title="${esc(t("locateMe"))}">${icon.pin}</button>
         <button id="prev" title="${esc(t("prevExtent"))}">${icon.back}</button>
         <button id="next" title="${esc(t("nextExtent"))}">${icon.fwd}</button>
         <button id="mdist" title="${esc(t("toolDistance"))}">${icon.ruler}</button>
@@ -74,12 +76,18 @@ export function renderCitizen(root, rerender, params = {}) {
     renderSide();
     const initial = params.ulpin || view.selected;
     if (initial) openParcel(initial, !!params.ulpin || !view.center);
-  }).catch((e) => { $("#sidebody").innerHTML = `<div class="notice bad">${esc(e.message)}</div>`; });
+  }).catch(() => {
+    $("#sidebody").innerHTML = `${emptyState(t("dataUnavailable"), "", icon.alert)}<button class="btn sm" id="map-retry">${esc(t("retry"))}</button>`;
+    $("#map-retry").onclick = rerender;
+  });
+  const syncContext = () => setContext({ page: "map", state: view.state, district: view.district, sub_district: view.sub, village: view.village, ulpin: view.selected }, { replace: true });
+  syncContext();
 
   // ---------- side panel ----------
   function renderSide() {
     root.querySelectorAll("[data-tab]").forEach(b => { b.classList.toggle("on", b.dataset.tab === view.tab); b.onclick = () => { view.tab = b.dataset.tab; renderSide(); }; });
     const body = $("#sidebody");
+    syncContext();
     if (view.tab === "nav") body.innerHTML = navHtml();
     if (view.tab === "layers") body.innerHTML = layersHtml();
     if (view.tab === "tools") body.innerHTML = toolsHtml();
@@ -133,7 +141,10 @@ export function renderCitizen(root, rerender, params = {}) {
     b.querySelector("#n-sub")?.addEventListener("change", (e) => { Object.assign(view, { sub: e.target.value, village: "" }); const { s } = node(); if (s?.villages.length === 1) view.village = s.villages[0].name; renderSide(); const n = node(); if (n.v) ctl.flyToBbox(n.v.bbox, 15); else if (s) ctl.flyToBbox(s.bbox, 13); });
     b.querySelector("#n-village")?.addEventListener("change", (e) => { view.village = e.target.value; renderSide(); const { v } = node(); if (v) ctl.flyToBbox(v.bbox, 15); });
     b.querySelectorAll(".plot-list [data-u]").forEach(x => x.onclick = () => openParcel(x.dataset.u, true));
-    b.querySelectorAll("[data-layer]").forEach(x => x.onchange = () => ctl.setLayer(x.dataset.layer, x.checked));
+    b.querySelectorAll("[data-layer]").forEach(x => x.onchange = () => {
+      ctl.setLayer(x.dataset.layer, x.checked);
+      toast(`${x.closest("label").textContent.trim()} · ${t(x.checked ? "layerOn" : "layerOff")}`, "info");
+    });
     b.querySelector("#t-dist")?.addEventListener("click", () => measure("distance"));
     b.querySelector("#t-area")?.addEventListener("click", () => measure("area"));
     b.querySelector("#t-clear")?.addEventListener("click", () => { ctl.clearMeasure(); $("#mout").hidden = true; });
@@ -153,6 +164,11 @@ export function renderCitizen(root, rerender, params = {}) {
   function bindTools() {
     $("#zin").onclick = () => ctl.map.zoomIn(); $("#zout").onclick = () => ctl.map.zoomOut();
     $("#full").onclick = () => ctl.home(); $("#prev").onclick = () => ctl.prev(); $("#next").onclick = () => ctl.next();
+    $("#locate").onclick = () => {
+      if (!navigator.geolocation) { toast(t("locateFail"), "bad"); return; }
+      navigator.geolocation.getCurrentPosition((pos) => { ctl.goTo(pos.coords.latitude, pos.coords.longitude); toast(t("locateOk"), "ok"); },
+        () => toast(t("locateFail"), "bad"), { timeout: 8000 });
+    };
     $("#mdist").onclick = () => measure("distance"); $("#marea").onclick = () => measure("area");
     const bms = root.querySelectorAll("[data-bm]");
     const mark = () => bms.forEach(b => b.classList.toggle("on", b.dataset.bm === view.basemap));
@@ -197,6 +213,8 @@ export function renderCitizen(root, rerender, params = {}) {
     ctl.select(u);
     if (fly) ctl.flyToUlpin(u);
     history.replaceState(null, "", `#/map/${u}`);
+    syncContext();
+    if (fly) toast(`${t("parcelSelected")} · ${p.native_label}`, "ok");
     const pp = $("#pp");
     pp.innerHTML = panelHtml(p, null, null);
     pp.classList.add("open");
@@ -207,7 +225,7 @@ export function renderCitizen(root, rerender, params = {}) {
     }).catch(() => {});
   }
   function bindPanel(p) {
-    $("#pp-close").onclick = () => { $("#pp").classList.remove("open"); view.selected = null; ctl.select(null); history.replaceState(null, "", "#/map"); };
+    $("#pp-close").onclick = () => { $("#pp").classList.remove("open"); view.selected = null; ctl.select(null); history.replaceState(null, "", "#/map"); syncContext(); };
     $("#pp-zoom").onclick = () => ctl.flyToUlpin(p.ulpin);
     $("#pp-copy").onclick = () => { navigator.clipboard?.writeText(p.ulpin); toast(`${t("copied")}: ${fmtUlpin(p.ulpin)}`); };
   }
@@ -244,5 +262,6 @@ function panelHtml(p, ver, reg) {
         : `<div class="notice ok">${icon.check}<span>${ver.summary.checks.pass} ${esc(t("checksPassed"))} · ${ver.findings.length} ${esc(t("findings"))}</span></div>`) : loading()}
     ${reg ? `<div class="sec-title">${esc(t("connectedRecords"))}</div><div class="chips">${linked.map(s => `<span class="chip" title="${esc(s.source_system)} · ${esc(s.source_table)}">${esc(s.native_record_type)}</span>`).join("")}</div>` : ""}
   </div>
-  <div class="pp-foot"><a class="btn primary" href="#/parcel/${p.ulpin}">${esc(t("openProfile"))}</a><button class="btn" id="pp-zoom">${esc(t("zoomTo"))}</button></div>`;
+  <div class="pp-foot"><a class="btn primary" href="#/parcel/${p.ulpin}">${esc(t("openProfile"))}</a><button class="btn" id="pp-zoom">${esc(t("zoomTo"))}</button>
+    <button class="btn" data-chat="${esc(t("qExplain"))}" title="${esc(t("askAboutParcel"))}">${icon.spark} ${esc(t("chatAsk"))}</button></div>`;
 }

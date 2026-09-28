@@ -21,6 +21,9 @@ const BASEMAPS = {
   terrain: () => esri("World_Topo_Map", { attribution: "Esri, HERE, Garmin, FAO, NOAA, USGS" }),
 };
 
+/** A fresh base-map layer (for small static maps outside the GIS workspace). */
+export const baseLayer = (k = "map") => BASEMAPS[k]();
+
 const STYLE = {
   plot: { color: "#7a5526", weight: 1.1, fillColor: "#f5e2b8", fillOpacity: 0.62, opacity: 1 },
   plotDark: { color: "#ffe9b0", weight: 1.1, fillColor: "#f3e3bf", fillOpacity: 0.07, opacity: 0.95 },
@@ -38,7 +41,7 @@ function ringCentroid(ring) {
   return { lon: x / n, lat: y / n };
 }
 
-export function createMap(el, { features, hierarchy, mode = "citizen", basemap = "map", onSelect = () => {}, overview = null } = {}) {
+export function createMap(el, { features, hierarchy, mode = "citizen", basemap = "map", onSelect = () => {}, overview = null, onDistrict = null, districtColor = null } = {}) {
   const map = L.map(el, { zoomControl: false, preferCanvas: true, minZoom: 4, maxZoom: 20, doubleClickZoom: true, attributionControl: true });
   map.createPane("labels").style.zIndex = 450;
   map.getPane("labels").style.pointerEvents = "none";
@@ -126,8 +129,9 @@ export function createMap(el, { features, hierarchy, mode = "citizen", basemap =
     if (!on.places) return;
     if (z >= 6 && z < Z.DISTRICT_MAX) {
       for (const d of districtCenters) {
-        L.marker(d.at, { icon: L.divIcon({ className: "", html: `<div class="map-label district">${esc(d.name)}</div>`, iconSize: null }), keyboard: false })
-          .on("click", () => flyToBbox(d.bbox, 11)).addTo(g.places);
+        const col = districtColor ? districtColor(d.name) : null;
+        L.marker(d.at, { icon: L.divIcon({ className: "", html: `<div class="map-label district${col ? " colored" : ""}"${col ? ` style="--dc:${col}"` : ""}>${col ? "<i></i>" : ""}${esc(d.name)}</div>`, iconSize: null }), keyboard: false })
+          .on("click", () => { flyToBbox(d.bbox, 11); onDistrict?.(d); }).addTo(g.places);
       }
     } else if (z >= Z.VILLAGE_MIN && z < Z.CONTEXT) {
       const seen = new Set();
@@ -248,6 +252,8 @@ export function createMap(el, { features, hierarchy, mode = "citizen", basemap =
     home: () => map.flyToBounds(INDIA, { duration: 1 }), prev: () => goHist(-1), next: () => goHist(1),
     startMeasure, clearMeasure, goTo: (lat, lon) => map.flyTo([lat, lon], 16, { duration: 1 }),
     get basemap() { return baseKey; }, props: (u) => byUlpin.get(u)?.props,
-    destroy() { ov?.om.remove(); map.remove(); },
+    // Stop any fly/zoom animation first: removing a canvas map mid-animation makes Leaflet redraw a
+    // renderer that no longer exists ("Cannot read properties of undefined (reading 'save')").
+    destroy() { map.stop(); ov?.om.stop(); ov?.om.remove(); map.remove(); },
   };
 }

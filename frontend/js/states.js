@@ -48,6 +48,46 @@ export const STATES = {
   },
 };
 
+// Regional land-information pages. Labels follow the state's own portal language (shown with English, as
+// the state portals do). `records[].native` must equal a native_record_type in the connected data;
+// `connected: false` marks a record the state publishes that is not part of this demo's connected sources.
+export const REGION = {
+  MH: {
+    accent: "#e07a1f", lang: "mr", title: "महाराष्ट्र भूमी माहिती", titleEn: "Maharashtra Land Information", switchLang: "मराठीत पहा",
+    labels: { district: "जिल्हा", sub: "तालुका", village: "गाव", parcel: "सर्वे / गट क्रमांक", record: "अधिकार अभिलेखाचा प्रकार", search: "शोधा", map: "जिल्हा नकाशा" },
+    records: [
+      { key: "712", native: "7/12", label: "७/१२", en: "7/12 extract" },
+      { key: "8a", native: "8A", label: "८अ", en: "8A holding" },
+      { key: "pc", native: "Property Card", label: "मालमत्ता पत्रक", en: "Property Card" },
+      { key: "ferfar", native: "Ferfar", label: "फेरफार", en: "Ferfar (mutation)" },
+      { key: "kprat", native: null, label: "क-प्रत", en: "K-Prat", connected: false },
+    ],
+  },
+  UP: {
+    accent: "#1d5fa8", lang: "hi", title: "उत्तर प्रदेश भूमि सूचना", titleEn: "Uttar Pradesh Land Information", switchLang: "हिन्दी में देखें",
+    labels: { district: "जनपद", sub: "तहसील", village: "ग्राम", parcel: "खसरा / गाटा संख्या", record: "अभिलेख का प्रकार", search: "खोजें", map: "जनपद मानचित्र" },
+    records: [
+      { key: "khatauni", native: "Khatauni", label: "खतौनी", en: "Khatauni" },
+      { key: "khasra", native: "Khasra", label: "खसरा", en: "Khasra" },
+      { key: "namantaran", native: "Namantaran", label: "नामान्तरण", en: "Namantaran (mutation)" },
+      { key: "bhunaksha", native: "BhuNaksha map record", label: "भू-नक्शा", en: "BhuNaksha map" },
+    ],
+  },
+  GJ: {
+    accent: "#15803d", lang: "gu", title: "ગુજરાત જમીન માહિતી", titleEn: "Gujarat Land Information", switchLang: "ગુજરાતીમાં જુઓ",
+    labels: { district: "જિલ્લો", sub: "તાલુકો", village: "ગામ", parcel: "સર્વે નંબર", record: "રેકર્ડનો પ્રકાર", search: "શોધો", map: "જિલ્લા નકશો" },
+    records: [
+      { key: "vf712", native: "VF 7/12", label: "ગા.ન.નં. 7/12", en: "VF 7/12" },
+      { key: "vf8a", native: "VF 8A", label: "ગા.ન.નં. 8અ", en: "VF 8A" },
+      { key: "vf6", native: "VF 6", label: "ગા.ન.નં. 6 (હક્ક પત્રક)", en: "VF 6 (mutation)" },
+      { key: "pc", native: "Property Card", label: "પ્રોપર્ટી કાર્ડ", en: "Property Card" },
+    ],
+  },
+};
+
+// Categorical colours for districts on the regional maps (muted map tones; cycled).
+export const DISTRICT_COLORS = ["#2f6fd6", "#e07a1f", "#15803d", "#9333ea", "#b45309", "#0f766e", "#be123c", "#4d7c0f", "#1e40af", "#a16207", "#0e7490", "#7c2d12", "#6d28d9", "#166534"];
+
 export const ACTION_LABEL = {
   record_note: "Record mutation note", issue_notice: "Issue notice", register_objection: "Register objection (disputed)",
   certify: "Certify", reject: "Reject", return: "Return for correction", forward: "Forward",

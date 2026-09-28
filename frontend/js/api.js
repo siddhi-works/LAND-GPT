@@ -50,6 +50,8 @@ export const api = {
   assistantStatus: () => request("/assistant/status", { fresh: true }),
   assistantContext: (u) => request(`/parcels/${u}/assistant-context`),
   ask: (ulpin, question) => request("/assistant/ask", { method: "POST", body: { ulpin, question } }),
+  chatStatus: () => request("/chat/status", { fresh: true }),
+  chat: (messages, context, lang) => request("/chat", { method: "POST", body: { messages, context, lang } }),
   // officer (authenticated, never cached)
   accounts: () => request("/officer/accounts"),
   login: (username, password) => request("/officer/login", { method: "POST", body: { username, password } }),

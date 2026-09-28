@@ -2,7 +2,7 @@
 retrieved Land Stack data (registry entry, canonical records, validation findings).
 
 Requires an Anthropic API key in ``ANTHROPIC_API_KEY`` (or ``ANTHROPIC_AUTH_TOKEN``).
-Model: ``LANDSTACK_ASSISTANT_MODEL`` (default ``claude-opus-5``).
+Model: ``LANDSTACK_ASSISTANT_MODEL`` (default ``claude-opus-5-5``).
 When no credential is configured the assistant reports that it is unavailable; it never
 fabricates an answer.
 """
@@ -15,8 +15,8 @@ from typing import Any
 from .portal import native_label
 from .service import LandStackService
 
-DEFAULT_MODEL = "claude-opus-5"
-_FALLBACK_MODELS = {"claude-opus-5", "claude-fable-5-1"}  # models that accept server-side refusal fallbacks
+DEFAULT_MODEL = "claude-opus-5-5"
+_FALLBACK_MODELS = {"claude-opus-5-5", "claude-opus-5", "claude-fable-5-1"}  # models that accept server-side refusal fallbacks
 
 SYSTEM_PROMPT = """You are the Land Stack Assistant used by citizens and revenue officers in Maharashtra, Uttar Pradesh and Gujarat.
 
@@ -120,21 +120,21 @@ class AssistantUnavailable(RuntimeError):
     pass
 
 
-def ask(svc: LandStackService, ulpin: str, question: str) -> dict[str, Any]:
+def anthropic_complete(system: str, messages: list[dict[str, Any]], effort: str = "medium") -> dict[str, Any]:
+    """One Messages API call. ``messages`` alternate user/assistant and end with a user turn.
+    Raises AssistantUnavailable on missing/invalid credentials or service errors."""
     if not configured():
-        raise AssistantUnavailable("The Land Stack Assistant is not configured. Set ANTHROPIC_API_KEY on the API server.")
+        raise AssistantUnavailable("No Anthropic credential is configured. Set ANTHROPIC_API_KEY on the API server.")
     import anthropic
 
-    ctx = context(svc, ulpin)
-    ctx_json = json.dumps(ctx, ensure_ascii=False, sort_keys=True, default=str)
     m = model()
     kwargs: dict[str, Any] = dict(
         model=m,
         max_tokens=16000,
         thinking={"type": "adaptive"},
-        output_config={"effort": "medium"},
-        system=[{"type": "text", "text": SYSTEM_PROMPT, "cache_control": {"type": "ephemeral"}}],
-        messages=[{"role": "user", "content": f"<parcel_context>\n{ctx_json}\n</parcel_context>\n\nQuestion: {question.strip()}"}],
+        output_config={"effort": effort},
+        system=[{"type": "text", "text": system, "cache_control": {"type": "ephemeral"}}],
+        messages=messages,
     )
     client = anthropic.Anthropic()
     try:
@@ -152,16 +152,26 @@ def ask(svc: LandStackService, ulpin: str, question: str) -> dict[str, Any]:
         raise AssistantUnavailable("The assistant service could not be reached.") from e
 
     if response.stop_reason == "refusal":
-        answer = "The assistant declined to answer this question."
+        text = "The assistant declined to answer this question."
     else:
-        answer = "".join(block.text for block in response.content if block.type == "text").strip()
+        text = "".join(block.text for block in response.content if block.type == "text").strip()
+    return {"text": text, "model": response.model, "stop_reason": response.stop_reason,
+            "usage": {"input_tokens": response.usage.input_tokens, "output_tokens": response.usage.output_tokens}}
+
+
+def ask(svc: LandStackService, ulpin: str, question: str) -> dict[str, Any]:
+    if not configured():
+        raise AssistantUnavailable("The Land Stack Assistant is not configured. Set ANTHROPIC_API_KEY on the API server.")
+    ctx = context(svc, ulpin)
+    ctx_json = json.dumps(ctx, ensure_ascii=False, sort_keys=True, default=str)
+    r = anthropic_complete(SYSTEM_PROMPT, [{"role": "user", "content": f"<parcel_context>\n{ctx_json}\n</parcel_context>\n\nQuestion: {question.strip()}"}])
     return {
         "ulpin": ctx["ulpin"],
         "question": question,
-        "answer": answer,
-        "model": response.model,
-        "stop_reason": response.stop_reason,
-        "grounding": {"records": [r["source"] for r in ctx["records"]],
+        "answer": r["text"],
+        "model": r["model"],
+        "stop_reason": r["stop_reason"],
+        "grounding": {"records": [x["source"] for x in ctx["records"]],
                       "rules": [f["rule"] for f in ctx["validation"]["findings"]]},
-        "usage": {"input_tokens": response.usage.input_tokens, "output_tokens": response.usage.output_tokens},
+        "usage": r["usage"],
     }

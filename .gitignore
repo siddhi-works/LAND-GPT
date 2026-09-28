@@ -13,3 +13,6 @@ node_modules/
 dist/
 build/
 *.log
+# Local tooling / build metadata
+.claude/
+*.egg-info/

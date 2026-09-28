@@ -237,6 +237,7 @@ def reports(svc: LandStackService, state: str | None = None, district: str | Non
         "findings_by_rule": dict(Counter(f.rule_id for f in fs).most_common()),
         "discrepancies": groups,
         "parcels_by_discrepancy": parcels_by_group,
+        "discrepancy_rules": {g: sorted(rules) for g, rules in _DISCREPANCY_GROUPS.items()},
         "mutations": dict(mut_by_status),
         "checks": dict(checks),
         "units": units,
