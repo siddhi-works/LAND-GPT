@@ -1,4 +1,5 @@
-// Regional land-information pages: #/state (choose a state) and #/state/<MH|UP|GJ>.
+// Regional land-information pages: #/state (choose a state) and #/state/<MH|UP|GJ>[/<record>[/<ulpin>]].
+// The Citizen Portal reaches the same pages as #/citizen/<maharashtra|uttar-pradesh|gujarat>.
 // Each state gets its own map, terminology, record types and language, all backed by the registry.
 import { api } from "./api.js";
 import { setContext } from "./context.js";
@@ -15,10 +16,13 @@ const L = window.L;
 // state cards (also used on the home page)
 // ---------------------------------------------------------------------------------------------
 
-export function stateCardsHtml() {
+export const SLUG = { MH: "maharashtra", UP: "uttar-pradesh", GJ: "gujarat" };
+export const codeFromSlug = (slug) => Object.keys(SLUG).find((c) => SLUG[c] === String(slug).toLowerCase()) || String(slug).toUpperCase();
+
+export function stateCardsHtml(href = (code) => `#/state/${code}`) {
   return `<div class="state-cards">${Object.entries(STATES).map(([code, s]) => {
     const R = REGION[code];
-    return `<a class="state-card" href="#/state/${code}" style="--accent:${R.accent}">
+    return `<a class="state-card" href="${href(code)}" style="--accent:${R.accent}">
       <div class="sc-map" data-mini="${code}" aria-hidden="true"></div>
       <div class="sc-body">
         <div class="sc-name"><b>${esc(s.name.toUpperCase())}</b><span>${esc(s.native)}</span></div>
@@ -61,11 +65,11 @@ const center = (b) => [(b[1] + b[3]) / 2, (b[0] + b[2]) / 2];
 // #/state
 // ---------------------------------------------------------------------------------------------
 
-export function renderRegion(root, rerender, { code, rec } = {}) {
+export function renderRegion(root, rerender, { code, rec, ulpin, base = "state" } = {}) {
   code = (code || "").toUpperCase();
   if (!STATES[code]) return renderChooser(root, rerender);
   if (rec && REGION[code].records.some((r) => r.key === rec && r.connected !== false)) view[code] = rec;
-  return renderState(root, rerender, code);
+  return renderState(root, rerender, code, { ulpin, base });
 }
 
 function renderChooser(root, rerender) {
@@ -91,19 +95,19 @@ function renderChooser(root, rerender) {
 
 const view = {};                                   // per-state remembered record type
 
-function renderState(root, rerender, code) {
+function renderState(root, rerender, code, { ulpin: preselect, base }) {
   const S = STATES[code], R = REGION[code];
   const rt = () => R.records.find((r) => r.key === view[code]) || R.records[0];
   const bi = (k) => `${R.labels[k]}`;
   setContext({ page: "state", state: code }, { replace: true });
 
   root.innerHTML = `<div class="page region" style="--accent:${R.accent}">
-    ${citizenHeader("records")}
+    ${citizenHeader(base === "citizen" ? "citizen" : "records")}
     <main class="region-main">
       <section class="region-banner">
         <div class="wrap rb-inner">
           <div>
-            <a class="back" href="#/state">${icon.chevron}${esc(t("allStatesInfo"))}</a>
+            <a class="back" href="${base === "citizen" ? "#/citizen" : "#/state"}">${icon.chevron}${esc(t(base === "citizen" ? "citizenPortal" : "allStatesInfo"))}</a>
             <h1><span lang="${R.lang}">${esc(R.title)}</span><small>${esc(R.titleEn)}</small></h1>
             <p>${esc(S.system)} · ${esc(S.department)}</p>
           </div>
@@ -187,6 +191,9 @@ function renderState(root, rerender, code) {
       districtColor: (name) => colorOf[name],
     });
     fitState();
+    // Deep link from a parcel profile: #/state/<CODE>/<record>/<ulpin> opens that record for that parcel.
+    const pre = preselect && fc.features.find((f) => f.properties.ulpin === preselect)?.properties;
+    if (pre) { disc.selectParcel(pre); showParcel(pre); }
     // district markers stay clickable at every zoom below the parcel level
     const dots = L.layerGroup().addTo(ctl.map);
     st.districts.forEach((d) => L.circleMarker(center(d.bbox), { radius: 9, weight: 2, color: "#fff", fillColor: colorOf[d.name], fillOpacity: 0.95 })

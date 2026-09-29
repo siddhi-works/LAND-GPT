@@ -192,6 +192,19 @@ export const icon = {
     '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/>'
   ),
 
+  // Land Stack concepts (connected-records diagram, services hub).
+  user: svg('<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>'),
+  swap: svg('<path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/>'),
+  building: svg('<path d="M4 21V5l8-3 8 3v16"/><path d="M9 9h1M14 9h1M9 13h1M14 13h1M10 21v-4h4v4"/>'),
+  rupee: svg('<path d="M7 5h10M7 9h10M8 5c5 0 7 1.5 7 4s-2 4-7 4l7 8"/>'),
+  gavel: svg('<path d="m14 13-7.5 7.5a2.1 2.1 0 0 1-3-3L11 10"/><path d="m16 16 6-6M8 8l6-6M9 7l8 8"/>'),
+  leaf: svg('<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5-6"/>'),
+  bolt: svg('<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>'),
+  grid: svg('<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>'),
+  lock: svg('<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>'),
+  eye: svg('<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>'),
+  bell: svg('<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/>'),
+
   // Portal header: parcel boundary with surveyed vertices; map sheet with a located parcel.
   parcelLg: svg(
     '<path d="M4 8.5 10 4l10 3.5-2.5 11.5L6 20z"/><circle cx="4" cy="8.5" r="1.4"/><circle cx="10" cy="4" r="1.4"/><circle cx="20" cy="7.5" r="1.4"/><circle cx="17.5" cy="19" r="1.4"/><circle cx="6" cy="20" r="1.4"/>',
@@ -269,8 +282,11 @@ function citizenNav(active, cls) {
   return `
     <nav class="${cls}" aria-label="Main">
       ${link("#/", "home", "home")}
+      ${link("#/citizen", "citizenPortal", "citizen")}
       ${link("#/map", "landMap", "map")}
       ${link("#/state", "landRecords", "records")}
+      ${link("#/dashboard", "navDashboard", "dashboard")}
+      ${link("#/services", "navServices", "services")}
       ${link("#/officer/login", "officerLogin", "officer")}
     </nav>
   `;
@@ -278,7 +294,7 @@ function citizenNav(active, cls) {
 
 export function citizenHeader(active = "home") {
 
-  if (!["home", "records"].includes(active)) {
+  if (!["home", "records", "citizen", "dashboard", "services"].includes(active)) {
     return `
       <header class="site-header">
         <div class="gov-strip" aria-hidden="true"></div>
@@ -549,8 +565,10 @@ export function siteFooter() {
         <div>
           <h4>${esc(t("quickLinks"))}</h4>
           <ul>
+            ${link("#/citizen", "citizenPortal")}
             ${link("#/map", "landMap")}
             ${link("#/state", "landRecords")}
+            ${link("#/dashboard", "dashTitle")}
             ${link("#/services", "digitalServices")}
             ${link("#/officer/login", "officerConsole")}
             <li><button class="sf-linkbtn" data-chat="${esc(t("qServices"))}">${esc(t("help"))}</button></li>

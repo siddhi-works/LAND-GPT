@@ -85,8 +85,11 @@ class Workflow:
         return out
 
     def login(self, username: str, password: str) -> Session:
-        officer = next((o for o in self.roster["officers"] if o["username"] == username), None)
-        digest = hashlib.sha256((password or "").encode()).hexdigest()
+        # Officer IDs are matched case-insensitively and both fields ignore surrounding whitespace
+        # (copy-paste / mobile keyboards); the password itself is still compared exactly.
+        uid = (username or "").strip().lower()
+        officer = next((o for o in self.roster["officers"] if o["username"].lower() == uid), None)
+        digest = hashlib.sha256((password or "").strip().encode()).hexdigest()
         if officer is None or not hmac.compare_digest(digest, self.roster["password_sha256"]):
             raise AuthError(401, "INVALID_CREDENTIALS", "Invalid user ID or password")
         s = Session(secrets.token_urlsafe(24), officer, self.roster["roles"][officer["role"]],

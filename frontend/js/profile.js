@@ -1,8 +1,8 @@
 import { api } from "./api.js";
-import { setContext } from "./context.js";
+import { rememberParcel, setContext } from "./context.js";
 import { createMap } from "./map.js";
 import { t, localText } from "./i18n.js";
-import { STATES } from "./states.js";
+import { REGION, STATES } from "./states.js";
 import { citizenHeader, bindLang, disclaimer, esc, fmtHa, fmtInr, fmtUlpin, fmtDate, icon, statusBadge, sev, errorBox, title, riskStatus, siteFooter, skeleton, toast } from "./ui.js";
 
 export function parcelSvg(ring, w = 132, h = 92, stroke = "#0b3d91", fill = "#e3ecfa") {
@@ -146,9 +146,12 @@ export function renderProfile(root, rerender, { ulpin, section: jump }) {
             <button class="btn primary" data-chat="${esc(t("qExplain"))}">${icon.spark} ${esc(t("qExplain"))}</button>
             <details class="grounding"><summary>${esc(t("groundingData"))}</summary><pre id="as-ctx">…</pre></details>
           </div></section>
+          ${relatedHtml(b, st, ulpin)}
         </aside>
       </div>`;
     root.querySelectorAll("[data-jump]").forEach(a => a.onclick = (e) => { e.preventDefault(); root.querySelector("#" + a.dataset.jump)?.scrollIntoView({ behavior: "smooth", block: "start" }); });
+    const props = fc.features.find((f) => f.properties.ulpin === ulpin)?.properties;
+    if (props) rememberParcel(props);
     root.querySelector("#pa-copy").onclick = () => { navigator.clipboard?.writeText(ulpin); toast(`${t("copied")}: ${fmtUlpin(ulpin)}`, "ok"); };
     root.querySelector("#pa-print").onclick = () => window.print();
     root.querySelectorAll("[data-node]").forEach((n) => n.onclick = () => root.querySelector("#sec-" + n.dataset.node)?.scrollIntoView({ behavior: "smooth", block: "start" }));
@@ -225,6 +228,21 @@ function hubHtml(b, ver, C, ring, terms) {
     ${nodes.map((nd, i) => `<button class="hub-node ${nd.cls}" data-node="${nd.id}" style="left:${pos[i][0].toFixed(2)}%;top:${pos[i][1].toFixed(2)}%">
       <b>${esc(nd.label)}</b><small>${nd.n ? `<span class="hn-count">${nd.n}</span>` : ""}${esc(nd.sub)}</small></button>`).join("")}
   </div>`;
+}
+
+// Services connected to this parcel: its own state records (opened with this parcel selected), the district
+// dashboard, the services hub and, for officers, the inspection workspace (sign-in required).
+function relatedHtml(b, st, ulpin) {
+  const have = new Set(b.sources.filter((s) => s.record_count).map((s) => s.native_record_type));
+  const recs = REGION[st].records.filter((r) => r.connected !== false && have.has(r.native));
+  const j = b.identity.jurisdiction;
+  const row = (href, ic, label, sub) => `<a class="rel-row" href="${href}">${icon[ic]}<span><b>${esc(label)}</b>${sub ? `<small>${esc(sub)}</small>` : ""}</span>${icon.right}</a>`;
+  return `<section class="panel related"><header><h2>${icon.grid} ${esc(t("relatedServices"))}</h2></header><div class="body">
+    ${recs.map((r) => row(`#/state/${st}/${r.key}/${ulpin}`, "register", r.en, `${STATES[st].name} · ${r.label}`)).join("")}
+    ${row(`#/dashboard/${st}/${encodeURIComponent(j.district)}`, "chart", t("dashTitle"), `${j.district} · ${STATES[st].name}`)}
+    ${row("#/services", "grid", t("digitalServices"), t("relServicesD"))}
+    ${row(`#/officer/parcel/${ulpin}`, "shield", t("relOfficer"), t("relOfficerD"))}
+  </div></section>`;
 }
 
 function timelineHtml(b, ver, st) {

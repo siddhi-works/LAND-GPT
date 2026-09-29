@@ -2,9 +2,34 @@
 // search. Everything comes from the registry (/admin/hierarchy, /gis/parcels, /search). Used on the home
 // page (any state) and on each state's land-information page (state fixed, regional labels).
 import { api } from "./api.js";
-import { t } from "./i18n.js";
+import { rememberParcel } from "./context.js";
+import { t, localText } from "./i18n.js";
 import { STATES } from "./states.js";
-import { esc, fmtUlpin, icon, statusBadge, skeleton } from "./ui.js";
+import { esc, fmtHa, fmtUlpin, icon, statusBadge, skeleton } from "./ui.js";
+
+/** "Selected parcel" card with the next steps (profile / map / assistant). `section` deep-links the profile. */
+export function parcelCardHtml(p, { section = "", note = "" } = {}) {
+  rememberParcel(p);
+  const st = p.state_code, sub = t(p.sub_district_type === "tehsil" ? "tehsil" : "taluka");
+  return `<div class="sel-parcel">
+    <div class="eyebrow">${esc(t("selectedParcel"))}</div>
+    <div class="sp-head"><div><div class="ulpin">${fmtUlpin(p.ulpin)}</div><b>${esc(p.native_label)}</b></div>${statusBadge(p.risk_level)}</div>
+    <dl class="kv">
+      <dt>${esc(t("village"))}</dt><dd>${esc(p.village)}</dd>
+      <dt>${esc(sub)}</dt><dd>${esc(p.sub_district)}</dd>
+      <dt>${esc(t("district"))}</dt><dd>${esc(p.district)} · ${esc(STATES[st].name)}</dd>
+      ${p.record_area_ha != null ? `<dt>${esc(t("area"))}</dt><dd>${fmtHa(p.record_area_ha)} <span class="muted">(${esc(p.record_area_source)})</span></dd>` : ""}
+      ${p.land_use_label ? `<dt>${esc(t("landUse"))}</dt><dd>${esc(localText(p.land_use_label, st))}</dd>` : ""}
+      ${p.findings != null ? `<dt>${esc(t("verification"))}</dt><dd>${p.findings ? `${p.findings} ${esc(t("findings"))}` : esc(t("stConsistent"))}</dd>` : ""}
+    </dl>
+    ${note ? `<div class="notice info">${icon.info}<span>${esc(note)}</span></div>` : ""}
+    <div class="res-actions">
+      <a class="btn primary" href="#/parcel/${p.ulpin}${section ? "/" + section : ""}">${icon.register} ${esc(t("openProfile"))}</a>
+      <a class="btn" href="#/map/${p.ulpin}">${icon.map} ${esc(t("viewOnMap"))}</a>
+      <button class="btn" data-chat="${esc(t("qExplain"))}">${icon.spark} ${esc(t("askAboutParcel"))}</button>
+    </div>
+  </div>`;
+}
 
 const KINDS = [["all", null], ["ULPIN", "ULPIN"], ["native", "Native identifier"], ["place", "Location"]];
 

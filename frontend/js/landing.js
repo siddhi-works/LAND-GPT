@@ -1,22 +1,23 @@
 import { api } from "./api.js";
 import { setContext } from "./context.js";
-import { mountDiscovery } from "./discovery.js";
-import { t, localText } from "./i18n.js";
-import { mountStateMinis, stateCardsHtml } from "./region.js";
-import { STATES } from "./states.js";
+import { mountDiscovery, parcelCardHtml } from "./discovery.js";
+import { t } from "./i18n.js";
+import { SLUG, mountStateMinis, stateCardsHtml } from "./region.js";
+import { mountStack } from "./stack.js";
+import { REGION, STATES } from "./states.js";
+import { compareHtml, countUp, donut, num } from "./dashboard.js";
 import {
   citizenHeader,
   bindLang,
   disclaimer,
   emptyState,
   esc,
-  fmtHa,
   fmtUlpin,
   icon,
+  pct,
   riskStatus,
   siteFooter,
   skeleton,
-  statusBadge,
   toast
 } from "./ui.js";
 
@@ -27,8 +28,8 @@ const QUICK = [
   { key: "landMap", icon: "map", href: "#/map" },
   { key: "qaRecords", icon: "register", href: "#/state" },
   { key: "qaVerify", icon: "shield", go: "explore:checks" },
-  { key: "qaProfile", icon: "area", go: "explore:" },
-  { key: "digitalServices", icon: "layers", go: "services" },
+  { key: "navDashboard", icon: "chart", href: "#/dashboard" },
+  { key: "digitalServices", icon: "grid", href: "#/services" },
   { key: "chatAsk", icon: "spark", chat: "" },
 ];
 
@@ -39,36 +40,15 @@ const SERVICES = [
   { title: "K-Prat", sub: "Maharashtra · क-प्रत", off: true, icon: "register" },
   { title: "Khatauni · Khasra", sub: "Uttar Pradesh · खतौनी", href: "#/state/UP/khatauni", icon: "register" },
   { title: "VF 7/12 · VF 8A", sub: "Gujarat · ગા.ન.નં.", href: "#/state/GJ/vf712", icon: "register" },
-  { tkey: "svcMutation", sub: "Ferfar · Namantaran · VF 6", links: [["MH", "#/state/MH/ferfar"], ["UP", "#/state/UP/namantaran"], ["GJ", "#/state/GJ/vf6"]], icon: "work" },
-  { tkey: "svcOwnership", section: "land", icon: "home" },
+  { tkey: "svcMutation", sub: "Ferfar · Namantaran · VF 6", links: [["MH", "#/state/MH/ferfar"], ["UP", "#/state/UP/namantaran"], ["GJ", "#/state/GJ/vf6"]], icon: "swap" },
+  { tkey: "svcOwnership", section: "land", icon: "user" },
   { tkey: "svcSurveySearch", go: "explore:native", icon: "search" },
   { tkey: "svcUlpinSearch", go: "explore:ulpin", icon: "search" },
   { tkey: "svcParcelMap", href: "#/map", icon: "map" },
   { tkey: "svcVerify", section: "checks", icon: "shield" },
-  { tkey: "secLandUse", section: "landuse", icon: "layers" },
-  { tkey: "connectedRecords", section: "records", icon: "link" },
-  { tkey: "secEncumbrance", section: "encumbrance", icon: "alert" },
-  { tkey: "secRegistration", section: "registration", icon: "audit" },
 ];
 
 const DISC_ORDER = ["ownership", "registration_mutation_lag", "area_gis", "encumbrance_litigation", "missing_links", "planning_environment", "data_quality", "spatial", "identity"];
-
-const DEPT = {
-  land_record: "Land records",
-  mutation: "Mutation",
-  registration: "Registration",
-  geometry: "Survey / GIS",
-  planning: "Planning",
-  building_permission: "Building permission",
-  encumbrance: "Encumbrance",
-  property_tax: "Property tax",
-  utilities: "Utilities",
-  environmental_restriction: "Environment",
-  parcel: "ULPIN registry",
-  ownership: "Ownership",
-  land_use: "Land use",
-  litigation: "Litigation",
-};
 
 
 /* =========================================================
@@ -144,8 +124,22 @@ export function renderLanding(root, rerender, params = {}) {
       <section class="quick-wrap" aria-label="${esc(t("quickActions"))}">
         <div class="wrap quick">${QUICK.map((q) => {
           const attrs = q.href ? `href="${q.href}"` : q.chat != null ? `href="#" data-chat="${esc(q.chat)}"` : `href="#" data-go="${q.go}"`;
-          return `<a class="qa" ${attrs}><span class="qa-ic">${icon[q.icon]}</span><span>${esc(t(q.key))}</span></a>`;
+          return `<a class="qact" ${attrs}><span class="qact-ic">${icon[q.icon]}</span><span>${esc(t(q.key))}</span></a>`;
         }).join("")}</div>
+      </section>
+
+      <!-- TWO PORTALS -->
+      <section class="wrap portals">
+        <a class="portal-card citizen" href="#/citizen">
+          <span class="pc-ic">${icon.user}</span>
+          <span class="pc-t"><b>${esc(t("citizenPortal"))}</b><small>${esc(t("citizenPortalD"))}</small></span>
+          <span class="pc-go">${esc(t("enterPortal"))} ${icon.right}</span>
+        </a>
+        <a class="portal-card officer" href="#/officer/login">
+          <span class="pc-ic">${icon.shield}</span>
+          <span class="pc-t"><b>${esc(t("officerPortal"))}</b><small>${esc(t("officerPortalD"))}</small></span>
+          <span class="pc-go">${esc(t("enterPortal"))} ${icon.right}</span>
+        </a>
       </section>
 
       <!-- EXPLORE LAND INFORMATION -->
@@ -164,117 +158,56 @@ export function renderLanding(root, rerender, params = {}) {
       <section class="band states-band" id="states">
         <div class="wrap">
           <div class="sec-intro"><h2>${esc(t("exploreStateInfo"))}</h2><p>${esc(t("exploreStateInfoD"))}</p></div>
-          ${stateCardsHtml()}
+          ${stateCardsHtml((code) => `#/citizen/${{ MH: "maharashtra", UP: "uttar-pradesh", GJ: "gujarat" }[code]}`)}
         </div>
       </section>
 
-      <!-- DIGITAL LAND SERVICES -->
+      <!-- WHAT LAND STACK CONNECTS -->
+      <section class="connects-band" id="connects">
+        <div class="wrap">
+          <div class="sec-intro"><h2>${esc(t("connects"))}</h2><p>${esc(t("connectsD"))}</p></div>
+          <div id="lstack"></div>
+        </div>
+      </section>
+
+      <!-- DIGITAL LAND SERVICES (preview of the services hub) -->
       <section class="wrap services" id="services">
-        <div class="sec-intro"><h2>${esc(t("digitalServices"))}</h2><p>${esc(t("digitalServicesD"))}</p></div>
+        <div class="sec-intro sec-intro-row"><div><h2>${esc(t("digitalServices"))}</h2><p>${esc(t("digitalServicesD"))}</p></div>
+          <a class="btn primary" href="#/services">${icon.grid} ${esc(t("openServicesHub"))}</a></div>
         <div class="svc-grid">${SERVICES.map(serviceCard).join("")}</div>
       </section>
 
       <!-- DASHBOARD + LAND INTELLIGENCE -->
       <section class="band insights" id="insights">
         <div class="wrap">
-          <div class="sec-intro"><h2>${esc(t("dashTitle"))}</h2><p>${esc(t("dashD"))}</p></div>
+          <div class="sec-intro sec-intro-row"><div><h2>${esc(t("dashTitle"))}</h2><p>${esc(t("dashD"))}</p></div>
+            <a class="btn primary" id="ins-open" href="#/dashboard">${icon.chart} ${esc(t("openDashboard"))}</a></div>
+          <div class="ins-bar"><div class="seg ins-tabs" role="tablist" aria-label="${esc(t("state"))}">
+            <button data-ins="" class="on">${esc(t("allStates"))}</button>
+            ${Object.entries(STATES).map(([c, s]) => `<button data-ins="${c}" style="--sc:${REGION[c].accent}">${esc(s.name)}</button>`).join("")}
+          </div><span class="demo-pill">${icon.info} ${esc(t("demoDataset"))}</span></div>
           <div class="kpi-row" id="kpis">${skeleton(2)}</div>
           <div class="intel-grid">
             <div class="panel"><header><h3>${icon.chart} ${esc(t("intelConsistency"))}</h3></header><div class="body" id="intel-risk">${skeleton(3)}</div></div>
             <div class="panel"><header><h3>${icon.alert} ${esc(t("intelDiscrepancies"))}</h3><span class="terms">${esc(t("intelClick"))}</span></header><div class="body" id="intel-disc">${skeleton(4)}</div></div>
             <div class="panel"><header><h3>${icon.shield} ${esc(t("intelFlagged"))}</h3></header><div class="body" id="intel-list">${emptyState(t("intelPick"), "", icon.info)}</div></div>
           </div>
+          <div class="db-sub ins-cmp-h"><h3>${icon.chart} ${esc(t("dbCompare"))}</h3><span class="terms">${esc(t("dbCompareD"))}</span></div>
+          <div id="ins-cmp">${skeleton(3)}</div>
         </div>
       </section>
 
-      <!-- =================================================
-           HOW IT WORKS
-           ================================================= -->
-
+      <!-- HOW IT WORKS -->
       <section class="band">
-
         <div class="wrap">
-
-          <h2 class="sec-h">
-            ${esc(t("howItWorks"))}
-          </h2>
-
+          <h2 class="sec-h">${esc(t("howItWorks"))}</h2>
           <ol class="chain-lg">
-
-            <li>
-              <b>
-                ${esc(t("storyParcel"))}
-              </b>
-
-              <span>
-                ${esc(t("storyParcelD"))}
-              </span>
-            </li>
-
-
-            <li>
-              <b>
-                ${esc(t("storyUlpin"))}
-              </b>
-
-              <span>
-                ${esc(t("storyUlpinD"))}
-              </span>
-            </li>
-
-
-            <li>
-              <b>
-                ${esc(t("storyRecords"))}
-              </b>
-
-              <span>
-                ${esc(t("storyRecordsD"))}
-              </span>
-            </li>
-
-
-            <li>
-              <b>
-                ${esc(t("storyProfile"))}
-              </b>
-
-              <span>
-                ${esc(t("storyProfileD"))}
-              </span>
-            </li>
-
+            <li><b>${esc(t("storyParcel"))}</b><span>${esc(t("storyParcelD"))}</span></li>
+            <li><b>${esc(t("storyUlpin"))}</b><span>${esc(t("storyUlpinD"))}</span></li>
+            <li><b>${esc(t("storyRecords"))}</b><span>${esc(t("storyRecordsD"))}</span></li>
+            <li><b>${esc(t("storyProfile"))}</b><span>${esc(t("storyProfileD"))}</span></li>
           </ol>
-
         </div>
-
-      </section>
-
-
-      <!-- =================================================
-           WHAT LAND STACK CONNECTS
-           ================================================= -->
-
-      <section class="wrap connects">
-
-        <h2 class="sec-h">
-          ${esc(t("connects"))}
-        </h2>
-
-        <div
-          class="state-cols"
-          id="cols"
-        >
-          <div class="loading">
-            <span class="spinner"></span>
-          </div>
-        </div>
-
-        <p
-          class="fine"
-          id="figures"
-        ></p>
-
       </section>
 
     </main>
@@ -286,138 +219,8 @@ export function renderLanding(root, rerender, params = {}) {
   </div>
   `;
 
-
-  /* =======================================================
-     LANGUAGE SWITCHING
-     ======================================================= */
-
   bindLang(root, rerender);
-
-
-  /* =======================================================
-     LOAD DATA QUALITY / STATE INFORMATION
-     ======================================================= */
-
-  api.dataQuality()
-    .then((dq) => {
-
-      const cols = Object.entries(STATES)
-        .map(([code, s]) => {
-
-          const rows =
-            (dq.source_coverage[code] || [])
-              .filter(
-                r =>
-                  !["core.parcel_registry"]
-                    .includes(r.source_table)
-              );
-
-
-          return `
-            <div class="state-col">
-
-              <h3>
-                ${esc(s.name)}
-
-                <span class="native">
-                  ${esc(s.native)}
-                </span>
-              </h3>
-
-
-              <p class="muted">
-                ${esc(s.system)}
-              </p>
-
-
-              <ul>
-
-                ${rows
-                  .map(r => {
-
-                    const concepts =
-                      r.concepts
-                        .map(
-                          c => DEPT[c] || c
-                        )
-                        .filter(
-                          (v, i, a) =>
-                            a.indexOf(v) === i
-                        )
-                        .join(" · ");
-
-
-                    return `
-                      <li>
-
-                        <b>
-                          ${esc(
-                            r.native_record_type
-                          )}
-                        </b>
-
-                        <span>
-                          ${esc(concepts)}
-                        </span>
-
-                      </li>
-                    `;
-
-                  })
-                  .join("")}
-
-              </ul>
-
-            </div>
-          `;
-
-        })
-        .join("");
-
-
-      const colsEl =
-        root.querySelector("#cols");
-
-      if (colsEl) {
-        colsEl.innerHTML = cols;
-      }
-
-
-      const systems =
-        Object.values(
-          dq.source_coverage
-        )
-        .reduce(
-          (n, r) => n + r.length,
-          0
-        );
-
-
-      const figuresEl =
-        root.querySelector("#figures");
-
-
-      if (figuresEl) {
-
-        figuresEl.textContent =
-          `${dq.registry.ulpins} ULPIN-linked parcels · ` +
-          `${systems} connected state source tables · ` +
-          `${dq.by_rule.length} cross-source validation rules`;
-
-      }
-
-    })
-
-    .catch(() => {
-
-      const colsEl =
-        root.querySelector("#cols");
-
-      if (colsEl) {
-        colsEl.innerHTML = "";
-      }
-
-    });
+  mountStack(root.querySelector("#lstack"));
 
 
   /* =======================================================
@@ -426,41 +229,18 @@ export function renderLanding(root, rerender, params = {}) {
 
   let wantSection = "";                     // profile section a service card asked for
 
-  const disc = mountDiscovery(root.querySelector("#disc"), {
+  mountDiscovery(root.querySelector("#disc"), {
     onChange: (sel) => setContext({ page: "home", state: sel.state, district: sel.district, sub_district: sel.sub, village: sel.village, ulpin: sel.ulpin || null }, { replace: true }),
-    onParcel: (p) => showParcel(p),
+    onParcel: (p) => {
+      const box = root.querySelector("#xresult");
+      box.innerHTML = parcelCardHtml(p, { section: wantSection, note: wantSection ? t("svcOpensSection") : "" });
+      box.classList.add("filled");
+      toast(t("parcelSelected"), "ok");
+    },
   });
 
-  function showParcel(p) {
-    const box = root.querySelector("#xresult");
-    const st = p.state_code, sub = t(p.sub_district_type === "tehsil" ? "tehsil" : "taluka");
-    const target = wantSection ? `#/parcel/${p.ulpin}/${wantSection}` : `#/parcel/${p.ulpin}`;
-    box.innerHTML = `
-      <div class="sel-parcel">
-        <div class="eyebrow">${esc(t("selectedParcel"))}</div>
-        <div class="sp-head"><div><div class="ulpin">${fmtUlpin(p.ulpin)}</div><b>${esc(p.native_label)}</b></div>${statusBadge(p.risk_level)}</div>
-        <dl class="kv">
-          <dt>${esc(t("village"))}</dt><dd>${esc(p.village)}</dd>
-          <dt>${esc(sub)}</dt><dd>${esc(p.sub_district)}</dd>
-          <dt>${esc(t("district"))}</dt><dd>${esc(p.district)} · ${esc(STATES[st].name)}</dd>
-          <dt>${esc(t("area"))}</dt><dd>${fmtHa(p.record_area_ha)} <span class="muted">(${esc(p.record_area_source)})</span></dd>
-          <dt>${esc(t("landUse"))}</dt><dd>${esc(localText(p.land_use_label, st))}</dd>
-          <dt>${esc(t("verification"))}</dt><dd>${p.findings ? `${p.findings} ${esc(t("findings"))}` : esc(t("stConsistent"))}</dd>
-        </dl>
-        ${wantSection ? `<div class="notice info">${icon.info}<span>${esc(t("svcOpensSection"))}</span></div>` : ""}
-        <div class="res-actions">
-          <a class="btn primary" href="${target}">${icon.register} ${esc(t("openProfile"))}</a>
-          <a class="btn" href="#/map/${p.ulpin}">${icon.map} ${esc(t("viewOnMap"))}</a>
-          <button class="btn" data-chat="${esc(t("qExplain"))}">${icon.spark} ${esc(t("askAboutParcel"))}</button>
-        </div>
-      </div>`;
-    box.classList.add("filled");
-    toast(t("parcelSelected"), "ok");
-  }
-
   function goExplore(kind) {
-    const sec = root.querySelector("#explore");
-    sec.scrollIntoView({ behavior: "smooth", block: "start" });
+    root.querySelector("#explore").scrollIntoView({ behavior: "smooth", block: "start" });
     setTimeout(() => {
       if (kind === "place") root.querySelector("#d-state")?.focus();
       else {
@@ -473,7 +253,7 @@ export function renderLanding(root, rerender, params = {}) {
 
   const onClick = (e) => {
     const a = e.target.closest("[data-go], [data-section]");
-    if (!a) return;
+    if (!a || !root.contains(a)) return;
     e.preventDefault();
     if (a.dataset.section) {
       wantSection = a.dataset.section;
@@ -481,84 +261,99 @@ export function renderLanding(root, rerender, params = {}) {
       goExplore("place");
       return;
     }
-    const [where, kind] = a.dataset.go.split(":");
-    if (where === "services") root.querySelector("#services").scrollIntoView({ behavior: "smooth" });
-    else {
-      if (kind === "checks") { wantSection = "checks"; toast(t("svcPickParcel"), "info"); }
-      goExplore(kind);
-    }
+    const [, kind] = a.dataset.go.split(":");
+    if (kind === "checks") { wantSection = "checks"; toast(t("svcPickParcel"), "info"); }
+    goExplore(kind);
   };
   root.addEventListener("click", onClick);
 
 
   /* =======================================================
-     DASHBOARD + LAND INTELLIGENCE (live from the registry)
+     DASHBOARD PREVIEW + LAND INTELLIGENCE (live from the registry; state tabs re-compute everything)
      ======================================================= */
 
-  Promise.all([api.reports(), api.hierarchy(), api.dataQuality()]).then(([rep, h, dq]) => {
-    const kpis = root.querySelector("#kpis");
-    if (!kpis) return;
-    const districts = h.states.reduce((n, s) => n + s.districts.length, 0);
-    const villages = h.states.reduce((n, s) => n + s.districts.reduce((m, d) => m + d.sub_districts.reduce((k, x) => k + x.villages.length, 0), 0), 0);
-    const tables = Object.values(dq.source_coverage).reduce((n, r) => n + r.length, 0);
-    const byStatus = { ok: 0, warn: 0, bad: 0 };
-    Object.entries(rep.risk_levels).forEach(([lvl, n]) => { byStatus[riskStatus(lvl)] += n; });
-    const kpi = (v, label, cls = "", ic = "") => `<div class="kpi-card ${cls}">${ic ? `<span class="kpi-ic">${icon[ic]}</span>` : ""}<b>${v}</b><span>${esc(label)}</span></div>`;
-    kpis.innerHTML = [
-      kpi(rep.parcels, t("kpiParcels"), "", "area"),
-      kpi(byStatus.ok, t("kpiConsistent"), "ok", "check"),
-      kpi(byStatus.warn + byStatus.bad, t("kpiReview"), "warn", "alert"),
-      kpi(rep.mutations.pending || 0, t("pendingMutations"), "", "work"),
-      kpi(3, t("kpiStates"), "", "globe"),
-      kpi(districts, t("kpiDistricts"), "", "map"),
-      kpi(villages, t("kpiVillages"), "", "pin"),
-      kpi(tables, t("kpiSources"), "", "link"),
-    ].join("");
+  let insState = "", insGroup = null;
 
-    const total = rep.parcels || 1;
-    root.querySelector("#intel-risk").innerHTML = `
-      <div class="stackbar">${["ok", "warn", "bad"].map((k) => byStatus[k] ? `<i class="${k}" style="flex:${byStatus[k]}" title="${byStatus[k]}"></i>` : "").join("")}</div>
-      <ul class="legend-list">
-        <li><span class="dot ok"></span>${esc(t("stConsistent"))}<b>${byStatus.ok}</b><small>${Math.round(byStatus.ok / total * 100)}%</small></li>
-        <li><span class="dot warn"></span>${esc(t("stAttention"))}<b>${byStatus.warn}</b><small>${Math.round(byStatus.warn / total * 100)}%</small></li>
-        <li><span class="dot bad"></span>${esc(t("stDiscrepancy"))}<b>${byStatus.bad}</b><small>${Math.round(byStatus.bad / total * 100)}%</small></li>
-      </ul>
-      <p class="fine">${esc(t("intelChecks"))}: ${rep.checks.pass || 0} ${esc(t("checksPassed"))} · ${rep.checks.fail || 0} ${esc(t("failed"))}</p>`;
+  function drawInsights(code) {
+    insState = code; insGroup = null;
+    root.querySelectorAll("[data-ins]").forEach((b) => b.classList.toggle("on", b.dataset.ins === code));
+    const dash = code ? `#/dashboard/${code}` : "#/dashboard";
+    root.querySelector("#ins-open").setAttribute("href", dash);
+    root.querySelector("#intel-list").innerHTML = emptyState(t("intelPick"), "", icon.info);
+    Promise.all([api.reports(code || undefined), api.hierarchy(), api.dataQuality()]).then(([rep, h, dq]) => {
+      const kpis = root.querySelector("#kpis");
+      if (!kpis || insState !== code) return;
+      const sts = h.states.filter((s) => !code || s.code === code);
+      const districts = sts.reduce((n, s) => n + s.districts.length, 0);
+      const villages = sts.reduce((n, s) => n + s.districts.reduce((m, d) => m + d.sub_districts.reduce((k, x) => k + x.villages.length, 0), 0), 0);
+      const tables = Object.entries(dq.source_coverage).filter(([c]) => !code || c === code).reduce((n, [, r]) => n + r.length, 0);
+      const by = { ok: 0, warn: 0, bad: 0 };
+      Object.entries(rep.risk_levels).forEach(([lvl, n]) => { by[riskStatus(lvl)] += n; });
+      const kpi = (v, label, href, cls = "", ic = "") => `<a class="kpi-card ${cls}" href="${href}">${ic ? `<span class="kpi-ic">${icon[ic]}</span>` : ""}${num(v)}<span>${esc(label)}</span></a>`;
+      kpis.innerHTML = [
+        kpi(rep.parcels, t("kpiParcels"), "#/map", "", "area"),
+        kpi(by.ok, t("kpiConsistent"), dash, "ok", "check"),
+        kpi(by.warn + by.bad, t("kpiReview"), dash, "warn", "alert"),
+        kpi(rep.mutations.pending || 0, t("pendingMutations"), dash, "", "swap"),
+        kpi(sts.length, t("kpiStates"), code ? `#/citizen/${SLUG[code]}` : "#/citizen", "", "globe"),
+        kpi(districts, t("kpiDistricts"), code ? `#/state/${code}` : "#/state", "", "map"),
+        kpi(villages, t("kpiVillages"), code ? `#/state/${code}` : "#/state", "", "pin"),
+        kpi(tables, t("kpiSources"), dash, "", "link"),
+      ].join("");
 
-    const groups = DISC_ORDER.filter((g) => rep.parcels_by_discrepancy[g]);
-    const max = Math.max(1, ...groups.map((g) => rep.parcels_by_discrepancy[g]));
-    const disc = root.querySelector("#intel-disc");
-    disc.innerHTML = `<div class="hbars">${groups.map((g) => `<button class="hbar" data-g="${g}">
-        <span class="hb-l">${esc(t("dg_" + g))}</span><span class="hb-t"><i style="width:${rep.parcels_by_discrepancy[g] / max * 100}%"></i></span><b>${rep.parcels_by_discrepancy[g]}</b></button>`).join("")}</div>
-      <p class="fine">${esc(t("intelUnit"))}</p>`;
-    disc.querySelectorAll("[data-g]").forEach((b) => b.onclick = () => {
-      disc.querySelectorAll("[data-g]").forEach((x) => x.classList.toggle("on", x === b));
-      flagged(b.dataset.g, new Set(rep.discrepancy_rules[b.dataset.g]));
+      const total = rep.parcels || 1;
+      root.querySelector("#intel-risk").innerHTML = `<div class="ins-donut">${donut(by)}
+        <ul class="legend-list">
+          <li><span class="dot ok"></span>${esc(t("stConsistent"))}<b>${by.ok}</b><small>${pct(by.ok, total)}%</small></li>
+          <li><span class="dot warn"></span>${esc(t("stAttention"))}<b>${by.warn}</b><small>${pct(by.warn, total)}%</small></li>
+          <li><span class="dot bad"></span>${esc(t("stDiscrepancy"))}<b>${by.bad}</b><small>${pct(by.bad, total)}%</small></li>
+        </ul></div>
+        <p class="fine">${esc(t("intelChecks"))}: ${rep.checks.pass || 0} ${esc(t("checksPassed"))} · ${rep.checks.fail || 0} ${esc(t("failed"))}</p>`;
+
+      const groups = DISC_ORDER.filter((g) => rep.parcels_by_discrepancy[g]);
+      const max = Math.max(1, ...groups.map((g) => rep.parcels_by_discrepancy[g]));
+      const disc = root.querySelector("#intel-disc");
+      disc.innerHTML = groups.length ? `<div class="dq-bars">${groups.map((g) => `<button class="dq-bar" data-g="${g}">
+          <span class="hb-l">${esc(t("dg_" + g))}</span><span class="hb-t"><i style="width:${rep.parcels_by_discrepancy[g] / max * 100}%"></i></span><b>${rep.parcels_by_discrepancy[g]}</b></button>`).join("")}</div>
+        <p class="fine">${esc(t("intelUnit"))}</p>` : emptyState(t("stConsistent"), "", icon.check);
+      disc.querySelectorAll("[data-g]").forEach((b) => b.onclick = () => {
+        disc.querySelectorAll("[data-g]").forEach((x) => x.classList.toggle("on", x === b));
+        insGroup = b.dataset.g;
+        flagged(b.dataset.g, new Set(rep.discrepancy_rules[b.dataset.g]), code);
+      });
+      countUp(kpis);
+    }).catch(() => {
+      const kpis = root.querySelector("#kpis");
+      if (kpis) kpis.innerHTML = emptyState(t("dataUnavailable"), "", icon.alert);
     });
-  }).catch(() => {
-    const kpis = root.querySelector("#kpis");
-    if (kpis) kpis.innerHTML = emptyState(t("dataUnavailable"), "", icon.alert);
-  });
+    compareHtml(code, (c) => `#/dashboard/${c}`).then((html) => {
+      const box = root.querySelector("#ins-cmp");
+      if (box && insState === code) { box.innerHTML = html; countUp(box); }
+    }).catch(() => {});
+  }
+  root.querySelectorAll("[data-ins]").forEach((b) => b.onclick = () => drawInsights(b.dataset.ins));
+  drawInsights("");
 
-  async function flagged(group, rules) {
+  async function flagged(group, rules, code) {
     const box = root.querySelector("#intel-list");
     box.innerHTML = skeleton(4);
     try {
-      const [f, fc] = await Promise.all([api.findings(), api.parcels()]);
+      const [f, fc] = await Promise.all([api.findings(code || undefined), api.parcels()]);
+      if (insGroup !== group || insState !== code) return;
       const props = new Map(fc.features.map((x) => [x.properties.ulpin, x.properties]));
       const seen = new Map();
       f.findings.filter((x) => rules.has(x.rule_id)).forEach((x) => { if (!seen.has(x.ulpin)) seen.set(x.ulpin, x); });
-      box.innerHTML = `<div class="eyebrow">${esc(t("dg_" + group))}</div><ul class="flag-list">${[...seen.values()].slice(0, 8).map((x) => {
+      box.innerHTML = `<div class="eyebrow">${esc(t("dg_" + group))} · ${seen.size}</div><ul class="flag-list">${[...seen.values()].slice(0, 8).map((x) => {
         const p = props.get(x.ulpin);
-        return `<li><a href="#/parcel/${x.ulpin}"><b>${esc(p?.native_label || fmtUlpin(x.ulpin))}</b><small>${esc(p ? `${p.village}, ${p.district} · ${STATES[p.state_code].name}` : "")}</small>
+        return `<li><a href="#/parcel/${x.ulpin}/checks"><b>${esc(p?.native_label || fmtUlpin(x.ulpin))}</b><small>${esc(p ? `${p.village}, ${p.district} · ${STATES[p.state_code].name}` : "")}</small>
           <span class="flag-msg">${esc(x.rule_id)} · ${esc(x.message)}</span></a></li>`;
-      }).join("")}</ul>`;
+      }).join("")}</ul><a class="btn sm" href="${code ? `#/dashboard/${code}` : "#/dashboard"}">${esc(t("openDashboard"))} ${icon.right}</a>`;
     } catch { box.innerHTML = emptyState(t("dataUnavailable"), "", icon.alert); }
   }
 
 
   /* =======================================================
-     STATE MAP THUMBNAILS + DEEP LINKS (#/services, #/explore)
+     STATE MAP THUMBNAILS + DEEP LINK (#/explore)
      ======================================================= */
 
   let minis = () => {};

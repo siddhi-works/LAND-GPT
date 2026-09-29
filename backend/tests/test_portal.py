@@ -46,6 +46,13 @@ def test_search(client, q, expected):
 def test_officer_login_rejects_bad_password(client):
     r = client.post("/v1/officer/login", json={"username": "mh.talathi.umbraj", "password": "wrong"})
     assert r.status_code == 401 and r.json()["error"]["code"] == "INVALID_CREDENTIALS"
+    r = client.post("/v1/officer/login", json={"username": "mh.talathi.umbraj", "password": "landstack@2026"})
+    assert r.status_code == 401                      # password stays case-sensitive
+
+
+def test_officer_login_tolerates_id_case_and_whitespace(client):
+    r = client.post("/v1/officer/login", json={"username": "  MH.Talathi.Umbraj ", "password": PW + " "})
+    assert r.status_code == 200 and r.json()["officer"]["username"] == "mh.talathi.umbraj"
     assert client.get("/v1/officer/work").status_code == 401
 
 

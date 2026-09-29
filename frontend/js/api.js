@@ -9,7 +9,9 @@ export class ApiError extends Error {
   }
 }
 
-function token() { try { return sessionStorage.getItem("ls-token"); } catch { return null; } }
+// Officer session: tab-scoped by default; "Remember me" also keeps it in localStorage on this device.
+function stored(k) { try { return sessionStorage.getItem(k) ?? localStorage.getItem(k); } catch { return null; } }
+function token() { return stored("ls-token"); }
 
 async function request(path, { method = "GET", body, auth = false, fresh = false } = {}) {
   const key = method === "GET" && !auth ? path : null;
@@ -66,7 +68,9 @@ export const api = {
 
 export const session = {
   get token() { return token(); },
-  get officer() { try { return JSON.parse(sessionStorage.getItem("ls-officer")); } catch { return null; } },
-  set(tok, officer) { sessionStorage.setItem("ls-token", tok); sessionStorage.setItem("ls-officer", JSON.stringify(officer)); },
-  clear() { sessionStorage.removeItem("ls-token"); sessionStorage.removeItem("ls-officer"); },
+  get officer() { try { return JSON.parse(stored("ls-officer")); } catch { return null; } },
+  set(tok, officer, remember = false) {
+    for (const s of remember ? [sessionStorage, localStorage] : [sessionStorage]) { s.setItem("ls-token", tok); s.setItem("ls-officer", JSON.stringify(officer)); }
+  },
+  clear() { for (const s of [sessionStorage, localStorage]) { try { s.removeItem("ls-token"); s.removeItem("ls-officer"); } catch {} } },
 };

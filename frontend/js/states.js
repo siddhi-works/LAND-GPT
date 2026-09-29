@@ -53,7 +53,7 @@ export const STATES = {
 // `connected: false` marks a record the state publishes that is not part of this demo's connected sources.
 export const REGION = {
   MH: {
-    accent: "#e07a1f", lang: "mr", title: "महाराष्ट्र भूमी माहिती", titleEn: "Maharashtra Land Information", switchLang: "मराठीत पहा",
+    accent: "#e07a1f", lang: "mr", title: "महाराष्ट्र भूमी माहिती", titleEn: "Maharashtra Land Information", switchLang: "मराठीत पहा", officerTitle: "अधिकारी प्रवेश — महाराष्ट्र",
     labels: { district: "जिल्हा", sub: "तालुका", village: "गाव", parcel: "सर्वे / गट क्रमांक", record: "अधिकार अभिलेखाचा प्रकार", search: "शोधा", map: "जिल्हा नकाशा" },
     records: [
       { key: "712", native: "7/12", label: "७/१२", en: "7/12 extract" },
@@ -64,7 +64,7 @@ export const REGION = {
     ],
   },
   UP: {
-    accent: "#1d5fa8", lang: "hi", title: "उत्तर प्रदेश भूमि सूचना", titleEn: "Uttar Pradesh Land Information", switchLang: "हिन्दी में देखें",
+    accent: "#1d5fa8", lang: "hi", title: "उत्तर प्रदेश भूमि सूचना", titleEn: "Uttar Pradesh Land Information", switchLang: "हिन्दी में देखें", officerTitle: "अधिकारी प्रवेश — उत्तर प्रदेश",
     labels: { district: "जनपद", sub: "तहसील", village: "ग्राम", parcel: "खसरा / गाटा संख्या", record: "अभिलेख का प्रकार", search: "खोजें", map: "जनपद मानचित्र" },
     records: [
       { key: "khatauni", native: "Khatauni", label: "खतौनी", en: "Khatauni" },
@@ -74,7 +74,7 @@ export const REGION = {
     ],
   },
   GJ: {
-    accent: "#15803d", lang: "gu", title: "ગુજરાત જમીન માહિતી", titleEn: "Gujarat Land Information", switchLang: "ગુજરાતીમાં જુઓ",
+    accent: "#15803d", lang: "gu", title: "ગુજરાત જમીન માહિતી", titleEn: "Gujarat Land Information", switchLang: "ગુજરાતીમાં જુઓ", officerTitle: "અધિકારી પ્રવેશ — ગુજરાત",
     labels: { district: "જિલ્લો", sub: "તાલુકો", village: "ગામ", parcel: "સર્વે નંબર", record: "રેકર્ડનો પ્રકાર", search: "શોધો", map: "જિલ્લા નકશો" },
     records: [
       { key: "vf712", native: "VF 7/12", label: "ગા.ન.નં. 7/12", en: "VF 7/12" },
