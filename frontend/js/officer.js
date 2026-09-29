@@ -3,8 +3,10 @@ import { assistantPanel } from "./assistant.js";
 import { bars, stack, lines, indicative, MONTHS } from "./charts.js";
 import { createMap } from "./map.js";
 import { findingHtml, flowHtml, parcelSvg, prov } from "./profile.js";
-import { STATES, ACTION_LABEL, STATUS_LABEL, FORWARD_TO, queueOf } from "./states.js";
-import { MARK, disclaimer, esc, fmtHa, fmtUlpin, fmtDate, icon, sev, loading, errorBox, title, toast, pct, SEV_RANK, riskStatus } from "./ui.js";
+import { STATES, REGION, ACTION_LABEL, STATUS_LABEL, FORWARD_TO, queueOf } from "./states.js";
+import { MARK, disclaimer, esc, fmtHa, fmtUlpin, fmtDate, icon, sev, loading, errorBox, title, toast, pct, SEV_RANK, riskStatus, bindLang, langSelect, siteFooter, skeleton } from "./ui.js";
+import { t } from "./i18n.js";
+import { mountStateMinis } from "./region.js";
 
 const ui = { queue: "pending", tab: "work", vfilter: { sev: "", group: "" }, gisSel: null };
 const statusBadge = (s) => { const [c, l] = STATUS_LABEL[s] || ["info", title(s)]; return `<span class="badge ${c}">${esc(l)}</span>`; };
@@ -15,66 +17,157 @@ const GROUP_RULES = { ownership: ["OWN"], registration_mutation_lag: ["MUT-001",
 const inGroup = (rule, g) => (GROUP_RULES[g] || []).some(p => rule.startsWith(p));
 
 // ------------------------------------------------------------------------------------------
-// Login
+// Officer Portal: state -> role (the state's demo officer accounts) -> sign-in -> workspace.
+// Sign-in is the Land Stack workflow service (/v1/officer/login) with demonstration accounts; it does
+// not authenticate against any state government system.
 // ------------------------------------------------------------------------------------------
 function officerTop(o) {
   return `<header class="site-header officer">
     <div class="gov-strip" aria-hidden="true"></div>
     <div class="bar">
-      <a class="brand" href="${o ? "#/officer" : "#/"}"><span class="brand-mark">${MARK}</span>
+      <a class="brand" href="${o ? "#/officer" : "#/officer/login"}"><span class="brand-mark">${MARK}</span>
         <span class="brand-text"><b>State Land Stack · Officer Console</b><span>${o ? esc(`${STATES[o.state].system} · ${o.department}`) : "Revenue & land records departments · Maharashtra · Uttar Pradesh · Gujarat"}</span></span></a>
       <span class="grow"></span>
       ${o ? `<form class="top-search" id="osearch" role="search">${icon.search}<input id="oq" placeholder="ULPIN / ${esc(o.state === "UP" ? "Gata" : o.state === "MH" ? "Gat / Survey" : "Survey")} no." autocomplete="off" aria-label="Search ULPIN"><div class="results" id="ores" hidden></div></form>
         <div class="who"><b>${esc(o.name)}</b><span>${esc(o.designation_native)} · ${esc(o.office)}</span></div>
-        <a class="btn sm ghost-light" href="#/officer/logout">${icon.logout} Sign out</a>` : `<nav class="topnav"><a href="#/">Citizen portal</a><a href="#/map">Land Map</a></nav>`}
+        <a class="btn sm ghost-light" href="#/officer/logout">${icon.logout} Sign out</a>` : `<nav class="topnav"><a href="#/">${esc(t("home"))}</a><a href="#/citizen">${esc(t("citizenPortal"))}</a><a href="#/map">${esc(t("landMap"))}</a></nav>${langSelect()}`}
     </div>
   </header>`;
 }
 
-export function renderOfficerLogin(root, rerender, params) {
-  const pick = { state: params.state || "MH", username: null };
-  root.innerHTML = `<div class="page">${officerTop(null)}<main class="login-main" id="lm">${loading()}</main>${disclaimer()}</div>`;
+const levelOf = (a) => a.jurisdiction.village ? t("lvVillage") : a.jurisdiction.sub_district ? t(STATES[a.state].sub === "tehsil" ? "tehsil" : "taluka")
+  : a.jurisdiction.district ? t("district") : t("lvState");
+const jurOf = (a) => [STATES[a.state].name, a.jurisdiction.district, a.jurisdiction.sub_district, a.jurisdiction.village].filter(Boolean).join(" › ");
+const REMEMBER = "ls-officer-id";
+
+export function renderOfficerLogin(root, rerender, { state, username } = {}) {
+  const code = STATES[(state || "").toUpperCase()] ? state.toUpperCase() : "";
+  root.innerHTML = `<div class="page officer-portal">${officerTop(null)}<main class="op-main" id="lm"><div class="wrap">${skeleton(4)}</div></main>${siteFooter()}${disclaimer()}</div>`;
+  bindLang(root, rerender);
+  let minis = () => {}, gone = false;
   api.accounts().then(({ accounts }) => {
-    const draw = () => {
-      const S = STATES[pick.state];
-      const accs = accounts.filter(a => a.state === pick.state);
-      if (!accs.find(a => a.username === pick.username)) pick.username = accs[0].username;
-      const a = accs.find(x => x.username === pick.username);
-      root.querySelector("#lm").innerHTML = `
-      <div class="login-grid">
-        <section class="login-left">
-          <h1>Officer sign-in</h1>
-          <p class="muted">Select your state and login category. Your role and jurisdiction determine the work queue, records and actions available to you.</p>
-          <div class="state-pick" role="radiogroup" aria-label="State">${Object.entries(STATES).map(([k, s]) => `<button role="radio" aria-checked="${k === pick.state}" class="${k === pick.state ? "on" : ""}" data-s="${k}">
-            <b>${esc(s.name)}</b><span class="native">${esc(s.native)}</span><small>${esc(s.system)}</small></button>`).join("")}</div>
-          <h2 class="sub-h">${esc(S.system)} — login categories</h2>
-          <div class="cat-list">${accs.map(x => `<button class="cat ${x.username === pick.username ? "on" : ""}" data-u="${x.username}">
-            <b>${esc(x.login_category)}</b><span>${esc(x.designation)} <span class="native">${esc(x.designation_native)}</span></span><small>${esc(x.office)}</small></button>`).join("")}</div>
-          <div class="hier"><h3>Administrative hierarchy</h3><ol>${S.hierarchy.map(h => `<li>${esc(h)}</li>`).join("")}</ol></div>
+    const main = root.querySelector("#lm");
+    if (gone || !main) return;
+    const signed = session.officer;
+    const banner = signed ? `<div class="notice info op-signed">${icon.info}<span>${esc(t("opSignedIn"))} <b>${esc(signed.name)}</b> (${esc(signed.designation)}).</span>
+      <a class="btn sm primary" href="#/officer">${esc(t("opGoWorkspace"))}</a><a class="btn sm" href="#/officer/logout">Sign out</a></div>` : "";
+    const demoNote = `<div class="demo-pill">${icon.lock} ${esc(t("opDemoAccess"))}</div>`;
+    const accs = accounts.filter((a) => a.state === code);
+    const acct = accs.find((a) => a.username === username);
+
+    if (!code) {                                            // A. state selection
+      main.innerHTML = `<div class="wrap">${banner}
+        <div class="op-head"><div><div class="eyebrow">${esc(t("brand"))}</div><h1>${esc(t("officerPortal"))}</h1><p>${esc(t("opIntro"))}</p></div>${demoNote}</div>
+        <div class="op-states">${Object.entries(STATES).map(([c, s]) => {
+          const R = REGION[c], n = accounts.filter((a) => a.state === c);
+          return `<a class="op-state" href="#/officer/login/${c}" style="--accent:${R.accent}">
+            <div class="op-map" data-mini="${c}" aria-hidden="true"></div>
+            <div class="op-state-b">
+              <div class="op-emb">${icon.shield}</div>
+              <div class="op-name"><b>${esc(s.name)}</b><span lang="${R.lang}">${esc(s.native)}</span></div>
+              <p>${esc(s.department)}</p>
+              <div class="chips"><span class="chip">${esc(s.system)}</span><span class="chip">${n.length} ${esc(t("opCategories"))}</span><span class="chip">${esc(s.mutation)}</span></div>
+              <span class="op-cta">${esc(t("opEnter").replace("{state}", s.name))} ${icon.right}</span>
+            </div></a>`;
+        }).join("")}</div>
+        <p class="fine">${esc(t("opFine"))}</p></div>`;
+      mountStateMinis(main).then((c) => { if (gone) c(); else minis = c; });
+      return;
+    }
+
+    const S = STATES[code], R = REGION[code];
+    const crumbs = (extra) => `<nav class="op-crumbs" aria-label="Breadcrumb"><a href="#/officer/login">${esc(t("officerPortal"))}</a><i>›</i>${extra ? `<a href="#/officer/login/${code}">${esc(S.name)}</a><i>›</i><span>${esc(extra)}</span>` : `<span>${esc(S.name)}</span>`}</nav>`;
+
+    if (!acct) {                                            // B. role / office selection
+      main.innerHTML = `<div class="wrap op-state-page" style="--accent:${R.accent}">${banner}${crumbs()}
+        <div class="op-head accent"><div><div class="eyebrow">${esc(S.system)}</div>
+          <h1><span lang="${R.lang}">${esc(R.officerTitle)}</span><small>${esc(t("opAccessFor").replace("{state}", S.name))}</small></h1>
+          <p>${esc(S.department)}</p></div>${demoNote}</div>
+        <div class="op-role-layout">
+          <div><h2 class="sec-h">${esc(t("opChooseRole"))}</h2>
+            <div class="op-roles">${accs.map((a) => `<a class="op-role" href="#/officer/login/${code}/${encodeURIComponent(a.username)}">
+              <span class="op-role-ic">${icon.user}</span>
+              <span class="op-role-t"><b>${esc(a.designation)}</b><span lang="${R.lang}">${esc(a.designation_native)}</span></span>
+              <span class="op-role-cat">${esc(a.login_category)}</span>
+              <span class="op-role-meta"><span>${icon.building}${esc(a.office)}</span><span>${icon.pin}${esc(jurOf(a))}</span></span>
+              <span class="op-level">${esc(levelOf(a))}</span>
+              <span class="op-go">${esc(t("opContinue"))} ${icon.right}</span></a>`).join("")}</div></div>
+          <aside class="panel op-aside"><header><h3>${esc(t("opHierarchy"))}</h3></header><div class="body">
+            <ol class="op-hier">${S.hierarchy.map((h) => `<li>${esc(h)}</li>`).join("")}</ol>
+            <div class="sec-title">${esc(S.mutationRegister)} · ${esc(S.statute)}</div>
+            <ol class="op-stages">${S.stages.map((x) => `<li><b>${esc(x.label)}</b><small>${esc(x.by)}</small></li>`).join("")}</ol>
+          </div></aside>
+        </div></div>`;
+      return;
+    }
+
+    // C. sign-in
+    let remembered = null; try { remembered = localStorage.getItem(REMEMBER); } catch {}
+    main.innerHTML = `<div class="wrap op-state-page" style="--accent:${R.accent}">${banner}${crumbs(acct.designation)}
+      <div class="op-signin">
+        <section class="op-who">
+          <div class="eyebrow">${esc(t("opSignInTitle"))}</div>
+          <h1>${esc(acct.designation)} <span lang="${R.lang}">${esc(acct.designation_native)}</span></h1>
+          <dl class="kv">
+            <dt>${esc(t("state"))}</dt><dd>${esc(S.name)} · <span lang="${R.lang}">${esc(S.native)}</span></dd>
+            <dt>${esc(t("opOffice"))}</dt><dd>${esc(acct.office)}</dd>
+            <dt>${esc(t("opCategory"))}</dt><dd>${esc(acct.login_category)}</dd>
+            <dt>${esc(t("opJurisdiction"))}</dt><dd>${esc(jurOf(acct))}</dd>
+            <dt>${esc(t("opSystem"))}</dt><dd>${esc(S.system)}</dd>
+          </dl>
+          <div class="op-back"><a href="#/officer/login/${code}">${icon.chevron}${esc(t("opBackRoles"))}</a><a href="#/officer/login">${icon.chevron}${esc(t("opBackStates"))}</a></div>
         </section>
-        <form class="login-card" id="lf" autocomplete="off">
-          <div class="eyebrow">${esc(a.login_category)}</div>
-          <h2>${esc(a.designation)}</h2>
-          <p class="muted">${esc(a.office)} · Jurisdiction: ${esc([STATES[a.state].name, a.jurisdiction.district, a.jurisdiction.sub_district, a.jurisdiction.village].filter(Boolean).join(" › "))}</p>
-          <div class="field"><label for="uid">User ID</label><input class="input" id="uid" value="${esc(a.username)}" readonly></div>
-          <div class="field"><label for="pw">Password</label><input class="input" id="pw" type="password" value="LandStack@2026" autocomplete="off"></div>
-          <button class="btn primary lg" type="submit">Sign in</button>
-          <div id="lerr"></div>
+        <form class="login-card op-form" id="lf" novalidate>
+          <div class="op-form-h">${icon.lock}<div><b>${esc(t("opSignInTitle"))}</b><small>${esc(S.name)} · ${esc(acct.login_category)}</small></div></div>
+          <div class="field"><label for="uid">${esc(t("opOfficerId"))}</label><input class="input" id="uid" autocomplete="username" value="${esc(acct.username)}" aria-describedby="uid-err"><small class="f-err" id="uid-err"></small></div>
+          <div class="field"><label for="pw">${esc(t("opPassword"))}</label>
+            <div class="pw-wrap"><input class="input" id="pw" type="password" autocomplete="off" data-lpignore="true" aria-describedby="pw-err">
+              <button type="button" class="icon-btn" id="pw-show" aria-label="${esc(t("opShowPw"))}" title="${esc(t("opShowPw"))}">${icon.eye}</button></div>
+            <small class="f-err" id="pw-err"></small></div>
+          <label class="op-remember"><input type="checkbox" id="rem" ${remembered === acct.username ? "checked" : ""}> ${esc(t("opRemember"))}</label>
+          <button class="btn primary lg" type="submit" id="lbtn">${esc(t("opSignIn"))}</button>
+          <div id="lerr" aria-live="polite"></div>
+          <div class="op-demo" id="demo-box">
+            <div class="op-demo-h">${icon.info} <b>${esc(t("opDemoCreds"))}</b></div>
+            <p>${esc(t("opDemoCredsD"))}</p>
+            <dl class="op-demo-kv"><dt>${esc(t("opOfficerId"))}</dt><dd class="mono">${esc(acct.username)}</dd><dt>${esc(t("opPassword"))}</dt><dd class="mono">LandStack@2026</dd></dl>
+            <div class="res-actions"><button type="button" class="btn sm primary" id="demo-go">${icon.check} ${esc(t("opDemoSignIn"))}</button><button type="button" class="btn sm" id="fill">${esc(t("opFillDemo"))}</button></div>
+          </div>
           <p class="fine">Access is logged. Actions recorded here are Land Stack workflow entries; the state system of record (${esc(S.system)}) is not modified.</p>
         </form>
-      </div>`;
-      root.querySelectorAll("[data-s]").forEach(b => b.onclick = () => { pick.state = b.dataset.s; pick.username = null; draw(); });
-      root.querySelectorAll("[data-u]").forEach(b => b.onclick = () => { pick.username = b.dataset.u; draw(); });
-      root.querySelector("#lf").onsubmit = async (e) => {
-        e.preventDefault();
-        try {
-          const r = await api.login(a.username, root.querySelector("#pw").value);
-          session.set(r.token, r.officer); location.hash = "#/officer";
-        } catch (err) { root.querySelector("#lerr").innerHTML = errorBox(err); }
-      };
+      </div></div>`;
+    const f = main.querySelector("#lf"), uid = f.querySelector("#uid"), pw = f.querySelector("#pw"), btn = f.querySelector("#lbtn");
+    const DEMO_PW = "LandStack@2026";
+    // Browsers sometimes autofill a password saved earlier for this address; start with an empty field.
+    setTimeout(() => { if (pw.value && pw.value !== DEMO_PW && document.activeElement !== pw) pw.value = ""; }, 400);
+    f.querySelector("#fill").onclick = () => { pw.value = DEMO_PW; pw.focus(); };
+    f.querySelector("#demo-go").onclick = () => { uid.value = acct.username; pw.value = DEMO_PW; f.requestSubmit(); };
+    f.querySelector("#pw-show").onclick = () => { pw.type = pw.type === "password" ? "text" : "password"; };
+    f.onsubmit = async (e) => {
+      e.preventDefault();
+      const errs = { uid: uid.value.trim() ? "" : t("opErrId"), pw: pw.value ? "" : t("opErrPw") };
+      f.querySelector("#uid-err").textContent = errs.uid; f.querySelector("#pw-err").textContent = errs.pw;
+      uid.classList.toggle("bad", !!errs.uid); pw.classList.toggle("bad", !!errs.pw);
+      if (errs.uid || errs.pw) return;
+      btn.disabled = true; btn.innerHTML = `<span class="spinner"></span> ${esc(t("opSigningIn"))}`; f.querySelector("#lerr").innerHTML = "";
+      try {
+        const r = await api.login(uid.value.trim(), pw.value);
+        const remember = f.querySelector("#rem").checked;
+        try { remember ? localStorage.setItem(REMEMBER, uid.value.trim()) : localStorage.removeItem(REMEMBER); } catch {}
+        session.set(r.token, r.officer, remember);
+        btn.innerHTML = `${icon.check} ${esc(t("opSignedOk"))}`; btn.classList.add("ok");
+        toast(`${t("opSignedOk")} · ${r.officer.name}`, "ok");
+        let next = null; try { next = sessionStorage.getItem("ls-after-login"); sessionStorage.removeItem("ls-after-login"); } catch {}
+        setTimeout(() => { if (!gone) location.hash = next && next.startsWith("#/officer/") && !next.includes("login") ? next : "#/officer"; }, 500);
+      } catch (err) {
+        btn.disabled = false; btn.textContent = t("opSignIn");
+        f.querySelector("#lerr").innerHTML = errorBox({ message: err.status === 401 ? t("opErrAuth") : err.message || t("dataUnavailable") });
+        if (err.status === 401) { const box = f.querySelector("#demo-box"); box.classList.add("flash"); setTimeout(() => box.classList.remove("flash"), 1600); }
+      }
     };
-    draw();
-  }).catch(e => { root.querySelector("#lm").innerHTML = errorBox(e); });
+    pw.focus();
+  }).catch((e) => { const m = root.querySelector("#lm"); if (m && !gone) m.innerHTML = `<div class="wrap">${errorBox(e)}</div>`; });
+  return () => { gone = true; minis(); };
 }
 
 // ------------------------------------------------------------------------------------------
@@ -127,7 +220,10 @@ function bindSearch(root, o) {
 
 export function renderOfficer(root, rerender, { view = "home", ulpin } = {}) {
   if (view === "logout") { api.logout().catch(() => {}); session.clear(); location.hash = "#/officer/login"; return; }
-  if (!session.token) { location.hash = "#/officer/login"; return; }
+  if (!session.token) {                       // remember where the officer was going; the sign-in returns there
+    try { sessionStorage.setItem("ls-after-login", location.hash); } catch {}
+    location.hash = "#/officer/login"; return;
+  }
   let cleanup = null;
   api.me().then((o) => {
     const views = { home: homeView, validation: validationView, gis: gisView, reports: reportsView, interop: interopView, audit: auditView, parcel: parcelView };
@@ -148,10 +244,82 @@ function stageStrip(o, item) {
   return `<ol class="stages">${S.stages.map((s, i) => `<li class="${i < idx ? "done" : i === idx ? "cur" : ""}"><b>${esc(s.label)}</b><small>${esc(s.by)}</small></li>`).join("")}</ol>`;
 }
 
+// Workspace header: profile, KPIs, parcel search, quick actions, notifications, recent activity.
+// Every number comes from /officer/work, /officer/reports and /officer/audit for this officer's jurisdiction.
+function workspaceHtml(o, items, rep, audit, attention) {
+  const S = STATES[o.state], R = REGION[o.state];
+  const initials = o.name.split(/\s+/).map((w) => w[0]).slice(0, 2).join("").toUpperCase();
+  const checks = (rep.checks.pass || 0) + (rep.checks.fail || 0);
+  const kpi = (n, label, act, cls = "", ic = "") => `<button class="ws-kpi ${cls}" data-ws="${act}">${ic ? `<span class="kpi-ic">${icon[ic]}</span>` : ""}<b>${n}</b><span>${esc(label)}</span></button>`;
+  const notes = [
+    ...items.filter((x) => x.type === "mutation" && x.days_pending > 30 && !["completed", "certified", "rejected"].includes(x.status))
+      .map((x) => ({ u: x.ulpin, cls: "warn", ic: "swap", t: `${x.reference} — ${t("wsPendingDays").replace("{n}", x.days_pending)}`, s: `${x.native_label} · ${x.village}` })),
+    ...items.filter((x) => x.type === "verification" && SEV_RANK[x.severity] >= 4 && x.status === "pending")
+      .map((x) => ({ u: x.ulpin, cls: "bad", ic: "alert", t: `${t("wsHighFinding")}: ${x.reference}`, s: `${x.title} · ${x.village}` })),
+    ...items.filter((x) => x.status === "returned").map((x) => ({ u: x.ulpin, cls: "", ic: "back", t: `${t("wsReturned")}: ${x.reference}`, s: x.village })),
+  ].slice(0, 6);
+  const quick = [
+    ["map", o.state === "UP" ? "BhuNaksha / GIS inspection" : "GIS inspection", "#/officer/gis"], ["shield", "Validation findings", "#/officer/validation"],
+    ["chart", "Reports", "#/officer/reports"], ["link", "Interoperability status", "#/officer/interop"], ["audit", "Audit log", "#/officer/audit"],
+    ["globe", t("landMap"), "#/map"], ["register", `${S.name} ${t("landRecords")}`, `#/state/${o.state}`], ["spark", t("chatTitle"), "chat"],
+  ];
+  return `<section class="ws-head" style="--accent:${R.accent}">
+      <div class="ws-profile"><span class="ws-avatar">${esc(initials)}</span><div><b>${esc(o.name)}</b><span>${esc(o.designation)} · <span lang="${R.lang}">${esc(o.designation_native)}</span></span><small>${esc(o.office)} · ${esc(o.department)}</small></div></div>
+      <div class="ws-jur"><span class="eyebrow">Jurisdiction</span><b>${esc([S.name, o.jurisdiction.district, o.jurisdiction.sub_district, o.jurisdiction.village].filter(Boolean).join(" › "))}</b><small>${esc(o.login_category)} · ${esc(S.system)}</small></div>
+      <div class="ws-state"><span class="badge ok">Signed in</span><small>Land Stack workflow · demo account</small></div>
+    </section>
+    <div class="ws-kpis">
+      ${kpi(rep.parcels, t("wsParcels"), "h:#/officer/gis", "", "area")}
+      ${kpi(attention[0][0], attention[0][1], "s:ws-work", "warn", "swap")}
+      ${kpi(attention[1][0], attention[1][1], "s:ws-work", "", "check")}
+      ${kpi(attention[2][0], attention[2][1], "h:#/officer/validation", "", "shield")}
+      ${kpi(attention[3][0], attention[3][1], "v:high", attention[3][0] ? "bad" : "", "alert")}
+      ${kpi(`${pct(rep.checks.pass || 0, checks)}%`, t("dbChecksPass"), "h:#/officer/reports", "ok", "chart")}
+    </div>
+    <div class="ws-grid">
+      <section class="panel ws-search"><header><h2>${icon.search} ${esc(t("wsSearch"))}</h2><span class="terms">${esc(S.name)}</span></header>
+        <div class="body"><div class="disc-input">${icon.search}<input id="ws-q" type="search" autocomplete="off" placeholder="ULPIN / ${esc(o.state === "UP" ? "Khasra / Gata" : o.state === "MH" ? "Gat / Survey / CTS" : "Survey")} no. / village" aria-label="${esc(t("wsSearch"))}"><div class="results" id="ws-res" hidden></div></div>
+        <p class="fine">${esc(t("wsSearchD"))}</p></div></section>
+      <section class="panel ws-actions"><header><h2>${icon.grid} ${esc(t("quickActions"))}</h2></header>
+        <div class="body ws-quick">${quick.map(([ic, l, h]) => h === "chat" ? `<button class="ws-q" data-chat="">${icon[ic]}<span>${esc(l)}</span></button>` : `<a class="ws-q" href="${h}">${icon[ic]}<span>${esc(l)}</span></a>`).join("")}</div></section>
+      <section class="panel ws-notes"><header><h2>${icon.bell} ${esc(t("wsNotifications"))} <span class="count">${notes.length}</span></h2><span class="terms">${esc(t("wsNotificationsD"))}</span></header>
+        <div class="body">${notes.length ? `<ul class="ws-list">${notes.map((n) => `<li><a href="#/officer/parcel/${n.u}" class="${n.cls}">${icon[n.ic]}<span><b>${esc(n.t)}</b><small>${esc(n.s)}</small></span></a></li>`).join("")}</ul>`
+          : `<div class="empty-state">${icon.check}<b>${esc(t("wsNoNotifications"))}</b></div>`}</div></section>
+      <section class="panel ws-activity"><header><h2>${icon.audit} ${esc(t("wsActivity"))}</h2><a class="terms" href="#/officer/audit">Audit log ${icon.right}</a></header>
+        <div class="body">${audit.length ? `<ul class="ws-list">${audit.slice(-6).reverse().map((e) => `<li><div class="ws-act"><span class="ws-dot"></span><span><b>${esc(e.action_label)}</b>${e.to ? ` → ${esc(e.to)}` : ""}
+          <small>${esc(e.officer_name)} · ${esc(e.at.replace("T", " ").slice(0, 16))}${e.ulpin ? ` · <a href="#/officer/parcel/${e.ulpin}">${fmtUlpin(e.ulpin)}</a>` : ""}</small></span></div></li>`).join("")}</ul>`
+          : `<div class="empty-state">${icon.info}<b>${esc(t("wsNoActivity"))}</b></div>`}</div></section>
+    </div>`;
+}
+
+function bindWorkspace(main, o, rerender, root) {
+  main.querySelectorAll("[data-ws]").forEach((b) => b.onclick = () => {
+    const [k, v] = [b.dataset.ws.slice(0, 1), b.dataset.ws.slice(2)];
+    if (k === "h") location.hash = v;
+    if (k === "s") main.querySelector("#" + v)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (k === "v") { ui.vfilter = { sev: v, group: "" }; location.hash = "#/officer/validation"; }
+  });
+  const q = main.querySelector("#ws-q"), res = main.querySelector("#ws-res");
+  let tm;
+  q.oninput = () => {
+    clearTimeout(tm);
+    if (!q.value.trim()) { res.hidden = true; return; }
+    tm = setTimeout(async () => {
+      const r = await api.search(q.value, o.state).catch(() => ({ results: [] }));
+      res.hidden = false;
+      res.innerHTML = r.results.length ? r.results.map((x) => `<button type="button" data-u="${x.ulpin}"><span class="r-main"><b>${esc(x.native_label)}</b><span class="mono">${fmtUlpin(x.ulpin)}</span></span><small>${esc(x.village)}, ${esc(x.sub_district)}, ${esc(x.district)}</small></button>`).join("")
+        : `<div class="empty">No parcel in ${esc(STATES[o.state].name)}</div>`;
+      res.querySelectorAll("[data-u]").forEach((b) => b.onclick = () => { location.hash = `#/officer/parcel/${b.dataset.u}`; });
+    }, 200);
+  };
+  q.onkeydown = (e) => { if (e.key === "Enter") res.querySelector("[data-u]")?.click(); if (e.key === "Escape") res.hidden = true; };
+}
+
 function homeView(root, rerender, o) {
-  shell(root, o, "home", loading());
-  api.work().then(({ items }) => {
+  shell(root, o, "home", `<div class="om-pad">${skeleton(3)}${skeleton(6)}</div>`);
+  Promise.all([api.work(), api.officerReports(), api.audit().catch(() => ({ entries: [] }))]).then(([{ items }, rep, aud]) => {
     const main = root.querySelector("#om");
+    if (!main) return;
     const muts = items.filter(x => x.type === "mutation"), vers = items.filter(x => x.type === "verification");
     const S = STATES[o.state];
     const count = (q) => muts.filter(x => queueOf(x) === q).length;
@@ -161,7 +329,6 @@ function homeView(root, rerender, o) {
       [vers.filter(v => ["pending", "returned"].includes(v.status)).length, "Discrepancies to review"],
       [vers.filter(v => SEV_RANK[v.severity] >= 4 && v.status === "pending").length, "High-severity"],
     ];
-    const kpis = `<div class="kpis">${attention.map(([n, l], i) => `<div class="kpi ${i === 3 && n ? "alert" : ""}"><b>${n}</b><span>${esc(l)}</span></div>`).join("")}</div>`;
     const heading = { MH: ["फेरफार नोंदवही · Ferfar register", `Mutation entries under ${o.process.statute} in your jurisdiction. The Talathi records entries and serves notice; the Mandal Adhikari certifies after the objection period.`],
       UP: [o.level === "tehsil" ? "नामान्तरण वाद · Namantaran cases" : o.level === "district" ? "District administrative dashboard" : "Board of Revenue — MIS", o.level === "tehsil" ? `Tehsil Mutation Login — applications under ${o.process.statute}. Lekhpal / Revenue Inspector report, then Tehsildar order; Khatauni is updated on disposal.` : "Tehsil-wise status of mutation and record verification across your jurisdiction."],
       GJ: ["ઈ-ધરા · e-Dhara VF 6 processing", `Mutation entries in the VF 6 register. The e-Dhara Dy. Mamlatdar verifies and generates the 135-D notice, the Talati serves it (30 days), the competent authority certifies and approves the S-form.`] }[o.state];
@@ -172,8 +339,8 @@ function homeView(root, rerender, o) {
     else workHtml = queueTable(o, muts);
 
     main.innerHTML = `<div class="om-pad">
-      <div class="page-title"><div><h1>${esc(heading[0])}</h1><p>${esc(heading[1])}</p></div><div class="title-side"><span class="muted">As of 28 Sep 2026</span></div></div>
-      ${kpis}
+      ${workspaceHtml(o, items, rep, aud.entries, attention)}
+      <div class="page-title" id="ws-work"><div><h1>${esc(heading[0])}</h1><p>${esc(heading[1])}</p></div><div class="title-side"><span class="muted">As of 28 Sep 2026</span></div></div>
       ${workHtml}
       <section class="panel" style="margin-top:16px"><header><h2>Cross-source discrepancies needing review</h2><span class="terms">Land Stack validation engine</span></header>
         ${vers.length ? `<table class="tbl"><thead><tr><th>ULPIN</th><th>Parcel</th><th>Location</th><th>Primary finding</th><th>Severity</th><th class="num">Findings</th><th>Status</th><th></th></tr></thead><tbody>${vers.map(v => `<tr class="click" data-u="${v.ulpin}">
@@ -181,9 +348,10 @@ function homeView(root, rerender, o) {
           <td><b>${esc(v.reference)}</b> ${esc(v.title)}</td><td>${sev(v.severity)}</td><td class="num">${v.finding_count}</td><td>${statusBadge(v.status)}</td><td>${icon.right}</td></tr>`).join("")}</tbody></table>`
           : `<div class="body empty">No material discrepancies in your jurisdiction.</div>`}
       </section></div>`;
-    main.querySelectorAll("[data-u]").forEach(r => r.onclick = () => { location.hash = `#/officer/parcel/${r.dataset.u}`; });
+    main.querySelectorAll("tr[data-u], .pcard[data-u]").forEach(r => r.onclick = () => { location.hash = `#/officer/parcel/${r.dataset.u}`; });
     main.querySelectorAll("[data-q]").forEach(b => b.onclick = () => { ui.queue = b.dataset.q; ui.queueChosen = true; homeView(root, rerender, o); });
-    if (o.state === "UP" && o.level !== "tehsil") api.officerReports().then(rep => { main.querySelector("#unitrep").innerHTML = unitTable(o, rep); });
+    bindWorkspace(main, o, rerender, root);
+    if (o.state === "UP" && o.level !== "tehsil") main.querySelector("#unitrep").innerHTML = unitTable(o, rep);
   }).catch(e => { root.querySelector("#om").innerHTML = errorBox(e); });
 }
 
