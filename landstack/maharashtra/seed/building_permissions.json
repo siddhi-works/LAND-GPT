@@ -48,5 +48,285 @@
     "built_up_area_sqm": 520,
     "approval_date": "2026-02-10",
     "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-017-2025",
+    "ulpin": "13362363536007",
+    "application_no": "BPAPP-MH-017",
+    "authority": "Thane Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 370,
+    "approval_date": "2025-05-18",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-021-2026",
+    "ulpin": "49029005785444",
+    "application_no": "BPAPP-MH-021",
+    "authority": "Thane Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 390,
+    "approval_date": "2026-07-15",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-023-2025",
+    "ulpin": "58800080362301",
+    "application_no": "BPAPP-MH-023",
+    "authority": "Pune Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 730,
+    "approval_date": "2026-07-10",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-024-2024",
+    "ulpin": "90241821072728",
+    "application_no": "BPAPP-MH-024",
+    "authority": "Nashik Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 4510,
+    "approval_date": "2025-04-18",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-025-2025",
+    "ulpin": "13813932144837",
+    "application_no": "BPAPP-MH-025",
+    "authority": "Chhatrapati Sambhajinagar Local Planning Authority",
+    "building_use": "Commercial",
+    "built_up_area_sqm": 1170,
+    "approval_date": "2025-07-24",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-027-2024",
+    "ulpin": "61715429657136",
+    "application_no": "BPAPP-MH-027",
+    "authority": "Pune Local Planning Authority",
+    "building_use": "Commercial",
+    "built_up_area_sqm": 400,
+    "approval_date": "2024-09-01",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-029-2025",
+    "ulpin": "37331764608018",
+    "application_no": "BPAPP-MH-029",
+    "authority": "Chhatrapati Sambhajinagar Local Planning Authority",
+    "building_use": "Commercial",
+    "built_up_area_sqm": 1800,
+    "approval_date": "2025-11-19",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-030-2025",
+    "ulpin": "44725666936570",
+    "application_no": "BPAPP-MH-030",
+    "authority": "Chhatrapati Sambhajinagar Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 3460,
+    "approval_date": "2025-09-17",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-033-2023",
+    "ulpin": "32937577398308",
+    "application_no": "BPAPP-MH-033",
+    "authority": "Nashik Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 1920,
+    "approval_date": "2024-05-16",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-034-2026",
+    "ulpin": "42350127890609",
+    "application_no": "BPAPP-MH-034",
+    "authority": "Pune Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 840,
+    "approval_date": "2026-09-06",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-042-2025",
+    "ulpin": "33752455881751",
+    "application_no": "BPAPP-MH-042",
+    "authority": "Thane Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 690,
+    "approval_date": "2025-09-30",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-048-2024",
+    "ulpin": "10105716703633",
+    "application_no": "BPAPP-MH-048",
+    "authority": "Thane Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 910,
+    "approval_date": "2024-12-15",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-049-2025",
+    "ulpin": "49591227837601",
+    "application_no": "BPAPP-MH-049",
+    "authority": "Chhatrapati Sambhajinagar Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 4980,
+    "approval_date": "2025-09-18",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-051-2025",
+    "ulpin": "64539556457873",
+    "application_no": "BPAPP-MH-051",
+    "authority": "Chhatrapati Sambhajinagar Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 2890,
+    "approval_date": "2025-12-03",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-055-2023",
+    "ulpin": "27711845132223",
+    "application_no": "BPAPP-MH-055",
+    "authority": "Thane Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 420,
+    "approval_date": "2023-12-02",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-058-2023",
+    "ulpin": "17485286059371",
+    "application_no": "BPAPP-MH-058",
+    "authority": "Nashik Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 4540,
+    "approval_date": "2024-06-30",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-060-2024",
+    "ulpin": "49696687932727",
+    "application_no": "BPAPP-MH-060",
+    "authority": "Chhatrapati Sambhajinagar Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 2360,
+    "approval_date": "2025-02-12",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-062-2024",
+    "ulpin": "47604283563095",
+    "application_no": "BPAPP-MH-062",
+    "authority": "Nashik Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 1400,
+    "approval_date": "2024-12-13",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-064-2025",
+    "ulpin": "66538951962850",
+    "application_no": "BPAPP-MH-064",
+    "authority": "Nashik Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 2960,
+    "approval_date": "2026-01-07",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-075-2026",
+    "ulpin": "85377713233184",
+    "application_no": "BPAPP-MH-075",
+    "authority": "Pune Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 770,
+    "approval_date": "2026-11-15",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-076-2025",
+    "ulpin": "47595297174613",
+    "application_no": "BPAPP-MH-076",
+    "authority": "Nashik Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 1660,
+    "approval_date": "2025-10-29",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-082-2023",
+    "ulpin": "75860089393535",
+    "application_no": "BPAPP-MH-082",
+    "authority": "Nashik Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 3760,
+    "approval_date": "2024-04-17",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-085-2024",
+    "ulpin": "66195609152858",
+    "application_no": "BPAPP-MH-085",
+    "authority": "Nashik Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 2050,
+    "approval_date": "2024-12-09",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-088-2025",
+    "ulpin": "47254019090511",
+    "application_no": "BPAPP-MH-088",
+    "authority": "Thane Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 390,
+    "approval_date": "2026-07-27",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-091-2026",
+    "ulpin": "47917905503625",
+    "application_no": "BPAPP-MH-091",
+    "authority": "Thane Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 1180,
+    "approval_date": "2026-09-28",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-092-2026",
+    "ulpin": "49183067327459",
+    "application_no": "BPAPP-MH-092",
+    "authority": "Pune Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 510,
+    "approval_date": "2026-11-03",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-093-2024",
+    "ulpin": "17746198837477",
+    "application_no": "BPAPP-MH-093",
+    "authority": "Chhatrapati Sambhajinagar Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 1500,
+    "approval_date": "2024-09-28",
+    "status": "approved"
+  },
+  {
+    "permission_no": "BP-MH-097-2024",
+    "ulpin": "64152781322393",
+    "application_no": "BPAPP-MH-097",
+    "authority": "Chhatrapati Sambhajinagar Local Planning Authority",
+    "building_use": "Residential",
+    "built_up_area_sqm": 4470,
+    "approval_date": "2024-07-29",
+    "status": "approved"
   }
 ]

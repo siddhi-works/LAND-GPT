@@ -41,7 +41,7 @@ def test_row_counts_match_the_sql_seed(store, settings, state):
     counts = _seed_counts(settings.data_root, STATE_LAYOUTS[state].directory)
     for table, n in counts.items():
         assert len(store.fetch(state, table)) == n, table
-    assert len(store.fetch(state, "spatial.cadastral_parcels")) == 15
+    assert len(store.fetch(state, "spatial.cadastral_parcels")) == 100
 
 
 def test_fetch_returns_copies(store):

@@ -31,10 +31,13 @@ def validate():
     ulpins = [p["ulpin"] for p in parcels]
     known = set(ulpins)
 
-    if len(parcels) != 15: errors.append("Expected 15 parcels")
-    if len(set(ulpins)) != 15: errors.append("ULPINs are not unique")
-    if sum(p["quality_class"]=="clean" for p in parcels) != 10: errors.append("Expected 10 clean")
-    if sum(p["quality_class"]=="messy" for p in parcels) != 5: errors.append("Expected 5 messy")
+    originals = [p for p in parcels if int(p["prototype_ref"][1:]) <= 15]
+    if len(parcels) != 100: errors.append("Expected 100 parcels (P001–P100)")
+    if [p["prototype_ref"] for p in parcels] != [f"P{i:03d}" for i in range(1, 101)]: errors.append("Expected P001–P100 in order")
+    if len(set(ulpins)) != len(ulpins): errors.append("ULPINs are not unique")
+    if sum(p["quality_class"]=="clean" for p in originals) != 10: errors.append("Expected 10 clean in P001–P015")
+    if sum(p["quality_class"]=="messy" for p in originals) != 5: errors.append("Expected 5 messy in P001–P015")
+    if any((p["quality_class"]=="messy") != bool(p["issue"]) for p in parcels): errors.append("messy <-> issue label mismatch")
 
     for p in parcels:
         if len(p["ulpin"]) != 14 or not p["ulpin"].isdigit():
@@ -101,8 +104,9 @@ def validate():
             print(" -", e)
         sys.exit(1)
 
+    clean = sum(p["quality_class"]=="clean" for p in parcels)
     print("VALIDATION PASS")
-    print("15 parcels | 10 clean | 5 messy")
+    print(f"{len(parcels)} parcels | {clean} clean | {len(parcels) - clean} messy (P001–P015: 10 clean | 5 messy)")
     print("P011 owner mismatch")
     print("P012 area mismatch")
     print("P013 pending mutation")

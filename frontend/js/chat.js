@@ -1,5 +1,7 @@
-// LandGPT Assistant - floating chat window, mounted once for the whole app.
-// Talks only to the backend (/v1/chat); the backend picks the AI provider or answers in demo mode.
+// BhuSamhita Assistant - the citizen's general land-information assistant, one floating window for the
+// citizen pages. It answers land-record questions (terms, offices, where to find a record) and, when the
+// user has a parcel open, questions about that parcel. It is not part of the government officer portal.
+// Talks only to the backend (/v1/chat); the backend picks the AI provider or its built-in answers.
 import { api } from "./api.js";
 import { getContext, onContext } from "./context.js";
 import { getLang, t } from "./i18n.js";
@@ -8,7 +10,9 @@ import { renderAnswer } from "./assistant.js";
 import { esc, fmtUlpin, icon } from "./ui.js";
 
 const KEY = "ls-chat";
-const SUGGEST = ["qUlpin", "qFind", "q712", "q8a", "qSurvey", "qVerify", "qExplain", "qServices", "qMap"];
+const SUGGEST = ["qGat", "q712", "qKhatauni", "qMutWhere", "qDept", "qUlpin", "qFind"];
+const SUGGEST_PARCEL = ["qExplain", "qIsVerified", "qOwner"];
+const officerRoute = () => location.hash.startsWith("#/officer");
 
 let state = { open: false, busy: false, status: null, msgs: load() };
 let el = null;
@@ -19,7 +23,7 @@ const time = (ts) => new Date(ts).toLocaleTimeString(getLang() === "en" ? "en-IN
 
 /** Open the assistant; optionally ask a question straight away. */
 export function openChat(question) {
-  if (!el) return;
+  if (!el || officerRoute()) return;
   state.open = true;
   render();
   if (question) send(question);
@@ -33,10 +37,11 @@ export function mountChat() {
   document.body.append(el);
   onContext(() => { if (state.open) renderContext(); });
   document.addEventListener("langchange", render);
+  window.addEventListener("hashchange", () => { if (officerRoute()) state.open = false; render(); });
   // Any element with [data-chat] opens the assistant; a non-empty value is asked straight away.
   document.addEventListener("click", (e) => {
     const b = e.target.closest("[data-chat]");
-    if (!b || el.contains(b)) return;
+    if (!b || el.contains(b) || officerRoute()) return;
     e.preventDefault();
     openChat(b.dataset.chat || undefined);
   });
@@ -52,15 +57,14 @@ function contextLabel() {
 
 function render() {
   if (!el) return;
+  if (officerRoute()) { el.innerHTML = ""; return; }
   if (!state.open) {
     el.innerHTML = `<button class="lg-fab" id="lg-fab" aria-label="${esc(t("chatTitle"))}">${icon.spark}<span>${esc(t("chatAsk"))}</span></button>`;
     el.querySelector("#lg-fab").onclick = () => openChat();
     return;
   }
   const st = state.status;
-  const modeBadge = !st ? "" : st.mode === "ai"
-    ? `<span class="lg-mode ai" title="${esc(st.provider)} · ${esc(st.model || "")}">AI · ${esc(st.provider)}</span>`
-    : `<span class="lg-mode demo" title="${esc(st.reason || "")}">${esc(t("chatDemo"))}</span>`;
+  const modeBadge = st?.mode === "ai" ? `<span class="lg-mode ai" title="${esc(st.provider)} · ${esc(st.model || "")}">AI</span>` : "";
   el.innerHTML = `
     <section class="lg-panel" role="dialog" aria-label="${esc(t("chatTitle"))}">
       <header class="lg-head">
@@ -102,10 +106,11 @@ function renderBody() {
     const links = (m.links || []).map((l) => `<a class="chip btn-chip" href="${esc(l.href)}">${esc(l.label)} ›</a>`).join("");
     const sugg = i === state.msgs.length - 1 ? (m.suggestions || []).map((s) => `<button class="chip btn-chip" data-q="${esc(s)}">${esc(s)}</button>`).join("") : "";
     return `<div class="lg-msg bot"><div class="lg-bubble">${fmt(m.content)}${links ? `<div class="chips">${links}</div>` : ""}</div>
-      <time>${time(m.ts)}${m.mode === "demo" ? ` · ${esc(t("chatDemo"))}` : m.model ? ` · ${esc(m.model)}` : ""}</time>${sugg ? `<div class="chips lg-sugg">${sugg}</div>` : ""}</div>`;
+      <time>${time(m.ts)}</time>${sugg ? `<div class="chips lg-sugg">${sugg}</div>` : ""}</div>`;
   }).join("");
+  const keys = getContext().ulpin ? [...SUGGEST_PARCEL, ...SUGGEST.slice(0, 4)] : SUGGEST;
   const starters = state.msgs.length ? "" : `<div class="lg-starters"><div class="eyebrow">${esc(t("chatTry"))}</div><div class="chips">${
-    SUGGEST.map((k) => `<button class="chip btn-chip" data-q="${esc(t(k))}">${esc(t(k))}</button>`).join("")}</div></div>`;
+    keys.map((k) => `<button class="chip btn-chip" data-q="${esc(t(k))}">${esc(t(k))}</button>`).join("")}</div></div>`;
   const typing = state.busy ? `<div class="lg-msg bot"><div class="lg-bubble lg-typing" aria-label="${esc(t("chatThinking"))}"><i></i><i></i><i></i></div></div>` : "";
   body.innerHTML = welcome + msgs + starters + typing;
   body.querySelectorAll("[data-q]").forEach((b) => b.onclick = () => send(b.dataset.q));

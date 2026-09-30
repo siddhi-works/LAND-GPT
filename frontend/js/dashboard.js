@@ -1,5 +1,5 @@
 // Land Information Dashboard: #/dashboard[/<CODE>[/<district>]]. All figures are computed live by
-// /v1/reports/summary over the connected demonstration dataset for the chosen scope; nothing is estimated.
+// /v1/reports/summary over the connected state records for the chosen scope; nothing is estimated.
 import { api } from "./api.js";
 import { bars, stack } from "./charts.js";
 import { setContext } from "./context.js";
@@ -76,8 +76,7 @@ export function renderDashboard(root, rerender, { code = "", district = "" } = {
     ${citizenHeader("dashboard")}
     <main class="region-main">
       <div class="wrap">
-        <div class="sec-intro sec-intro-row"><div><h1>${esc(t("dashTitle"))}</h1><p>${esc(t("dashD"))}</p></div>
-          <span class="demo-pill">${icon.info} ${esc(t("demoDataset"))}</span></div>
+        <div class="sec-intro sec-intro-row"><div><h1>${esc(t("dashTitle"))}</h1><p>${esc(t("dashD"))}</p></div></div>
         <div class="db-controls">
           <div class="seg db-states">
             <a href="#/dashboard" class="${!code ? "on" : ""}">${esc(t("allStates"))}</a>

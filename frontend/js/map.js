@@ -6,6 +6,9 @@ import { esc, riskStatus } from "./ui.js";
 
 const L = window.L;
 export const Z = { DISTRICT_MAX: 9, VILLAGE_MIN: 9, PARCELS: 12, CONTEXT: 14, PARCEL_ID: 15, PLOT_ID: 17 };
+// Citizen maps reveal land parcels only at cadastral zoom (with the village plots around them), so the
+// state and district views show places, not dots; officer maps keep parcels visible from district zoom.
+export const parcelZoom = (mode) => (mode === "officer" ? Z.PARCELS : Z.CONTEXT);
 export const INDIA = [[7.5, 67.5], [31.5, 90.5]];
 
 const esri = (path, opts = {}) => L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/${path}/MapServer/tile/{z}/{y}/{x}`,
@@ -41,7 +44,7 @@ function ringCentroid(ring) {
   return { lon: x / n, lat: y / n };
 }
 
-export function createMap(el, { features, hierarchy, mode = "citizen", basemap = "map", onSelect = () => {}, overview = null, onDistrict = null, districtColor = null } = {}) {
+export function createMap(el, { features, hierarchy, mode = "citizen", basemap = "map", onSelect = () => {}, overview = null, onDistrict = null, districtColor = null, districtMinZoom = 6 } = {}) {
   const map = L.map(el, { zoomControl: false, preferCanvas: true, minZoom: 4, maxZoom: 20, doubleClickZoom: true, attributionControl: true });
   map.createPane("labels").style.zIndex = 450;
   map.getPane("labels").style.pointerEvents = "none";
@@ -127,7 +130,7 @@ export function createMap(el, { features, hierarchy, mode = "citizen", basemap =
     g.places.clearLayers();
     const z = map.getZoom();
     if (!on.places) return;
-    if (z >= 6 && z < Z.DISTRICT_MAX) {
+    if (z >= districtMinZoom && z < Z.DISTRICT_MAX) {
       for (const d of districtCenters) {
         const col = districtColor ? districtColor(d.name) : null;
         L.marker(d.at, { icon: L.divIcon({ className: "", html: `<div class="map-label district${col ? " colored" : ""}"${col ? ` style="--dc:${col}"` : ""}>${col ? "<i></i>" : ""}${esc(d.name)}</div>`, iconSize: null }), keyboard: false })
@@ -166,7 +169,7 @@ export function createMap(el, { features, hierarchy, mode = "citizen", basemap =
   const show = (layer, visible) => visible ? (!map.hasLayer(layer) && layer.addTo(map)) : (map.hasLayer(layer) && map.removeLayer(layer));
   function refresh() {
     const z = map.getZoom();
-    show(g.parcels, on.parcels && z >= 6);
+    show(g.parcels, on.parcels && z >= (mode === "officer" ? 6 : Z.CONTEXT));
     show(g.context, on.context && z >= Z.CONTEXT);
     show(g.villages, on.villages && z >= 12);
     for (const k of ["ghost", "encumbrance", "environment"]) show(g[k], on[k] && z >= 11);

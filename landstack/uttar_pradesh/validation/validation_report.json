@@ -1,8 +1,8 @@
 {
   "status": "PASS",
-  "records": 15,
-  "clean": 10,
-  "messy": 5,
+  "records": 100,
+  "clean": 66,
+  "messy": 34,
   "messy_cases": [
     {
       "P011": "owner mismatch"
@@ -19,5 +19,17 @@
     {
       "P015": "GIS/geometry area differs from land record"
     }
-  ]
+  ],
+  "generated_issue_labels": {
+    "AREA_MISMATCH": 5,
+    "ENCUMBRANCE_LITIGATION": 5,
+    "GIS_AREA_MISMATCH": 4,
+    "GIS_AREA_MISMATCH+ENCUMBRANCE_LITIGATION": 1,
+    "GIS_GEOMETRY_MISMATCH": 2,
+    "OWNER_MISMATCH": 5,
+    "OWNER_MISMATCH+ENCUMBRANCE_LITIGATION": 1,
+    "PARTIAL_LINKAGE": 3,
+    "PENDING_NAMANTARAN": 7,
+    "PENDING_NAMANTARAN+AREA_MISMATCH": 1
+  }
 }

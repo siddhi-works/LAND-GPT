@@ -1,14 +1,21 @@
 import { api } from "./api.js";
-import { createMap, Z } from "./map.js";
-import { t, localText } from "./i18n.js";
+import { createMap, parcelZoom, Z } from "./map.js";
+import { t, localText, recType } from "./i18n.js";
 import { STATES } from "./states.js";
+import { SLUG } from "./region.js";
 import { citizenHeader, bindLang, disclaimer, esc, fmtHa, fmtUlpin, icon, statusBadge, toast, loading, sev, emptyState } from "./ui.js";
 import { setContext } from "./context.js";
+
+// Parcel number term used by each state's own records.
+const PARCEL_TERM = { MH: "Gat / Survey no.", UP: "Khasra / Gata no.", GJ: "Survey no." };
 
 // Persist the view across language re-renders and back-navigation from the profile.
 const view = { tab: "nav", state: "", district: "", sub: "", village: "", selected: null, basemap: "map", center: null, zoom: null, panel: true };
 
 export function renderCitizen(root, rerender, params = {}) {
+  // #/map with no parcel is the state chooser: one dropdown that opens the chosen state's page.
+  const pickOnly = !params.ulpin && !params.state;
+  if (pickOnly) Object.assign(view, { tab: "nav", state: "", district: "", sub: "", village: "", selected: null, center: null, zoom: null, panel: true });
   root.innerHTML = `
   <div class="map-app">
     ${citizenHeader("map")}
@@ -21,7 +28,7 @@ export function renderCitizen(root, rerender, params = {}) {
       </div>
       <div class="float hint" id="hint" hidden></div>
 
-      <aside class="float side ${view.panel ? "" : "collapsed"}" id="side">
+      <aside class="float side ${view.panel ? "" : "collapsed"} ${pickOnly ? "compact" : ""}" id="side">
         <div class="side-tabs" role="tablist">
           <button data-tab="nav" role="tab">${icon.nav}<span>${esc(t("navigate"))}</span></button>
           <button data-tab="layers" role="tab">${icon.layers}<span>${esc(t("layers"))}</span></button>
@@ -62,20 +69,26 @@ export function renderCitizen(root, rerender, params = {}) {
   Promise.all([api.parcels(), api.hierarchy()]).then(([fc, h]) => {
     if (destroyed) return;
     hier = h;
-    ctl = createMap($("#map"), { features: fc, hierarchy: h, basemap: view.basemap, overview: $("#overview"), onSelect: (p) => openParcel(p.ulpin, false) });
+    ctl = createMap($("#map"), { features: fc, hierarchy: h, basemap: view.basemap, overview: $("#overview"), districtMinZoom: 5, onSelect: (p) => openParcel(p.ulpin, false) });
     if (view.center) ctl.map.setView(view.center, view.zoom, { animate: false });
     ctl.map.on("moveend", () => { view.center = ctl.map.getCenter(); view.zoom = ctl.map.getZoom(); });
     ctl.map.on("mousemove", (e) => { $("#coord").textContent = `${e.latlng.lat.toFixed(6)}° N  ${e.latlng.lng.toFixed(6)}° E`; });
     $("#map").addEventListener("viewchange", (e) => {
       const z = e.detail.zoom; $("#zl").textContent = `Zoom ${z}`;
-      const msg = z < Z.PARCELS ? t("hintBoundaries") : z < Z.PLOT_ID ? t("hintIds") : "";
+      const msg = z < parcelZoom("citizen") ? t("hintBoundaries") : z < Z.PLOT_ID ? t("hintIds") : "";
       $("#hint").hidden = !msg || z < 5; $("#hint").textContent = msg;
     });
     ctl.map.fire("zoomend");
     bindTools();
     renderSide();
-    const initial = params.ulpin || view.selected;
-    if (initial) openParcel(initial, !!params.ulpin || !view.center);
+    if (params.state && STATES[params.state]) {           // #/state/<CODE>: open straight in that state's view
+      Object.assign(view, { state: params.state, district: "", sub: "", village: "", selected: null });
+      renderSide(); showState();
+    } else {
+      const initial = params.ulpin || view.selected;
+      if (initial) openParcel(initial, !!params.ulpin || !view.center);
+    }
+    if (location.hash.includes("?search")) $("#q").focus();
   }).catch(() => {
     $("#sidebody").innerHTML = `${emptyState(t("dataUnavailable"), "", icon.alert)}<button class="btn sm" id="map-retry">${esc(t("retry"))}</button>`;
     $("#map-retry").onclick = rerender;
@@ -102,12 +115,19 @@ export function renderCitizen(root, rerender, params = {}) {
     return { st, d, s, v };
   };
   function navHtml() {
+    if (pickOnly) {                                // Land Map entry: choose a state, then go to its state page
+      return `<div class="field map-state-pick"><label for="n-state">${esc(t("state"))}</label><select class="select" id="n-state">${opt("", `— ${t("select")} —`, "")}
+        ${hier.states.map(x => opt(x.code, `${x.name} · ${STATES[x.code].native}`, "")).join("")}</select></div>
+        <p class="nav-hint">${icon.info}<span>${esc(t("navHintState"))}</span></p>`;
+    }
     const { st, d, s, v } = node();
     const subLabel = t(STATES[view.state]?.sub === "tehsil" ? "tehsil" : "taluka");
     const parcels = v ? v.ulpins.map(u => ctl.props(u)).filter(Boolean) : [];
+    // State first: choosing one opens that state's view straight away; the rest drills down within it.
     return `
-      <div class="field"><label for="n-state">${esc(t("state"))}</label><select class="select" id="n-state">${opt("", `— ${t("select")} —`, view.state)}
+      <div class="field map-state-pick"><label for="n-state">${esc(t("state"))}</label><select class="select" id="n-state">${opt("", `— ${t("select")} —`, view.state)}
         ${hier.states.map(x => opt(x.code, `${x.name} · ${STATES[x.code].native}`, view.state)).join("")}</select></div>
+      ${st ? "" : `<p class="nav-hint">${icon.info}<span>${esc(t("navHint"))}</span></p>`}
       <div class="field"><label for="n-district">${esc(t("district"))}</label><select class="select" id="n-district" ${st ? "" : "disabled"}>${opt("", `— ${t("select")} —`, view.district)}
         ${(st?.districts || []).map(x => opt(x.name, x.name, view.district)).join("")}</select></div>
       <div class="field"><label for="n-sub">${esc(subLabel)}</label><select class="select" id="n-sub" ${d ? "" : "disabled"}>${opt("", `— ${t("select")} —`, view.sub)}
@@ -123,7 +143,7 @@ export function renderCitizen(root, rerender, params = {}) {
     return `<div class="layer-group"><h4>Cadastral</h4>
         ${row("parcels", t("lyParcels"), "sw-parcel")}${row("context", t("lyContext"), "sw-plot")}${row("ids", t("lyIds"), "sw-id")}</div>
       <div class="layer-group"><h4>Administrative</h4>${row("villages", t("lyVillages"), "sw-village")}${row("places", t("lyPlaces"), "sw-place")}</div>
-      <p class="fine">State, district and taluka/tehsil boundaries are shown by the base map. Parcel boundaries appear from zoom ${Z.PARCELS}; plot numbers from zoom ${Z.PLOT_ID}.</p>`;
+      <p class="fine">State, district and taluka/tehsil boundaries are shown by the base map. Land parcels appear from zoom ${parcelZoom("citizen")}; plot numbers from zoom ${Z.PLOT_ID}.</p>`;
   }
   function toolsHtml() {
     return `<div class="tool-grid">
@@ -134,9 +154,16 @@ export function renderCitizen(root, rerender, params = {}) {
         <div class="coord-row"><input class="input" id="c-lat" placeholder="Lat e.g. 21.1558" inputmode="decimal"><input class="input" id="c-lon" placeholder="Lon e.g. 79.0922" inputmode="decimal"><button class="btn" id="c-go">${esc(t("go"))}</button></div></div>
       <button class="btn ghost" id="t-clear" style="margin-top:10px">${icon.clear} ${esc(t("toolClear"))}</button>`;
   }
+  function showState() {
+    const { st } = node();
+    if (!st) return;
+    $("#pp").classList.remove("open");
+    ctl.map.fitBounds([[st.bbox[1], st.bbox[0]], [st.bbox[3], st.bbox[2]]], { padding: [40, 40], animate: false });
+    $("#crumb").textContent = st.name;
+  }
   function bindSide() {
     const b = $("#sidebody");
-    b.querySelector("#n-state")?.addEventListener("change", (e) => { Object.assign(view, { state: e.target.value, district: "", sub: "", village: "" }); renderSide(); const { st } = node(); if (st) ctl.flyToBbox(st.bbox, 8); });
+    b.querySelector("#n-state")?.addEventListener("change", (e) => { Object.assign(view, { state: e.target.value, district: "", sub: "", village: "" }); if (pickOnly) { if (e.target.value) location.hash = `#/citizen/${SLUG[e.target.value]}`; return; } renderSide(); showState(); });
     b.querySelector("#n-district")?.addEventListener("change", (e) => { Object.assign(view, { district: e.target.value, sub: "", village: "" }); const { d } = node(); if (d?.sub_districts.length === 1) view.sub = d.sub_districts[0].name; renderSide(); if (d) ctl.flyToBbox(d.bbox, 11); });
     b.querySelector("#n-sub")?.addEventListener("change", (e) => { Object.assign(view, { sub: e.target.value, village: "" }); const { s } = node(); if (s?.villages.length === 1) view.village = s.villages[0].name; renderSide(); const n = node(); if (n.v) ctl.flyToBbox(n.v.bbox, 15); else if (s) ctl.flyToBbox(s.bbox, 13); });
     b.querySelector("#n-village")?.addEventListener("change", (e) => { view.village = e.target.value; renderSide(); const { v } = node(); if (v) ctl.flyToBbox(v.bbox, 15); });
@@ -260,7 +287,7 @@ function panelHtml(p, ver, reg) {
     <div class="sec-title">${esc(t("verification"))}</div>
     ${ver ? (top.length ? top.map(f => `<div class="finding compact"><div class="top">${sev(f.severity)}<span class="rule">${esc(f.rule_id)}</span></div><p>${esc(f.message)}</p></div>`).join("")
         : `<div class="notice ok">${icon.check}<span>${ver.summary.checks.pass} ${esc(t("checksPassed"))} · ${ver.findings.length} ${esc(t("findings"))}</span></div>`) : loading()}
-    ${reg ? `<div class="sec-title">${esc(t("connectedRecords"))}</div><div class="chips">${linked.map(s => `<span class="chip" title="${esc(s.source_system)} · ${esc(s.source_table)}">${esc(s.native_record_type)}</span>`).join("")}</div>` : ""}
+    ${reg ? `<div class="sec-title">${esc(t("connectedRecords"))}</div><div class="chips">${linked.map(s => `<span class="chip" title="${esc(s.source_system)} · ${esc(s.source_table)}">${esc(recType(s.native_record_type))}</span>`).join("")}</div>` : ""}
   </div>
   <div class="pp-foot"><a class="btn primary" href="#/parcel/${p.ulpin}">${esc(t("openProfile"))}</a><button class="btn" id="pp-zoom">${esc(t("zoomTo"))}</button>
     <button class="btn" data-chat="${esc(t("qExplain"))}" title="${esc(t("askAboutParcel"))}">${icon.spark} ${esc(t("chatAsk"))}</button></div>`;

@@ -827,6 +827,4671 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P016",
+        "ulpin": "35876424324908",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Rajkot",
+        "tehsil": null,
+        "village": "Mavdi",
+        "quality_class": "messy",
+        "issue": "AREA_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7982047,
+              22.3149193
+            ],
+            [
+              70.798494,
+              22.3150212
+            ],
+            [
+              70.7986846,
+              22.3153187
+            ],
+            [
+              70.7984889,
+              22.3156226
+            ],
+            [
+              70.798149,
+              22.3156794
+            ],
+            [
+              70.7978201,
+              22.3154654
+            ],
+            [
+              70.7978838,
+              22.3151163
+            ],
+            [
+              70.7982047,
+              22.3149193
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P017",
+        "ulpin": "40253572923625",
+        "state": "Gujarat",
+        "district": "Banaskantha",
+        "taluka": "Palanpur",
+        "tehsil": null,
+        "village": "Chitrasani",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.4342271,
+              24.1889379
+            ],
+            [
+              72.4352378,
+              24.1889712
+            ],
+            [
+              72.4356197,
+              24.1895933
+            ],
+            [
+              72.4353645,
+              24.1900621
+            ],
+            [
+              72.4350175,
+              24.1906065
+            ],
+            [
+              72.4336264,
+              24.190372
+            ],
+            [
+              72.4336656,
+              24.1897317
+            ],
+            [
+              72.4335392,
+              24.1893273
+            ],
+            [
+              72.4342271,
+              24.1889379
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P018",
+        "ulpin": "49228928380512",
+        "state": "Gujarat",
+        "district": "Panchmahal",
+        "taluka": "Godhra",
+        "tehsil": null,
+        "village": "Vavdi",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.6029288,
+              22.7937447
+            ],
+            [
+              73.6032427,
+              22.7942668
+            ],
+            [
+              73.6027689,
+              22.7950821
+            ],
+            [
+              73.6024211,
+              22.7951782
+            ],
+            [
+              73.6019375,
+              22.794572
+            ],
+            [
+              73.6018822,
+              22.7938021
+            ],
+            [
+              73.6023048,
+              22.7936253
+            ],
+            [
+              73.6029288,
+              22.7937447
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P019",
+        "ulpin": "99959285949041",
+        "state": "Gujarat",
+        "district": "Surat",
+        "taluka": "Choryasi",
+        "tehsil": null,
+        "village": "Palanpur",
+        "quality_class": "messy",
+        "issue": "PENDING_VF6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8318582,
+              21.1836398
+            ],
+            [
+              72.8322222,
+              21.1834511
+            ],
+            [
+              72.8327505,
+              21.1832264
+            ],
+            [
+              72.8330563,
+              21.183608
+            ],
+            [
+              72.8329409,
+              21.1841203
+            ],
+            [
+              72.8326699,
+              21.1843029
+            ],
+            [
+              72.8321684,
+              21.1841021
+            ],
+            [
+              72.8318582,
+              21.1836398
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P020",
+        "ulpin": "25270017018332",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Savli",
+        "tehsil": null,
+        "village": "Manjusar",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1793053,
+              22.3098319
+            ],
+            [
+              73.1797124,
+              22.3098703
+            ],
+            [
+              73.1802103,
+              22.310123
+            ],
+            [
+              73.1801973,
+              22.3106
+            ],
+            [
+              73.1800389,
+              22.3110638
+            ],
+            [
+              73.1792781,
+              22.3108065
+            ],
+            [
+              73.1791474,
+              22.310589
+            ],
+            [
+              73.1793053,
+              22.3098319
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P021",
+        "ulpin": "79726952230795",
+        "state": "Gujarat",
+        "district": "Kutch",
+        "taluka": "Bhuj",
+        "tehsil": null,
+        "village": "Madhapar",
+        "quality_class": "messy",
+        "issue": "GIS_AREA_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              69.8580922,
+              23.7455489
+            ],
+            [
+              69.85855,
+              23.7457405
+            ],
+            [
+              69.8584859,
+              23.7462405
+            ],
+            [
+              69.8581283,
+              23.7465214
+            ],
+            [
+              69.857632,
+              23.7466257
+            ],
+            [
+              69.8570439,
+              23.7461313
+            ],
+            [
+              69.8572352,
+              23.7457729
+            ],
+            [
+              69.8574677,
+              23.7456375
+            ],
+            [
+              69.8580922,
+              23.7455489
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P022",
+        "ulpin": "82981536706345",
+        "state": "Gujarat",
+        "district": "Panchmahal",
+        "taluka": "Godhra",
+        "tehsil": null,
+        "village": "Vavdi",
+        "quality_class": "messy",
+        "issue": "AREA_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.6053273,
+              22.7954368
+            ],
+            [
+              73.6055767,
+              22.7952659
+            ],
+            [
+              73.6060564,
+              22.7951961
+            ],
+            [
+              73.6065177,
+              22.7951909
+            ],
+            [
+              73.6065852,
+              22.7958301
+            ],
+            [
+              73.6061918,
+              22.7962093
+            ],
+            [
+              73.605788,
+              22.7963983
+            ],
+            [
+              73.6053627,
+              22.7959489
+            ],
+            [
+              73.6053273,
+              22.7954368
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P023",
+        "ulpin": "15468685050692",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Ahmedabad City",
+        "tehsil": null,
+        "village": "Navrangpura",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5688645,
+              23.0321025
+            ],
+            [
+              72.5689749,
+              23.0322014
+            ],
+            [
+              72.569013,
+              23.032303
+            ],
+            [
+              72.5689358,
+              23.0324517
+            ],
+            [
+              72.568724,
+              23.0325022
+            ],
+            [
+              72.5685883,
+              23.0323906
+            ],
+            [
+              72.5685793,
+              23.0322876
+            ],
+            [
+              72.5686544,
+              23.0321615
+            ],
+            [
+              72.5688645,
+              23.0321025
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P024",
+        "ulpin": "29498576473515",
+        "state": "Gujarat",
+        "district": "Bhavnagar",
+        "taluka": "Ghogha",
+        "tehsil": null,
+        "village": "Nari",
+        "quality_class": "messy",
+        "issue": "AREA_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.1447372,
+              21.7716777
+            ],
+            [
+              72.1446694,
+              21.7714624
+            ],
+            [
+              72.1447761,
+              21.7711199
+            ],
+            [
+              72.1451724,
+              21.771057
+            ],
+            [
+              72.1454551,
+              21.7711565
+            ],
+            [
+              72.1455226,
+              21.7715502
+            ],
+            [
+              72.1451036,
+              21.7718149
+            ],
+            [
+              72.1447372,
+              21.7716777
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P025",
+        "ulpin": "70271092780579",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Savli",
+        "tehsil": null,
+        "village": "Manjusar",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1749586,
+              22.3114367
+            ],
+            [
+              73.175929,
+              22.3110621
+            ],
+            [
+              73.177098,
+              22.3110717
+            ],
+            [
+              73.1771292,
+              22.3116674
+            ],
+            [
+              73.1770426,
+              22.3122702
+            ],
+            [
+              73.1759892,
+              22.3127957
+            ],
+            [
+              73.1751562,
+              22.312195
+            ],
+            [
+              73.1749586,
+              22.3114367
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P026",
+        "ulpin": "27024022136287",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Gondal",
+        "tehsil": null,
+        "village": "Biliya",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7967964,
+              22.3055509
+            ],
+            [
+              70.7966832,
+              22.3061203
+            ],
+            [
+              70.7961646,
+              22.3062117
+            ],
+            [
+              70.7957491,
+              22.3060789
+            ],
+            [
+              70.7955013,
+              22.3056072
+            ],
+            [
+              70.7957597,
+              22.3053657
+            ],
+            [
+              70.7962604,
+              22.3052498
+            ],
+            [
+              70.7967964,
+              22.3055509
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P027",
+        "ulpin": "78684089980721",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Savli",
+        "tehsil": null,
+        "village": "Manjusar",
+        "quality_class": "messy",
+        "issue": "ENCUMBRANCE_LITIGATION"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1782659,
+              22.3056721
+            ],
+            [
+              73.1788328,
+              22.3059441
+            ],
+            [
+              73.1793714,
+              22.3064492
+            ],
+            [
+              73.1789718,
+              22.3072979
+            ],
+            [
+              73.1784639,
+              22.307674
+            ],
+            [
+              73.1777538,
+              22.3072781
+            ],
+            [
+              73.1772596,
+              22.3068165
+            ],
+            [
+              73.1777894,
+              22.306044
+            ],
+            [
+              73.1782659,
+              22.3056721
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P028",
+        "ulpin": "23030544152757",
+        "state": "Gujarat",
+        "district": "Kutch",
+        "taluka": "Bhuj",
+        "tehsil": null,
+        "village": "Madhapar",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              69.8599808,
+              23.7478029
+            ],
+            [
+              69.8606723,
+              23.7479093
+            ],
+            [
+              69.8607096,
+              23.7484021
+            ],
+            [
+              69.8607868,
+              23.7488101
+            ],
+            [
+              69.860337,
+              23.7491317
+            ],
+            [
+              69.8597979,
+              23.7489456
+            ],
+            [
+              69.859372,
+              23.748437
+            ],
+            [
+              69.8596754,
+              23.7479904
+            ],
+            [
+              69.8599808,
+              23.7478029
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P029",
+        "ulpin": "47210891944247",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Rajkot",
+        "tehsil": null,
+        "village": "Mavdi",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.79748,
+              22.3168668
+            ],
+            [
+              70.797878,
+              22.3170625
+            ],
+            [
+              70.7977543,
+              22.3174649
+            ],
+            [
+              70.7975257,
+              22.3176514
+            ],
+            [
+              70.797119,
+              22.3175576
+            ],
+            [
+              70.7969805,
+              22.3173524
+            ],
+            [
+              70.7971991,
+              22.3169341
+            ],
+            [
+              70.79748,
+              22.3168668
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P030",
+        "ulpin": "71228997323343",
+        "state": "Gujarat",
+        "district": "Banaskantha",
+        "taluka": "Palanpur",
+        "tehsil": null,
+        "village": "Chitrasani",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.4305186,
+              24.1891608
+            ],
+            [
+              72.4297305,
+              24.1888157
+            ],
+            [
+              72.4294221,
+              24.1884407
+            ],
+            [
+              72.4302175,
+              24.1878954
+            ],
+            [
+              72.4310696,
+              24.1879801
+            ],
+            [
+              72.4313777,
+              24.1884326
+            ],
+            [
+              72.4310848,
+              24.1888454
+            ],
+            [
+              72.4305186,
+              24.1891608
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P031",
+        "ulpin": "29639354990293",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Daskroi",
+        "tehsil": null,
+        "village": "Aslali",
+        "quality_class": "messy",
+        "issue": "GIS_AREA_MISMATCH+ENCUMBRANCE_LITIGATION"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5707579,
+              23.0226436
+            ],
+            [
+              72.5701908,
+              23.0222796
+            ],
+            [
+              72.5699353,
+              23.0216976
+            ],
+            [
+              72.5701334,
+              23.021268
+            ],
+            [
+              72.5707772,
+              23.0210207
+            ],
+            [
+              72.5714995,
+              23.0214188
+            ],
+            [
+              72.5713328,
+              23.021836
+            ],
+            [
+              72.5711706,
+              23.0224009
+            ],
+            [
+              72.5707579,
+              23.0226436
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P032",
+        "ulpin": "61921867386650",
+        "state": "Gujarat",
+        "district": "Mehsana",
+        "taluka": "Visnagar",
+        "tehsil": null,
+        "village": "Gunjala",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.3685695,
+              23.5913757
+            ],
+            [
+              72.3690484,
+              23.5910527
+            ],
+            [
+              72.3696169,
+              23.5910799
+            ],
+            [
+              72.3698181,
+              23.5918223
+            ],
+            [
+              72.3698112,
+              23.5920928
+            ],
+            [
+              72.3692418,
+              23.5923632
+            ],
+            [
+              72.3686742,
+              23.5921337
+            ],
+            [
+              72.3682384,
+              23.5916084
+            ],
+            [
+              72.3685695,
+              23.5913757
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P033",
+        "ulpin": "99880098340756",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Vadodara City",
+        "tehsil": null,
+        "village": "Akota",
+        "quality_class": "messy",
+        "issue": "PENDING_VF6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1769741,
+              22.3179914
+            ],
+            [
+              73.176889,
+              22.3178575
+            ],
+            [
+              73.1769173,
+              22.3175644
+            ],
+            [
+              73.177031,
+              22.3173673
+            ],
+            [
+              73.1773106,
+              22.3174597
+            ],
+            [
+              73.1773075,
+              22.3176657
+            ],
+            [
+              73.1772345,
+              22.3179069
+            ],
+            [
+              73.1769741,
+              22.3179914
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P034",
+        "ulpin": "29366481569701",
+        "state": "Gujarat",
+        "district": "Anand",
+        "taluka": "Anand",
+        "tehsil": null,
+        "village": "Lambhvel",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.926266,
+              22.5698976
+            ],
+            [
+              72.926577,
+              22.5696761
+            ],
+            [
+              72.9271528,
+              22.5696534
+            ],
+            [
+              72.9273975,
+              22.5698332
+            ],
+            [
+              72.9274152,
+              22.5701754
+            ],
+            [
+              72.9269399,
+              22.5703932
+            ],
+            [
+              72.9263773,
+              22.5703029
+            ],
+            [
+              72.926266,
+              22.5698976
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P035",
+        "ulpin": "65483635771832",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Gondal",
+        "tehsil": null,
+        "village": "Biliya",
+        "quality_class": "messy",
+        "issue": "GIS_AREA_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7990698,
+              22.3093899
+            ],
+            [
+              70.7982728,
+              22.3091914
+            ],
+            [
+              70.798069,
+              22.3081719
+            ],
+            [
+              70.7986285,
+              22.3074429
+            ],
+            [
+              70.799491,
+              22.3077186
+            ],
+            [
+              70.8001588,
+              22.3083179
+            ],
+            [
+              70.7998912,
+              22.3093683
+            ],
+            [
+              70.7990698,
+              22.3093899
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P036",
+        "ulpin": "14536117059612",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Rajkot",
+        "tehsil": null,
+        "village": "Mavdi",
+        "quality_class": "messy",
+        "issue": "ENCUMBRANCE_LITIGATION"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7960983,
+              22.3152193
+            ],
+            [
+              70.7958759,
+              22.315312
+            ],
+            [
+              70.7956893,
+              22.3152887
+            ],
+            [
+              70.7956157,
+              22.3148765
+            ],
+            [
+              70.7956694,
+              22.3147398
+            ],
+            [
+              70.7959356,
+              22.3145956
+            ],
+            [
+              70.7960552,
+              22.3147951
+            ],
+            [
+              70.7961953,
+              22.3151046
+            ],
+            [
+              70.7960983,
+              22.3152193
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P037",
+        "ulpin": "22378075927058",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Ahmedabad City",
+        "tehsil": null,
+        "village": "Navrangpura",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5703102,
+              23.0316241
+            ],
+            [
+              72.5705157,
+              23.0315481
+            ],
+            [
+              72.5707015,
+              23.0316542
+            ],
+            [
+              72.5707177,
+              23.031865
+            ],
+            [
+              72.5705681,
+              23.0320017
+            ],
+            [
+              72.5703473,
+              23.032004
+            ],
+            [
+              72.5703109,
+              23.0317989
+            ],
+            [
+              72.5703102,
+              23.0316241
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P038",
+        "ulpin": "24954181268428",
+        "state": "Gujarat",
+        "district": "Bhavnagar",
+        "taluka": "Ghogha",
+        "tehsil": null,
+        "village": "Nari",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.1480908,
+              21.7704246
+            ],
+            [
+              72.1475633,
+              21.7708095
+            ],
+            [
+              72.1468735,
+              21.7705816
+            ],
+            [
+              72.1469269,
+              21.7700754
+            ],
+            [
+              72.1471144,
+              21.7695741
+            ],
+            [
+              72.1475622,
+              21.7694151
+            ],
+            [
+              72.1480463,
+              21.7697923
+            ],
+            [
+              72.1480908,
+              21.7704246
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P039",
+        "ulpin": "81412842762428",
+        "state": "Gujarat",
+        "district": "Gandhinagar",
+        "taluka": "Kalol",
+        "tehsil": null,
+        "village": "Santej",
+        "quality_class": "messy",
+        "issue": "PARTIAL_LINKAGE"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.6354021,
+              23.2236471
+            ],
+            [
+              72.6354119,
+              23.2231582
+            ],
+            [
+              72.6354789,
+              23.2226743
+            ],
+            [
+              72.6358821,
+              23.2226913
+            ],
+            [
+              72.636247,
+              23.2230164
+            ],
+            [
+              72.6361245,
+              23.2234985
+            ],
+            [
+              72.6357909,
+              23.2236998
+            ],
+            [
+              72.6354021,
+              23.2236471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P040",
+        "ulpin": "52378698927106",
+        "state": "Gujarat",
+        "district": "Banaskantha",
+        "taluka": "Palanpur",
+        "tehsil": null,
+        "village": "Chitrasani",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.4300701,
+              24.1859069
+            ],
+            [
+              72.430749,
+              24.1851283
+            ],
+            [
+              72.4311929,
+              24.1853238
+            ],
+            [
+              72.4317728,
+              24.1857421
+            ],
+            [
+              72.4313995,
+              24.186517
+            ],
+            [
+              72.430873,
+              24.1870217
+            ],
+            [
+              72.4302532,
+              24.1863181
+            ],
+            [
+              72.4300701,
+              24.1859069
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P041",
+        "ulpin": "93879929417357",
+        "state": "Gujarat",
+        "district": "Bhavnagar",
+        "taluka": "Ghogha",
+        "tehsil": null,
+        "village": "Nari",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.1470175,
+              21.775207
+            ],
+            [
+              72.1464455,
+              21.7748347
+            ],
+            [
+              72.14614,
+              21.7746328
+            ],
+            [
+              72.1463703,
+              21.7738749
+            ],
+            [
+              72.1469563,
+              21.7738211
+            ],
+            [
+              72.147265,
+              21.773906
+            ],
+            [
+              72.1473038,
+              21.7746695
+            ],
+            [
+              72.1470175,
+              21.775207
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P042",
+        "ulpin": "83213523673104",
+        "state": "Gujarat",
+        "district": "Gandhinagar",
+        "taluka": "Kalol",
+        "tehsil": null,
+        "village": "Santej",
+        "quality_class": "messy",
+        "issue": "PARTIAL_LINKAGE"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.6356974,
+              23.2246019
+            ],
+            [
+              72.6357362,
+              23.224793
+            ],
+            [
+              72.6355744,
+              23.2250196
+            ],
+            [
+              72.6352872,
+              23.2250126
+            ],
+            [
+              72.6350561,
+              23.2247714
+            ],
+            [
+              72.6351541,
+              23.2245378
+            ],
+            [
+              72.6353202,
+              23.2243631
+            ],
+            [
+              72.6355254,
+              23.2243893
+            ],
+            [
+              72.6356974,
+              23.2246019
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P043",
+        "ulpin": "79111546123694",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Rajkot",
+        "tehsil": null,
+        "village": "Mavdi",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7955008,
+              22.316686
+            ],
+            [
+              70.7957013,
+              22.3164
+            ],
+            [
+              70.7960892,
+              22.3164136
+            ],
+            [
+              70.7961771,
+              22.3167772
+            ],
+            [
+              70.7960837,
+              22.3170974
+            ],
+            [
+              70.7957204,
+              22.317225
+            ],
+            [
+              70.7954994,
+              22.3170901
+            ],
+            [
+              70.7955008,
+              22.316686
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P044",
+        "ulpin": "38227807650143",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Daskroi",
+        "tehsil": null,
+        "village": "Aslali",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5679675,
+              23.0215342
+            ],
+            [
+              72.5683197,
+              23.0213628
+            ],
+            [
+              72.568689,
+              23.0219677
+            ],
+            [
+              72.5685939,
+              23.0226979
+            ],
+            [
+              72.5682871,
+              23.0228283
+            ],
+            [
+              72.5675199,
+              23.0226393
+            ],
+            [
+              72.5674749,
+              23.0220977
+            ],
+            [
+              72.5679675,
+              23.0215342
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P045",
+        "ulpin": "36761252543603",
+        "state": "Gujarat",
+        "district": "Surat",
+        "taluka": "Choryasi",
+        "tehsil": null,
+        "village": "Vesu",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8324859,
+              21.1747767
+            ],
+            [
+              72.8326822,
+              21.1750487
+            ],
+            [
+              72.832742,
+              21.1754691
+            ],
+            [
+              72.8325022,
+              21.1756333
+            ],
+            [
+              72.8322025,
+              21.1755148
+            ],
+            [
+              72.8320359,
+              21.175265
+            ],
+            [
+              72.8322493,
+              21.1748321
+            ],
+            [
+              72.8324859,
+              21.1747767
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P046",
+        "ulpin": "65566429278584",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Ahmedabad City",
+        "tehsil": null,
+        "village": "Navrangpura",
+        "quality_class": "messy",
+        "issue": "PENDING_VF6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5690918,
+              23.0334071
+            ],
+            [
+              72.5689654,
+              23.03328
+            ],
+            [
+              72.5689897,
+              23.0330817
+            ],
+            [
+              72.5692565,
+              23.0330147
+            ],
+            [
+              72.569514,
+              23.0330072
+            ],
+            [
+              72.5695761,
+              23.033197
+            ],
+            [
+              72.569525,
+              23.0333652
+            ],
+            [
+              72.5693459,
+              23.0333884
+            ],
+            [
+              72.5690918,
+              23.0334071
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P047",
+        "ulpin": "48512879092925",
+        "state": "Gujarat",
+        "district": "Banaskantha",
+        "taluka": "Palanpur",
+        "tehsil": null,
+        "village": "Chitrasani",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.4343414,
+              24.186097
+            ],
+            [
+              72.4337215,
+              24.186397
+            ],
+            [
+              72.4333905,
+              24.1860165
+            ],
+            [
+              72.4333548,
+              24.1854402
+            ],
+            [
+              72.4336769,
+              24.1850021
+            ],
+            [
+              72.4342996,
+              24.1850101
+            ],
+            [
+              72.4345259,
+              24.1855529
+            ],
+            [
+              72.4343414,
+              24.186097
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P048",
+        "ulpin": "73626530613369",
+        "state": "Gujarat",
+        "district": "Surat",
+        "taluka": "Choryasi",
+        "tehsil": null,
+        "village": "Vesu",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.831858,
+              21.1737261
+            ],
+            [
+              72.831959,
+              21.1734797
+            ],
+            [
+              72.8322984,
+              21.1732517
+            ],
+            [
+              72.8328946,
+              21.1734599
+            ],
+            [
+              72.8330467,
+              21.1738214
+            ],
+            [
+              72.8327215,
+              21.1740117
+            ],
+            [
+              72.8321504,
+              21.1741035
+            ],
+            [
+              72.831858,
+              21.1737261
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P049",
+        "ulpin": "31790206822366",
+        "state": "Gujarat",
+        "district": "Banaskantha",
+        "taluka": "Palanpur",
+        "tehsil": null,
+        "village": "Chitrasani",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.4322647,
+              24.191543
+            ],
+            [
+              72.4307785,
+              24.191637
+            ],
+            [
+              72.430491,
+              24.1907784
+            ],
+            [
+              72.4302935,
+              24.1901199
+            ],
+            [
+              72.4311644,
+              24.1897597
+            ],
+            [
+              72.4323551,
+              24.1903268
+            ],
+            [
+              72.4324835,
+              24.1911354
+            ],
+            [
+              72.4322647,
+              24.191543
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P050",
+        "ulpin": "75753242959627",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Savli",
+        "tehsil": null,
+        "village": "Manjusar",
+        "quality_class": "messy",
+        "issue": "OWNER_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1807341,
+              22.308328
+            ],
+            [
+              73.1809022,
+              22.30884
+            ],
+            [
+              73.180687,
+              22.3093871
+            ],
+            [
+              73.1803777,
+              22.3095103
+            ],
+            [
+              73.1798517,
+              22.3092726
+            ],
+            [
+              73.1798104,
+              22.3086167
+            ],
+            [
+              73.1803937,
+              22.3081123
+            ],
+            [
+              73.1807341,
+              22.308328
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P051",
+        "ulpin": "68815875513847",
+        "state": "Gujarat",
+        "district": "Surat",
+        "taluka": "Choryasi",
+        "tehsil": null,
+        "village": "Vesu",
+        "quality_class": "messy",
+        "issue": "OWNER_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8298858,
+              21.1753004
+            ],
+            [
+              72.8295935,
+              21.1756371
+            ],
+            [
+              72.8291887,
+              21.175609
+            ],
+            [
+              72.8289877,
+              21.1753697
+            ],
+            [
+              72.8291607,
+              21.1747709
+            ],
+            [
+              72.8296177,
+              21.1746596
+            ],
+            [
+              72.8300553,
+              21.1750337
+            ],
+            [
+              72.8298858,
+              21.1753004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P052",
+        "ulpin": "81489346687366",
+        "state": "Gujarat",
+        "district": "Anand",
+        "taluka": "Anand",
+        "tehsil": null,
+        "village": "Lambhvel",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.9273754,
+              22.5720125
+            ],
+            [
+              72.9272953,
+              22.5713227
+            ],
+            [
+              72.9275597,
+              22.5708483
+            ],
+            [
+              72.9280291,
+              22.5707958
+            ],
+            [
+              72.9286958,
+              22.5712073
+            ],
+            [
+              72.928904,
+              22.5719289
+            ],
+            [
+              72.9284734,
+              22.5722963
+            ],
+            [
+              72.9280114,
+              22.5725701
+            ],
+            [
+              72.9273754,
+              22.5720125
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P053",
+        "ulpin": "34232813719489",
+        "state": "Gujarat",
+        "district": "Kutch",
+        "taluka": "Bhuj",
+        "tehsil": null,
+        "village": "Madhapar",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              69.8545072,
+              23.7476154
+            ],
+            [
+              69.8555268,
+              23.7473436
+            ],
+            [
+              69.8563913,
+              23.747512
+            ],
+            [
+              69.8566641,
+              23.7484619
+            ],
+            [
+              69.855843,
+              23.748693
+            ],
+            [
+              69.8546344,
+              23.748762
+            ],
+            [
+              69.8544421,
+              23.7481448
+            ],
+            [
+              69.8545072,
+              23.7476154
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P054",
+        "ulpin": "53431604172024",
+        "state": "Gujarat",
+        "district": "Banaskantha",
+        "taluka": "Palanpur",
+        "tehsil": null,
+        "village": "Chitrasani",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.4352582,
+              24.186583
+            ],
+            [
+              72.4359585,
+              24.1863771
+            ],
+            [
+              72.4371366,
+              24.1864575
+            ],
+            [
+              72.4371293,
+              24.1871482
+            ],
+            [
+              72.4369099,
+              24.1878595
+            ],
+            [
+              72.4358193,
+              24.1879023
+            ],
+            [
+              72.4352232,
+              24.1873492
+            ],
+            [
+              72.4352582,
+              24.186583
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P055",
+        "ulpin": "53758524411651",
+        "state": "Gujarat",
+        "district": "Kutch",
+        "taluka": "Bhuj",
+        "tehsil": null,
+        "village": "Madhapar",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              69.8577768,
+              23.7510627
+            ],
+            [
+              69.8576806,
+              23.7505823
+            ],
+            [
+              69.8577139,
+              23.7501174
+            ],
+            [
+              69.8584122,
+              23.7498041
+            ],
+            [
+              69.8590399,
+              23.749778
+            ],
+            [
+              69.8592795,
+              23.7502865
+            ],
+            [
+              69.8590871,
+              23.7511381
+            ],
+            [
+              69.8583971,
+              23.7511139
+            ],
+            [
+              69.8577768,
+              23.7510627
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P056",
+        "ulpin": "41160016532996",
+        "state": "Gujarat",
+        "district": "Panchmahal",
+        "taluka": "Godhra",
+        "tehsil": null,
+        "village": "Vavdi",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.6083669,
+              22.793328
+            ],
+            [
+              73.6084267,
+              22.7942271
+            ],
+            [
+              73.6082486,
+              22.794555
+            ],
+            [
+              73.6074697,
+              22.7951689
+            ],
+            [
+              73.6069467,
+              22.7947731
+            ],
+            [
+              73.6068535,
+              22.794113
+            ],
+            [
+              73.6070076,
+              22.7930255
+            ],
+            [
+              73.6077398,
+              22.792948
+            ],
+            [
+              73.6083669,
+              22.793328
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P057",
+        "ulpin": "90714949268011",
+        "state": "Gujarat",
+        "district": "Kutch",
+        "taluka": "Bhuj",
+        "tehsil": null,
+        "village": "Madhapar",
+        "quality_class": "messy",
+        "issue": "OWNER_MISMATCH+ENCUMBRANCE_LITIGATION"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              69.8600683,
+              23.746291
+            ],
+            [
+              69.8594435,
+              23.7459551
+            ],
+            [
+              69.8599115,
+              23.7452697
+            ],
+            [
+              69.8605436,
+              23.7451191
+            ],
+            [
+              69.8610624,
+              23.7454099
+            ],
+            [
+              69.8610567,
+              23.7459753
+            ],
+            [
+              69.8604852,
+              23.7464955
+            ],
+            [
+              69.8600683,
+              23.746291
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P058",
+        "ulpin": "82525779149434",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Daskroi",
+        "tehsil": null,
+        "village": "Aslali",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5684319,
+              23.025656
+            ],
+            [
+              72.56772,
+              23.0264537
+            ],
+            [
+              72.5672325,
+              23.0264274
+            ],
+            [
+              72.5667656,
+              23.0253196
+            ],
+            [
+              72.5670125,
+              23.0243326
+            ],
+            [
+              72.5677171,
+              23.0241077
+            ],
+            [
+              72.568086,
+              23.0243532
+            ],
+            [
+              72.5685744,
+              23.0247734
+            ],
+            [
+              72.5684319,
+              23.025656
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P059",
+        "ulpin": "80794748562309",
+        "state": "Gujarat",
+        "district": "Panchmahal",
+        "taluka": "Godhra",
+        "tehsil": null,
+        "village": "Vavdi",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.6051385,
+              22.7925489
+            ],
+            [
+              73.605454,
+              22.792384
+            ],
+            [
+              73.6057096,
+              22.7924576
+            ],
+            [
+              73.6059753,
+              22.7926728
+            ],
+            [
+              73.6057368,
+              22.7930264
+            ],
+            [
+              73.6053965,
+              22.7931052
+            ],
+            [
+              73.6051979,
+              22.7929686
+            ],
+            [
+              73.6051385,
+              22.7925489
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P060",
+        "ulpin": "62770526046928",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Savli",
+        "tehsil": null,
+        "village": "Manjusar",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1752459,
+              22.307089
+            ],
+            [
+              73.1757037,
+              22.3076494
+            ],
+            [
+              73.1758044,
+              22.3079213
+            ],
+            [
+              73.1750738,
+              22.3082119
+            ],
+            [
+              73.1744769,
+              22.3081623
+            ],
+            [
+              73.1741005,
+              22.3079204
+            ],
+            [
+              73.1741633,
+              22.307356
+            ],
+            [
+              73.1745532,
+              22.3071932
+            ],
+            [
+              73.1752459,
+              22.307089
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P061",
+        "ulpin": "51923934921393",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Savli",
+        "tehsil": null,
+        "village": "Manjusar",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1785761,
+              22.3117918
+            ],
+            [
+              73.1790743,
+              22.3115419
+            ],
+            [
+              73.1797561,
+              22.3119571
+            ],
+            [
+              73.1799528,
+              22.312513
+            ],
+            [
+              73.1795966,
+              22.3131725
+            ],
+            [
+              73.1789032,
+              22.3134395
+            ],
+            [
+              73.1784273,
+              22.313162
+            ],
+            [
+              73.1782311,
+              22.3125504
+            ],
+            [
+              73.1785761,
+              22.3117918
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P062",
+        "ulpin": "97155143702785",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Ahmedabad City",
+        "tehsil": null,
+        "village": "Navrangpura",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.569531,
+              23.0317644
+            ],
+            [
+              72.569488,
+              23.0318498
+            ],
+            [
+              72.5693022,
+              23.0318275
+            ],
+            [
+              72.5691834,
+              23.0317235
+            ],
+            [
+              72.5692036,
+              23.0316525
+            ],
+            [
+              72.5693538,
+              23.0315948
+            ],
+            [
+              72.5695001,
+              23.0315619
+            ],
+            [
+              72.5695633,
+              23.0316828
+            ],
+            [
+              72.569531,
+              23.0317644
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P063",
+        "ulpin": "24501992922092",
+        "state": "Gujarat",
+        "district": "Mehsana",
+        "taluka": "Visnagar",
+        "tehsil": null,
+        "village": "Gunjala",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.3693204,
+              23.5932546
+            ],
+            [
+              72.369599,
+              23.5930864
+            ],
+            [
+              72.3699297,
+              23.5930806
+            ],
+            [
+              72.3700946,
+              23.5934489
+            ],
+            [
+              72.370003,
+              23.5937009
+            ],
+            [
+              72.3698129,
+              23.5939316
+            ],
+            [
+              72.3695215,
+              23.5939266
+            ],
+            [
+              72.3691819,
+              23.5936375
+            ],
+            [
+              72.3693204,
+              23.5932546
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P064",
+        "ulpin": "19756979332412",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Gondal",
+        "tehsil": null,
+        "village": "Biliya",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7932477,
+              22.3068327
+            ],
+            [
+              70.7940156,
+              22.3062009
+            ],
+            [
+              70.7944191,
+              22.3061379
+            ],
+            [
+              70.7954112,
+              22.3066702
+            ],
+            [
+              70.7952981,
+              22.3072724
+            ],
+            [
+              70.794621,
+              22.3078337
+            ],
+            [
+              70.7939084,
+              22.3079012
+            ],
+            [
+              70.7932195,
+              22.3074745
+            ],
+            [
+              70.7932477,
+              22.3068327
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P065",
+        "ulpin": "26533065367316",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Ahmedabad City",
+        "tehsil": null,
+        "village": "Navrangpura",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5709889,
+              23.0333601
+            ],
+            [
+              72.5708866,
+              23.0334499
+            ],
+            [
+              72.5705992,
+              23.0334203
+            ],
+            [
+              72.5705896,
+              23.0332918
+            ],
+            [
+              72.5706856,
+              23.0331719
+            ],
+            [
+              72.5708699,
+              23.0331229
+            ],
+            [
+              72.5710457,
+              23.0332171
+            ],
+            [
+              72.5709889,
+              23.0333601
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P066",
+        "ulpin": "15453893537035",
+        "state": "Gujarat",
+        "district": "Surat",
+        "taluka": "Choryasi",
+        "tehsil": null,
+        "village": "Palanpur",
+        "quality_class": "messy",
+        "issue": "PENDING_VF6+AREA_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8321338,
+              21.1826454
+            ],
+            [
+              72.8318758,
+              21.1827765
+            ],
+            [
+              72.8316291,
+              21.1827332
+            ],
+            [
+              72.8314496,
+              21.1825859
+            ],
+            [
+              72.8314663,
+              21.1823558
+            ],
+            [
+              72.8316339,
+              21.1822511
+            ],
+            [
+              72.8319307,
+              21.1822926
+            ],
+            [
+              72.8321194,
+              21.1824735
+            ],
+            [
+              72.8321338,
+              21.1826454
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P067",
+        "ulpin": "73284008138699",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Vadodara City",
+        "tehsil": null,
+        "village": "Akota",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1771896,
+              22.3188636
+            ],
+            [
+              73.1770685,
+              22.3190632
+            ],
+            [
+              73.1768754,
+              22.3189938
+            ],
+            [
+              73.1768341,
+              22.3188532
+            ],
+            [
+              73.1768153,
+              22.3186441
+            ],
+            [
+              73.1769723,
+              22.318586
+            ],
+            [
+              73.1771016,
+              22.3185531
+            ],
+            [
+              73.1771613,
+              22.3186981
+            ],
+            [
+              73.1771896,
+              22.3188636
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P068",
+        "ulpin": "37710318656123",
+        "state": "Gujarat",
+        "district": "Panchmahal",
+        "taluka": "Godhra",
+        "tehsil": null,
+        "village": "Vavdi",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.6020106,
+              22.791897
+            ],
+            [
+              73.602562,
+              22.7917563
+            ],
+            [
+              73.6029492,
+              22.7920676
+            ],
+            [
+              73.603147,
+              22.7924543
+            ],
+            [
+              73.6029916,
+              22.7928342
+            ],
+            [
+              73.6025178,
+              22.7930128
+            ],
+            [
+              73.6019518,
+              22.7928977
+            ],
+            [
+              73.601762,
+              22.7923894
+            ],
+            [
+              73.6020106,
+              22.791897
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P069",
+        "ulpin": "17131710217983",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Ahmedabad City",
+        "tehsil": null,
+        "village": "Navrangpura",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5713957,
+              23.0319647
+            ],
+            [
+              72.5714359,
+              23.0320975
+            ],
+            [
+              72.5712918,
+              23.0322778
+            ],
+            [
+              72.5711035,
+              23.0322559
+            ],
+            [
+              72.5709824,
+              23.0321207
+            ],
+            [
+              72.5709827,
+              23.0320237
+            ],
+            [
+              72.5711531,
+              23.0319247
+            ],
+            [
+              72.5713957,
+              23.0319647
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P070",
+        "ulpin": "14539063082236",
+        "state": "Gujarat",
+        "district": "Bhavnagar",
+        "taluka": "Ghogha",
+        "tehsil": null,
+        "village": "Nari",
+        "quality_class": "messy",
+        "issue": "ENCUMBRANCE_LITIGATION"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.1481655,
+              21.7731336
+            ],
+            [
+              72.148885,
+              21.7724648
+            ],
+            [
+              72.1496791,
+              21.772291
+            ],
+            [
+              72.1502639,
+              21.7724991
+            ],
+            [
+              72.1504175,
+              21.7732922
+            ],
+            [
+              72.1501056,
+              21.7738839
+            ],
+            [
+              72.1491879,
+              21.773961
+            ],
+            [
+              72.1483525,
+              21.7737786
+            ],
+            [
+              72.1481655,
+              21.7731336
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P071",
+        "ulpin": "81949785045038",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Daskroi",
+        "tehsil": null,
+        "village": "Aslali",
+        "quality_class": "messy",
+        "issue": "GIS_GEOMETRY_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5730494,
+              23.0250671
+            ],
+            [
+              72.5723971,
+              23.0251261
+            ],
+            [
+              72.5719789,
+              23.0247687
+            ],
+            [
+              72.571629,
+              23.0238506
+            ],
+            [
+              72.5721044,
+              23.0233733
+            ],
+            [
+              72.5730168,
+              23.0236635
+            ],
+            [
+              72.5734398,
+              23.0240802
+            ],
+            [
+              72.5730494,
+              23.0250671
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P072",
+        "ulpin": "72325137181745",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Gondal",
+        "tehsil": null,
+        "village": "Biliya",
+        "quality_class": "messy",
+        "issue": "GIS_GEOMETRY_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7962512,
+              22.3095262
+            ],
+            [
+              70.7959261,
+              22.3101693
+            ],
+            [
+              70.795368,
+              22.310428
+            ],
+            [
+              70.7945472,
+              22.3101107
+            ],
+            [
+              70.7942602,
+              22.3096199
+            ],
+            [
+              70.7947298,
+              22.3089689
+            ],
+            [
+              70.7953082,
+              22.308796
+            ],
+            [
+              70.7958651,
+              22.3089153
+            ],
+            [
+              70.7962512,
+              22.3095262
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P073",
+        "ulpin": "86399501365603",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Rajkot",
+        "tehsil": null,
+        "village": "Mavdi",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7992412,
+              22.3167418
+            ],
+            [
+              70.7989839,
+              22.3164335
+            ],
+            [
+              70.7991934,
+              22.3159916
+            ],
+            [
+              70.7993447,
+              22.315762
+            ],
+            [
+              70.7997454,
+              22.3158145
+            ],
+            [
+              70.7999483,
+              22.3163341
+            ],
+            [
+              70.7997579,
+              22.3166478
+            ],
+            [
+              70.7995548,
+              22.3168456
+            ],
+            [
+              70.7992412,
+              22.3167418
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P074",
+        "ulpin": "93524168006467",
+        "state": "Gujarat",
+        "district": "Surat",
+        "taluka": "Choryasi",
+        "tehsil": null,
+        "village": "Palanpur",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8291711,
+              21.1838139
+            ],
+            [
+              72.8293499,
+              21.1835245
+            ],
+            [
+              72.829889,
+              21.1835433
+            ],
+            [
+              72.8300214,
+              21.1839996
+            ],
+            [
+              72.8300208,
+              21.184288
+            ],
+            [
+              72.8295021,
+              21.1844948
+            ],
+            [
+              72.8290943,
+              21.184245
+            ],
+            [
+              72.8291711,
+              21.1838139
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P075",
+        "ulpin": "59341082858314",
+        "state": "Gujarat",
+        "district": "Anand",
+        "taluka": "Anand",
+        "tehsil": null,
+        "village": "Lambhvel",
+        "quality_class": "messy",
+        "issue": "PENDING_VF6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.923095,
+              22.5719747
+            ],
+            [
+              72.9240916,
+              22.5719386
+            ],
+            [
+              72.9245601,
+              22.572793
+            ],
+            [
+              72.9244808,
+              22.5732287
+            ],
+            [
+              72.9233606,
+              22.5735992
+            ],
+            [
+              72.9229731,
+              22.573151
+            ],
+            [
+              72.9228467,
+              22.5726317
+            ],
+            [
+              72.923095,
+              22.5719747
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P076",
+        "ulpin": "41612574773564",
+        "state": "Gujarat",
+        "district": "Anand",
+        "taluka": "Anand",
+        "tehsil": null,
+        "village": "Lambhvel",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.9262077,
+              22.5729108
+            ],
+            [
+              72.9266207,
+              22.5727838
+            ],
+            [
+              72.9271857,
+              22.5731976
+            ],
+            [
+              72.9272056,
+              22.573426
+            ],
+            [
+              72.927018,
+              22.5738636
+            ],
+            [
+              72.9263412,
+              22.5740617
+            ],
+            [
+              72.9257526,
+              22.5737981
+            ],
+            [
+              72.9256094,
+              22.5731431
+            ],
+            [
+              72.9262077,
+              22.5729108
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P077",
+        "ulpin": "75080085123871",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Ahmedabad City",
+        "tehsil": null,
+        "village": "Navrangpura",
+        "quality_class": "messy",
+        "issue": "AREA_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5701571,
+              23.0314487
+            ],
+            [
+              72.5699691,
+              23.0314466
+            ],
+            [
+              72.569837,
+              23.0314417
+            ],
+            [
+              72.569798,
+              23.0312471
+            ],
+            [
+              72.5698853,
+              23.0311281
+            ],
+            [
+              72.5700512,
+              23.0311172
+            ],
+            [
+              72.5701637,
+              23.031239
+            ],
+            [
+              72.5702091,
+              23.0313687
+            ],
+            [
+              72.5701571,
+              23.0314487
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P078",
+        "ulpin": "96791296646060",
+        "state": "Gujarat",
+        "district": "Anand",
+        "taluka": "Anand",
+        "tehsil": null,
+        "village": "Lambhvel",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.9249631,
+              22.5686196
+            ],
+            [
+              72.9252711,
+              22.5693167
+            ],
+            [
+              72.9246154,
+              22.5697821
+            ],
+            [
+              72.923687,
+              22.5698773
+            ],
+            [
+              72.9232161,
+              22.5694021
+            ],
+            [
+              72.9232091,
+              22.5687838
+            ],
+            [
+              72.9243767,
+              22.568275
+            ],
+            [
+              72.9249631,
+              22.5686196
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P079",
+        "ulpin": "69491420108549",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Daskroi",
+        "tehsil": null,
+        "village": "Aslali",
+        "quality_class": "messy",
+        "issue": "OWNER_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5715027,
+              23.0261175
+            ],
+            [
+              72.5712378,
+              23.0265338
+            ],
+            [
+              72.5707512,
+              23.0265935
+            ],
+            [
+              72.5700349,
+              23.0264241
+            ],
+            [
+              72.5698595,
+              23.0260607
+            ],
+            [
+              72.5703795,
+              23.0255289
+            ],
+            [
+              72.5708776,
+              23.0254601
+            ],
+            [
+              72.5713029,
+              23.0256962
+            ],
+            [
+              72.5715027,
+              23.0261175
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P080",
+        "ulpin": "69942630653979",
+        "state": "Gujarat",
+        "district": "Bhavnagar",
+        "taluka": "Ghogha",
+        "tehsil": null,
+        "village": "Nari",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.1440617,
+              21.7740309
+            ],
+            [
+              72.1434212,
+              21.7740141
+            ],
+            [
+              72.1430542,
+              21.7735962
+            ],
+            [
+              72.1430281,
+              21.7727873
+            ],
+            [
+              72.1436328,
+              21.7726428
+            ],
+            [
+              72.1446248,
+              21.7727368
+            ],
+            [
+              72.1448569,
+              21.7731685
+            ],
+            [
+              72.1450094,
+              21.7739574
+            ],
+            [
+              72.1440617,
+              21.7740309
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P081",
+        "ulpin": "19351633112881",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Ahmedabad City",
+        "tehsil": null,
+        "village": "Navrangpura",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5688123,
+              23.0315932
+            ],
+            [
+              72.5686809,
+              23.0315671
+            ],
+            [
+              72.5686427,
+              23.0313828
+            ],
+            [
+              72.5686973,
+              23.031179
+            ],
+            [
+              72.5688307,
+              23.0312041
+            ],
+            [
+              72.5689984,
+              23.0313949
+            ],
+            [
+              72.5689481,
+              23.0315282
+            ],
+            [
+              72.5688123,
+              23.0315932
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P082",
+        "ulpin": "68549432341674",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Gondal",
+        "tehsil": null,
+        "village": "Biliya",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7996667,
+              22.3059386
+            ],
+            [
+              70.7989972,
+              22.3062716
+            ],
+            [
+              70.7981994,
+              22.3061902
+            ],
+            [
+              70.7976163,
+              22.3054698
+            ],
+            [
+              70.797827,
+              22.3049884
+            ],
+            [
+              70.7988388,
+              22.3046694
+            ],
+            [
+              70.7994856,
+              22.3054156
+            ],
+            [
+              70.7996667,
+              22.3059386
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P083",
+        "ulpin": "92968375018415",
+        "state": "Gujarat",
+        "district": "Mehsana",
+        "taluka": "Visnagar",
+        "tehsil": null,
+        "village": "Gunjala",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.3679089,
+              23.5961285
+            ],
+            [
+              72.367402,
+              23.5960704
+            ],
+            [
+              72.3669091,
+              23.5957526
+            ],
+            [
+              72.3669623,
+              23.595464
+            ],
+            [
+              72.3674883,
+              23.5953473
+            ],
+            [
+              72.3678597,
+              23.5953219
+            ],
+            [
+              72.3682252,
+              23.5956733
+            ],
+            [
+              72.3679089,
+              23.5961285
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P084",
+        "ulpin": "55614336839443",
+        "state": "Gujarat",
+        "district": "Anand",
+        "taluka": "Anand",
+        "tehsil": null,
+        "village": "Lambhvel",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.9222609,
+              22.5697982
+            ],
+            [
+              72.9224331,
+              22.5701604
+            ],
+            [
+              72.9221895,
+              22.5710711
+            ],
+            [
+              72.9218728,
+              22.571443
+            ],
+            [
+              72.9210799,
+              22.5713456
+            ],
+            [
+              72.9209019,
+              22.5704787
+            ],
+            [
+              72.9208332,
+              22.5700273
+            ],
+            [
+              72.9215643,
+              22.5696952
+            ],
+            [
+              72.9222609,
+              22.5697982
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P085",
+        "ulpin": "56089298058011",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Gondal",
+        "tehsil": null,
+        "village": "Biliya",
+        "quality_class": "messy",
+        "issue": "ENCUMBRANCE_LITIGATION"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7944592,
+              22.3038362
+            ],
+            [
+              70.7948283,
+              22.3035747
+            ],
+            [
+              70.7955504,
+              22.3036329
+            ],
+            [
+              70.7958116,
+              22.3037256
+            ],
+            [
+              70.7959608,
+              22.304155
+            ],
+            [
+              70.7952939,
+              22.3044026
+            ],
+            [
+              70.7950394,
+              22.304445
+            ],
+            [
+              70.79456,
+              22.3041243
+            ],
+            [
+              70.7944592,
+              22.3038362
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P086",
+        "ulpin": "45765217190250",
+        "state": "Gujarat",
+        "district": "Anand",
+        "taluka": "Anand",
+        "tehsil": null,
+        "village": "Lambhvel",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.9259703,
+              22.5680793
+            ],
+            [
+              72.9264673,
+              22.5681621
+            ],
+            [
+              72.9268111,
+              22.5684676
+            ],
+            [
+              72.9266752,
+              22.5687535
+            ],
+            [
+              72.9261242,
+              22.5688268
+            ],
+            [
+              72.9257364,
+              22.5687948
+            ],
+            [
+              72.9255414,
+              22.5684453
+            ],
+            [
+              72.9259703,
+              22.5680793
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P087",
+        "ulpin": "36364916621280",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Savli",
+        "tehsil": null,
+        "village": "Manjusar",
+        "quality_class": "messy",
+        "issue": "PENDING_VF6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1730928,
+              22.3094337
+            ],
+            [
+              73.1733235,
+              22.30922
+            ],
+            [
+              73.1740135,
+              22.3090521
+            ],
+            [
+              73.1743546,
+              22.3092665
+            ],
+            [
+              73.1743102,
+              22.309973
+            ],
+            [
+              73.1736386,
+              22.3102039
+            ],
+            [
+              73.1730991,
+              22.3100002
+            ],
+            [
+              73.1730928,
+              22.3094337
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P088",
+        "ulpin": "20663080683371",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Vadodara City",
+        "tehsil": null,
+        "village": "Akota",
+        "quality_class": "messy",
+        "issue": "OWNER_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1778233,
+              22.3174426
+            ],
+            [
+              73.1778985,
+              22.3172344
+            ],
+            [
+              73.1780412,
+              22.3172003
+            ],
+            [
+              73.1782561,
+              22.3172751
+            ],
+            [
+              73.1783812,
+              22.3173905
+            ],
+            [
+              73.1782849,
+              22.3175566
+            ],
+            [
+              73.1780766,
+              22.3175949
+            ],
+            [
+              73.1779441,
+              22.3175471
+            ],
+            [
+              73.1778233,
+              22.3174426
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P089",
+        "ulpin": "99432149363188",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Vadodara City",
+        "tehsil": null,
+        "village": "Akota",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1789137,
+              22.3181192
+            ],
+            [
+              73.1787325,
+              22.3181224
+            ],
+            [
+              73.1785905,
+              22.3180822
+            ],
+            [
+              73.1786286,
+              22.3179908
+            ],
+            [
+              73.17867,
+              22.3178782
+            ],
+            [
+              73.1788618,
+              22.3178445
+            ],
+            [
+              73.1789394,
+              22.3179362
+            ],
+            [
+              73.178997,
+              22.3180477
+            ],
+            [
+              73.1789137,
+              22.3181192
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P090",
+        "ulpin": "81630160045305",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Gondal",
+        "tehsil": null,
+        "village": "Biliya",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.7974697,
+              22.3106364
+            ],
+            [
+              70.79791,
+              22.3109074
+            ],
+            [
+              70.79795,
+              22.3115386
+            ],
+            [
+              70.7969924,
+              22.3116839
+            ],
+            [
+              70.7964188,
+              22.3117218
+            ],
+            [
+              70.7959499,
+              22.310943
+            ],
+            [
+              70.7965175,
+              22.3106829
+            ],
+            [
+              70.7974697,
+              22.3106364
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P091",
+        "ulpin": "40457818191814",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Vadodara City",
+        "tehsil": null,
+        "village": "Akota",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1778789,
+              22.3191703
+            ],
+            [
+              73.1779893,
+              22.3191016
+            ],
+            [
+              73.1780959,
+              22.3190501
+            ],
+            [
+              73.1782507,
+              22.3190491
+            ],
+            [
+              73.1782979,
+              22.3192215
+            ],
+            [
+              73.1782101,
+              22.3193548
+            ],
+            [
+              73.1781109,
+              22.3193369
+            ],
+            [
+              73.1779259,
+              22.3192929
+            ],
+            [
+              73.1778789,
+              22.3191703
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P092",
+        "ulpin": "35302209186023",
+        "state": "Gujarat",
+        "district": "Anand",
+        "taluka": "Anand",
+        "tehsil": null,
+        "village": "Lambhvel",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.9277615,
+              22.5685637
+            ],
+            [
+              72.9284028,
+              22.5683702
+            ],
+            [
+              72.9288693,
+              22.568334
+            ],
+            [
+              72.9292797,
+              22.5686011
+            ],
+            [
+              72.9289717,
+              22.5691494
+            ],
+            [
+              72.9283777,
+              22.569244
+            ],
+            [
+              72.9280793,
+              22.5690875
+            ],
+            [
+              72.9277615,
+              22.5685637
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P093",
+        "ulpin": "60043243987135",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Vadodara City",
+        "tehsil": null,
+        "village": "Akota",
+        "quality_class": "messy",
+        "issue": "PENDING_VF6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1788202,
+              22.3169501
+            ],
+            [
+              73.1790311,
+              22.3168331
+            ],
+            [
+              73.1792029,
+              22.316843
+            ],
+            [
+              73.1794189,
+              22.3170437
+            ],
+            [
+              73.1794065,
+              22.3172009
+            ],
+            [
+              73.1791684,
+              22.3173438
+            ],
+            [
+              73.1790017,
+              22.3173494
+            ],
+            [
+              73.1788612,
+              22.3171691
+            ],
+            [
+              73.1788202,
+              22.3169501
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P094",
+        "ulpin": "77419974689972",
+        "state": "Gujarat",
+        "district": "Anand",
+        "taluka": "Anand",
+        "tehsil": null,
+        "village": "Lambhvel",
+        "quality_class": "messy",
+        "issue": "PARTIAL_LINKAGE"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.9253255,
+              22.5741551
+            ],
+            [
+              72.9255565,
+              22.5741581
+            ],
+            [
+              72.9257577,
+              22.5742761
+            ],
+            [
+              72.9257325,
+              22.5745751
+            ],
+            [
+              72.9255689,
+              22.5749604
+            ],
+            [
+              72.9253481,
+              22.5749789
+            ],
+            [
+              72.9250736,
+              22.5746279
+            ],
+            [
+              72.9250993,
+              22.5744349
+            ],
+            [
+              72.9253255,
+              22.5741551
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P095",
+        "ulpin": "98114847024329",
+        "state": "Gujarat",
+        "district": "Ahmedabad",
+        "taluka": "Ahmedabad City",
+        "tehsil": null,
+        "village": "Navrangpura",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.5686709,
+              23.0331215
+            ],
+            [
+              72.5687215,
+              23.0332627
+            ],
+            [
+              72.5686177,
+              23.0334001
+            ],
+            [
+              72.5683572,
+              23.0333798
+            ],
+            [
+              72.56813,
+              23.0333055
+            ],
+            [
+              72.5681025,
+              23.0331931
+            ],
+            [
+              72.5682398,
+              23.0330204
+            ],
+            [
+              72.5684115,
+              23.033012
+            ],
+            [
+              72.5686709,
+              23.0331215
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P096",
+        "ulpin": "16477371158490",
+        "state": "Gujarat",
+        "district": "Rajkot",
+        "taluka": "Gondal",
+        "tehsil": null,
+        "village": "Biliya",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70.8025128,
+              22.3072558
+            ],
+            [
+              70.8026196,
+              22.3081957
+            ],
+            [
+              70.8019686,
+              22.3085577
+            ],
+            [
+              70.8014406,
+              22.3082282
+            ],
+            [
+              70.801037,
+              22.3072914
+            ],
+            [
+              70.801447,
+              22.307029
+            ],
+            [
+              70.8020321,
+              22.3068657
+            ],
+            [
+              70.8025128,
+              22.3072558
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P097",
+        "ulpin": "84894228232063",
+        "state": "Gujarat",
+        "district": "Mehsana",
+        "taluka": "Visnagar",
+        "tehsil": null,
+        "village": "Gunjala",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.3651837,
+              23.5942864
+            ],
+            [
+              72.3657029,
+              23.5945792
+            ],
+            [
+              72.3657588,
+              23.5953191
+            ],
+            [
+              72.3649786,
+              23.5958324
+            ],
+            [
+              72.3640573,
+              23.5955829
+            ],
+            [
+              72.3639102,
+              23.5951197
+            ],
+            [
+              72.3641876,
+              23.5944074
+            ],
+            [
+              72.3651837,
+              23.5942864
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P098",
+        "ulpin": "80849613220477",
+        "state": "Gujarat",
+        "district": "Vadodara",
+        "taluka": "Vadodara City",
+        "tehsil": null,
+        "village": "Akota",
+        "quality_class": "messy",
+        "issue": "GIS_AREA_MISMATCH"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.1790079,
+              22.3186894
+            ],
+            [
+              73.1791607,
+              22.3186383
+            ],
+            [
+              73.1793569,
+              22.318789
+            ],
+            [
+              73.179288,
+              22.3190201
+            ],
+            [
+              73.1792482,
+              22.3191081
+            ],
+            [
+              73.1790168,
+              22.3191299
+            ],
+            [
+              73.1788212,
+              22.3190604
+            ],
+            [
+              73.1788656,
+              22.3188639
+            ],
+            [
+              73.1790079,
+              22.3186894
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P099",
+        "ulpin": "57008130338318",
+        "state": "Gujarat",
+        "district": "Anand",
+        "taluka": "Anand",
+        "tehsil": null,
+        "village": "Lambhvel",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.9233839,
+              22.5751054
+            ],
+            [
+              72.9230397,
+              22.574892
+            ],
+            [
+              72.9229618,
+              22.5746767
+            ],
+            [
+              72.9231667,
+              22.57439
+            ],
+            [
+              72.9234159,
+              22.5742686
+            ],
+            [
+              72.9236556,
+              22.5744719
+            ],
+            [
+              72.9237643,
+              22.5747919
+            ],
+            [
+              72.923575,
+              22.5750991
+            ],
+            [
+              72.9233839,
+              22.5751054
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "prototype_ref": "P100",
+        "ulpin": "30158445084938",
+        "state": "Gujarat",
+        "district": "Anand",
+        "taluka": "Anand",
+        "tehsil": null,
+        "village": "Lambhvel",
+        "quality_class": "clean",
+        "issue": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.928702,
+              22.5730324
+            ],
+            [
+              72.9289552,
+              22.5732702
+            ],
+            [
+              72.928877,
+              22.5736318
+            ],
+            [
+              72.9286863,
+              22.5738367
+            ],
+            [
+              72.9284768,
+              22.5739365
+            ],
+            [
+              72.9282373,
+              22.5736034
+            ],
+            [
+              72.9282966,
+              22.5731216
+            ],
+            [
+              72.928702,
+              22.5730324
+            ]
+          ]
+        ]
+      }
     }
   ]
 }

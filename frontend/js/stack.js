@@ -51,34 +51,21 @@ export function mountStack(el) {
       return `<button class="ls-card ${on ? "" : "off"} ${open === c.k ? "open" : ""}" data-c="${c.k}" aria-expanded="${open === c.k}">
         <span class="ls-ic">${icon[c.ic]}</span>
         <span class="ls-t"><b>${esc(t(c.tkey))}</b><small>${esc(t(c.dkey))}</small></span>
-        <span class="ls-states">${Object.keys(STATES).map((code) => `<i class="${states.includes(code) ? "y" : ""}" style="--sc:${REGION[code].accent}" title="${esc(STATES[code].name)}">${code}</i>`).join("")}</span>
         ${filter ? `<span class="ls-native">${on ? names.map(esc).join(" · ") : esc(t("hubNotConnected"))}</span>` : ""}
       </button>`;
     };
     el.innerHTML = `
       <div class="lstack">
         <div class="ls-top">
-          <div class="ls-node n-parcel">${icon.area}<span><b>${esc(t("storyParcel"))}</b><small>${esc(t("storyParcelD"))}</small></span></div>
-          <span class="ls-arrow" aria-hidden="true"></span>
           <div class="ls-node n-ulpin">${icon.register}<span><b>ULPIN</b><small>${esc(t("storyUlpinD"))}</small></span></div>
           <span class="ls-arrow" aria-hidden="true"></span>
-          <div class="seg ls-filter" role="group" aria-label="${esc(t("state"))}">
-            <button data-f="" class="${!filter ? "on" : ""}">${esc(t("allStates"))}</button>
-            ${Object.entries(STATES).map(([code, s]) => `<button data-f="${code}" class="${filter === code ? "on" : ""}" style="--sc:${REGION[code].accent}">${esc(s.name)}</button>`).join("")}
-          </div>
+          <div class="ls-node n-parcel">${icon.area}<span><b>${esc(t("storyParcel"))}</b><small>${esc(t("storyParcelD"))}</small></span></div>
         </div>
         <div class="ls-tiers">${TIERS.map((tk, i) => `
           <div class="ls-tier"><div class="ls-tier-h"><i>${i + 1}</i>${esc(t(tk))}</div>
             <div class="ls-cards">${CONCEPTS.filter((c) => c.tier === i).map(card).join("")}</div></div>`).join("")}
         </div>
         <div class="ls-detail" id="ls-detail" ${open ? "" : "hidden"}>${open ? detail(open) : ""}</div>
-        <div class="ls-bottom">
-          <a class="ls-node n-svc" href="#/services">${icon.grid}<span><b>${esc(t("digitalServices"))}</b><small>${esc(t("lsServicesD"))}</small></span></a>
-          <span class="ls-arrow" aria-hidden="true"></span>
-          <a class="ls-node" href="#/citizen">${icon.user}<span><b>${esc(t("citizenPortal"))}</b><small>${esc(t("lsCitizenD"))}</small></span></a>
-          <a class="ls-node" href="#/officer/login">${icon.shield}<span><b>${esc(t("officerPortal"))}</b><small>${esc(t("lsOfficerD"))}</small></span></a>
-        </div>
-        <p class="fine">${fig.parcels} ${esc(t("kpiParcels"))} · ${fig.tables} ${esc(t("kpiSources"))} · ${fig.rules} ${esc(t("lsRules"))}</p>
       </div>`;
     el.querySelectorAll("[data-f]").forEach((b) => b.onclick = () => { filter = b.dataset.f; draw(fig); });
     el.querySelectorAll("[data-c]").forEach((b) => b.onclick = () => {

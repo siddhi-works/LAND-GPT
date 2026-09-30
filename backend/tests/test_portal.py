@@ -14,12 +14,12 @@ def login(client, username):
 
 def test_gis_layer_has_every_ulpin_polygon(client):
     fc = client.get("/v1/gis/parcels").json()
-    assert fc["type"] == "FeatureCollection" and len(fc["features"]) == 45
+    assert fc["type"] == "FeatureCollection" and len(fc["features"]) == 300
     f = next(x for x in fc["features"] if x["id"] == P[("MH", "P015")])
     assert f["geometry"]["type"] == "Polygon"
     assert f["properties"]["native_label"] == "Khasra No. 118/1"
     assert f["properties"]["record_area_ha"] == 2.2 and 2.47 < f["properties"]["gis_area_ha"] < 2.5
-    assert len(client.get("/v1/gis/parcels?state=GJ").json()["features"]) == 15
+    assert len(client.get("/v1/gis/parcels?state=GJ").json()["features"]) == 100
 
 
 def test_admin_hierarchy(client):
@@ -28,7 +28,7 @@ def test_admin_hierarchy(client):
     assert set(states) == {"MH", "UP", "GJ"} and states["UP"]["sub_district_type"] == "tehsil"
     saharanpur = next(d for d in states["UP"]["districts"] if d["name"] == "Saharanpur")
     behat = saharanpur["sub_districts"][0]
-    assert behat["name"] == "Behat" and behat["villages"][0]["ulpins"] == [P[("UP", "P013")]]
+    assert behat["name"] == "Behat" and P[("UP", "P013")] in behat["villages"][0]["ulpins"]
     assert len(states["MH"]["bbox"]) == 4
 
 
@@ -97,11 +97,11 @@ def test_jurisdiction_enforced(client):
 
 def test_reports(client):
     rep = client.get("/v1/reports/summary").json()
-    assert rep["parcels"] == 45 and rep["mutations"]["pending"] == 3
+    assert rep["parcels"] == 300 and rep["mutations"]["pending"] == 24
     assert rep["discrepancies"]["ownership"] >= 6 and rep["parcels_by_discrepancy"]["area_gis"] >= 6
     h, _ = login(client, "up.board")
     orep = client.get("/v1/officer/reports", headers=h).json()
-    assert orep["parcels"] == 15 and "work" in orep
+    assert orep["parcels"] == 100 and "work" in orep
 
 
 def test_assistant_grounding_and_unconfigured_behaviour(client, monkeypatch):

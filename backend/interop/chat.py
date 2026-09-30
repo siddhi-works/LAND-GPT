@@ -1,4 +1,4 @@
-"""LandGPT Assistant: the conversational endpoint behind the portal's chat window.
+"""BhuSamhita Assistant: the conversational endpoint behind the portal's chat window.
 
 Frontend -> POST /v1/chat -> provider (Anthropic | OpenAI | Gemini | demo) -> reply.
 
@@ -7,9 +7,9 @@ Frontend -> POST /v1/chat -> provider (Anthropic | OpenAI | Gemini | demo) -> re
     ANTHROPIC_API_KEY         Anthropic (model: LANDSTACK_ASSISTANT_MODEL, see assistant.py)
     OPENAI_API_KEY            OpenAI  (model: LANDSTACK_CHAT_MODEL, required)
     GEMINI_API_KEY            Gemini  (model: LANDSTACK_CHAT_MODEL, required)
-* With no configured provider the assistant runs in DEMO mode: deterministic answers from a fixed
-  knowledge base of the land-record terms this portal uses, plus facts read from the open parcel's
-  records. Demo mode never generates free text and never invents parcel facts.
+* With no configured provider the assistant answers from a fixed knowledge base (API mode "demo"):
+  land-record terms, offices and where to find records, plus facts read from the open parcel's
+  records. It never generates free text and never invents parcel facts.
 * Grounding is built server-side from the ULPIN / location the page reports; client-sent record data
   is never trusted.
 """
@@ -30,14 +30,16 @@ STATES = {"MH": "Maharashtra", "UP": "Uttar Pradesh", "GJ": "Gujarat"}
 LANG_NAMES = {"en": "English", "hi": "Hindi", "mr": "Marathi", "gu": "Gujarati"}
 PROVIDERS = ("anthropic", "openai", "gemini")
 
-SYSTEM_PROMPT = """You are the LandGPT Assistant inside LAND-GPT, a State Land Stack demonstration portal for Maharashtra, Uttar Pradesh and Gujarat. It connects each state's existing land systems (records of rights, registration, mutation, survey/GIS, planning, tax, utilities) through a common parcel identifier, the ULPIN.
+SYSTEM_PROMPT = """You are the BhuSamhita Assistant inside BhuSamhita ("Bharat's Land. One Connected System."), a citizen land-information portal for Maharashtra, Uttar Pradesh and Gujarat. It connects each state's existing land systems (records of rights, registration, mutation, survey/GIS, planning, tax, utilities) through a common parcel identifier, the ULPIN.
+
+You are first a general land-information assistant: explain land terms (Gat, survey number, 7/12, 8A, Khatauni, Khasra, VF 7/12, VF 6, mutation, encumbrance), where a citizen can find a record, and which department or office handles a land service. Keep answers practical and simple.
 
 Each user turn may start with <app_context> JSON describing what the user is looking at: the page, the selected state/district/taluka or tehsil/village, and - when a parcel is open - that parcel's connected records and cross-record validation findings retrieved from Land Stack.
 
 Rules:
 - For facts about a specific parcel, place or record use ONLY <app_context>. If it is not there, say it is not available in the connected records. Never guess owners, areas, dates, amounts or outcomes.
 - You may explain general land-record concepts (ULPIN, 7/12, 8A, Property Card, Ferfar, Khatauni, Khasra, Namantaran, BhuNaksha, VF 6, VF 7/12, VF 8A, mutation, encumbrance). Be accurate and say when practice varies by state.
-- The data in this portal is replicated demonstration data and the ULPINs are demonstration identifiers. Verification here means consistency checks across connected records, not legal certification. Give no legal advice; name the office that handles a process instead.
+- Verification here means consistency checks across connected records, not legal certification. Give no legal advice; name the office that handles a process instead.
 - To help the user navigate, you may point to portal pages: Land Map, the state land-information pages, a parcel's Unified Land Profile, and Government Officer Login.
 - Reply in {language}. Keep state terms (7/12, Khatauni, VF 6 ...) as they are. Be concise: short paragraphs or a short list."""
 
@@ -215,13 +217,39 @@ def _links(g: dict) -> list[dict[str, str]]:
 # ---------------------------------------------------------------------------------------------
 
 KB: list[tuple[str, tuple[str, ...], str]] = [
+    ("department", ("department", "which office", "what office", "who handles", "who deals", "whom to contact", "who to contact",
+                    "which authority", "विभाग", "कार्यालय", "कचेरी", "વિભાગ", "કચેરી"),
+     "**Who handles what** (office names differ by state):\n"
+     "- **Record of rights and mutation** (7/12 & 8A · Khatauni & Khasra · VF 7/12, VF 8A & VF 6): the state **Revenue "
+     "Department**. Maharashtra: Talathi (village), Mandal Adhikari / Circle Officer, Tahsildar. Uttar Pradesh: Lekhpal, "
+     "Revenue Inspector, Tehsildar, under the Board of Revenue. Gujarat: Talati-cum-Mantri and the e-Dhara Kendra at the "
+     "Mamlatdar office.\n"
+     "- **Survey, maps and boundaries:** the land records / survey office - Maharashtra: Settlement Commissioner & Director "
+     "of Land Records (City Survey office for Property Cards); Uttar Pradesh: Revenue Department (BhuNaksha village maps); "
+     "Gujarat: District Inspector of Land Records (City Survey office for Property Cards).\n"
+     "- **Registration of sale, gift or mortgage deeds:** the **Registration & Stamps Department** - the Sub-Registrar office.\n"
+     "- **Property tax and water connection:** the municipal corporation / council, or the gram panchayat in villages.\n"
+     "- **Building permission and zoning:** the planning or development authority, or the municipal body.\n\n"
+     "Open a parcel's Unified Land Profile to see which of these records are connected for that land."),
+    ("gat", ("what is gat", "what is a gat", "gat mean", "meaning of gat", "gat no", "gat number mean", "गट क्रमांक", "गट नंबर",
+             "गट म्हणजे", "गट क्या", "ગટ શું", "ગટ નંબર"),
+     "**Gat number** (गट क्रमांक) is the parcel number used in Maharashtra's village land records after consolidation of "
+     "holdings: old survey numbers were regrouped into gats. It identifies the land on the 7/12 extract and the village map.\n\n"
+     "Other areas use a **survey number** (with a hissa / part), Uttar Pradesh uses the **khasra / gata** number and Gujarat "
+     "the **survey number** (with sub-division); towns use a City Survey (CTS) number.\n\n"
+     "In BhuSamhita, choose the village and then the Gat / Survey / Khasra number, or type the number in the search box."),
+    ("survey", ("what is survey number", "what is a survey number", "survey number mean", "survey no mean", "what is hissa",
+                "सर्वे क्रमांक म्हणजे", "सर्वे नंबर क्या", "સર્વે નંબર શું"),
+     "A **survey number** identifies a piece of land in the village land records and on the village map; a sub-division "
+     "(hissa / part) splits it further. Maharashtra often uses a **Gat** number instead, Uttar Pradesh a **khasra / gata** "
+     "number, and Gujarat the survey number with sub-division. Towns use City Survey (CTS) numbers on Property Cards."),
     ("ulpin", ("ulpin", "bhu-aadhaar", "bhu aadhaar", "unique land parcel", "land parcel identification"),
      "**ULPIN** (Unique Land Parcel Identification Number) is a 14-digit alphanumeric identifier for a land parcel, "
      "introduced by the Department of Land Resources under DILRMP. It is generated from the geo-coordinates of the "
      "parcel's boundary vertices on georeferenced cadastral maps, with the state revenue administration generating it.\n\n"
-     "In LAND-GPT every parcel is looked up by its ULPIN. The ULPIN registry maps it to the state, jurisdiction and the "
+     "In BhuSamhita every parcel is looked up by its ULPIN. The ULPIN registry maps it to the state, jurisdiction and the "
      "state's own parcel number (Survey/Gat, Khasra, Survey No.), so records held by different departments can be read "
-     "together.\n\nThe ULPINs in this portal are demonstration identifiers, not officially issued ones."),
+     "together."),
     ("712", ("7/12", "7-12", "712", "७/१२", "सातबारा", "satbara", "saat baara", "record of rights maharashtra"),
      "The **7/12 extract** (सातबारा उतारा) is Maharashtra's record of rights for land. It combines Village Form VII "
      "(occupants and rights) and Village Form XII (cultivation and crop details) for a survey or gat number: area, "
@@ -235,12 +263,12 @@ KB: list[tuple[str, tuple[str, ...], str]] = [
     ("propertycard", ("property card", "मालमत्ता पत्रक", "malmatta", "city survey", "cts"),
      "A **Property Card** (मालमत्ता पत्रक) is the record of rights for land in City Survey (urban) areas, maintained by "
      "the land records department's City Survey office. It is identified by a City Survey / CTS number rather than a "
-     "survey or gat number. Maharashtra and Gujarat both maintain property cards.\n\nIn this demo only some parcels have "
-     "a property card; for others the connected record is the 7/12 or VF 7/12."),
+     "survey or gat number. Maharashtra and Gujarat both maintain property cards.\n\nNot every parcel has a property card: "
+     "rural land is recorded on the 7/12 (Maharashtra) or VF 7/12 (Gujarat)."),
     ("kprat", ("k-prat", "kprat", "k prat", "क-प्रत", "क प्रत"),
-     "K-Prat appears as a record type on Maharashtra's land-record portal, but it is **not part of the records connected "
-     "to this demo**, so LAND-GPT cannot show or describe its contents. The connected Maharashtra records are 7/12, 8A, "
-     "Ferfar, Property Card and registration documents."),
+     "K-Prat appears as a record type on Maharashtra's land-record portal, but it is **not yet connected to BhuSamhita**, "
+     "so BhuSamhita cannot show its contents. The connected Maharashtra records are 7/12, 8A, Ferfar, Property Card and "
+     "registration documents."),
     ("ferfar", ("ferfar", "फेरफार", "e-ferfar", "mutation entry maharashtra"),
      "**Ferfar** (फेरफार) is Maharashtra's mutation entry: when rights change (sale, inheritance, mortgage), the Talathi "
      "records the entry and serves notice, objections go to the register of disputed cases, and the Mandal Adhikari "
@@ -257,7 +285,7 @@ KB: list[tuple[str, tuple[str, ...], str]] = [
      "Inspector report and the Tehsildar's order."),
     ("bhunaksha", ("bhunaksha", "bhu naksha", "भू नक्शा", "cadastral map"),
      "**BhuNaksha** is the digitised cadastral (village) map system: it shows plot boundaries with their plot numbers. "
-     "In LAND-GPT the parcel boundary is compared with the recorded area; a difference above 5% is flagged (rule GIS-001)."),
+     "In BhuSamhita the parcel boundary is compared with the recorded area; a difference above 5% is flagged (rule GIS-001)."),
     ("vf6", ("vf 6", "vf6", "vf-6", "hakk patrak", "હક્ક પત્રક", "ferfar gujarat"),
      "**VF 6** (Village Form 6, હક્ક પત્રક) is Gujarat's mutation register. An entry made at the e-Dhara Kendra is "
      "verified, a 135-D notice is served (30 days), and after certification VF 7/12 and VF 8A are updated."),
@@ -265,13 +293,18 @@ KB: list[tuple[str, tuple[str, ...], str]] = [
      "**VF 7/12** is Gujarat's record of rights for a survey number (area, holders, rights and crops), maintained through "
      "e-Dhara and viewable on AnyROR. **VF 8A** lists all survey numbers held by one account holder."),
     ("encumbrance", ("encumbrance", "mortgage", "loan", "charge", "बोजा", "litigation", "court case"),
-     "An **encumbrance** is a charge on land such as a mortgage, lien or court attachment. In LAND-GPT, encumbrance "
+     "An **encumbrance** is a charge on land such as a mortgage, lien or court attachment. In BhuSamhita, encumbrance "
      "records come from the rights-and-liabilities source, and the validation engine flags active charges and litigation "
      "(rules ENC-* and LIT-*). Open a parcel's Unified Land Profile → *Encumbrance / Mortgage*."),
-    ("mutation", ("mutation", "transfer of ownership", "change owner", "name change"),
-     "A **mutation** updates the record of rights after ownership changes. Each state names it differently: Ferfar in "
-     "Maharashtra, Namantaran in Uttar Pradesh, VF 6 entries in Gujarat. LAND-GPT compares registrations with mutations "
-     "and flags a registration whose mutation is still pending (rule MUT-003)."),
+    ("mutation", ("mutation", "transfer of ownership", "change owner", "name change", "ફેરફાર"),
+     "A **mutation** updates the record of rights after ownership changes (sale, gift, inheritance, mortgage). Each state "
+     "names it differently: **Ferfar** in Maharashtra, **Namantaran** in Uttar Pradesh, **VF 6** entries in Gujarat.\n\n"
+     "Where to find mutation information:\n"
+     "- **In BhuSamhita:** open the parcel's Unified Land Profile → *Mutation* for each entry, its status and the deed it is based on.\n"
+     "- **Maharashtra:** the Talathi office keeps the Ferfar register; entries and their status are online through Mahabhumi / e-Ferfar.\n"
+     "- **Uttar Pradesh:** Namantaran cases are decided at the tehsil (Tehsildar); the updated Khatauni is on UP Bhulekh.\n"
+     "- **Gujarat:** VF 6 entries are made at the e-Dhara Kendra in the Mamlatdar office; VF 6 details can be seen on AnyROR.\n\n"
+     "A registered sale whose mutation is still pending is flagged in the parcel's verification."),
     ("verify", ("verify", "verification", "verified", "consistent", "discrepancy", "flag", "validate", "सत्याप", "पडताळ", "ચકાસ"),
      "Each parcel's **Unified Land Profile** runs cross-record checks, for example:\n"
      "- the holder on the record of rights matches the buyer on the latest registration\n"
@@ -292,12 +325,11 @@ KB: list[tuple[str, tuple[str, ...], str]] = [
     ("map", ("map", "gis", "zoom", "layer", "measure", "basemap", "satellite", "मानचित्र", "नकाशा", "નકશ"),
      "Using **Land Map**:\n"
      "- Pick state → district → taluka/tehsil → village in the *Navigate* panel, or search by ULPIN / survey number.\n"
-     "- Parcel boundaries appear from zoom 12, plot numbers from zoom 17. Click a parcel for its summary.\n"
+     "- Land parcels appear when you reach a village (zoom 14); plot numbers from zoom 17. Click a parcel for its summary.\n"
      "- *Layers* toggles cadastral parcels, village plots, identifiers and village boundaries.\n"
-     "- *Tools* measures distance/area and jumps to coordinates. Basemaps: map, satellite, hybrid, terrain.\n\n"
-     "The parcel polygons are synthetic cadastral-style shapes for demonstration."),
+     "- *Tools* measures distance/area and jumps to coordinates. Basemaps: map, satellite, hybrid, terrain."),
     ("services", ("service", "what can you do", "help", "features", "options", "सेवा", "સેવા"),
-     "LAND-GPT offers:\n"
+     "BhuSamhita offers:\n"
      "- **State land information** - Maharashtra (7/12, 8A, Property Card), Uttar Pradesh (Khatauni, Khasra), Gujarat "
      "(VF 7/12, VF 8A, VF 6)\n"
      "- **Land Map** - GIS navigation to any parcel\n"
@@ -327,6 +359,11 @@ def _norm(s: str) -> str:
 def demo_answer(question: str, g: dict) -> dict[str, Any]:
     q = _norm(question)
     p = g.get("parcel")
+    # General questions ("what is ...", "which department ...") get the general answer even with a parcel open.
+    if re.match(r"^(what is|what's|what are|what does|meaning|define|which department|which office|who handles|where can i find)", q):
+        for key, keys, text in KB:
+            if any(k in q for k in keys):
+                return {"reply": text, "links": _kb_links(key, g), "suggestions": _kb_follow(key)}
     if p:
         for intent, keys in PARCEL_INTENTS:
             if any(k in q for k in keys):
@@ -343,11 +380,11 @@ def demo_answer(question: str, g: dict) -> dict[str, Any]:
             return {"reply": text, "links": _kb_links(key, g), "suggestions": _kb_follow(key)}
     if g.get("location") and any(k in q for k in ("district", "village", "taluka", "tehsil", "state")):
         return {"reply": _location_answer(g["location"]), "links": _links(g), "suggestions": []}
-    return {"reply": "I'm running in **demo mode**, so I answer a fixed set of questions using this portal's data. I can explain "
-                     "ULPIN, 7/12, 8A, Property Card, Ferfar, Khatauni, Khasra, Namantaran, VF 6, VF 7/12, mutation, encumbrance "
-                     "and verification, help you find a parcel or use the map - and, when a parcel is open, explain that parcel "
-                     "from its connected records.\n\nFree-form answers are available when an AI provider is configured on the server.",
-            "links": [], "suggestions": ["What is ULPIN?", "How can I find my land parcel?", "Explain this parcel"]}
+    return {"reply": "I can help with common land-record questions: what Gat, survey number, ULPIN, 7/12, 8A, Property Card, "
+                     "Ferfar, Khatauni, Khasra, Namantaran, VF 7/12 or VF 6 mean; where to find mutation or encumbrance "
+                     "information; which department handles a land service; how to find a parcel or use the map - and, "
+                     "when a parcel is open, what its connected records say.\n\nTry asking one of these, in a few words.",
+            "links": [], "suggestions": ["What is Gat?", "Which department handles land records?", "How can I find my land parcel?"]}
 
 
 def _kb_links(key: str, g: dict) -> list[dict[str, str]]:
@@ -362,7 +399,10 @@ def _kb_links(key: str, g: dict) -> list[dict[str, str]]:
 
 
 def _kb_follow(key: str) -> list[str]:
-    return {"ulpin": ["How can I find my land parcel?", "What is a 7/12 record?"],
+    return {"department": ["Where can I find mutation information?", "What is a 7/12 record?"],
+            "gat": ["What is a 7/12 record?", "How can I find my land parcel?"],
+            "mutation": ["Which department handles land records?", "What is Ferfar?"],
+            "ulpin": ["How can I find my land parcel?", "What is a 7/12 record?"],
             "712": ["What is 8A?", "What is Ferfar?"], "8a": ["What is a 7/12 record?"],
             "khatauni": ["What is Khasra?", "What is Namantaran?"], "vf712": ["What is VF 6?"],
             "find": ["How do I use the map?", "What is ULPIN?"], "verify": ["Explain this parcel"]}.get(key, [])
@@ -376,7 +416,7 @@ def _loc_line(j: dict) -> str:
 def _location_answer(loc: dict) -> str:
     parts = [f"You are viewing **{_loc_line(loc) or loc.get('state')}**{', ' + loc['state'] if loc.get('district') else ''}."]
     if loc.get("ulpin_parcels") is not None:
-        parts.append(f"The connected demo data has {loc['ulpin_parcels']} ULPIN-linked parcel(s) here"
+        parts.append(f"The connected records have {loc['ulpin_parcels']} ULPIN-linked parcel(s) here"
                      + (f", {loc['parcels_with_findings']} with verification findings." if loc.get("parcels_with_findings") is not None else "."))
     if loc.get("villages"):
         parts.append("Villages with connected records: " + ", ".join(loc["villages"]) + ".")

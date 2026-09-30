@@ -14,7 +14,6 @@ export function renderCitizenPortal(root, rerender) {
     ["map", "landMap", "cpMapD", "#/map"],
     ["register", "landRecords", "cpRecordsD", "#/state"],
     ["search", "svcUlpinSearch", "cpUlpinD", "#cp-find"],
-    ["chart", "navDashboard", "cpDashD", "#/dashboard"],
     ["grid", "digitalServices", "cpHubD", "#/services"],
     ["spark", "chatTitle", "svcAskD", "chat"],
   ];
@@ -59,7 +58,7 @@ export function renderCitizenPortal(root, rerender) {
           <div class="svc-grid">${svc.map(([ic, tk, dk, href]) => {
             const attrs = href === "chat" ? `href="#" data-chat=""` : href.startsWith("#cp-") ? `href="#" data-jump="${href.slice(1)}"` : `href="${href}"`;
             return `<a class="svc-card" ${attrs}><span class="svc-ic">${icon[ic]}</span><span class="svc-t"><b>${esc(t(tk))}</b></span>
-              <span class="svc-d">${esc(t(dk))}</span><span class="svc-tag ${href === "chat" ? "" : "live"}">${esc(t(href === "chat" ? "badgeDemo" : "available"))}</span></a>`;
+              <span class="svc-d">${esc(t(dk))}</span><span class="svc-tag live">${esc(t("available"))}</span></a>`;
           }).join("")}</div>
         </section>
       </div>

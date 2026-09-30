@@ -6,11 +6,11 @@ from interop.registry import InvalidUlpin, UlpinAmbiguous, UlpinNotFound
 from .conftest import P
 
 
-def test_registry_holds_all_45_unique_ulpins(service):
-    assert len(service.registry) == 45
+def test_registry_holds_all_300_unique_ulpins(service):
+    assert len(service.registry) == 300
     assert service.registry.issues == []
     for code in ("MH", "UP", "GJ"):
-        assert len(service.registry.identities(code)) == 15
+        assert len(service.registry.identities(code)) == 100
 
 
 @pytest.mark.parametrize("key,scheme,value,part,account,sub_type", [

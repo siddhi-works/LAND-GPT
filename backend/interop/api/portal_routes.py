@@ -136,7 +136,7 @@ def portal_router(svc: LandStackService, wf: Workflow) -> APIRouter:
     def assistant_ask(body: AskRequest):
         return assistant.ask(svc, body.ulpin, body.question)
 
-    # -- LandGPT chat (provider chosen server-side; demo mode when none is configured) ------------
+    # -- BhuSamhita chat (provider chosen server-side; demo mode when none is configured) ------------
     @r.get("/chat/status", tags=["assistant"])
     def chat_status():
         return chat.status()

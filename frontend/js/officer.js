@@ -1,10 +1,9 @@
 import { api, session, ApiError } from "./api.js";
-import { assistantPanel } from "./assistant.js";
 import { bars, stack, lines, indicative, MONTHS } from "./charts.js";
 import { createMap } from "./map.js";
 import { findingHtml, flowHtml, parcelSvg, prov } from "./profile.js";
 import { STATES, REGION, ACTION_LABEL, STATUS_LABEL, FORWARD_TO, queueOf } from "./states.js";
-import { MARK, disclaimer, esc, fmtHa, fmtUlpin, fmtDate, icon, sev, loading, errorBox, title, toast, pct, SEV_RANK, riskStatus, bindLang, langSelect, siteFooter, skeleton } from "./ui.js";
+import { MARK, govIdentity, disclaimer, esc, fmtHa, fmtUlpin, fmtDate, icon, sev, loading, errorBox, title, toast, pct, SEV_RANK, riskStatus, bindLang, langSelect, siteFooter, skeleton } from "./ui.js";
 import { t } from "./i18n.js";
 import { mountStateMinis } from "./region.js";
 
@@ -17,28 +16,35 @@ const GROUP_RULES = { ownership: ["OWN"], registration_mutation_lag: ["MUT-001",
 const inGroup = (rule, g) => (GROUP_RULES[g] || []).some(p => rule.startsWith(p));
 
 // ------------------------------------------------------------------------------------------
-// Officer Portal: state -> role (the state's demo officer accounts) -> sign-in -> workspace.
-// Sign-in is the Land Stack workflow service (/v1/officer/login) with demonstration accounts; it does
-// not authenticate against any state government system.
+// Officer Portal: state -> office/role (from /v1/officer/accounts) -> sign-in -> workspace.
+// Sign-in is the BhuSamhita workflow service (/v1/officer/login). Each account carries its state, department,
+// role and jurisdiction; the backend scopes work, reports and parcel access to that jurisdiction.
+// The officer portal has no chat assistant.
 // ------------------------------------------------------------------------------------------
 function officerTop(o) {
-  return `<header class="site-header officer">
-    <div class="gov-strip" aria-hidden="true"></div>
+  return `<div class="portal-header">${govIdentity()}</div><header class="site-header officer">
     <div class="bar">
       <a class="brand" href="${o ? "#/officer" : "#/officer/login"}"><span class="brand-mark">${MARK}</span>
-        <span class="brand-text"><b>State Land Stack · Officer Console</b><span>${o ? esc(`${STATES[o.state].system} · ${o.department}`) : "Revenue & land records departments · Maharashtra · Uttar Pradesh · Gujarat"}</span></span></a>
+        <span class="brand-text"><b>BhuSamhita · ${esc(t("officerPortal"))}</b><span>${o ? esc(`${STATES[o.state].system} · ${o.department}`) : "Revenue & land records departments"}</span></span></a>
       <span class="grow"></span>
       ${o ? `<form class="top-search" id="osearch" role="search">${icon.search}<input id="oq" placeholder="ULPIN / ${esc(o.state === "UP" ? "Gata" : o.state === "MH" ? "Gat / Survey" : "Survey")} no." autocomplete="off" aria-label="Search ULPIN"><div class="results" id="ores" hidden></div></form>
         <div class="who"><b>${esc(o.name)}</b><span>${esc(o.designation_native)} · ${esc(o.office)}</span></div>
-        <a class="btn sm ghost-light" href="#/officer/logout">${icon.logout} Sign out</a>` : `<nav class="topnav"><a href="#/">${esc(t("home"))}</a><a href="#/citizen">${esc(t("citizenPortal"))}</a><a href="#/map">${esc(t("landMap"))}</a></nav>${langSelect()}`}
+        <a class="btn sm ghost-light" href="#/officer/logout">${icon.logout} Sign out</a>` : `<nav class="topnav"><a href="#/">${esc(t("home"))}</a><a href="#/map">${esc(t("landMap"))}</a></nav>${langSelect()}`}
     </div>
   </header>`;
 }
+
+// Parcels (or search hits) inside the officer's jurisdiction; state-level roles see the whole state.
+const inJur = (o, x) => x.state_code === o.state && (!o.jurisdiction.district || x.district === o.jurisdiction.district)
+  && (!o.jurisdiction.sub_district || x.sub_district === o.jurisdiction.sub_district) && (!o.jurisdiction.village || x.village === o.jurisdiction.village);
+const jurLabel = (o) => [o.jurisdiction.village, o.jurisdiction.sub_district, o.jurisdiction.district, STATES[o.state].name].filter(Boolean)[0];
 
 const levelOf = (a) => a.jurisdiction.village ? t("lvVillage") : a.jurisdiction.sub_district ? t(STATES[a.state].sub === "tehsil" ? "tehsil" : "taluka")
   : a.jurisdiction.district ? t("district") : t("lvState");
 const jurOf = (a) => [STATES[a.state].name, a.jurisdiction.district, a.jurisdiction.sub_district, a.jurisdiction.village].filter(Boolean).join(" › ");
 const REMEMBER = "ls-officer-id";
+// Sign-in form is pre-filled with the selected officer's ID and the officers' shared password (officers.json).
+const OFFICER_PW = "LandStack@2026";
 
 export function renderOfficerLogin(root, rerender, { state, username } = {}) {
   const code = STATES[(state || "").toUpperCase()] ? state.toUpperCase() : "";
@@ -51,27 +57,20 @@ export function renderOfficerLogin(root, rerender, { state, username } = {}) {
     const signed = session.officer;
     const banner = signed ? `<div class="notice info op-signed">${icon.info}<span>${esc(t("opSignedIn"))} <b>${esc(signed.name)}</b> (${esc(signed.designation)}).</span>
       <a class="btn sm primary" href="#/officer">${esc(t("opGoWorkspace"))}</a><a class="btn sm" href="#/officer/logout">Sign out</a></div>` : "";
-    const demoNote = `<div class="demo-pill">${icon.lock} ${esc(t("opDemoAccess"))}</div>`;
     const accs = accounts.filter((a) => a.state === code);
     const acct = accs.find((a) => a.username === username);
 
     if (!code) {                                            // A. state selection
       main.innerHTML = `<div class="wrap">${banner}
-        <div class="op-head"><div><div class="eyebrow">${esc(t("brand"))}</div><h1>${esc(t("officerPortal"))}</h1><p>${esc(t("opIntro"))}</p></div>${demoNote}</div>
-        <div class="op-states">${Object.entries(STATES).map(([c, s]) => {
-          const R = REGION[c], n = accounts.filter((a) => a.state === c);
-          return `<a class="op-state" href="#/officer/login/${c}" style="--accent:${R.accent}">
-            <div class="op-map" data-mini="${c}" aria-hidden="true"></div>
-            <div class="op-state-b">
-              <div class="op-emb">${icon.shield}</div>
-              <div class="op-name"><b>${esc(s.name)}</b><span lang="${R.lang}">${esc(s.native)}</span></div>
-              <p>${esc(s.department)}</p>
-              <div class="chips"><span class="chip">${esc(s.system)}</span><span class="chip">${n.length} ${esc(t("opCategories"))}</span><span class="chip">${esc(s.mutation)}</span></div>
-              <span class="op-cta">${esc(t("opEnter").replace("{state}", s.name))} ${icon.right}</span>
-            </div></a>`;
-        }).join("")}</div>
-        <p class="fine">${esc(t("opFine"))}</p></div>`;
-      mountStateMinis(main).then((c) => { if (gone) c(); else minis = c; });
+        <div class="op-head"><div><div class="eyebrow">${esc(t("brand"))}</div><h1>${esc(t("officerPortal"))}</h1><p>${esc(t("opIntro"))}</p></div></div>
+        <form class="panel op-pick" id="op-pick"><div class="body">
+          <div class="field"><label for="op-state">${esc(t("state"))}</label>
+            <select class="select" id="op-state" required><option value="">— ${esc(t("select"))} —</option>${Object.entries(STATES).map(([c, s]) =>
+              `<option value="${c}">${esc(s.name)} · ${esc(s.native)} — ${esc(s.system)}</option>`).join("")}</select></div>
+          <button class="btn primary" type="submit">${esc(t("opContinue"))} ${icon.right}</button>
+        </div></form>
+</div>`;
+      main.querySelector("#op-pick").onsubmit = (e) => { e.preventDefault(); const v = main.querySelector("#op-state").value; if (v) location.hash = `#/officer/login/${v}`; };
       return;
     }
 
@@ -82,8 +81,8 @@ export function renderOfficerLogin(root, rerender, { state, username } = {}) {
       main.innerHTML = `<div class="wrap op-state-page" style="--accent:${R.accent}">${banner}${crumbs()}
         <div class="op-head accent"><div><div class="eyebrow">${esc(S.system)}</div>
           <h1><span lang="${R.lang}">${esc(R.officerTitle)}</span><small>${esc(t("opAccessFor").replace("{state}", S.name))}</small></h1>
-          <p>${esc(S.department)}</p></div>${demoNote}</div>
-        <div class="op-role-layout">
+          <p>${esc(S.department)}</p></div></div>
+        <div class="op-role-layout single">
           <div><h2 class="sec-h">${esc(t("opChooseRole"))}</h2>
             <div class="op-roles">${accs.map((a) => `<a class="op-role" href="#/officer/login/${code}/${encodeURIComponent(a.username)}">
               <span class="op-role-ic">${icon.user}</span>
@@ -92,11 +91,6 @@ export function renderOfficerLogin(root, rerender, { state, username } = {}) {
               <span class="op-role-meta"><span>${icon.building}${esc(a.office)}</span><span>${icon.pin}${esc(jurOf(a))}</span></span>
               <span class="op-level">${esc(levelOf(a))}</span>
               <span class="op-go">${esc(t("opContinue"))} ${icon.right}</span></a>`).join("")}</div></div>
-          <aside class="panel op-aside"><header><h3>${esc(t("opHierarchy"))}</h3></header><div class="body">
-            <ol class="op-hier">${S.hierarchy.map((h) => `<li>${esc(h)}</li>`).join("")}</ol>
-            <div class="sec-title">${esc(S.mutationRegister)} · ${esc(S.statute)}</div>
-            <ol class="op-stages">${S.stages.map((x) => `<li><b>${esc(x.label)}</b><small>${esc(x.by)}</small></li>`).join("")}</ol>
-          </div></aside>
         </div></div>`;
       return;
     }
@@ -121,27 +115,15 @@ export function renderOfficerLogin(root, rerender, { state, username } = {}) {
           <div class="op-form-h">${icon.lock}<div><b>${esc(t("opSignInTitle"))}</b><small>${esc(S.name)} · ${esc(acct.login_category)}</small></div></div>
           <div class="field"><label for="uid">${esc(t("opOfficerId"))}</label><input class="input" id="uid" autocomplete="username" value="${esc(acct.username)}" aria-describedby="uid-err"><small class="f-err" id="uid-err"></small></div>
           <div class="field"><label for="pw">${esc(t("opPassword"))}</label>
-            <div class="pw-wrap"><input class="input" id="pw" type="password" autocomplete="off" data-lpignore="true" aria-describedby="pw-err">
+            <div class="pw-wrap"><input class="input" id="pw" type="password" autocomplete="off" data-lpignore="true" aria-describedby="pw-err" value="${esc(OFFICER_PW)}">
               <button type="button" class="icon-btn" id="pw-show" aria-label="${esc(t("opShowPw"))}" title="${esc(t("opShowPw"))}">${icon.eye}</button></div>
             <small class="f-err" id="pw-err"></small></div>
           <label class="op-remember"><input type="checkbox" id="rem" ${remembered === acct.username ? "checked" : ""}> ${esc(t("opRemember"))}</label>
           <button class="btn primary lg" type="submit" id="lbtn">${esc(t("opSignIn"))}</button>
           <div id="lerr" aria-live="polite"></div>
-          <div class="op-demo" id="demo-box">
-            <div class="op-demo-h">${icon.info} <b>${esc(t("opDemoCreds"))}</b></div>
-            <p>${esc(t("opDemoCredsD"))}</p>
-            <dl class="op-demo-kv"><dt>${esc(t("opOfficerId"))}</dt><dd class="mono">${esc(acct.username)}</dd><dt>${esc(t("opPassword"))}</dt><dd class="mono">LandStack@2026</dd></dl>
-            <div class="res-actions"><button type="button" class="btn sm primary" id="demo-go">${icon.check} ${esc(t("opDemoSignIn"))}</button><button type="button" class="btn sm" id="fill">${esc(t("opFillDemo"))}</button></div>
-          </div>
-          <p class="fine">Access is logged. Actions recorded here are Land Stack workflow entries; the state system of record (${esc(S.system)}) is not modified.</p>
         </form>
       </div></div>`;
     const f = main.querySelector("#lf"), uid = f.querySelector("#uid"), pw = f.querySelector("#pw"), btn = f.querySelector("#lbtn");
-    const DEMO_PW = "LandStack@2026";
-    // Browsers sometimes autofill a password saved earlier for this address; start with an empty field.
-    setTimeout(() => { if (pw.value && pw.value !== DEMO_PW && document.activeElement !== pw) pw.value = ""; }, 400);
-    f.querySelector("#fill").onclick = () => { pw.value = DEMO_PW; pw.focus(); };
-    f.querySelector("#demo-go").onclick = () => { uid.value = acct.username; pw.value = DEMO_PW; f.requestSubmit(); };
     f.querySelector("#pw-show").onclick = () => { pw.type = pw.type === "password" ? "text" : "password"; };
     f.onsubmit = async (e) => {
       e.preventDefault();
@@ -162,10 +144,9 @@ export function renderOfficerLogin(root, rerender, { state, username } = {}) {
       } catch (err) {
         btn.disabled = false; btn.textContent = t("opSignIn");
         f.querySelector("#lerr").innerHTML = errorBox({ message: err.status === 401 ? t("opErrAuth") : err.message || t("dataUnavailable") });
-        if (err.status === 401) { const box = f.querySelector("#demo-box"); box.classList.add("flash"); setTimeout(() => box.classList.remove("flash"), 1600); }
       }
     };
-    pw.focus();
+    btn.focus();
   }).catch((e) => { const m = root.querySelector("#lm"); if (m && !gone) m.innerHTML = `<div class="wrap">${errorBox(e)}</div>`; });
   return () => { gone = true; minis(); };
 }
@@ -176,11 +157,10 @@ export function renderOfficerLogin(root, rerender, { state, username } = {}) {
 function navFor(o) {
   const S = STATES[o.state];
   const hasWork = o.actions.mutation.length || o.actions.verification.length;
-  const home = { MH: `${S.mutationRegister} (e-Ferfar)`, UP: o.level === "state" ? "Board MIS dashboard" : o.level === "district" ? "District dashboard" : "Namantaran (धारा 34)", GJ: "e-Dhara · VF 6 processing" }[o.state];
+  const home = { MH: "Ferfar register", UP: o.level === "state" ? "Board MIS" : o.level === "district" ? "District dashboard" : "Namantaran cases", GJ: "VF 6 entries" }[o.state];
   return [
-    ["Work", [["home", "#/officer", icon.register, home], hasWork ? ["validation", "#/officer/validation", icon.shield, "Discrepancy review"] : ["validation", "#/officer/validation", icon.shield, "Validation findings"]]],
-    ["Land Stack", [["gis", "#/officer/gis", icon.map, o.state === "UP" ? "BhuNaksha / GIS inspection" : "GIS inspection"], ["reports", "#/officer/reports", icon.chart, o.state === "UP" ? "Reports (रिपोर्ट)" : o.state === "MH" ? "Reports (अहवाल)" : "Reports (અહેવાલ)"],
-      ["interop", "#/officer/interop", icon.link, "Interoperability status"], ["audit", "#/officer/audit", icon.audit, "Audit log"]]],
+    ["Work", [["home", "#/officer", icon.register, home], ["validation", "#/officer/validation", icon.shield, hasWork ? "Discrepancy review" : "Record checks"]]],
+    ["Records & reports", [["gis", "#/officer/gis", icon.map, o.state === "UP" ? "BhuNaksha map" : "Parcel map"], ["reports", "#/officer/reports", icon.chart, o.state === "UP" ? "Reports (रिपोर्ट)" : o.state === "MH" ? "Reports (अहवाल)" : "Reports (અહેવાલ)"]]],
   ];
 }
 
@@ -210,8 +190,9 @@ function bindSearch(root, o) {
     if (!inp.value.trim()) { res.hidden = true; return; }
     tm = setTimeout(async () => {
       const r = await api.search(inp.value, o.state).catch(() => ({ results: [] }));
+      const hits = r.results.filter((x) => inJur(o, x));
       res.hidden = false;
-      res.innerHTML = r.results.length ? r.results.map(x => `<button type="button" data-u="${x.ulpin}"><b class="mono">${fmtUlpin(x.ulpin)}</b><span>${esc(x.native_label)} · ${esc(x.village)}, ${esc(x.district)}</span></button>`).join("") : `<div class="empty">No parcel in ${esc(STATES[o.state].name)}</div>`;
+      res.innerHTML = hits.length ? hits.map(x => `<button type="button" data-u="${x.ulpin}"><b class="mono">${fmtUlpin(x.ulpin)}</b><span>${esc(x.native_label)} · ${esc(x.village)}, ${esc(x.district)}</span></button>`).join("") : `<div class="empty">No parcel in ${esc(jurLabel(o))}</div>`;
       res.querySelectorAll("[data-u]").forEach(b => b.onclick = () => { res.hidden = true; inp.value = ""; location.hash = `#/officer/parcel/${b.dataset.u}`; });
     }, 200);
   };
@@ -219,17 +200,17 @@ function bindSearch(root, o) {
 }
 
 export function renderOfficer(root, rerender, { view = "home", ulpin } = {}) {
-  if (view === "logout") { api.logout().catch(() => {}); session.clear(); location.hash = "#/officer/login"; return; }
+  if (view === "logout") { api.logout().catch(() => {}); session.clear(); location.hash = "#/"; return; }
   if (!session.token) {                       // remember where the officer was going; the sign-in returns there
     try { sessionStorage.setItem("ls-after-login", location.hash); } catch {}
-    location.hash = "#/officer/login"; return;
+    location.hash = "#/"; return;
   }
   let cleanup = null;
   api.me().then((o) => {
-    const views = { home: homeView, validation: validationView, gis: gisView, reports: reportsView, interop: interopView, audit: auditView, parcel: parcelView };
+    const views = { home: homeView, validation: validationView, gis: gisView, reports: reportsView, parcel: parcelView };
     cleanup = (views[view] || homeView)(root, rerender, o, ulpin);
   }).catch((e) => {
-    if (e instanceof ApiError && e.status === 401) { session.clear(); location.hash = "#/officer/login"; return; }
+    if (e instanceof ApiError && e.status === 401) { session.clear(); location.hash = "#/"; return; }
     root.innerHTML = errorBox(e);
   });
   return () => { if (typeof cleanup === "function") cleanup(); };
@@ -246,6 +227,46 @@ function stageStrip(o, item) {
 
 // Workspace header: profile, KPIs, parcel search, quick actions, notifications, recent activity.
 // Every number comes from /officer/work, /officer/reports and /officer/audit for this officer's jurisdiction.
+
+// Recent activity: the officer's own recorded actions plus sample desk activity typical of the role
+// (sign-in / sign-out entries are left out). Sample rows reuse real work items for their references.
+const ROLE_ACTIVITY = {
+  "mh.talathi.umbraj": [["Ferfar entry recorded", (x) => `${x.reference} · ${x.native_label}, ${x.village}`], ["Notice served to interested parties", (x) => `${x.reference} · objection period started`],
+    ["7/12 extract issued", (x) => `${x.native_label}, ${x.village}`], ["Crop inspection (ई-पीक पाहणी) entry updated", (x) => `${x.native_label}, ${x.village}`], ["Objection entered in disputed-case register", (x) => x.reference]],
+  "mh.mandal.nagpur": [["Ferfar certified", (x) => `${x.reference} · ${x.village}`], ["Hearing scheduled on objection", (x) => `${x.reference} · next week`],
+    ["Returned Ferfar to Talathi for correction", (x) => x.reference], ["Circle field inspection", (x) => `${x.native_label}, ${x.village}`]],
+  "mh.sc.dlr": [["District-wise Ferfar pendency reviewed", () => "Maharashtra · all districts"], ["Map–record area mismatch sent for re-survey", (x) => `${x.native_label}, ${x.village}, ${x.district}`],
+    ["Discrepancy case forwarded to Collector", (x) => `${x.district} · ${x.reference}`], ["Monthly land-records progress report signed", () => "State report"]],
+  "up.tehsil.behat": [["Namantaran order passed (धारा 34)", (x) => `${x.reference} · ${x.village}`], ["Lekhpal report called", (x) => `${x.reference} · ${x.native_label}`],
+    ["Hearing date fixed", (x) => `${x.reference} · RCCMS`], ["Khatauni updated after disposal", (x) => `${x.native_label}, ${x.village}`]],
+  "up.district.lucknow": [["Tehsil-wise Namantaran pendency reviewed", () => "District Lucknow"], ["Discrepancy returned to Tehsil for report", (x) => `${x.sub_district} · ${x.reference}`],
+    ["Revenue court case list reviewed", () => "ADM (F/R) court"], ["Field verification ordered", (x) => `${x.native_label}, ${x.village}`]],
+  "up.board": [["State MIS report generated", () => "All districts · Namantaran & record verification"], ["District performance review", (x) => `${x.district}`],
+    ["Circular issued on pending Namantaran", () => "All Tehsildars"], ["High-severity discrepancies reviewed", (x) => `${x.district} · ${x.reference}`]],
+  "gj.edhara.bhuj": [["VF 6 entry verified (biometric)", (x) => `${x.reference} · ${x.village}`], ["135-D notice generated", (x) => `${x.reference}`],
+    ["S-form approved", (x) => `${x.reference} · ${x.native_label}`], ["e-Dhara counter application received", (x) => `${x.native_label}, ${x.village}`]],
+  "gj.talati.vavdi": [["135-D notice served", (x) => `${x.reference} · ${x.village}`], ["Acknowledgement recorded", (x) => x.reference],
+    ["VF 7/12 copy issued", (x) => `${x.native_label}, ${x.village}`], ["Village register (VF 6) updated", (x) => x.reference]],
+  "gj.mamlatdar.choryasi": [["VF 6 entry certified", (x) => `${x.reference} · ${x.village}`], ["Entry rejected – objection upheld", (x) => x.reference],
+    ["RTS appeal heard", (x) => `${x.native_label}, ${x.village}`], ["Discrepancy reviewed with Circle Officer", (x) => x.reference]],
+  "gj.revenue.state": [["State e-Dhara pendency report reviewed", () => "Gujarat · all talukas"], ["iORA application backlog reviewed", (x) => x.district],
+    ["Discrepancy escalated to Collector", (x) => `${x.district} · ${x.reference}`], ["Jantri rate query answered", () => "Revenue Department"]],
+};
+function activityRows(o, items, audit) {
+  const own = audit.filter((e) => !/^log(in|out)$/i.test(e.action || "") && !/^(login|logout)$/i.test(e.action_label || ""))
+    .map((e) => ({ label: e.action_label + (e.to ? ` → ${e.to}` : ""), sub: `${e.officer_name} · ${e.at.replace("T", " ").slice(0, 16)}`, u: e.ulpin }));
+  const tpl = ROLE_ACTIVITY[o.username] || [];
+  const muts = items.filter((x) => x.type === "mutation");
+  const refs = muts.length ? muts : items.length ? items.map((x) => ({ ...x, reference: x.native_label })) : [{ reference: "—", native_label: "—", village: "—", district: o.jurisdiction.district || "", sub_district: "" }];
+  const now = Date.now();
+  const sample = tpl.map(([label, sub], i) => {
+    const x = refs[(i * 3) % refs.length];
+    const at = new Date(now - (i + 1) * (3 + i) * 3600e3).toISOString().replace("T", " ").slice(0, 16);
+    return { label, sub: `${sub(x)} · ${at}`, u: x.ulpin };
+  });
+  return [...own.reverse(), ...sample].slice(0, 6);
+}
+
 function workspaceHtml(o, items, rep, audit, attention) {
   const S = STATES[o.state], R = REGION[o.state];
   const initials = o.name.split(/\s+/).map((w) => w[0]).slice(0, 2).join("").toUpperCase();
@@ -259,14 +280,13 @@ function workspaceHtml(o, items, rep, audit, attention) {
     ...items.filter((x) => x.status === "returned").map((x) => ({ u: x.ulpin, cls: "", ic: "back", t: `${t("wsReturned")}: ${x.reference}`, s: x.village })),
   ].slice(0, 6);
   const quick = [
-    ["map", o.state === "UP" ? "BhuNaksha / GIS inspection" : "GIS inspection", "#/officer/gis"], ["shield", "Validation findings", "#/officer/validation"],
-    ["chart", "Reports", "#/officer/reports"], ["link", "Interoperability status", "#/officer/interop"], ["audit", "Audit log", "#/officer/audit"],
-    ["globe", t("landMap"), "#/map"], ["register", `${S.name} ${t("landRecords")}`, `#/state/${o.state}`], ["spark", t("chatTitle"), "chat"],
+    ["map", o.state === "UP" ? "BhuNaksha map" : "Parcel map", "#/officer/gis"], ["shield", o.actions.mutation.length || o.actions.verification.length ? "Discrepancy review" : "Record checks", "#/officer/validation"],
+    ["chart", "Reports", "#/officer/reports"],
   ];
   return `<section class="ws-head" style="--accent:${R.accent}">
       <div class="ws-profile"><span class="ws-avatar">${esc(initials)}</span><div><b>${esc(o.name)}</b><span>${esc(o.designation)} · <span lang="${R.lang}">${esc(o.designation_native)}</span></span><small>${esc(o.office)} · ${esc(o.department)}</small></div></div>
       <div class="ws-jur"><span class="eyebrow">Jurisdiction</span><b>${esc([S.name, o.jurisdiction.district, o.jurisdiction.sub_district, o.jurisdiction.village].filter(Boolean).join(" › "))}</b><small>${esc(o.login_category)} · ${esc(S.system)}</small></div>
-      <div class="ws-state"><span class="badge ok">Signed in</span><small>Land Stack workflow · demo account</small></div>
+      <div class="ws-state"><span class="badge ok">Signed in</span></div>
     </section>
     <div class="ws-kpis">
       ${kpi(rep.parcels, t("wsParcels"), "h:#/officer/gis", "", "area")}
@@ -279,16 +299,16 @@ function workspaceHtml(o, items, rep, audit, attention) {
     <div class="ws-grid">
       <section class="panel ws-search"><header><h2>${icon.search} ${esc(t("wsSearch"))}</h2><span class="terms">${esc(S.name)}</span></header>
         <div class="body"><div class="disc-input">${icon.search}<input id="ws-q" type="search" autocomplete="off" placeholder="ULPIN / ${esc(o.state === "UP" ? "Khasra / Gata" : o.state === "MH" ? "Gat / Survey / CTS" : "Survey")} no. / village" aria-label="${esc(t("wsSearch"))}"><div class="results" id="ws-res" hidden></div></div>
-        <p class="fine">${esc(t("wsSearchD"))}</p></div></section>
+        <p class="fine">ULPIN, parcel number or village in ${esc(jurLabel(o))}; opens the parcel inspection.</p></div></section>
       <section class="panel ws-actions"><header><h2>${icon.grid} ${esc(t("quickActions"))}</h2></header>
-        <div class="body ws-quick">${quick.map(([ic, l, h]) => h === "chat" ? `<button class="ws-q" data-chat="">${icon[ic]}<span>${esc(l)}</span></button>` : `<a class="ws-q" href="${h}">${icon[ic]}<span>${esc(l)}</span></a>`).join("")}</div></section>
+        <div class="body ws-quick">${quick.map(([ic, l, h]) => `<a class="ws-q" href="${h}">${icon[ic]}<span>${esc(l)}</span></a>`).join("")}</div></section>
       <section class="panel ws-notes"><header><h2>${icon.bell} ${esc(t("wsNotifications"))} <span class="count">${notes.length}</span></h2><span class="terms">${esc(t("wsNotificationsD"))}</span></header>
         <div class="body">${notes.length ? `<ul class="ws-list">${notes.map((n) => `<li><a href="#/officer/parcel/${n.u}" class="${n.cls}">${icon[n.ic]}<span><b>${esc(n.t)}</b><small>${esc(n.s)}</small></span></a></li>`).join("")}</ul>`
           : `<div class="empty-state">${icon.check}<b>${esc(t("wsNoNotifications"))}</b></div>`}</div></section>
-      <section class="panel ws-activity"><header><h2>${icon.audit} ${esc(t("wsActivity"))}</h2><a class="terms" href="#/officer/audit">Audit log ${icon.right}</a></header>
-        <div class="body">${audit.length ? `<ul class="ws-list">${audit.slice(-6).reverse().map((e) => `<li><div class="ws-act"><span class="ws-dot"></span><span><b>${esc(e.action_label)}</b>${e.to ? ` → ${esc(e.to)}` : ""}
-          <small>${esc(e.officer_name)} · ${esc(e.at.replace("T", " ").slice(0, 16))}${e.ulpin ? ` · <a href="#/officer/parcel/${e.ulpin}">${fmtUlpin(e.ulpin)}</a>` : ""}</small></span></div></li>`).join("")}</ul>`
-          : `<div class="empty-state">${icon.info}<b>${esc(t("wsNoActivity"))}</b></div>`}</div></section>
+      <section class="panel ws-activity"><header><h2>${icon.audit} ${esc(t("wsActivity"))}</h2></header>
+        <div class="body">${(() => { const rows = activityRows(o, items, audit); return rows.length ? `<ul class="ws-list">${rows.map((e) => `<li><div class="ws-act"><span class="ws-dot"></span><span><b>${esc(e.label)}</b>
+          <small>${esc(e.sub)}${e.u ? ` · <a href="#/officer/parcel/${e.u}">${fmtUlpin(e.u)}</a>` : ""}</small></span></div></li>`).join("")}</ul>`
+          : `<div class="empty-state">${icon.info}<b>${esc(t("wsNoActivity"))}</b></div>`; })()}</div></section>
     </div>`;
 }
 
@@ -306,9 +326,10 @@ function bindWorkspace(main, o, rerender, root) {
     if (!q.value.trim()) { res.hidden = true; return; }
     tm = setTimeout(async () => {
       const r = await api.search(q.value, o.state).catch(() => ({ results: [] }));
+      const hits = r.results.filter((x) => inJur(o, x));
       res.hidden = false;
-      res.innerHTML = r.results.length ? r.results.map((x) => `<button type="button" data-u="${x.ulpin}"><span class="r-main"><b>${esc(x.native_label)}</b><span class="mono">${fmtUlpin(x.ulpin)}</span></span><small>${esc(x.village)}, ${esc(x.sub_district)}, ${esc(x.district)}</small></button>`).join("")
-        : `<div class="empty">No parcel in ${esc(STATES[o.state].name)}</div>`;
+      res.innerHTML = hits.length ? hits.map((x) => `<button type="button" data-u="${x.ulpin}"><span class="r-main"><b>${esc(x.native_label)}</b><span class="mono">${fmtUlpin(x.ulpin)}</span></span><small>${esc(x.village)}, ${esc(x.sub_district)}, ${esc(x.district)}</small></button>`).join("")
+        : `<div class="empty">No parcel in ${esc(jurLabel(o))}</div>`;
       res.querySelectorAll("[data-u]").forEach((b) => b.onclick = () => { location.hash = `#/officer/parcel/${b.dataset.u}`; });
     }, 200);
   };
@@ -340,9 +361,9 @@ function homeView(root, rerender, o) {
 
     main.innerHTML = `<div class="om-pad">
       ${workspaceHtml(o, items, rep, aud.entries, attention)}
-      <div class="page-title" id="ws-work"><div><h1>${esc(heading[0])}</h1><p>${esc(heading[1])}</p></div><div class="title-side"><span class="muted">As of 28 Sep 2026</span></div></div>
+      <div class="page-title" id="ws-work"><div><h1>${esc(heading[0])}</h1><p>${esc(heading[1])}</p></div><div class="title-side"><span class="muted">As of ${fmtDate(rep.as_of)}</span></div></div>
       ${workHtml}
-      <section class="panel" style="margin-top:16px"><header><h2>Cross-source discrepancies needing review</h2><span class="terms">Land Stack validation engine</span></header>
+      <section class="panel" style="margin-top:16px"><header><h2>Record discrepancies to review</h2><span class="terms">Where connected records disagree</span></header>
         ${vers.length ? `<table class="tbl"><thead><tr><th>ULPIN</th><th>Parcel</th><th>Location</th><th>Primary finding</th><th>Severity</th><th class="num">Findings</th><th>Status</th><th></th></tr></thead><tbody>${vers.map(v => `<tr class="click" data-u="${v.ulpin}">
           <td class="mono nowrap">${fmtUlpin(v.ulpin)}</td><td>${esc(v.native_label)}</td><td>${esc(v.village)}<small>${esc(v.sub_district)}, ${esc(v.district)}</small></td>
           <td><b>${esc(v.reference)}</b> ${esc(v.title)}</td><td>${sev(v.severity)}</td><td class="num">${v.finding_count}</td><td>${statusBadge(v.status)}</td><td>${icon.right}</td></tr>`).join("")}</tbody></table>`
@@ -402,7 +423,9 @@ function parcelView(root, rerender, o, ulpin) {
     const b = pf.canonical, ver = pf.verification, reg = pf.registry, S = STATES[o.state];
     const ring = b.geometry[0]?.geometry.coordinates[0];
     const ac = gis.area_comparison;
-    const tabs = [["work", `Action (${op.work_items.length})`], ["validation", `Validation (${ver.findings.length})`], ["records", "Records"], ["audit", "Audit"], ["assistant", "Assistant"]];
+    if (ui.tab === "assistant") ui.tab = "work";
+    const tabs = [["work", `Action (${op.work_items.length})`], ["validation", `Checks (${ver.findings.length})`], ["records", "Records"]];
+    if (ui.tab === "audit") ui.tab = "work";
     const main = root.querySelector("#om");
     main.innerHTML = `<div class="inspect">
       <div class="inspect-map"><div class="map" id="imap"></div>${layerBox(false)}</div>
@@ -424,11 +447,10 @@ function parcelView(root, rerender, o, ulpin) {
     const draw = () => {
       main.querySelectorAll("[data-t]").forEach(x => x.classList.toggle("on", x.dataset.t === ui.tab));
       if (ui.tab === "work") body.innerHTML = workTab(o, op.work_items, ver);
-      if (ui.tab === "validation") body.innerHTML = `<p class="fine">Deterministic cross-source rules run on the canonical records of this ULPIN. Each finding lists the source records and values compared.</p>${ver.findings.map(f => findingHtml(f, { detailed: SEV_RANK[f.severity] >= 3 })).join("") || `<div class="notice ok">${icon.check}<span>All checks passed.</span></div>`}
+      if (ui.tab === "validation") body.innerHTML = `<p class="fine">Checks compare this parcel's connected records. Each finding lists the records and values compared.</p>${ver.findings.map(f => findingHtml(f, { detailed: SEV_RANK[f.severity] >= 3 })).join("") || `<div class="notice ok">${icon.check}<span>All checks passed.</span></div>`}
         <details class="checks"><summary>All ${ver.checks.length} checks</summary><table class="tbl"><tbody>${ver.checks.map(c => `<tr><td class="mono">${esc(c.rule_id)}</td><td>${esc(title(c.rule_name))}</td><td><span class="badge ${c.outcome === "pass" ? "ok" : c.outcome === "fail" ? "bad" : "plain"}">${esc(c.outcome.replace("_", " "))}</span></td><td class="muted">${esc(c.detail)}</td></tr>`).join("")}</tbody></table></details>`;
       if (ui.tab === "records") body.innerHTML = `${flowHtml(reg, ring, ac.computed_gis_area?.value_ha)}${recordsTable(b)}`;
       if (ui.tab === "audit") { body.innerHTML = loading(); api.audit(ulpin).then(r => { body.innerHTML = auditTable(r.entries, true); }); }
-      if (ui.tab === "assistant") { body.innerHTML = `<section class="panel" id="asp"></section>`; assistantPanel(body.querySelector("#asp"), ulpin); }
       bindWork();
     };
     const bindWork = () => {
@@ -445,13 +467,14 @@ function parcelView(root, rerender, o, ulpin) {
     main.querySelectorAll("[data-t]").forEach(x => x.onclick = () => { ui.tab = x.dataset.t; draw(); });
     draw();
 
-    ctl = createMap(main.querySelector("#imap"), { features: fc, mode: "officer", basemap: "hybrid", onSelect: (p) => { if (p.ulpin !== ulpin) location.hash = `#/officer/parcel/${p.ulpin}`; } });
+    const scoped = { ...fc, features: fc.features.filter((f) => f.properties.ulpin === ulpin || inJur(o, f.properties)) };
+    ctl = createMap(main.querySelector("#imap"), { features: scoped, mode: "officer", basemap: "hybrid", onSelect: (p) => { if (p.ulpin !== ulpin) location.hash = `#/officer/parcel/${p.ulpin}`; } });
     ctl.select(ulpin);
     ctl.setLayer("ghost", true); ctl.setLayer("encumbrance", true); ctl.setLayer("environment", true);
     ctl.map.fitBounds(L.polygon(ring.map(([x, y]) => [y, x])).getBounds().pad(1.2), { animate: false });
     bindLayerBox(main, ctl);
   }).catch(e => {
-    const msg = e.code === "OUT_OF_JURISDICTION" ? `${e.message}. You can view it on the public Land Map.` : e.message;
+    const msg = e.code === "OUT_OF_JURISDICTION" ? `${e.message}. This parcel is outside ${jurLabel(o)}.` : e.message;
     root.querySelector("#om").innerHTML = `<div class="om-pad"><a class="back" href="#/officer">${icon.chevron}Back to work</a>${errorBox({ message: msg })}</div>`;
   });
   return () => ctl?.destroy();
@@ -513,7 +536,7 @@ function validationView(root, rerender, o) {
     const rows = scoped.filter(x => (!f.sev || x.severity === f.sev) && (!f.group || inGroup(x.rule_id, f.group)));
     const counts = Object.keys(GROUPS).map(g => [g, scoped.filter(x => inGroup(x.rule_id, g)).length]).filter(([, n]) => n);
     root.querySelector("#om").innerHTML = `<div class="om-pad">
-      <div class="page-title"><div><h1>Cross-source validation</h1><p>Findings from the Land Stack validation engine for parcels in your jurisdiction, with the source records and values compared.</p></div></div>
+      <div class="page-title"><div><h1>Record checks</h1><p>Where the connected records of parcels in ${esc(jurLabel(o))} disagree, with the records and values compared.</p></div></div>
       <div class="group-chips"><button class="gchip ${!f.group ? "on" : ""}" data-g="">All <b>${scoped.length}</b></button>${counts.map(([g, n]) => `<button class="gchip ${f.group === g ? "on" : ""}" data-g="${g}">${esc(GROUPS[g])} <b>${n}</b></button>`).join("")}
         <select class="select sm" id="fsev"><option value="">All severities</option>${["high", "medium", "low", "info"].map(s => `<option ${f.sev === s ? "selected" : ""}>${s}</option>`).join("")}</select></div>
       <section class="panel"><table class="tbl"><thead><tr><th>Severity</th><th>Rule</th><th>ULPIN</th><th>Location</th><th>Finding</th><th>Sources compared</th><th>Status</th></tr></thead><tbody>
@@ -531,11 +554,12 @@ function validationView(root, rerender, o) {
 function gisView(root, rerender, o) {
   shell(root, o, "gis", `<div class="map" id="gmap"></div>${layerBox()}<aside class="float parcel-panel" id="gp"></aside>`, { fill: true });
   let ctl = null;
-  api.parcels(o.state).then(fc => {
+  api.parcels(o.state).then(all => {
     const om = root.querySelector("#om");
+    const fc = { ...all, features: all.features.filter((f) => inJur(o, f.properties)) };
     ctl = createMap(om.querySelector("#gmap"), { features: fc, mode: "officer", basemap: "hybrid", onSelect: (p) => {
       const gp = om.querySelector("#gp"); const d = p.record_area_ha ? (p.gis_area_ha - p.record_area_ha) / p.record_area_ha : 0;
-      const inJ = (!o.jurisdiction.district || p.district === o.jurisdiction.district) && (!o.jurisdiction.sub_district || p.sub_district === o.jurisdiction.sub_district) && (!o.jurisdiction.village || p.village === o.jurisdiction.village);
+      const inJ = inJur(o, p);
       gp.innerHTML = `<div class="pp-head"><div class="row"><div><div class="eyebrow">ULPIN</div><div class="ulpin">${fmtUlpin(p.ulpin)}</div></div><button class="icon-btn" id="gx" aria-label="Close">${icon.close}</button></div>
         <div class="row-inline">${sev(p.risk_level === "none" ? "" : p.risk_level)}<span class="muted">${p.findings} findings · ${p.pending_mutations} pending mutation</span></div></div>
         <div class="pp-body"><dl class="kv"><dt>Parcel</dt><dd>${esc(p.native_label)}</dd><dt>Location</dt><dd>${esc(p.village)}<span class="sub">${esc(p.sub_district)} · ${esc(p.district)}</span></dd>
@@ -550,8 +574,10 @@ function gisView(root, rerender, o) {
     bindLayerBox(om, ctl);
     api.hierarchy().then(h => {
       const s = h.states.find(x => x.code === o.state);
-      let bb = s.bbox;
-      if (o.jurisdiction.district) bb = s.districts.find(d => d.name === o.jurisdiction.district)?.bbox || bb;
+      const d = o.jurisdiction.district && s.districts.find(x => x.name === o.jurisdiction.district);
+      const sd = o.jurisdiction.sub_district && d?.sub_districts.find(x => x.name === o.jurisdiction.sub_district);
+      const v = o.jurisdiction.village && sd?.villages.find(x => x.name === o.jurisdiction.village);
+      const bb = (v || sd || d || s).bbox;
       ctl.map.fitBounds([[bb[1], bb[0]], [bb[3], bb[2]]], { padding: [60, 60], maxZoom: 15, animate: false });
     });
   });
@@ -603,7 +629,7 @@ function interopView(root, rerender, o) {
     const st = h.states[o.state];
     const files = h.store.files.filter(f => f.path.startsWith({ MH: "maharashtra", UP: "uttar_pradesh", GJ: "gujarat" }[o.state]));
     root.querySelector("#om").innerHTML = `<div class="om-pad">
-      <div class="page-title"><div><h1>Interoperability status</h1><p>State systems federated through the Land Stack canonical layer. Each system remains the system of record; Land Stack reads and links by ULPIN.</p></div>
+      <div class="page-title"><div><h1>Connected systems</h1><p>State systems linked to BhuSamhita by ULPIN. Each system remains the system of record; BhuSamhita only reads and links it.</p></div>
         <div class="title-side"><span class="badge ok">API ${esc(h.api_version)} · operational</span></div></div>
       <div class="kpis"><div class="kpi"><b>${st.parcels}</b><span>ULPINs in ${esc(st.name)} registry</span></div><div class="kpi"><b>${st.native_tables.length}</b><span>Native source tables</span></div>
         <div class="kpi"><b>${esc(h.engine_version)}</b><span>Validation engine</span></div><div class="kpi"><b>${esc(h.glossary_version)}</b><span>Semantic glossary</span></div></div>
@@ -626,7 +652,69 @@ function auditTable(entries, compact = false) {
 function auditView(root, rerender, o) {
   shell(root, o, "audit", loading());
   api.audit().then(r => {
-    root.querySelector("#om").innerHTML = `<div class="om-pad"><div class="page-title"><div><h1>Audit log</h1><p>Sign-ins and workflow actions in ${esc(STATES[o.state].name)}. Entries are held by the Land Stack workflow service; source records are never modified.</p></div></div>
+    root.querySelector("#om").innerHTML = `<div class="om-pad"><div class="page-title"><div><h1>Audit log</h1><p>Sign-ins and workflow actions in ${esc(STATES[o.state].name)}. Entries are kept in the BhuSamhita work register; source records are never modified.</p></div></div>
       <section class="panel">${auditTable(r.entries)}</section></div>`;
   }).catch(e => { root.querySelector("#om").innerHTML = errorBox(e); });
+}
+
+// ------------------------------------------------------------------------------------------
+// Employee services: a small, secondary area. Profile and service details come from the signed-in
+// account; leave, tour and reimbursement forms keep drafts on this device only (no HR system is connected).
+// ------------------------------------------------------------------------------------------
+const EMP_TABS = [["profile", "Profile"], ["leave", "Leave"], ["tour", "Tour"], ["service", "Service record"], ["training", "Training"], ["claims", "Reimbursements"]];
+const EMP_FORMS = {
+  leave: [["type", "Leave type", ["Casual leave", "Earned leave", "Half pay leave", "Commuted leave", "Special casual leave"]], ["from", "From", "date"], ["to", "To", "date"], ["reason", "Reason", "text"]],
+  tour: [["from", "From", "date"], ["to", "To", "date"], ["places", "Places / villages", "text"], ["purpose", "Purpose", ["Field inspection", "Mutation hearing", "Crop inspection", "Boundary / survey verification", "Office meeting"]]],
+  claims: [["type", "Claim type", ["Travelling allowance", "Daily allowance", "Medical reimbursement", "Other"]], ["date", "Date", "date"], ["amount", "Amount (₹)", "number"], ["details", "Details", "text"]],
+};
+const draftKey = (o, kind) => `ls-emp-${o.username}-${kind}`;
+const readDrafts = (o, kind) => { try { return JSON.parse(localStorage.getItem(draftKey(o, kind))) || []; } catch { return []; } };
+const writeDrafts = (o, kind, rows) => { try { localStorage.setItem(draftKey(o, kind), JSON.stringify(rows)); } catch {} };
+
+function employeeView(root, rerender, o) {
+  const tab = EMP_TABS.some(([k]) => k === ui.emp) ? ui.emp : "profile";
+  const S = STATES[o.state], R = REGION[o.state];
+  const jur = [S.name, o.jurisdiction.district, o.jurisdiction.sub_district, o.jurisdiction.village].filter(Boolean).join(" › ");
+  const kv = (rows) => `<dl class="kv">${rows.filter(([, v]) => v).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v}</dd>`).join("")}</dl>`;
+  const hrNote = `<p class="fine">Applications are processed through your department's establishment section. Drafts saved here stay on this device.</p>`;
+  const form = (kind) => {
+    const drafts = readDrafts(o, kind);
+    const field = ([k, label, type]) => `<div class="field"><label for="ef-${k}">${esc(label)}</label>${Array.isArray(type)
+      ? `<select class="select" id="ef-${k}" name="${k}">${type.map((x) => `<option>${esc(x)}</option>`).join("")}</select>`
+      : `<input class="input" id="ef-${k}" name="${k}" type="${type}" ${type === "number" ? 'min="0" step="1"' : ""}>`}</div>`;
+    return `<form class="emp-form" id="ef" novalidate><div class="emp-grid">${EMP_FORMS[kind].map(field).join("")}</div>
+        <div class="actions"><button class="btn primary" type="submit">${icon.check} Save draft</button></div></form>${hrNote}
+      <h3 class="sec-title">Saved drafts <span class="count">${drafts.length}</span></h3>
+      ${drafts.length ? `<table class="tbl"><thead><tr>${EMP_FORMS[kind].map(([, label]) => `<th>${esc(label)}</th>`).join("")}<th>Saved</th><th></th></tr></thead><tbody>
+        ${drafts.map((d, i) => `<tr>${EMP_FORMS[kind].map(([k]) => `<td>${esc(d[k] || "—")}</td>`).join("")}<td class="nowrap">${esc(fmtDate(d.saved))}</td>
+          <td><button class="btn sm ghost" data-del="${i}">Remove</button></td></tr>`).join("")}</tbody></table>`
+        : `<div class="empty-state">${icon.info}<b>No drafts yet</b></div>`}`;
+  };
+  const body = {
+    profile: kv([["Name", esc(o.name)], ["Designation", `${esc(o.designation)} · <span lang="${R.lang}">${esc(o.designation_native)}</span>`],
+      ["Officer ID", `<span class="mono">${esc(o.username)}</span>`], ["Office", esc(o.office)], ["Department", esc(o.department)],
+      ["Login category", esc(o.login_category)], ["Jurisdiction", esc(jur)], ["State system", esc(S.system)]]),
+    leave: form("leave"), tour: form("tour"), claims: form("claims"),
+    service: `${kv([["Present post", esc(o.designation)], ["Office", esc(o.office)], ["Department", esc(o.department)], ["Jurisdiction", esc(jur)]])}
+      <div class="empty-state">${icon.register}<b>Service book entries are maintained by the establishment section</b><span>Postings, increments and confirmations are not shown here.</span></div>`,
+    training: `<div class="empty-state">${icon.audit}<b>No training nominations</b><span>Nominations from the state training institute appear here once issued.</span></div>`,
+  }[tab];
+  shell(root, o, "employee", `<div class="om-pad">
+    <div class="page-title"><div><h1>Employee services</h1><p>${esc(o.name)} · ${esc(o.designation)} · ${esc(o.office)}</p></div></div>
+    <section class="panel emp"><div class="tabs" role="tablist">${EMP_TABS.map(([k, l]) => `<button role="tab" data-emp="${k}" class="${k === tab ? "on" : ""}">${esc(l)}</button>`).join("")}</div>
+      <div class="body">${body}</div></section></div>`);
+  const om = root.querySelector("#om");
+  om.querySelectorAll("[data-emp]").forEach((b) => b.onclick = () => { ui.emp = b.dataset.emp; employeeView(root, rerender, o); });
+  const f = om.querySelector("#ef");
+  if (f) f.onsubmit = (e) => {
+    e.preventDefault();
+    const row = Object.fromEntries(EMP_FORMS[tab].map(([k]) => [k, f.elements[k].value.trim()]));
+    if (EMP_FORMS[tab].some(([k, , type]) => type === "date" && !row[k])) { toast("Enter the dates", "bad"); return; }
+    writeDrafts(o, tab, [...readDrafts(o, tab), { ...row, saved: new Date().toISOString() }]);
+    toast("Draft saved on this device", "ok");
+    employeeView(root, rerender, o);
+  };
+  om.querySelectorAll("[data-del]").forEach((b) => b.onclick = () => {
+    const rows = readDrafts(o, tab); rows.splice(+b.dataset.del, 1); writeDrafts(o, tab, rows); employeeView(root, rerender, o);
+  });
 }

@@ -88,5 +88,635 @@
     "zone_name_en": "Agricultural Zone",
     "permitted_use": "Agricultural",
     "restriction_status": "none"
+  },
+  {
+    "ulpin": "35876424324908",
+    "planning_authority": "Rajkot Planning Authority",
+    "plan_reference": "Rajkot Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "40253572923625",
+    "planning_authority": "Banaskantha Planning Authority",
+    "plan_reference": "Banaskantha Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "99959285949041",
+    "planning_authority": "Surat Planning Authority",
+    "plan_reference": "Surat Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "25270017018332",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "79726952230795",
+    "planning_authority": "Kutch Planning Authority",
+    "plan_reference": "Kutch Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "15468685050692",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "70271092780579",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "78684089980721",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "23030544152757",
+    "planning_authority": "Kutch Planning Authority",
+    "plan_reference": "Kutch Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "47210891944247",
+    "planning_authority": "Rajkot Planning Authority",
+    "plan_reference": "Rajkot Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "71228997323343",
+    "planning_authority": "Banaskantha Planning Authority",
+    "plan_reference": "Banaskantha Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "99880098340756",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "29366481569701",
+    "planning_authority": "Anand Planning Authority",
+    "plan_reference": "Anand Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "65483635771832",
+    "planning_authority": "Rajkot Planning Authority",
+    "plan_reference": "Rajkot Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "14536117059612",
+    "planning_authority": "Rajkot Planning Authority",
+    "plan_reference": "Rajkot Development/Regional Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_gu": "વાણિજ્યિક ઝોન",
+    "zone_name_en": "Commercial Zone",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "22378075927058",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "24954181268428",
+    "planning_authority": "Bhavnagar Planning Authority",
+    "plan_reference": "Bhavnagar Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "81412842762428",
+    "planning_authority": "Gandhinagar Planning Authority",
+    "plan_reference": "Gandhinagar Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "52378698927106",
+    "planning_authority": "Banaskantha Planning Authority",
+    "plan_reference": "Banaskantha Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "93879929417357",
+    "planning_authority": "Bhavnagar Planning Authority",
+    "plan_reference": "Bhavnagar Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "83213523673104",
+    "planning_authority": "Gandhinagar Planning Authority",
+    "plan_reference": "Gandhinagar Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "79111546123694",
+    "planning_authority": "Rajkot Planning Authority",
+    "plan_reference": "Rajkot Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "38227807650143",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "36761252543603",
+    "planning_authority": "Surat Planning Authority",
+    "plan_reference": "Surat Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "65566429278584",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "73626530613369",
+    "planning_authority": "Surat Planning Authority",
+    "plan_reference": "Surat Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "31790206822366",
+    "planning_authority": "Banaskantha Planning Authority",
+    "plan_reference": "Banaskantha Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "68815875513847",
+    "planning_authority": "Surat Planning Authority",
+    "plan_reference": "Surat Development/Regional Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_gu": "વાણિજ્યિક ઝોન",
+    "zone_name_en": "Commercial Zone",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "81489346687366",
+    "planning_authority": "Anand Planning Authority",
+    "plan_reference": "Anand Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "41160016532996",
+    "planning_authority": "Panchmahal Planning Authority",
+    "plan_reference": "Panchmahal Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "90714949268011",
+    "planning_authority": "Kutch Planning Authority",
+    "plan_reference": "Kutch Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "82525779149434",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "80794748562309",
+    "planning_authority": "Panchmahal Planning Authority",
+    "plan_reference": "Panchmahal Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "51923934921393",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "97155143702785",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "19756979332412",
+    "planning_authority": "Rajkot Planning Authority",
+    "plan_reference": "Rajkot Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "26533065367316",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "15453893537035",
+    "planning_authority": "Surat Planning Authority",
+    "plan_reference": "Surat Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "73284008138699",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "17131710217983",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_gu": "વાણિજ્યિક ઝોન",
+    "zone_name_en": "Commercial Zone",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "72325137181745",
+    "planning_authority": "Rajkot Planning Authority",
+    "plan_reference": "Rajkot Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "86399501365603",
+    "planning_authority": "Rajkot Planning Authority",
+    "plan_reference": "Rajkot Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "93524168006467",
+    "planning_authority": "Surat Planning Authority",
+    "plan_reference": "Surat Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "41612574773564",
+    "planning_authority": "Anand Planning Authority",
+    "plan_reference": "Anand Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "75080085123871",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_gu": "વાણિજ્યિક ઝોન",
+    "zone_name_en": "Commercial Zone",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "96791296646060",
+    "planning_authority": "Anand Planning Authority",
+    "plan_reference": "Anand Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "69942630653979",
+    "planning_authority": "Bhavnagar Planning Authority",
+    "plan_reference": "Bhavnagar Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "19351633112881",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "56089298058011",
+    "planning_authority": "Rajkot Planning Authority",
+    "plan_reference": "Rajkot Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "45765217190250",
+    "planning_authority": "Anand Planning Authority",
+    "plan_reference": "Anand Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "36364916621280",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "20663080683371",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "99432149363188",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "81630160045305",
+    "planning_authority": "Rajkot Planning Authority",
+    "plan_reference": "Rajkot Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "40457818191814",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "35302209186023",
+    "planning_authority": "Anand Planning Authority",
+    "plan_reference": "Anand Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "60043243987135",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "77419974689972",
+    "planning_authority": "Anand Planning Authority",
+    "plan_reference": "Anand Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "98114847024329",
+    "planning_authority": "Ahmedabad Planning Authority",
+    "plan_reference": "Ahmedabad Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "16477371158490",
+    "planning_authority": "Rajkot Planning Authority",
+    "plan_reference": "Rajkot Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "84894228232063",
+    "planning_authority": "Mehsana Planning Authority",
+    "plan_reference": "Mehsana Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "80849613220477",
+    "planning_authority": "Vadodara Planning Authority",
+    "plan_reference": "Vadodara Development/Regional Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_gu": "રહેણાંક ઝોન",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "30158445084938",
+    "planning_authority": "Anand Planning Authority",
+    "plan_reference": "Anand Development/Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_gu": "કૃષિ ઝોન",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
   }
 ]

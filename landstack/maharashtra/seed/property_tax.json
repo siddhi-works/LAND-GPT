@@ -58,5 +58,285 @@
     "paid_amount": 3800.0,
     "outstanding_amount": 0,
     "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-017",
+    "ulpin": "13362363536007",
+    "assessment_year": "2025-26",
+    "assessed_value": 840000,
+    "tax_amount": 3360.0,
+    "paid_amount": 3360.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-021",
+    "ulpin": "49029005785444",
+    "assessment_year": "2025-26",
+    "assessed_value": 880000,
+    "tax_amount": 3520.0,
+    "paid_amount": 3520.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-023",
+    "ulpin": "58800080362301",
+    "assessment_year": "2025-26",
+    "assessed_value": 870000,
+    "tax_amount": 3480.0,
+    "paid_amount": 3480.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-024",
+    "ulpin": "90241821072728",
+    "assessment_year": "2025-26",
+    "assessed_value": 1260000,
+    "tax_amount": 5040.0,
+    "paid_amount": 5040.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-025",
+    "ulpin": "13813932144837",
+    "assessment_year": "2025-26",
+    "assessed_value": 440000,
+    "tax_amount": 1760.0,
+    "paid_amount": 1760.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-027",
+    "ulpin": "61715429657136",
+    "assessment_year": "2025-26",
+    "assessed_value": 600000,
+    "tax_amount": 2400.0,
+    "paid_amount": 2400.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-029",
+    "ulpin": "37331764608018",
+    "assessment_year": "2025-26",
+    "assessed_value": 410000,
+    "tax_amount": 1640.0,
+    "paid_amount": 1640.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-030",
+    "ulpin": "44725666936570",
+    "assessment_year": "2025-26",
+    "assessed_value": 1690000,
+    "tax_amount": 6760.0,
+    "paid_amount": 6760.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-033",
+    "ulpin": "32937577398308",
+    "assessment_year": "2025-26",
+    "assessed_value": 910000,
+    "tax_amount": 3640.0,
+    "paid_amount": 3640.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-034",
+    "ulpin": "42350127890609",
+    "assessment_year": "2025-26",
+    "assessed_value": 2260000,
+    "tax_amount": 9040.0,
+    "paid_amount": 9040.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-042",
+    "ulpin": "33752455881751",
+    "assessment_year": "2025-26",
+    "assessed_value": 1350000,
+    "tax_amount": 5400.0,
+    "paid_amount": 3240.0,
+    "outstanding_amount": 2160.0,
+    "status": "partially_paid"
+  },
+  {
+    "property_id": "PT-MH-048",
+    "ulpin": "10105716703633",
+    "assessment_year": "2025-26",
+    "assessed_value": 1650000,
+    "tax_amount": 6600.0,
+    "paid_amount": 6600.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-049",
+    "ulpin": "49591227837601",
+    "assessment_year": "2025-26",
+    "assessed_value": 1350000,
+    "tax_amount": 5400.0,
+    "paid_amount": 5400.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-051",
+    "ulpin": "64539556457873",
+    "assessment_year": "2025-26",
+    "assessed_value": 900000,
+    "tax_amount": 3600.0,
+    "paid_amount": 3600.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-055",
+    "ulpin": "27711845132223",
+    "assessment_year": "2025-26",
+    "assessed_value": 570000,
+    "tax_amount": 2280.0,
+    "paid_amount": 2280.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-058",
+    "ulpin": "17485286059371",
+    "assessment_year": "2025-26",
+    "assessed_value": 1120000,
+    "tax_amount": 4480.0,
+    "paid_amount": 4480.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-060",
+    "ulpin": "49696687932727",
+    "assessment_year": "2025-26",
+    "assessed_value": 1190000,
+    "tax_amount": 4760.0,
+    "paid_amount": 4760.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-062",
+    "ulpin": "47604283563095",
+    "assessment_year": "2025-26",
+    "assessed_value": 390000,
+    "tax_amount": 1560.0,
+    "paid_amount": 1092.0,
+    "outstanding_amount": 468.0,
+    "status": "partially_paid"
+  },
+  {
+    "property_id": "PT-MH-064",
+    "ulpin": "66538951962850",
+    "assessment_year": "2025-26",
+    "assessed_value": 1500000,
+    "tax_amount": 6000.0,
+    "paid_amount": 4200.0,
+    "outstanding_amount": 1800.0,
+    "status": "partially_paid"
+  },
+  {
+    "property_id": "PT-MH-075",
+    "ulpin": "85377713233184",
+    "assessment_year": "2025-26",
+    "assessed_value": 970000,
+    "tax_amount": 3880.0,
+    "paid_amount": 3880.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-076",
+    "ulpin": "47595297174613",
+    "assessment_year": "2025-26",
+    "assessed_value": 460000,
+    "tax_amount": 1840.0,
+    "paid_amount": 1840.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-082",
+    "ulpin": "75860089393535",
+    "assessment_year": "2025-26",
+    "assessed_value": 1810000,
+    "tax_amount": 7240.0,
+    "paid_amount": 7240.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-085",
+    "ulpin": "66195609152858",
+    "assessment_year": "2025-26",
+    "assessed_value": 890000,
+    "tax_amount": 3560.0,
+    "paid_amount": 3560.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-088",
+    "ulpin": "47254019090511",
+    "assessment_year": "2025-26",
+    "assessed_value": 1140000,
+    "tax_amount": 4560.0,
+    "paid_amount": 4560.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-091",
+    "ulpin": "47917905503625",
+    "assessment_year": "2025-26",
+    "assessed_value": 1590000,
+    "tax_amount": 6360.0,
+    "paid_amount": 6360.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-092",
+    "ulpin": "49183067327459",
+    "assessment_year": "2025-26",
+    "assessed_value": 980000,
+    "tax_amount": 3920.0,
+    "paid_amount": 2744.0,
+    "outstanding_amount": 1176.0,
+    "status": "partially_paid"
+  },
+  {
+    "property_id": "PT-MH-093",
+    "ulpin": "17746198837477",
+    "assessment_year": "2025-26",
+    "assessed_value": 460000,
+    "tax_amount": 1840.0,
+    "paid_amount": 1840.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
+  },
+  {
+    "property_id": "PT-MH-097",
+    "ulpin": "64152781322393",
+    "assessment_year": "2025-26",
+    "assessed_value": 1300000,
+    "tax_amount": 5200.0,
+    "paid_amount": 5200.0,
+    "outstanding_amount": 0.0,
+    "status": "paid"
   }
 ]

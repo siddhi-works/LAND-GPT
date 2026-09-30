@@ -22,5 +22,85 @@
     "restriction_type": "None",
     "zone_name": "General",
     "status": "clear"
+  },
+  {
+    "environment_id": "ENV-GJ-022",
+    "ulpin": "82981536706345",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-GJ-024",
+    "ulpin": "29498576473515",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-GJ-027",
+    "ulpin": "78684089980721",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-GJ-055",
+    "ulpin": "53758524411651",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-GJ-061",
+    "ulpin": "51923934921393",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-GJ-075",
+    "ulpin": "59341082858314",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-GJ-076",
+    "ulpin": "41612574773564",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-GJ-079",
+    "ulpin": "69491420108549",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-GJ-080",
+    "ulpin": "69942630653979",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-GJ-082",
+    "ulpin": "68549432341674",
+    "source_authority": "Gujarat environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
   }
 ]

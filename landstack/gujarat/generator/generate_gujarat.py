@@ -17,11 +17,14 @@ def validate():
     building=load("building_permissions.json")
     enc=load("encumbrances.json")
 
-    assert len(parcels)==15
-    assert len({x["ulpin"] for x in parcels})==15
+    originals=[x for x in parcels if int(x["prototype_ref"][1:])<=15]
+    assert len(parcels)==100
+    assert [x["prototype_ref"] for x in parcels]==[f"P{i:03d}" for i in range(1,101)]
+    assert len({x["ulpin"] for x in parcels})==100
     assert all(len(x["ulpin"])==14 and x["ulpin"].isdigit() for x in parcels)
-    assert sum(x["quality_class"]=="clean" for x in parcels)==10
-    assert sum(x["quality_class"]=="messy" for x in parcels)==5
+    assert sum(x["quality_class"]=="clean" for x in originals)==10
+    assert sum(x["quality_class"]=="messy" for x in originals)==5
+    assert all((x["quality_class"]=="messy")==bool(x["issue"]) for x in parcels)
 
     known={x["ulpin"] for x in parcels}
     for rows,label in [
@@ -62,8 +65,9 @@ def validate():
     assert all(x["khatedar_name_gu"] and x["khatedar_name_en"] for x in land["vf7_12"])
     assert all(x["buyer_name_gu"] and x["buyer_name_en"] for x in registrations)
 
+    clean=sum(x["quality_class"]=="clean" for x in parcels)
     print("VALIDATION PASS")
-    print("15 parcels | 10 clean | 5 messy")
+    print(f"{len(parcels)} parcels | {clean} clean | {len(parcels)-clean} messy (P001–P015: 10 clean | 5 messy)")
     print("P011 owner mismatch")
     print("P012 7/12 ↔ 8A area mismatch")
     print("P013 pending VF-6")

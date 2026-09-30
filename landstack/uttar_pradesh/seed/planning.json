@@ -98,5 +98,655 @@
     "zone_name_en": "Agricultural Zone",
     "permitted_use": "Agricultural",
     "restriction_status": "none"
+  },
+  {
+    "ulpin": "71439163017407",
+    "planning_authority": "Jhansi Development Authority",
+    "plan_reference": "Jhansi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "48818684456214",
+    "planning_authority": "Ayodhya Development Authority",
+    "plan_reference": "Ayodhya Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "92093649964473",
+    "planning_authority": "Gautam Buddha Nagar Development Authority",
+    "plan_reference": "Gautam Buddha Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "56219552340114",
+    "planning_authority": "Gautam Buddha Nagar Development Authority",
+    "plan_reference": "Gautam Buddha Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "39259003094680",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "62577794759537",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "69166338351512",
+    "planning_authority": "Ghaziabad Development Authority",
+    "plan_reference": "Ghaziabad Regional/Development Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_hi": "व्यावसायिक क्षेत्र",
+    "zone_name_en": "Commercial Zone",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "80986328437127",
+    "planning_authority": "Jhansi Development Authority",
+    "plan_reference": "Jhansi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "40589052570710",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "61012373048524",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "94560729285880",
+    "planning_authority": "Gautam Buddha Nagar Development Authority",
+    "plan_reference": "Gautam Buddha Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "11341658782159",
+    "planning_authority": "Kanpur Nagar Development Authority",
+    "plan_reference": "Kanpur Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "65656477190493",
+    "planning_authority": "Ayodhya Development Authority",
+    "plan_reference": "Ayodhya Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "34264773124337",
+    "planning_authority": "Saharanpur Development Authority",
+    "plan_reference": "Saharanpur Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "25519606164137",
+    "planning_authority": "Kanpur Nagar Development Authority",
+    "plan_reference": "Kanpur Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "17814404456934",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "88146321860634",
+    "planning_authority": "Ghaziabad Development Authority",
+    "plan_reference": "Ghaziabad Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "36463681895810",
+    "planning_authority": "Mathura Development Authority",
+    "plan_reference": "Mathura Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "52438618080617",
+    "planning_authority": "Jhansi Development Authority",
+    "plan_reference": "Jhansi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "59120566063893",
+    "planning_authority": "Jhansi Development Authority",
+    "plan_reference": "Jhansi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "83779962682001",
+    "planning_authority": "Moradabad Development Authority",
+    "plan_reference": "Moradabad Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "82802709012644",
+    "planning_authority": "Varanasi Development Authority",
+    "plan_reference": "Varanasi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "15287848757245",
+    "planning_authority": "Ayodhya Development Authority",
+    "plan_reference": "Ayodhya Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "28199986961077",
+    "planning_authority": "Mathura Development Authority",
+    "plan_reference": "Mathura Regional/Development Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_hi": "व्यावसायिक क्षेत्र",
+    "zone_name_en": "Commercial Zone",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "27855871869798",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "62371828697891",
+    "planning_authority": "Gautam Buddha Nagar Development Authority",
+    "plan_reference": "Gautam Buddha Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "19468862980852",
+    "planning_authority": "Agra Development Authority",
+    "plan_reference": "Agra Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "82662642934674",
+    "planning_authority": "Ayodhya Development Authority",
+    "plan_reference": "Ayodhya Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "54364071757293",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_hi": "व्यावसायिक क्षेत्र",
+    "zone_name_en": "Commercial Zone",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "81071361166936",
+    "planning_authority": "Ayodhya Development Authority",
+    "plan_reference": "Ayodhya Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "23036790649169",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "16739825820558",
+    "planning_authority": "Jhansi Development Authority",
+    "plan_reference": "Jhansi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "93714927605921",
+    "planning_authority": "Moradabad Development Authority",
+    "plan_reference": "Moradabad Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "30160190323179",
+    "planning_authority": "Mathura Development Authority",
+    "plan_reference": "Mathura Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "16589180056299",
+    "planning_authority": "Jhansi Development Authority",
+    "plan_reference": "Jhansi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "13466612306569",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "68447703752985",
+    "planning_authority": "Varanasi Development Authority",
+    "plan_reference": "Varanasi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "12389153749748",
+    "planning_authority": "Kanpur Nagar Development Authority",
+    "plan_reference": "Kanpur Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "45775327364096",
+    "planning_authority": "Mathura Development Authority",
+    "plan_reference": "Mathura Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "35203682636459",
+    "planning_authority": "Agra Development Authority",
+    "plan_reference": "Agra Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "43027620981193",
+    "planning_authority": "Ghaziabad Development Authority",
+    "plan_reference": "Ghaziabad Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "30238706955428",
+    "planning_authority": "Agra Development Authority",
+    "plan_reference": "Agra Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "29787522454158",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "45999007026390",
+    "planning_authority": "Ayodhya Development Authority",
+    "plan_reference": "Ayodhya Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "63331074641600",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "91224844741079",
+    "planning_authority": "Gautam Buddha Nagar Development Authority",
+    "plan_reference": "Gautam Buddha Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "12353116498436",
+    "planning_authority": "Jhansi Development Authority",
+    "plan_reference": "Jhansi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "91447453014029",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "35911262579027",
+    "planning_authority": "Varanasi Development Authority",
+    "plan_reference": "Varanasi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "21929776561186",
+    "planning_authority": "Mathura Development Authority",
+    "plan_reference": "Mathura Regional/Development Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_hi": "व्यावसायिक क्षेत्र",
+    "zone_name_en": "Commercial Zone",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "30647522075536",
+    "planning_authority": "Ayodhya Development Authority",
+    "plan_reference": "Ayodhya Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "17055935228203",
+    "planning_authority": "Gorakhpur Development Authority",
+    "plan_reference": "Gorakhpur Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "38536533355204",
+    "planning_authority": "Gautam Buddha Nagar Development Authority",
+    "plan_reference": "Gautam Buddha Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "20204228224061",
+    "planning_authority": "Gautam Buddha Nagar Development Authority",
+    "plan_reference": "Gautam Buddha Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_hi": "आवासीय क्षेत्र",
+    "zone_name_en": "Residential Zone",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "80584061916484",
+    "planning_authority": "Lucknow Development Authority",
+    "plan_reference": "Lucknow Regional/Development Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_hi": "व्यावसायिक क्षेत्र",
+    "zone_name_en": "Commercial Zone",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "22429150401008",
+    "planning_authority": "Kanpur Nagar Development Authority",
+    "plan_reference": "Kanpur Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "67278398652742",
+    "planning_authority": "Jhansi Development Authority",
+    "plan_reference": "Jhansi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "82218266755506",
+    "planning_authority": "Varanasi Development Authority",
+    "plan_reference": "Varanasi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "38836162891505",
+    "planning_authority": "Agra Development Authority",
+    "plan_reference": "Agra Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "31039051969579",
+    "planning_authority": "Varanasi Development Authority",
+    "plan_reference": "Varanasi Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "96437444751753",
+    "planning_authority": "Gorakhpur Development Authority",
+    "plan_reference": "Gorakhpur Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "56429336172390",
+    "planning_authority": "Gorakhpur Development Authority",
+    "plan_reference": "Gorakhpur Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "45758083590992",
+    "planning_authority": "Mathura Development Authority",
+    "plan_reference": "Mathura Regional/Development Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_hi": "व्यावसायिक क्षेत्र",
+    "zone_name_en": "Commercial Zone",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "48995440653870",
+    "planning_authority": "Saharanpur Development Authority",
+    "plan_reference": "Saharanpur Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "43048816731768",
+    "planning_authority": "Kanpur Nagar Development Authority",
+    "plan_reference": "Kanpur Nagar Regional/Development Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_hi": "कृषि क्षेत्र",
+    "zone_name_en": "Agricultural Zone",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
   }
 ]

@@ -8,7 +8,7 @@
   --green: #15803d; --green-soft: #e7f5ec; --amber: #9a5b00; --amber-soft: #fdf3e0; --red: #b42318; --red-soft: #fdecea;
   --radius: 6px; --shadow: 0 1px 2px rgba(6, 26, 51, .08), 0 4px 14px rgba(6, 26, 51, .08); --shadow-lg: 0 10px 34px rgba(6, 26, 51, .18);
   --font: "Noto Sans", "Noto Sans Devanagari", "Noto Sans Gujarati", system-ui, sans-serif; --mono: "Noto Sans Mono", ui-monospace, Consolas, monospace;
-  --header-h: 60px; --disc-h: 24px;
+  --header-h: 60px; --disc-h: 0px;
   --gov-blue: #123f6d; --saffron-accent: #f28a16; --india-saffron: #ff9933; --india-green: #138808;
 }
 * { box-sizing: border-box; }
@@ -452,7 +452,7 @@ code.cite { font-size: 11px; color: var(--teal); background: var(--teal-soft); b
 }
 
 /* =====================================================================================
-   PHASE 2 - services, regional pages, dashboard, dossier, LandGPT Assistant
+   PHASE 2 - services, regional pages, dashboard, dossier, BhuSamhita Assistant
    Palette: gov navy/blue, saffron accent, verification green / amber / red, muted map tones.
    ===================================================================================== */
 :root { --map-green: #e6f2e8; --earth: #f6efe3; --sky: #e8f3fc; --lift: 0 6px 20px rgba(6, 26, 51, .12); }
@@ -564,7 +564,7 @@ a.svc-card:hover { transform: translateY(-2px); box-shadow: var(--lift); border-
 
 /* footer */
 .site-footer { background: var(--navy-950); color: #b9cbe2; border-top: 4px solid var(--saffron-accent); margin-top: auto; }
-.sf-inner { max-width: 1280px; margin: 0 auto; padding: 32px 24px 36px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.4fr; gap: 28px; }
+.sf-inner { max-width: 1280px; margin: 0 auto; padding: 32px 24px 36px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 28px; }
 .sf-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; } .sf-logo b { color: #fff; font-size: 18px; letter-spacing: .04em; }
 .site-footer p { margin: 0 0 6px; font-size: 13px; } .sf-muted { color: #8ea5c2; }
 .site-footer h4 { color: #fff; margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
@@ -645,7 +645,7 @@ a.svc-card:hover { transform: translateY(-2px); box-shadow: var(--lift); border-
 .ask-card { border-top: 3px solid var(--saffron-accent); } .ask-card .body { padding: 12px 16px 14px; display: grid; gap: 10px; } .ask-card .body > .btn { justify-self: start; }
 .dossier-skel { display: grid; gap: 12px; }
 
-/* LandGPT Assistant */
+/* BhuSamhita Assistant */
 .lg-chat { position: fixed; right: 18px; bottom: 38px; z-index: 4000; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
 body[data-view="renderCitizen"] .lg-chat { bottom: 36px; right: 280px; }   /* left of the basemap switcher, clear of the parcel panel */
 .lg-fab { display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 18px 0 14px; border: 0; border-radius: 24px; cursor: pointer; color: #fff; font-weight: 700; font-size: 14px;
@@ -1008,3 +1008,202 @@ a.cov-row:hover { background: var(--navy-50); }
 
 @media (max-width: 1100px) { .cmp { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 640px) { .cmp-card { grid-template-columns: 90px minmax(0, 1fr); } .cmp-ring .donut { width: 90px; height: 90px; } .disc-input.sm { width: 100%; } }
+
+/* ---------------- phase 4: guided GIS navigation, employee services ---------------- */
+.nav-steps { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 2px; border: 1px solid var(--line-2); border-radius: var(--radius); background: var(--navy-50); padding: 6px; }
+.nav-steps li { display: flex; align-items: center; gap: 9px; padding: 4px 6px; border-radius: 4px; color: var(--muted); }
+.nav-steps li i { width: 20px; height: 20px; flex: none; display: grid; place-items: center; border-radius: 50%; border: 1.5px solid var(--line); background: #fff; font: 700 11px/1 var(--font); color: var(--muted); }
+.nav-steps li i svg { width: 12px; height: 12px; }
+.nav-steps li span { display: flex; flex-direction: column; min-width: 0; line-height: 1.25; }
+.nav-steps li small { font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; }
+.nav-steps li b { font-size: 12.5px; font-weight: 600; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nav-steps li.done i { background: var(--green); border-color: var(--green); color: #fff; }
+.nav-steps li.done b { color: var(--navy-900); }
+.nav-steps li.cur { background: #fff; box-shadow: inset 3px 0 0 var(--saffron); }
+.nav-steps li.cur i { border-color: var(--saffron); color: var(--saffron); }
+.nav-hint { display: flex; gap: 8px; align-items: flex-start; margin: 0 0 12px; font-size: 12.5px; color: var(--navy-800); background: #fff; border: 1px dashed var(--line); border-radius: var(--radius); padding: 8px 10px; }
+.nav-hint svg { flex: none; margin-top: 2px; color: var(--blue); }
+.emp .tabs { border-bottom: 1px solid var(--line); }
+.emp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 4px 14px; }
+.emp-form .actions { margin: 4px 0 6px; }
+.emp .sec-title .count { margin-left: 6px; }
+.op-pick { max-width: 520px; margin: 8px 0 12px; } .op-pick .body { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; } .op-pick .field { flex: 1; min-width: 240px; margin: 0; }
+/* services: compact government-portal directory (all categories visible at once) */
+.services-page .region-main { padding-top: 18px; }
+.svc-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; border-bottom: 2px solid var(--navy-900); padding-bottom: 6px; }
+.svc-head h1 { margin: 0; font-size: 22px; } .svc-head .fine { margin: 0; display: inline-flex; gap: 4px; align-items: center; }
+.services-page .svc-layout { display: grid; grid-template-columns: 1fr 300px; gap: 16px; align-items: start; }
+.services-page .svc-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.services-page .svc-cat { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); margin: 0; }
+.services-page .svc-cat-h { margin: 0; padding: 8px 12px; font-size: 13px; background: var(--navy-900); color: #fff; border-radius: var(--radius) var(--radius) 0 0; display: flex; align-items: center; gap: 8px; }
+.services-page .svc-cat-h .svc-ic { width: auto; height: auto; background: none; color: #fff; }
+.svc-rows { display: flex; flex-direction: column; }
+.svc-row { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line-2); padding: 7px 12px; cursor: pointer; font-size: 13px; color: var(--ink); }
+.svc-row:last-child { border-bottom: 0; } .svc-row:hover { background: var(--navy-50); }
+.svc-row > svg { flex: none; width: 15px; height: 15px; color: var(--blue); }
+.svc-row span { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.25; }
+.svc-row span small { color: var(--muted); font-size: 11px; }
+.svc-row .svc-pin svg { width: 13px; height: 13px; color: var(--saffron); }
+.svc-row.off { color: var(--muted); } .svc-row .svc-tag { font-size: 10px; }
+.services-page .svc-parcel { position: sticky; top: 12px; }
+@media (max-width: 1100px) { .services-page .svc-layout { grid-template-columns: 1fr; } .services-page .svc-cats { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .services-page .svc-cats { grid-template-columns: 1fr; } }
+.map-state-pick select { font-weight: 600; border-color: var(--navy-700); }
+.svc-dlg.wide { width: min(760px, 94vw); }
+.svc-pick header div { display: flex; flex-direction: column; } .svc-pick header small { color: var(--muted); font-weight: 400; }
+/* Land Map state chooser: compact card, full-width dropdown */
+.side.compact { bottom: auto; } .side.compact .side-body { padding-bottom: 14px; }
+.map-state-pick { margin-bottom: 10px; } .map-state-pick label { display: block; margin-bottom: 4px; }
+.map-state-pick select { width: 100%; }
+.side-body .nav-hint { margin-bottom: 0; }
+.op-role-layout.single { grid-template-columns: minmax(0, 1fr); }
+
+/* ---------------- sign-in dialog, account area, FAQ, contact ---------------- */
+.acct-slot { display: inline-flex; margin-left: 10px; } .ph-right { display: inline-flex; align-items: center; gap: 6px; }
+.acct { display: inline-flex; align-items: center; gap: 8px; }
+.acct-ic { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--navy-100); color: var(--navy-900); flex: none; }
+.acct-t { display: flex; flex-direction: column; line-height: 1.15; max-width: 170px; }
+.acct-t b { font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .acct-t small { font-size: 11px; opacity: .75; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.site-header .acct-t b { color: #fff; } .site-header .acct-t small { color: #c9d7e8; } .site-header .acct .btn { background: transparent; color: #fff; border-color: rgba(255,255,255,.35); }
+.acct-login { white-space: nowrap; }
+.login-dlg { border: 0; padding: 0; border-radius: 16px; width: min(400px, 94vw); box-shadow: 0 24px 60px rgba(6,26,51,.35); background: #f8fafc; }
+.login-dlg::backdrop { background: rgba(15, 23, 42, .55); backdrop-filter: blur(3px); }
+.lg-card { padding: 0 22px 20px; position: relative; }
+.lg-top { height: 5px; margin: 0 -22px 14px; background: linear-gradient(90deg, #f59e0b, #22c55e); }
+.lg-brand { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px; }
+.lg-brand .lg-mark { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: #fde68a; color: #92400e; }
+.lg-brand b { display: block; font-size: 15px; color: var(--navy-900); } .lg-brand small { color: var(--blue); font-size: 11.5px; }
+.lg-x { position: absolute; right: 12px; top: 16px; }
+.lg-notice { background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 8px 10px; font-size: 12px; font-weight: 600; color: #b91c1c; margin-bottom: 12px; }
+.lg-side { display: flex; margin-bottom: 8px; } .lg-side button { flex: 1; }
+.lg-modes { display: flex; background: #eef2f7; border-radius: 10px; padding: 4px; gap: 2px; margin-bottom: 12px; }
+.lg-modes button { flex: 1; border: 0; background: none; padding: 7px 4px; border-radius: 8px; font-size: 12.5px; font-weight: 600; color: var(--ink-2); cursor: pointer; }
+.lg-modes button.on { background: #fff; color: var(--navy-900); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.lg-body { background: #fff; border-radius: 12px; padding: 14px; border: 1px solid var(--line-2); }
+.lg-f { margin-bottom: 10px; } .lg-f label { display: block; text-align: center; font-size: 12px; font-weight: 600; color: var(--ink-2); margin-bottom: 4px; }
+.lg-in { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 8px; padding: 0 10px; background: #fff; }
+.lg-in svg { width: 15px; height: 15px; color: var(--muted); flex: none; } .lg-in input { border: 0; outline: 0; flex: 1; padding: 9px 0; background: none; min-width: 0; }
+.lg-body .select { width: 100%; }
+.lg-cap { display: flex; justify-content: center; gap: 8px; margin-bottom: 6px; }
+.cap-img { font: italic 700 22px/1 var(--mono); letter-spacing: .25em; color: #fbbf24; background: #0f172a radial-gradient(#334155 1px, transparent 1px) 0 0 / 6px 6px; padding: 12px 18px; border-radius: 8px; }
+.lg-row { display: flex; gap: 8px; align-items: flex-end; } .lg-row .lg-f { flex: 1; }
+.lg-otp { background: #f59e0b; color: #fff; border-color: #f59e0b; margin-bottom: 10px; }
+.lg-go { width: 100%; justify-content: center; background: #0f172a; color: #fff; border-color: #0f172a; padding: 10px; margin-top: 4px; }
+.lg-go.green { background: #16a34a; border-color: #16a34a; } .lg-go:disabled { opacity: .5; }
+.lg-note, .lg-dept { text-align: center; }
+.wrap.narrow { max-width: 880px; }
+.faq-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+.faq { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
+.faq summary { list-style: none; cursor: pointer; padding: 12px 16px; font-weight: 600; color: var(--navy-900); display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.faq summary::-webkit-details-marker { display: none; } .faq summary svg { transition: transform .15s; flex: none; } .faq[open] summary svg { transform: rotate(90deg); }
+.faq p { margin: 0; padding: 0 16px 14px; color: var(--ink-2); line-height: 1.6; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.contact-list li { display: flex; gap: 10px; align-items: flex-start; } .contact-list li > svg { color: var(--blue); flex: none; margin-top: 3px; }
+.contact-list span { display: flex; flex-direction: column; } .contact-list small { color: var(--muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; }
+.contact-map { height: 380px; margin: 0 14px 10px; border-radius: 8px; overflow: hidden; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+/* services: eight government-service cards, each with its own state selector */
+.gsvc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: 8px; }
+.gsvc { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--navy-800); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.gsvc h2 { margin: 0; font-size: 15px; display: flex; align-items: center; gap: 8px; } .gsvc h2 svg { color: var(--blue); flex: none; }
+.gsvc .field { margin: 0; } .gsvc .select { width: 100%; }
+.gsvc-avail { background: var(--navy-50); border-radius: 6px; padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.gsvc-avail small { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.gsvc-avail b { font-size: 13px; color: var(--navy-900); } .gsvc-avail span { font-size: 12.5px; color: var(--ink-2); }
+.gsvc-go { justify-content: center; } .gsvc-url { text-align: center; color: var(--muted); font-size: 11px; margin-top: -4px; }
+@media (max-width: 1100px) { .gsvc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .gsvc-grid { grid-template-columns: 1fr; } }
+.gsvc { border-color: #f5c38f; border-top-color: var(--saffron); }
+.gsvc-go { background: var(--saffron); border-color: var(--saffron); color: #fff; }
+.gsvc-go:hover { background: #c96a14; border-color: #c96a14; color: #fff; }
+.gsvc-go:disabled { opacity: .5; cursor: not-allowed; }
+.gsvc .select:focus { border-color: var(--saffron); }
+/* services: government theme over the national-flag background, orange actions */
+.services-page { background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(240,246,255,.75)), url("../assets/india-flag-bg.jpg") center / cover fixed; }
+.services-page .svc-head { border-bottom-color: #ff9933; } .services-page .svc-head h1 { color: #0b2545; }
+.gsvc { background: rgba(255,255,255,.86); backdrop-filter: blur(8px); border: 1px solid #ffcf9e; border-top: 4px solid #ff9933; border-radius: 14px; box-shadow: 0 6px 20px rgba(11,37,69,.12); }
+.gsvc h2 svg { color: #138808; } .gsvc-avail { background: rgba(255,153,51,.08); border-left: 3px solid #138808; }
+.gsvc-go { background: #ff8c1a; border-color: #ff8c1a; color: #fff; border-radius: 8px; }
+.gsvc-go:hover { background: #e06f00; border-color: #e06f00; color: #fff; }
+.gsvc .select { border-color: #ffcf9e; } .gsvc .select:focus { border-color: #ff8c1a; }
+/* common header: MoRD · Government of India (larger, centre) · DoLR */
+.ph-logos { display: flex !important; align-items: center; justify-content: center; gap: clamp(20px, 6vw, 90px); padding: 8px 20px; background: #fff; }
+.ph-logo { display: block; object-fit: contain; mix-blend-mode: multiply; }
+.ph-logo.side { height: 58px; max-width: 26vw; }
+.ph-logo.goi { height: 86px; max-width: 34vw; }
+@media (max-width: 640px) { .ph-logo.side { height: 38px; } .ph-logo.goi { height: 56px; } }
+/* side logos: crop the empty margins of the source images so they match the Government of India logo */
+.ph-logo.side { height: 80px; width: auto; max-width: 30vw; }
+.ph-logo.mord { object-view-box: inset(29% 12% 29% 13%); aspect-ratio: 600 / 190; }
+.ph-logo.dolr { object-view-box: inset(31% 4% 27% 19%); aspect-ratio: 395 / 215; }
+.ph-strip-inner span { flex: 1; text-align: center; } .ph-strip-inner .ph-sep { flex: none; }
+@media (max-width: 640px) { .ph-logo.side { height: 44px; } }
+.ph-logos { display: grid !important; grid-template-columns: repeat(3, 1fr); justify-items: center; max-width: 1280px; margin: 0 auto; }
+.ph-strip-inner { display: flex; }
+/* three logos in identical boxes so they read as the same size */
+.ph-logo, .ph-logo.side, .ph-logo.goi { height: 78px; width: 230px; max-width: 28vw; object-fit: contain; aspect-ratio: auto; }
+@media (max-width: 640px) { .ph-logo, .ph-logo.side, .ph-logo.goi { height: 44px; } }
+
+/* ================= BhuSamhita: vibrant tricolour theme ================= */
+:root { --saffron: #ff7a00; --saffron-accent: #ff8f1f; --india-green: #138808; --blue: #0b5cd6; --gov-blue: #0b3d91; --bg: #fffaf3; }
+body { background: var(--bg); }
+.bs-logo { width: 36px; height: 36px; display: block; }
+.brand-mark .bs-logo, .brand-mark svg { width: 36px; height: 36px; }
+
+/* orange navigation bar, items spread evenly across the full width */
+.ph-navrow { background: linear-gradient(90deg, #ff7a00, #ff9a2e 55%, #ff7a00); border-bottom: 3px solid var(--india-green); box-shadow: 0 2px 8px rgba(255, 122, 0, .35); }
+.ph-navrow-inner { max-width: none; padding: 0 28px; gap: 20px; }
+.bs-brand { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #fff; font-weight: 800; font-size: 17px; letter-spacing: .02em; white-space: nowrap; }
+.bs-brand .bs-logo { width: 38px; height: 38px; background: #fff; border-radius: 50%; padding: 3px; box-shadow: 0 1px 4px rgba(0,0,0,.2); }
+.ph-navrow .ph-nav { flex: 1; justify-content: space-evenly; }
+.ph-navrow .ph-nav a { color: #fff; font-weight: 700; border-bottom-color: transparent; }
+.ph-navrow .ph-nav a:hover { background: rgba(255,255,255,.16); color: #fff; }
+.ph-navrow .ph-nav a.on { color: #fff; border-bottom-color: #fff; background: rgba(11, 61, 145, .22); }
+.ph-navrow .lang-select { background: rgba(255,255,255,.95); color: var(--navy-900); border-color: rgba(255,255,255,.6); }
+.ph-navrow .acct-t b, .ph-navrow .acct-t small { color: #fff; opacity: 1; }
+.ph-navrow .acct-ic { background: #fff; color: #ff7a00; }
+.ph-navrow .acct .btn { background: rgba(255,255,255,.14); color: #fff; border-color: rgba(255,255,255,.7); }
+.ph-navrow .acct-login { background: var(--gov-blue); border-color: var(--gov-blue); color: #fff; }
+
+/* hero: faint tiranga field behind the two portraits */
+.hero-portal { position: relative; background:
+  linear-gradient(180deg, rgba(255,250,243,.80), rgba(255,255,255,.72) 55%, rgba(236,248,236,.85)),
+  url("../assets/tiranga-field.png") center / cover no-repeat !important; }
+.hp-center h1 { background: linear-gradient(90deg, #ff7a00, #0b3d91 50%, #138808); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hp-tagline { font-size: clamp(22px, 2vw, 28px); color: var(--navy-900); }
+.hp-hl { display: inline-block; margin-left: 6px; padding: 0 10px; border-radius: 6px; color: #fff;
+  background: linear-gradient(90deg, #ff7a00, #ff9a2e); box-shadow: 0 3px 0 var(--india-green); font-weight: 800; }
+.hp-intro { font-size: 17px; color: var(--ink); font-weight: 500; }
+.hp-cta .btn.primary { background: linear-gradient(90deg, #0b3d91, #0b5cd6); border-color: #0b3d91; box-shadow: 0 4px 12px rgba(11, 92, 214, .35); }
+.hp-cta .btn:not(.primary) { border-color: #ff7a00; color: #c75a00; background: #fff; }
+.hp-cta .btn:not(.primary):hover { background: #fff3e6; }
+
+/* sections and cards get colour instead of grey */
+.sec-intro h2::before { background: linear-gradient(180deg, #ff7a00 0 50%, #138808 50%) !important; }
+.ls-node.n-ulpin { background: linear-gradient(135deg, #0b3d91, #0b5cd6); }
+.ls-node.n-parcel { border-color: #ff7a00; background: #fff5ea; }
+.ls-tier:nth-child(1) .ls-card { border-top: 3px solid #ff7a00; }
+.ls-tier:nth-child(2) .ls-card { border-top: 3px solid #0b5cd6; }
+.ls-tier:nth-child(3) .ls-card { border-top: 3px solid #138808; }
+.ls-card:hover { box-shadow: 0 6px 18px rgba(255, 122, 0, .18); }
+.chain-lg li { background: #fff; border-top: 3px solid #ff7a00; } .chain-lg li:nth-child(2) { border-top-color: #0b5cd6; }
+.chain-lg li:nth-child(3) { border-top-color: #138808; } .chain-lg li:nth-child(4) { border-top-color: #9333ea; }
+.btn.primary { background: #0b5cd6; border-color: #0b5cd6; }
+.btn.primary:hover { background: #0b3d91; border-color: #0b3d91; }
+
+/* footer */
+.site-footer { background: linear-gradient(135deg, #061a33, #0b3d91); border-top: 4px solid #ff7a00; box-shadow: inset 0 4px 0 #fff, inset 0 8px 0 #138808; }
+.sf-inner { grid-template-columns: 1.6fr 1fr; }
+.sf-logo .bs-logo { width: 40px; height: 40px; background: #fff; border-radius: 50%; padding: 3px; }
+.sf-copy { text-align: center; padding: 12px 20px; border-top: 1px solid rgba(255,255,255,.14); color: #c9d7e8; font-size: 13px; }
+.sf-copy b { color: #ffb366; }
+
+@media (max-width: 820px) { .ph-navrow .ph-nav { justify-content: flex-start; } .bs-brand span { display: none; } }
+/* orange nav bar: solid green edge above, like the one below */
+.ph-tricolor { background: var(--india-green) !important; height: 3px; }
+/* parcel profile: plain-language alert when records disagree */
+.disc-alert { display: flex; gap: 12px; align-items: flex-start; background: #fdecea; border: 1px solid #f5b5ae; border-left: 5px solid #b42318; color: #7a1a12; border-radius: 8px; padding: 12px 16px; margin: 8px 0 14px; }
+.disc-alert > svg { flex: none; width: 22px; height: 22px; color: #b42318; margin-top: 1px; }
+.disc-alert b { display: block; font-size: 15px; color: #8f1d14; } .disc-alert p { margin: 3px 0 0; line-height: 1.5; }
+.region-banner h1 { display: block; }

@@ -20,14 +20,14 @@ def test_health(client):
         body = client.get(path).json()
         assert body["status"] == "ok" and body["api_version"] == "v1"
     body = client.get("/v1/health").json()
-    assert body["store"]["read_only"] is True and body["registry"]["ulpins"] == 45
+    assert body["store"]["read_only"] is True and body["registry"]["ulpins"] == 300
     assert set(body["states"]) == {"MH", "UP", "GJ"}
     assert "revenue_cadastral.bhu_naksha" in body["states"]["UP"]["native_tables"]
 
 
 def test_registry_endpoints(client):
-    assert client.get("/v1/registry").json()["count"] == 45
-    assert client.get("/v1/registry?state=UP").json()["count"] == 15
+    assert client.get("/v1/registry").json()["count"] == 300
+    assert client.get("/v1/registry?state=UP").json()["count"] == 100
     assert client.get("/v1/registry?state=XX").status_code == 422
     e = client.get(f"/v1/registry/ulpin/{P[('UP', 'P013')]}").json()
     assert e["state"] == {"code": "UP", "name": "Uttar Pradesh"}
@@ -135,9 +135,9 @@ def test_rules_and_analytics(client):
     rules = client.get("/v1/validation/rules").json()
     assert len({r["rule_id"] for r in rules}) == len(rules) >= 30
     dq = client.get("/v1/analytics/data-quality").json()
-    assert dq["totals"]["parcels"] == 45
+    assert dq["totals"]["parcels"] == 300
     det = dq["labelled_issue_detection"]
-    assert det["labelled_parcels"] == 15 and det["detected"] == 15
+    assert det["labelled_parcels"] == 102 and det["detected"] == 102
     assert dq["orphan_rows"] == [] and dq["registry"]["issues"] == []
     assert set(dq["glossary_resolution"]) <= {"en", "native", "en+native", "absent"}
     assert set(dq["by_state"]) == {"MH", "UP", "GJ"}

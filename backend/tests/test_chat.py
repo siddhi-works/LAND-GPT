@@ -36,10 +36,10 @@ def test_demo_answers_known_terms(client, no_provider):
     r = ask(client, "What is ULPIN?")
     assert r.status_code == 200
     body = r.json()
-    assert body["mode"] == "demo" and "14-digit" in body["reply"] and "demonstration identifiers" in body["reply"]
+    assert body["mode"] == "demo" and "14-digit" in body["reply"] and "demo" not in body["reply"].lower()
     assert "Ferfar" in ask(client, "What is a 7/12 record?").json()["reply"]
     k = ask(client, "What is K-Prat?").json()
-    assert "not part of the records connected" in k["reply"]
+    assert "not yet connected" in k["reply"]
 
 
 def test_demo_explains_open_parcel_from_records_only(client, no_provider):
@@ -69,3 +69,19 @@ def test_location_context_is_resolved_from_registry(client, no_provider):
 def test_bad_requests(client, no_provider):
     assert client.post("/v1/chat", json={"messages": [{"role": "assistant", "content": "x"}]}).status_code == 400
     assert ask(client, "Explain", {"ulpin": "00000000000000"}).status_code == 404
+
+
+def test_general_land_questions(client, no_provider):
+    """The citizen assistant is first a general land-information assistant."""
+    assert "consolidation" in ask(client, "What is Gat?").json()["reply"]
+    assert "Khatauni" in ask(client, "What is Khatauni?").json()["reply"]
+    where = ask(client, "Where can I find mutation information?").json()["reply"]
+    assert "Ferfar" in where and "Namantaran" in where and "VF 6" in where
+    dept = ask(client, "Which department handles land records?").json()["reply"]
+    assert "Revenue" in dept and "Sub-Registrar" in dept
+    # a general question stays general with a parcel open; parcel questions still use the parcel
+    u = P[("MH", "P001")]
+    assert "Sub-Registrar" in ask(client, "Which department handles land records?", {"ulpin": u}).json()["reply"]
+    assert u in ask(client, "Explain this parcel", {"ulpin": u}).json()["reply"]
+    for q in ("What is Gat?", "hello"):
+        assert "demo" not in ask(client, q).json()["reply"].lower()

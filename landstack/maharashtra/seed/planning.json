@@ -98,5 +98,695 @@
     "zone_name_en": "Agricultural",
     "permitted_use": "Agricultural",
     "restriction_status": "none"
+  },
+  {
+    "ulpin": "29546334407265",
+    "planning_authority": "Ratnagiri Planning Authority",
+    "plan_name": "Ratnagiri Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "13362363536007",
+    "planning_authority": "Thane Planning Authority",
+    "plan_name": "Thane Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "92402720392308",
+    "planning_authority": "Pune Planning Authority",
+    "plan_name": "Pune Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "37527231991415",
+    "planning_authority": "Nagpur Planning Authority",
+    "plan_name": "Nagpur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "49029005785444",
+    "planning_authority": "Thane Planning Authority",
+    "plan_name": "Thane Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "58800080362301",
+    "planning_authority": "Pune Planning Authority",
+    "plan_name": "Pune Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "90241821072728",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "13813932144837",
+    "planning_authority": "Chhatrapati Sambhajinagar Planning Authority",
+    "plan_name": "Chhatrapati Sambhajinagar Development Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_mr": "व्यावसायिक",
+    "zone_name_en": "Commercial",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "56403881116760",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "61715429657136",
+    "planning_authority": "Pune Planning Authority",
+    "plan_name": "Pune Development Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_mr": "व्यावसायिक",
+    "zone_name_en": "Commercial",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "37331764608018",
+    "planning_authority": "Chhatrapati Sambhajinagar Planning Authority",
+    "plan_name": "Chhatrapati Sambhajinagar Development Plan (Synthetic)",
+    "zone_code": "C1",
+    "zone_name_mr": "व्यावसायिक",
+    "zone_name_en": "Commercial",
+    "permitted_use": "Commercial",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "44725666936570",
+    "planning_authority": "Chhatrapati Sambhajinagar Planning Authority",
+    "plan_name": "Chhatrapati Sambhajinagar Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "90927633766460",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "32937577398308",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "42350127890609",
+    "planning_authority": "Pune Planning Authority",
+    "plan_name": "Pune Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "19552994934281",
+    "planning_authority": "Ahilyanagar Planning Authority",
+    "plan_name": "Ahilyanagar Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "61941139185809",
+    "planning_authority": "Solapur Planning Authority",
+    "plan_name": "Solapur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "68114333568604",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "21657675971113",
+    "planning_authority": "Satara Planning Authority",
+    "plan_name": "Satara Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "33752455881751",
+    "planning_authority": "Thane Planning Authority",
+    "plan_name": "Thane Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "66825775529361",
+    "planning_authority": "Pune Planning Authority",
+    "plan_name": "Pune Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "83337197742836",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "79831109879032",
+    "planning_authority": "Satara Planning Authority",
+    "plan_name": "Satara Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "43260150794442",
+    "planning_authority": "Nagpur Planning Authority",
+    "plan_name": "Nagpur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "10105716703633",
+    "planning_authority": "Thane Planning Authority",
+    "plan_name": "Thane Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "49591227837601",
+    "planning_authority": "Chhatrapati Sambhajinagar Planning Authority",
+    "plan_name": "Chhatrapati Sambhajinagar Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "22735160780301",
+    "planning_authority": "Nagpur Planning Authority",
+    "plan_name": "Nagpur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "64539556457873",
+    "planning_authority": "Chhatrapati Sambhajinagar Planning Authority",
+    "plan_name": "Chhatrapati Sambhajinagar Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "20734454606222",
+    "planning_authority": "Kolhapur Planning Authority",
+    "plan_name": "Kolhapur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "14290611156523",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "27711845132223",
+    "planning_authority": "Thane Planning Authority",
+    "plan_name": "Thane Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "62365113279163",
+    "planning_authority": "Nagpur Planning Authority",
+    "plan_name": "Nagpur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "17485286059371",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "10117699978005",
+    "planning_authority": "Ahilyanagar Planning Authority",
+    "plan_name": "Ahilyanagar Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "49696687932727",
+    "planning_authority": "Chhatrapati Sambhajinagar Planning Authority",
+    "plan_name": "Chhatrapati Sambhajinagar Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "47604283563095",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "99844422117049",
+    "planning_authority": "Kolhapur Planning Authority",
+    "plan_name": "Kolhapur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "66538951962850",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "28936753230586",
+    "planning_authority": "Satara Planning Authority",
+    "plan_name": "Satara Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "12435794744411",
+    "planning_authority": "Ahilyanagar Planning Authority",
+    "plan_name": "Ahilyanagar Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "35015245919721",
+    "planning_authority": "Satara Planning Authority",
+    "plan_name": "Satara Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "70363810173958",
+    "planning_authority": "Nagpur Planning Authority",
+    "plan_name": "Nagpur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "67530812751121",
+    "planning_authority": "Solapur Planning Authority",
+    "plan_name": "Solapur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "25228215870561",
+    "planning_authority": "Satara Planning Authority",
+    "plan_name": "Satara Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "18977379747867",
+    "planning_authority": "Nagpur Planning Authority",
+    "plan_name": "Nagpur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "82457448470156",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "53487044793581",
+    "planning_authority": "Satara Planning Authority",
+    "plan_name": "Satara Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "85377713233184",
+    "planning_authority": "Pune Planning Authority",
+    "plan_name": "Pune Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "47595297174613",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "40600806478676",
+    "planning_authority": "Satara Planning Authority",
+    "plan_name": "Satara Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "68749696395584",
+    "planning_authority": "Satara Planning Authority",
+    "plan_name": "Satara Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "15887999767973",
+    "planning_authority": "Nagpur Planning Authority",
+    "plan_name": "Nagpur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "75860089393535",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "57020453293194",
+    "planning_authority": "Nagpur Planning Authority",
+    "plan_name": "Nagpur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "19146331749652",
+    "planning_authority": "Nagpur Planning Authority",
+    "plan_name": "Nagpur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "66195609152858",
+    "planning_authority": "Nashik Planning Authority",
+    "plan_name": "Nashik Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "28417527147059",
+    "planning_authority": "Satara Planning Authority",
+    "plan_name": "Satara Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "43074146192552",
+    "planning_authority": "Solapur Planning Authority",
+    "plan_name": "Solapur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "47254019090511",
+    "planning_authority": "Thane Planning Authority",
+    "plan_name": "Thane Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "58968084994006",
+    "planning_authority": "Pune Planning Authority",
+    "plan_name": "Pune Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "36689932338563",
+    "planning_authority": "Kolhapur Planning Authority",
+    "plan_name": "Kolhapur Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "47917905503625",
+    "planning_authority": "Thane Planning Authority",
+    "plan_name": "Thane Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "49183067327459",
+    "planning_authority": "Pune Planning Authority",
+    "plan_name": "Pune Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "17746198837477",
+    "planning_authority": "Chhatrapati Sambhajinagar Planning Authority",
+    "plan_name": "Chhatrapati Sambhajinagar Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "26525070894457",
+    "planning_authority": "Pune Planning Authority",
+    "plan_name": "Pune Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "23208402143010",
+    "planning_authority": "Pune Planning Authority",
+    "plan_name": "Pune Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "64152781322393",
+    "planning_authority": "Chhatrapati Sambhajinagar Planning Authority",
+    "plan_name": "Chhatrapati Sambhajinagar Development Plan (Synthetic)",
+    "zone_code": "R1",
+    "zone_name_mr": "निवासी",
+    "zone_name_en": "Residential",
+    "permitted_use": "Residential",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "69818438297262",
+    "planning_authority": "Satara Planning Authority",
+    "plan_name": "Satara Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
+  },
+  {
+    "ulpin": "52968557032552",
+    "planning_authority": "Satara Planning Authority",
+    "plan_name": "Satara Regional Plan (Synthetic)",
+    "zone_code": "AG",
+    "zone_name_mr": "शेती",
+    "zone_name_en": "Agricultural",
+    "permitted_use": "Agricultural",
+    "restriction_status": "none"
   }
 ]

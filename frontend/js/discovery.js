@@ -36,7 +36,7 @@ const KINDS = [["all", null], ["ULPIN", "ULPIN"], ["native", "Native identifier"
 export function mountDiscovery(el, { state = "", fixed = false, labels = null, onParcel = () => {}, onChange = () => {} } = {}) {
   const sel = { state, district: "", sub: "", village: "", ulpin: "" };
   let hier = null, fc = null, kind = "all", timer = null, seq = 0;
-  const L = (key, i18nKey = key) => labels?.[key] ? `${labels[key]} (${t(i18nKey)})` : t(i18nKey);
+  const L = (key, i18nKey = key) => labels?.[key] || t(i18nKey);
   el.innerHTML = skeleton(5);
 
   api.hierarchy().then((h) => { hier = h; return state ? loadState(state) : null; })
@@ -74,7 +74,7 @@ export function mountDiscovery(el, { state = "", fixed = false, labels = null, o
         <div class="field"><label for="d-parcel">${esc(L("parcel", "parcelNo"))}</label><select class="select" id="d-parcel" ${v ? "" : "disabled"}>${opt("", none, sel.ulpin)}
           ${parcels.map((p) => opt(p.ulpin, p.native_label, sel.ulpin)).join("")}</select></div>
         <div class="field disc-go"><label aria-hidden="true">&nbsp;</label>
-          <button class="btn primary" id="d-go" ${sel.ulpin ? "" : "disabled"}>${icon.search} ${esc(labels?.search ? `${labels.search} (${t("view")})` : t("view"))}</button></div>
+          <button class="btn primary" id="d-go" ${sel.ulpin ? "" : "disabled"}>${icon.search} ${esc(labels?.search || t("view"))}</button></div>
       </div>
       <div class="disc-or"><span>${esc(t("orSearch"))}</span></div>
       <div class="disc-search">

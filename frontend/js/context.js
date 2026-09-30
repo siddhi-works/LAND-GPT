@@ -1,5 +1,5 @@
 // What the user is looking at right now (page, selected place, open parcel).
-// Pages update it; the LandGPT Assistant reads it and sends it with each question.
+// Pages update it; the BhuSamhita Assistant reads it and sends it with each question.
 // Only identifiers are kept here - the server looks up the records itself.
 const ctx = { page: "home" };
 const subs = new Set();

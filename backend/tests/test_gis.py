@@ -6,13 +6,18 @@ from interop.geo import polygon_area_ha, ring_problems, rings_overlap
 from .conftest import P
 
 
+def _geometry_mismatch_labelled(b) -> bool:
+    return "GIS_GEOMETRY_MISMATCH" in (b.identity.dataset_label.issue or "")
+
+
 def test_every_ulpin_links_to_exactly_one_polygon(service):
     for b in service.bundles():
         assert len(b.geometry) == 1, b.identity.ulpin
         g = b.geometry[0]
         assert g.provenance.source_table == "spatial.cadastral_parcels"
         assert g.native["ulpin"] == b.identity.ulpin
-        assert g.geometry == b.identity.registry_geometry
+        # registry and spatial layer agree, except on parcels seeded with a geometry mismatch
+        assert (g.geometry == b.identity.registry_geometry) != _geometry_mismatch_labelled(b), b.identity.ulpin
 
 
 def test_computed_area_close_to_declared_area_for_all_parcels(service):
@@ -39,11 +44,16 @@ def test_up_bhunaksha_map_area_vs_khatauni(service):
     assert "GIS-001" not in {x.rule_id for x in rep.findings}, "polygon agrees with Khatauni for UP P012"
 
 
-def test_clean_parcels_pass_all_spatial_checks(service):
+def test_all_parcels_pass_spatial_integrity_checks(service):
+    """Valid polygons, no overlaps, one polygon per ULPIN and declared area == polygon area for all
+    300 parcels; registry vs spatial-layer geometry differs only where the dataset seeds that issue."""
     for rep in service.verifications():
+        mismatch = _geometry_mismatch_labelled(service.bundle(rep.ulpin))
         for c in rep.checks:
-            if c.rule_id in ("GIS-002", "GIS-003", "GIS-004", "GIS-005", "GIS-006"):
+            if c.rule_id in ("GIS-002", "GIS-004", "GIS-005", "GIS-006"):
                 assert c.outcome == "pass", (rep.ulpin, c)
+            if c.rule_id == "GIS-003":
+                assert c.outcome == ("fail" if mismatch else "pass"), (rep.ulpin, c)
 
 
 def test_gis_endpoint_returns_feature_and_area_comparison(client):

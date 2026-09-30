@@ -246,6 +246,1393 @@
       "land_use_en": "Agricultural",
       "assessment": 3290.0,
       "record_status": "active"
+    },
+    {
+      "ulpin": "29546334407265",
+      "district": "Ratnagiri",
+      "taluka": "Dapoli",
+      "village": "Harnai",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "518",
+      "survey_part": "3",
+      "khata_no": "414",
+      "khatedar_name_mr": "तुकाराम शिंदे",
+      "khatedar_name_en": "Tukaram Shinde",
+      "total_area": 2.85,
+      "khatedar_area": 2.85,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3907.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "92402720392308",
+      "district": "Pune",
+      "taluka": "Mulshi",
+      "village": "Shivapur",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "198",
+      "survey_part": "3",
+      "khata_no": "119",
+      "khatedar_name_mr": "महेश मोरे",
+      "khatedar_name_en": "Mahesh More",
+      "total_area": 1.75,
+      "khatedar_area": 1.75,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2862.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "37527231991415",
+      "district": "Nagpur",
+      "taluka": "Hingna",
+      "village": "Wadi",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "563",
+      "survey_part": "3",
+      "khata_no": "346",
+      "khatedar_name_mr": "नेहा सावंत",
+      "khatedar_name_en": "Neha Sawant",
+      "total_area": 2.48,
+      "khatedar_area": 2.48,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3556.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "50674654106369",
+      "district": "Pune",
+      "taluka": "Baramati",
+      "village": "Malegaon",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "116",
+      "survey_part": "2",
+      "khata_no": "177",
+      "khatedar_name_mr": "नितीन पाटील",
+      "khatedar_name_en": "Nitin Patil",
+      "total_area": 0.97,
+      "khatedar_area": 0.97,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2121.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "27988069474424",
+      "district": "Ahilyanagar",
+      "taluka": "Rahata",
+      "village": "Loni",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "35",
+      "survey_part": "3",
+      "khata_no": "152",
+      "khatedar_name_mr": "महेश निकम",
+      "khatedar_name_en": "Mahesh Nikam",
+      "total_area": 3.0,
+      "khatedar_area": 3.0,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 4050.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "90241821072728",
+      "district": "Nashik",
+      "taluka": "Nashik",
+      "village": "Makhmalabad",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "120",
+      "survey_part": "3",
+      "khata_no": "272",
+      "khatedar_name_mr": "संदीप सावंत",
+      "khatedar_name_en": "Sandeep Sawant",
+      "total_area": 0.84,
+      "khatedar_area": 0.84,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1998.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "13813932144837",
+      "district": "Chhatrapati Sambhajinagar",
+      "taluka": "Paithan",
+      "village": "Bidkin",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "308",
+      "survey_part": "2",
+      "khata_no": "87",
+      "khatedar_name_mr": "वैशाली साळुंखे",
+      "khatedar_name_en": "Vaishali Salunkhe",
+      "total_area": 0.25,
+      "khatedar_area": 0.25,
+      "area_unit": "hectare",
+      "land_use_mr": "व्यावसायिक",
+      "land_use_en": "Commercial",
+      "assessment": 1437.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "56403881116760",
+      "district": "Nashik",
+      "taluka": "Sinnar",
+      "village": "Khadak",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "314",
+      "survey_part": "1",
+      "khata_no": "41",
+      "khatedar_name_mr": "संदीप मोरे",
+      "khatedar_name_en": "Sandeep More",
+      "total_area": 2.25,
+      "khatedar_area": 2.25,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3337.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "38448293175186",
+      "district": "Satara",
+      "taluka": "Karad",
+      "village": "Umbraj",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "238",
+      "survey_part": "1",
+      "khata_no": "361",
+      "khatedar_name_mr": "राजेश कांबळे",
+      "khatedar_name_en": "Rajesh Kamble",
+      "total_area": 0.71,
+      "khatedar_area": 0.71,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 1874.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "37331764608018",
+      "district": "Chhatrapati Sambhajinagar",
+      "taluka": "Paithan",
+      "village": "Bidkin",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "169",
+      "survey_part": "4",
+      "khata_no": "382",
+      "khatedar_name_mr": "वैशाली सावंत",
+      "khatedar_name_en": "Vaishali Sawant",
+      "total_area": 0.31,
+      "khatedar_area": 0.31,
+      "area_unit": "hectare",
+      "land_use_mr": "व्यावसायिक",
+      "land_use_en": "Commercial",
+      "assessment": 1494.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "44725666936570",
+      "district": "Chhatrapati Sambhajinagar",
+      "taluka": "Paithan",
+      "village": "Bidkin",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "570",
+      "survey_part": "2",
+      "khata_no": "328",
+      "khatedar_name_mr": "प्रकाश थोरात",
+      "khatedar_name_en": "Prakash Thorat",
+      "total_area": 0.7,
+      "khatedar_area": 0.7,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1865.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "40384774791836",
+      "district": "Pune",
+      "taluka": "Mulshi",
+      "village": "Shivapur",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "48",
+      "survey_part": "1",
+      "khata_no": "354",
+      "khatedar_name_mr": "अश्विनी म्हात्रे",
+      "khatedar_name_en": "Ashwini Mhatre",
+      "total_area": 2.99,
+      "khatedar_area": 2.99,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 4040.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "90927633766460",
+      "district": "Nashik",
+      "taluka": "Sinnar",
+      "village": "Khadak",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "238",
+      "survey_part": null,
+      "khata_no": "33",
+      "khatedar_name_mr": "अमोल म्हात्रे",
+      "khatedar_name_en": "Amol Mhatre",
+      "total_area": 2.89,
+      "khatedar_area": 2.89,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3945.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "32937577398308",
+      "district": "Nashik",
+      "taluka": "Nashik",
+      "village": "Makhmalabad",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "63",
+      "survey_part": "4",
+      "khata_no": "143",
+      "khatedar_name_mr": "अश्विनी शेलार",
+      "khatedar_name_en": "Ashwini Shelar",
+      "total_area": 0.51,
+      "khatedar_area": 0.51,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1684.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "98604400119014",
+      "district": "Nagpur",
+      "taluka": "Kalmeshwar",
+      "village": "Saoner Road",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "291",
+      "survey_part": "1",
+      "khata_no": "230",
+      "khatedar_name_mr": "पूजा कुलकर्णी",
+      "khatedar_name_en": "Pooja Kulkarni",
+      "total_area": 1.23,
+      "khatedar_area": 1.23,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2368.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "19552994934281",
+      "district": "Ahilyanagar",
+      "taluka": "Rahata",
+      "village": "Loni",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "74",
+      "survey_part": "3",
+      "khata_no": "229",
+      "khatedar_name_mr": "तुकाराम सावंत",
+      "khatedar_name_en": "Tukaram Sawant",
+      "total_area": 2.41,
+      "khatedar_area": 2.41,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3489.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "61941139185809",
+      "district": "Solapur",
+      "taluka": "Barshi",
+      "village": "Pangri",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "432",
+      "survey_part": "2",
+      "khata_no": "197",
+      "khatedar_name_mr": "मनीषा म्हात्रे",
+      "khatedar_name_en": "Manisha Mhatre",
+      "total_area": 1.18,
+      "khatedar_area": 1.18,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2321.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "34665783827821",
+      "district": "Kolhapur",
+      "taluka": "Karveer",
+      "village": "Kale",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "27",
+      "survey_part": null,
+      "khata_no": "91",
+      "khatedar_name_mr": "विनायक चव्हाण",
+      "khatedar_name_en": "Vinayak Chavan",
+      "total_area": 3.04,
+      "khatedar_area": 3.04,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 4088.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "68114333568604",
+      "district": "Nashik",
+      "taluka": "Sinnar",
+      "village": "Khadak",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "454",
+      "survey_part": "2",
+      "khata_no": "223",
+      "khatedar_name_mr": "अक्षय काळे",
+      "khatedar_name_en": "Akshay Kale",
+      "total_area": 2.57,
+      "khatedar_area": 2.57,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3641.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "88422259428156",
+      "district": "Kolhapur",
+      "taluka": "Karveer",
+      "village": "Kale",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "434",
+      "survey_part": "2",
+      "khata_no": "199",
+      "khatedar_name_mr": "अमोल कुलकर्णी",
+      "khatedar_name_en": "Amol Kulkarni",
+      "total_area": 1.22,
+      "khatedar_area": 1.22,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2359.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "21657675971113",
+      "district": "Satara",
+      "taluka": "Karad",
+      "village": "Umbraj",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "164",
+      "survey_part": "2",
+      "khata_no": "239",
+      "khatedar_name_mr": "राजेश कांबळे",
+      "khatedar_name_en": "Rajesh Kamble",
+      "total_area": 1.38,
+      "khatedar_area": 1.38,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2511.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "66825775529361",
+      "district": "Pune",
+      "taluka": "Mulshi",
+      "village": "Shivapur",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "249",
+      "survey_part": "1",
+      "khata_no": "77",
+      "khatedar_name_mr": "माधुरी भोयर",
+      "khatedar_name_en": "Madhuri Bhoyar",
+      "total_area": 2.24,
+      "khatedar_area": 2.24,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3328.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "94163572348410",
+      "district": "Kolhapur",
+      "taluka": "Karveer",
+      "village": "Kale",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "207",
+      "survey_part": null,
+      "khata_no": "209",
+      "khatedar_name_mr": "सविता देशपांडे",
+      "khatedar_name_en": "Savita Deshpande",
+      "total_area": 1.26,
+      "khatedar_area": 1.26,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2397.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "83337197742836",
+      "district": "Nashik",
+      "taluka": "Sinnar",
+      "village": "Khadak",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "184",
+      "survey_part": "4",
+      "khata_no": "198",
+      "khatedar_name_mr": "गणेश म्हात्रे",
+      "khatedar_name_en": "Ganesh Mhatre",
+      "total_area": 2.6,
+      "khatedar_area": 2.6,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3670.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "79831109879032",
+      "district": "Satara",
+      "taluka": "Karad",
+      "village": "Umbraj",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "26",
+      "survey_part": "3",
+      "khata_no": "165",
+      "khatedar_name_mr": "मंगल चव्हाण",
+      "khatedar_name_en": "Mangal Chavan",
+      "total_area": 0.87,
+      "khatedar_area": 0.87,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2026.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "43260150794442",
+      "district": "Nagpur",
+      "taluka": "Kalmeshwar",
+      "village": "Saoner Road",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "576",
+      "survey_part": "3",
+      "khata_no": "18",
+      "khatedar_name_mr": "सविता गायकवाड",
+      "khatedar_name_en": "Savita Gaikwad",
+      "total_area": 1.16,
+      "khatedar_area": 1.16,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2302.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "49591227837601",
+      "district": "Chhatrapati Sambhajinagar",
+      "taluka": "Paithan",
+      "village": "Bidkin",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "405",
+      "survey_part": "3",
+      "khata_no": "156",
+      "khatedar_name_mr": "प्रिया साळुंखे",
+      "khatedar_name_en": "Priya Salunkhe",
+      "total_area": 0.84,
+      "khatedar_area": 0.84,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1998.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "22735160780301",
+      "district": "Nagpur",
+      "taluka": "Kalmeshwar",
+      "village": "Saoner Road",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "558",
+      "survey_part": "4",
+      "khata_no": "13",
+      "khatedar_name_mr": "सविता काळे",
+      "khatedar_name_en": "Savita Kale",
+      "total_area": 1.98,
+      "khatedar_area": 1.98,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3081.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "64539556457873",
+      "district": "Chhatrapati Sambhajinagar",
+      "taluka": "Paithan",
+      "village": "Bidkin",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "192",
+      "survey_part": "4",
+      "khata_no": "53",
+      "khatedar_name_mr": "प्रणव म्हात्रे",
+      "khatedar_name_en": "Pranav Mhatre",
+      "total_area": 0.5,
+      "khatedar_area": 0.5,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1675.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "53896953349199",
+      "district": "Satara",
+      "taluka": "Karad",
+      "village": "Umbraj",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "69",
+      "survey_part": "3",
+      "khata_no": "144",
+      "khatedar_name_mr": "नेहा जोशी",
+      "khatedar_name_en": "Neha Joshi",
+      "total_area": 1.76,
+      "khatedar_area": 1.76,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2872.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "20734454606222",
+      "district": "Kolhapur",
+      "taluka": "Karveer",
+      "village": "Kale",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "33",
+      "survey_part": null,
+      "khata_no": "359",
+      "khatedar_name_mr": "प्रिया पाटील",
+      "khatedar_name_en": "Priya Patil",
+      "total_area": 1.5,
+      "khatedar_area": 1.5,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2625.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "14290611156523",
+      "district": "Nashik",
+      "taluka": "Sinnar",
+      "village": "Khadak",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "284",
+      "survey_part": null,
+      "khata_no": "181",
+      "khatedar_name_mr": "प्रिया शेलार",
+      "khatedar_name_en": "Priya Shelar",
+      "total_area": 3.13,
+      "khatedar_area": 3.13,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 4173.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "65846273241271",
+      "district": "Nagpur",
+      "taluka": "Hingna",
+      "village": "Wadi",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "52",
+      "survey_part": "2",
+      "khata_no": "250",
+      "khatedar_name_mr": "मंगल गायकवाड",
+      "khatedar_name_en": "Mangal Gaikwad",
+      "total_area": 2.86,
+      "khatedar_area": 2.86,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3917.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "62365113279163",
+      "district": "Nagpur",
+      "taluka": "Hingna",
+      "village": "Wadi",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "139",
+      "survey_part": "2",
+      "khata_no": "56",
+      "khatedar_name_mr": "रोहित थोरात",
+      "khatedar_name_en": "Rohit Thorat",
+      "total_area": 1.65,
+      "khatedar_area": 1.65,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2767.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "17485286059371",
+      "district": "Nashik",
+      "taluka": "Nashik",
+      "village": "Makhmalabad",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "91",
+      "survey_part": "1",
+      "khata_no": "148",
+      "khatedar_name_mr": "कविता भोसले",
+      "khatedar_name_en": "Kavita Bhosale",
+      "total_area": 0.77,
+      "khatedar_area": 0.77,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1931.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "10117699978005",
+      "district": "Ahilyanagar",
+      "taluka": "Rahata",
+      "village": "Loni",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "521",
+      "survey_part": "4",
+      "khata_no": "249",
+      "khatedar_name_mr": "वैशाली जोशी",
+      "khatedar_name_en": "Vaishali Joshi",
+      "total_area": 2.33,
+      "khatedar_area": 2.33,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3413.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "49696687932727",
+      "district": "Chhatrapati Sambhajinagar",
+      "taluka": "Paithan",
+      "village": "Bidkin",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "109",
+      "survey_part": "1",
+      "khata_no": "195",
+      "khatedar_name_mr": "कविता नाईक",
+      "khatedar_name_en": "Kavita Naik",
+      "total_area": 0.59,
+      "khatedar_area": 0.59,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1760.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "91976026916150",
+      "district": "Ahilyanagar",
+      "taluka": "Rahata",
+      "village": "Loni",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "204",
+      "survey_part": "1",
+      "khata_no": "407",
+      "khatedar_name_mr": "तुकाराम म्हात्रे",
+      "khatedar_name_en": "Tukaram Mhatre",
+      "total_area": 0.86,
+      "khatedar_area": 0.86,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2017.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "47604283563095",
+      "district": "Nashik",
+      "taluka": "Nashik",
+      "village": "Makhmalabad",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "377",
+      "survey_part": null,
+      "khata_no": "369",
+      "khatedar_name_mr": "विनायक थोरात",
+      "khatedar_name_en": "Vinayak Thorat",
+      "total_area": 0.39,
+      "khatedar_area": 0.39,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1570.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "99844422117049",
+      "district": "Kolhapur",
+      "taluka": "Karveer",
+      "village": "Kale",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "151",
+      "survey_part": "2",
+      "khata_no": "21",
+      "khatedar_name_mr": "रुपाली भोयर",
+      "khatedar_name_en": "Rupali Bhoyar",
+      "total_area": 3.28,
+      "khatedar_area": 3.28,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 4316.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "66538951962850",
+      "district": "Nashik",
+      "taluka": "Nashik",
+      "village": "Makhmalabad",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "471",
+      "survey_part": "4",
+      "khata_no": "213",
+      "khatedar_name_mr": "स्वाती म्हात्रे",
+      "khatedar_name_en": "Swati Mhatre",
+      "total_area": 0.71,
+      "khatedar_area": 0.71,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1874.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "28936753230586",
+      "district": "Satara",
+      "taluka": "Phaltan",
+      "village": "Nimbhore",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "413",
+      "survey_part": "1",
+      "khata_no": "60",
+      "khatedar_name_mr": "संदीप म्हात्रे",
+      "khatedar_name_en": "Sandeep Mhatre",
+      "total_area": 1.07,
+      "khatedar_area": 1.07,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2216.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "12435794744411",
+      "district": "Ahilyanagar",
+      "taluka": "Rahata",
+      "village": "Loni",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "75",
+      "survey_part": "3",
+      "khata_no": "274",
+      "khatedar_name_mr": "रोहित म्हात्रे",
+      "khatedar_name_en": "Rohit Mhatre",
+      "total_area": 1.82,
+      "khatedar_area": 1.82,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2929.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "93930405599009",
+      "district": "Nagpur",
+      "taluka": "Hingna",
+      "village": "Wadi",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "7",
+      "survey_part": "1",
+      "khata_no": "124",
+      "khatedar_name_mr": "अक्षय माने",
+      "khatedar_name_en": "Akshay Mane",
+      "total_area": 0.62,
+      "khatedar_area": 0.62,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 1789.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "35015245919721",
+      "district": "Satara",
+      "taluka": "Karad",
+      "village": "Umbraj",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "319",
+      "survey_part": "2",
+      "khata_no": "294",
+      "khatedar_name_mr": "रुपाली देशपांडे",
+      "khatedar_name_en": "Rupali Deshpande",
+      "total_area": 2.23,
+      "khatedar_area": 2.23,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3318.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "70363810173958",
+      "district": "Nagpur",
+      "taluka": "Kalmeshwar",
+      "village": "Saoner Road",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "113",
+      "survey_part": "4",
+      "khata_no": "412",
+      "khatedar_name_mr": "स्नेहा कदम",
+      "khatedar_name_en": "Sneha Kadam",
+      "total_area": 3.04,
+      "khatedar_area": 3.04,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 4088.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "67530812751121",
+      "district": "Solapur",
+      "taluka": "Barshi",
+      "village": "Pangri",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "439",
+      "survey_part": "1",
+      "khata_no": "371",
+      "khatedar_name_mr": "रोहित देशपांडे",
+      "khatedar_name_en": "Rohit Deshpande",
+      "total_area": 2.1,
+      "khatedar_area": 2.1,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3195.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "25228215870561",
+      "district": "Satara",
+      "taluka": "Karad",
+      "village": "Umbraj",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "540",
+      "survey_part": "3",
+      "khata_no": "196",
+      "khatedar_name_mr": "प्रिया भोसले",
+      "khatedar_name_en": "Priya Bhosale",
+      "total_area": 0.93,
+      "khatedar_area": 0.93,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2083.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "18977379747867",
+      "district": "Nagpur",
+      "taluka": "Kalmeshwar",
+      "village": "Saoner Road",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "589",
+      "survey_part": "4",
+      "khata_no": "254",
+      "khatedar_name_mr": "ज्ञानेश्वर शेलार",
+      "khatedar_name_en": "Dnyaneshwar Shelar",
+      "total_area": 0.83,
+      "khatedar_area": 0.83,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 1988.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "82457448470156",
+      "district": "Nashik",
+      "taluka": "Sinnar",
+      "village": "Khadak",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "262",
+      "survey_part": "1",
+      "khata_no": "365",
+      "khatedar_name_mr": "शुभांगी कदम",
+      "khatedar_name_en": "Shubhangi Kadam",
+      "total_area": 2.67,
+      "khatedar_area": 2.67,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3736.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "53487044793581",
+      "district": "Satara",
+      "taluka": "Phaltan",
+      "village": "Nimbhore",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "498",
+      "survey_part": "4",
+      "khata_no": "215",
+      "khatedar_name_mr": "स्वाती थोरात",
+      "khatedar_name_en": "Swati Thorat",
+      "total_area": 2.76,
+      "khatedar_area": 2.76,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3822.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "47595297174613",
+      "district": "Nashik",
+      "taluka": "Nashik",
+      "village": "Makhmalabad",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "502",
+      "survey_part": "4",
+      "khata_no": "21",
+      "khatedar_name_mr": "अक्षय देशमुख",
+      "khatedar_name_en": "Akshay Deshmukh",
+      "total_area": 0.36,
+      "khatedar_area": 0.36,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1542.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "40600806478676",
+      "district": "Satara",
+      "taluka": "Karad",
+      "village": "Umbraj",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "203",
+      "survey_part": "2",
+      "khata_no": "114",
+      "khatedar_name_mr": "महेश सावंत",
+      "khatedar_name_en": "Mahesh Sawant",
+      "total_area": 3.25,
+      "khatedar_area": 3.25,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 4287.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "65521013706346",
+      "district": "Satara",
+      "taluka": "Karad",
+      "village": "Umbraj",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "376",
+      "survey_part": "4",
+      "khata_no": "338",
+      "khatedar_name_mr": "योगेश पाटील",
+      "khatedar_name_en": "Yogesh Patil",
+      "total_area": 3.17,
+      "khatedar_area": 3.17,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 4211.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "68749696395584",
+      "district": "Satara",
+      "taluka": "Karad",
+      "village": "Umbraj",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "624",
+      "survey_part": null,
+      "khata_no": "36",
+      "khatedar_name_mr": "सचिन देशपांडे",
+      "khatedar_name_en": "Sachin Deshpande",
+      "total_area": 0.78,
+      "khatedar_area": 0.78,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 1941.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "15887999767973",
+      "district": "Nagpur",
+      "taluka": "Hingna",
+      "village": "Wadi",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "5",
+      "survey_part": "4",
+      "khata_no": "111",
+      "khatedar_name_mr": "योगेश देशमुख",
+      "khatedar_name_en": "Yogesh Deshmukh",
+      "total_area": 1.17,
+      "khatedar_area": 1.17,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2311.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "27928004829723",
+      "district": "Pune",
+      "taluka": "Baramati",
+      "village": "Malegaon",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "434",
+      "survey_part": "3",
+      "khata_no": "193",
+      "khatedar_name_mr": "अश्विनी कुलकर्णी",
+      "khatedar_name_en": "Ashwini Kulkarni",
+      "total_area": 1.03,
+      "khatedar_area": 1.03,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2178.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "75860089393535",
+      "district": "Nashik",
+      "taluka": "Nashik",
+      "village": "Makhmalabad",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "599",
+      "survey_part": "2",
+      "khata_no": "280",
+      "khatedar_name_mr": "योगेश सावंत",
+      "khatedar_name_en": "Yogesh Sawant",
+      "total_area": 0.71,
+      "khatedar_area": 0.71,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1874.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "57020453293194",
+      "district": "Nagpur",
+      "taluka": "Hingna",
+      "village": "Wadi",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "351",
+      "survey_part": "2",
+      "khata_no": "79",
+      "khatedar_name_mr": "तुकाराम पवार",
+      "khatedar_name_en": "Tukaram Pawar",
+      "total_area": 3.06,
+      "khatedar_area": 3.06,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 4107.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "19146331749652",
+      "district": "Nagpur",
+      "taluka": "Kalmeshwar",
+      "village": "Saoner Road",
+      "land_identifier_type": "KHASRA_NO",
+      "survey_gat_khasra_no": "400",
+      "survey_part": "1",
+      "khata_no": "5",
+      "khatedar_name_mr": "प्रकाश निकम",
+      "khatedar_name_en": "Prakash Nikam",
+      "total_area": 2.88,
+      "khatedar_area": 2.88,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3936.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "66195609152858",
+      "district": "Nashik",
+      "taluka": "Nashik",
+      "village": "Makhmalabad",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "206",
+      "survey_part": "1",
+      "khata_no": "64",
+      "khatedar_name_mr": "सविता मोरे",
+      "khatedar_name_en": "Savita More",
+      "total_area": 0.48,
+      "khatedar_area": 0.48,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1656.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "28417527147059",
+      "district": "Satara",
+      "taluka": "Karad",
+      "village": "Umbraj",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "488",
+      "survey_part": null,
+      "khata_no": "121",
+      "khatedar_name_mr": "मंगल भोयर",
+      "khatedar_name_en": "Mangal Bhoyar",
+      "total_area": 1.14,
+      "khatedar_area": 1.14,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2283.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "43074146192552",
+      "district": "Solapur",
+      "taluka": "Barshi",
+      "village": "Pangri",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "622",
+      "survey_part": "2",
+      "khata_no": "273",
+      "khatedar_name_mr": "नेहा माने",
+      "khatedar_name_en": "Neha Mane",
+      "total_area": 1.02,
+      "khatedar_area": 1.02,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2169.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "58968084994006",
+      "district": "Pune",
+      "taluka": "Baramati",
+      "village": "Malegaon",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "512",
+      "survey_part": null,
+      "khata_no": "342",
+      "khatedar_name_mr": "सविता जोशी",
+      "khatedar_name_en": "Savita Joshi",
+      "total_area": 1.28,
+      "khatedar_area": 1.28,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2416.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "36689932338563",
+      "district": "Kolhapur",
+      "taluka": "Karveer",
+      "village": "Kale",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "470",
+      "survey_part": "2",
+      "khata_no": "268",
+      "khatedar_name_mr": "कविता सावंत",
+      "khatedar_name_en": "Kavita Sawant",
+      "total_area": 1.45,
+      "khatedar_area": 1.45,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2577.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "17746198837477",
+      "district": "Chhatrapati Sambhajinagar",
+      "taluka": "Paithan",
+      "village": "Bidkin",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "60",
+      "survey_part": null,
+      "khata_no": "307",
+      "khatedar_name_mr": "स्वाती जोशी",
+      "khatedar_name_en": "Swati Joshi",
+      "total_area": 0.36,
+      "khatedar_area": 0.36,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 1542.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "78284416897777",
+      "district": "Satara",
+      "taluka": "Phaltan",
+      "village": "Nimbhore",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "347",
+      "survey_part": "4",
+      "khata_no": "279",
+      "khatedar_name_mr": "राजेश कांबळे",
+      "khatedar_name_en": "Rajesh Kamble",
+      "total_area": 2.23,
+      "khatedar_area": 2.23,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 3318.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "26525070894457",
+      "district": "Pune",
+      "taluka": "Baramati",
+      "village": "Malegaon",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "66",
+      "survey_part": "3",
+      "khata_no": "21",
+      "khatedar_name_mr": "नितीन काळे",
+      "khatedar_name_en": "Nitin Kale",
+      "total_area": 3.35,
+      "khatedar_area": 3.35,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 4382.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "23208402143010",
+      "district": "Pune",
+      "taluka": "Mulshi",
+      "village": "Shivapur",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "29",
+      "survey_part": "3",
+      "khata_no": "379",
+      "khatedar_name_mr": "रोहित चव्हाण",
+      "khatedar_name_en": "Rohit Chavan",
+      "total_area": 1.81,
+      "khatedar_area": 1.81,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2919.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "64152781322393",
+      "district": "Chhatrapati Sambhajinagar",
+      "taluka": "Paithan",
+      "village": "Bidkin",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "227",
+      "survey_part": "3",
+      "khata_no": "409",
+      "khatedar_name_mr": "प्रणव गायकवाड",
+      "khatedar_name_en": "Pranav Gaikwad",
+      "total_area": 0.93,
+      "khatedar_area": 0.93,
+      "area_unit": "hectare",
+      "land_use_mr": "निवासी",
+      "land_use_en": "Residential",
+      "assessment": 2083.5,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "69818438297262",
+      "district": "Satara",
+      "taluka": "Karad",
+      "village": "Umbraj",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "355",
+      "survey_part": "2",
+      "khata_no": "34",
+      "khatedar_name_mr": "अमोल पाटील",
+      "khatedar_name_en": "Amol Patil",
+      "total_area": 1.48,
+      "khatedar_area": 1.48,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2606.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "65403158845650",
+      "district": "Pune",
+      "taluka": "Baramati",
+      "village": "Malegaon",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "487",
+      "survey_part": "3",
+      "khata_no": "135",
+      "khatedar_name_mr": "प्रकाश भोयर",
+      "khatedar_name_en": "Prakash Bhoyar",
+      "total_area": 1.06,
+      "khatedar_area": 1.06,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 2207.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "52968557032552",
+      "district": "Satara",
+      "taluka": "Phaltan",
+      "village": "Nimbhore",
+      "land_identifier_type": "GAT_NO",
+      "survey_gat_khasra_no": "205",
+      "survey_part": "1",
+      "khata_no": "73",
+      "khatedar_name_mr": "योगेश मोरे",
+      "khatedar_name_en": "Yogesh More",
+      "total_area": 0.6,
+      "khatedar_area": 0.6,
+      "area_unit": "hectare",
+      "land_use_mr": "शेती",
+      "land_use_en": "Agricultural",
+      "assessment": 1770.0,
+      "record_status": "active"
     }
   ],
   "record_8a": [
@@ -494,6 +1881,1393 @@
       "non_cultivable_area": 0.11,
       "area_unit": "hectare",
       "land_revenue": 1774.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "29546334407265",
+      "khata_no": "414",
+      "khatedar_name_mr": "तुकाराम शिंदे",
+      "khatedar_name_en": "Tukaram Shinde",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "518",
+          "part": "3"
+        }
+      ],
+      "total_area": 2.85,
+      "cultivable_area": 2.708,
+      "non_cultivable_area": 0.143,
+      "area_unit": "hectare",
+      "land_revenue": 2030.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "92402720392308",
+      "khata_no": "119",
+      "khatedar_name_mr": "महेश मोरे",
+      "khatedar_name_en": "Mahesh More",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "198",
+          "part": "3"
+        }
+      ],
+      "total_area": 1.75,
+      "cultivable_area": 1.662,
+      "non_cultivable_area": 0.088,
+      "area_unit": "hectare",
+      "land_revenue": 1590.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "37527231991415",
+      "khata_no": "346",
+      "khatedar_name_mr": "नेहा सावंत",
+      "khatedar_name_en": "Neha Sawant",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "563",
+          "part": "3"
+        }
+      ],
+      "total_area": 2.48,
+      "cultivable_area": 2.356,
+      "non_cultivable_area": 0.124,
+      "area_unit": "hectare",
+      "land_revenue": 1882.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "50674654106369",
+      "khata_no": "177",
+      "khatedar_name_mr": "नितीन पाटील",
+      "khatedar_name_en": "Nitin Patil",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "116",
+          "part": "2"
+        }
+      ],
+      "total_area": 0.97,
+      "cultivable_area": 0.921,
+      "non_cultivable_area": 0.049,
+      "area_unit": "hectare",
+      "land_revenue": 1278.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "27988069474424",
+      "khata_no": "152",
+      "khatedar_name_mr": "महेश निकम",
+      "khatedar_name_en": "Mahesh Nikam",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "35",
+          "part": "3"
+        }
+      ],
+      "total_area": 3.0,
+      "cultivable_area": 2.85,
+      "non_cultivable_area": 0.15,
+      "area_unit": "hectare",
+      "land_revenue": 2090.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "90241821072728",
+      "khata_no": "272",
+      "khatedar_name_mr": "संदीप सावंत",
+      "khatedar_name_en": "Sandeep Sawant",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "120",
+          "part": "3"
+        }
+      ],
+      "total_area": 0.84,
+      "cultivable_area": 0.798,
+      "non_cultivable_area": 0.042,
+      "area_unit": "hectare",
+      "land_revenue": 1226.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "13813932144837",
+      "khata_no": "87",
+      "khatedar_name_mr": "वैशाली साळुंखे",
+      "khatedar_name_en": "Vaishali Salunkhe",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "308",
+          "part": "2"
+        }
+      ],
+      "total_area": 0.25,
+      "cultivable_area": 0.237,
+      "non_cultivable_area": 0.013,
+      "area_unit": "hectare",
+      "land_revenue": 990.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "56403881116760",
+      "khata_no": "41",
+      "khatedar_name_mr": "संदीप मोरे",
+      "khatedar_name_en": "Sandeep More",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "314",
+          "part": "1"
+        }
+      ],
+      "total_area": 2.25,
+      "cultivable_area": 2.137,
+      "non_cultivable_area": 0.113,
+      "area_unit": "hectare",
+      "land_revenue": 1790.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "38448293175186",
+      "khata_no": "361",
+      "khatedar_name_mr": "राजेश कांबळे",
+      "khatedar_name_en": "Rajesh Kamble",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "238",
+          "part": "1"
+        }
+      ],
+      "total_area": 0.71,
+      "cultivable_area": 0.674,
+      "non_cultivable_area": 0.035,
+      "area_unit": "hectare",
+      "land_revenue": 1174.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "37331764608018",
+      "khata_no": "382",
+      "khatedar_name_mr": "वैशाली सावंत",
+      "khatedar_name_en": "Vaishali Sawant",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "169",
+          "part": "4"
+        }
+      ],
+      "total_area": 0.31,
+      "cultivable_area": 0.294,
+      "non_cultivable_area": 0.015,
+      "area_unit": "hectare",
+      "land_revenue": 1014.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "44725666936570",
+      "khata_no": "328",
+      "khatedar_name_mr": "प्रकाश थोरात",
+      "khatedar_name_en": "Prakash Thorat",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "570",
+          "part": "2"
+        }
+      ],
+      "total_area": 0.7,
+      "cultivable_area": 0.665,
+      "non_cultivable_area": 0.035,
+      "area_unit": "hectare",
+      "land_revenue": 1170.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "40384774791836",
+      "khata_no": "354",
+      "khatedar_name_mr": "अश्विनी म्हात्रे",
+      "khatedar_name_en": "Ashwini Mhatre",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "48",
+          "part": "1"
+        }
+      ],
+      "total_area": 2.99,
+      "cultivable_area": 2.841,
+      "non_cultivable_area": 0.15,
+      "area_unit": "hectare",
+      "land_revenue": 2086.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "90927633766460",
+      "khata_no": "33",
+      "khatedar_name_mr": "अमोल म्हात्रे",
+      "khatedar_name_en": "Amol Mhatre",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "238",
+          "part": null
+        }
+      ],
+      "total_area": 2.89,
+      "cultivable_area": 2.745,
+      "non_cultivable_area": 0.145,
+      "area_unit": "hectare",
+      "land_revenue": 2046.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "32937577398308",
+      "khata_no": "143",
+      "khatedar_name_mr": "अश्विनी शेलार",
+      "khatedar_name_en": "Ashwini Shelar",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "63",
+          "part": "4"
+        }
+      ],
+      "total_area": 0.51,
+      "cultivable_area": 0.484,
+      "non_cultivable_area": 0.026,
+      "area_unit": "hectare",
+      "land_revenue": 1094.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "98604400119014",
+      "khata_no": "230",
+      "khatedar_name_mr": "पूजा कुलकर्णी",
+      "khatedar_name_en": "Pooja Kulkarni",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "291",
+          "part": "1"
+        }
+      ],
+      "total_area": 1.23,
+      "cultivable_area": 1.168,
+      "non_cultivable_area": 0.061,
+      "area_unit": "hectare",
+      "land_revenue": 1382.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "19552994934281",
+      "khata_no": "229",
+      "khatedar_name_mr": "तुकाराम सावंत",
+      "khatedar_name_en": "Tukaram Sawant",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "74",
+          "part": "3"
+        }
+      ],
+      "total_area": 2.41,
+      "cultivable_area": 2.289,
+      "non_cultivable_area": 0.121,
+      "area_unit": "hectare",
+      "land_revenue": 1854.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "61941139185809",
+      "khata_no": "197",
+      "khatedar_name_mr": "मनीषा म्हात्रे",
+      "khatedar_name_en": "Manisha Mhatre",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "432",
+          "part": "2"
+        }
+      ],
+      "total_area": 1.18,
+      "cultivable_area": 1.121,
+      "non_cultivable_area": 0.059,
+      "area_unit": "hectare",
+      "land_revenue": 1362.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "34665783827821",
+      "khata_no": "91",
+      "khatedar_name_mr": "विनायक चव्हाण",
+      "khatedar_name_en": "Vinayak Chavan",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "27",
+          "part": null
+        }
+      ],
+      "total_area": 3.04,
+      "cultivable_area": 2.888,
+      "non_cultivable_area": 0.152,
+      "area_unit": "hectare",
+      "land_revenue": 2106.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "68114333568604",
+      "khata_no": "223",
+      "khatedar_name_mr": "अक्षय काळे",
+      "khatedar_name_en": "Akshay Kale",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "454",
+          "part": "2"
+        }
+      ],
+      "total_area": 2.57,
+      "cultivable_area": 2.441,
+      "non_cultivable_area": 0.129,
+      "area_unit": "hectare",
+      "land_revenue": 1918.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "88422259428156",
+      "khata_no": "199",
+      "khatedar_name_mr": "अमोल कुलकर्णी",
+      "khatedar_name_en": "Amol Kulkarni",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "434",
+          "part": "2"
+        }
+      ],
+      "total_area": 1.27,
+      "cultivable_area": 1.206,
+      "non_cultivable_area": 0.064,
+      "area_unit": "hectare",
+      "land_revenue": 1398.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "21657675971113",
+      "khata_no": "239",
+      "khatedar_name_mr": "राजेश कांबळे",
+      "khatedar_name_en": "Rajesh Kamble",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "164",
+          "part": "2"
+        }
+      ],
+      "total_area": 1.38,
+      "cultivable_area": 1.311,
+      "non_cultivable_area": 0.069,
+      "area_unit": "hectare",
+      "land_revenue": 1442.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "66825775529361",
+      "khata_no": "77",
+      "khatedar_name_mr": "माधुरी भोयर",
+      "khatedar_name_en": "Madhuri Bhoyar",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "249",
+          "part": "1"
+        }
+      ],
+      "total_area": 2.24,
+      "cultivable_area": 2.128,
+      "non_cultivable_area": 0.112,
+      "area_unit": "hectare",
+      "land_revenue": 1786.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "94163572348410",
+      "khata_no": "209",
+      "khatedar_name_mr": "सविता देशपांडे",
+      "khatedar_name_en": "Savita Deshpande",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "207",
+          "part": null
+        }
+      ],
+      "total_area": 1.26,
+      "cultivable_area": 1.197,
+      "non_cultivable_area": 0.063,
+      "area_unit": "hectare",
+      "land_revenue": 1394.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "83337197742836",
+      "khata_no": "198",
+      "khatedar_name_mr": "गणेश म्हात्रे",
+      "khatedar_name_en": "Ganesh Mhatre",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "184",
+          "part": "4"
+        }
+      ],
+      "total_area": 2.6,
+      "cultivable_area": 2.47,
+      "non_cultivable_area": 0.13,
+      "area_unit": "hectare",
+      "land_revenue": 1930.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "79831109879032",
+      "khata_no": "165",
+      "khatedar_name_mr": "मंगल चव्हाण",
+      "khatedar_name_en": "Mangal Chavan",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "26",
+          "part": "3"
+        }
+      ],
+      "total_area": 0.87,
+      "cultivable_area": 0.827,
+      "non_cultivable_area": 0.044,
+      "area_unit": "hectare",
+      "land_revenue": 1238.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "43260150794442",
+      "khata_no": "18",
+      "khatedar_name_mr": "सविता गायकवाड",
+      "khatedar_name_en": "Savita Gaikwad",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "576",
+          "part": "3"
+        }
+      ],
+      "total_area": 1.16,
+      "cultivable_area": 1.102,
+      "non_cultivable_area": 0.058,
+      "area_unit": "hectare",
+      "land_revenue": 1354.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "49591227837601",
+      "khata_no": "156",
+      "khatedar_name_mr": "प्रिया साळुंखे",
+      "khatedar_name_en": "Priya Salunkhe",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "405",
+          "part": "3"
+        }
+      ],
+      "total_area": 0.84,
+      "cultivable_area": 0.798,
+      "non_cultivable_area": 0.042,
+      "area_unit": "hectare",
+      "land_revenue": 1226.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "22735160780301",
+      "khata_no": "13",
+      "khatedar_name_mr": "सविता काळे",
+      "khatedar_name_en": "Savita Kale",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "558",
+          "part": "4"
+        }
+      ],
+      "total_area": 1.98,
+      "cultivable_area": 1.881,
+      "non_cultivable_area": 0.099,
+      "area_unit": "hectare",
+      "land_revenue": 1682.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "64539556457873",
+      "khata_no": "53",
+      "khatedar_name_mr": "प्रणव म्हात्रे",
+      "khatedar_name_en": "Pranav Mhatre",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "192",
+          "part": "4"
+        }
+      ],
+      "total_area": 0.5,
+      "cultivable_area": 0.475,
+      "non_cultivable_area": 0.025,
+      "area_unit": "hectare",
+      "land_revenue": 1090.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "53896953349199",
+      "khata_no": "144",
+      "khatedar_name_mr": "नेहा जोशी",
+      "khatedar_name_en": "Neha Joshi",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "69",
+          "part": "3"
+        }
+      ],
+      "total_area": 1.76,
+      "cultivable_area": 1.672,
+      "non_cultivable_area": 0.088,
+      "area_unit": "hectare",
+      "land_revenue": 1594.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "20734454606222",
+      "khata_no": "359",
+      "khatedar_name_mr": "प्रिया पाटील",
+      "khatedar_name_en": "Priya Patil",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "33",
+          "part": null
+        }
+      ],
+      "total_area": 1.5,
+      "cultivable_area": 1.425,
+      "non_cultivable_area": 0.075,
+      "area_unit": "hectare",
+      "land_revenue": 1490.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "14290611156523",
+      "khata_no": "181",
+      "khatedar_name_mr": "प्रिया शेलार",
+      "khatedar_name_en": "Priya Shelar",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "284",
+          "part": null
+        }
+      ],
+      "total_area": 3.13,
+      "cultivable_area": 2.973,
+      "non_cultivable_area": 0.157,
+      "area_unit": "hectare",
+      "land_revenue": 2142.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "65846273241271",
+      "khata_no": "250",
+      "khatedar_name_mr": "मंगल गायकवाड",
+      "khatedar_name_en": "Mangal Gaikwad",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "52",
+          "part": "2"
+        }
+      ],
+      "total_area": 2.86,
+      "cultivable_area": 2.717,
+      "non_cultivable_area": 0.143,
+      "area_unit": "hectare",
+      "land_revenue": 2034.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "62365113279163",
+      "khata_no": "56",
+      "khatedar_name_mr": "रोहित थोरात",
+      "khatedar_name_en": "Rohit Thorat",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "139",
+          "part": "2"
+        }
+      ],
+      "total_area": 1.65,
+      "cultivable_area": 1.567,
+      "non_cultivable_area": 0.083,
+      "area_unit": "hectare",
+      "land_revenue": 1550.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "17485286059371",
+      "khata_no": "148",
+      "khatedar_name_mr": "कविता भोसले",
+      "khatedar_name_en": "Kavita Bhosale",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "91",
+          "part": "1"
+        }
+      ],
+      "total_area": 0.77,
+      "cultivable_area": 0.731,
+      "non_cultivable_area": 0.039,
+      "area_unit": "hectare",
+      "land_revenue": 1198.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "10117699978005",
+      "khata_no": "249",
+      "khatedar_name_mr": "वैशाली जोशी",
+      "khatedar_name_en": "Vaishali Joshi",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "521",
+          "part": "4"
+        }
+      ],
+      "total_area": 2.33,
+      "cultivable_area": 2.213,
+      "non_cultivable_area": 0.117,
+      "area_unit": "hectare",
+      "land_revenue": 1822.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "49696687932727",
+      "khata_no": "195",
+      "khatedar_name_mr": "कविता नाईक",
+      "khatedar_name_en": "Kavita Naik",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "109",
+          "part": "1"
+        }
+      ],
+      "total_area": 0.59,
+      "cultivable_area": 0.56,
+      "non_cultivable_area": 0.029,
+      "area_unit": "hectare",
+      "land_revenue": 1126.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "91976026916150",
+      "khata_no": "407",
+      "khatedar_name_mr": "तुकाराम म्हात्रे",
+      "khatedar_name_en": "Tukaram Mhatre",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "204",
+          "part": "1"
+        }
+      ],
+      "total_area": 0.86,
+      "cultivable_area": 0.817,
+      "non_cultivable_area": 0.043,
+      "area_unit": "hectare",
+      "land_revenue": 1234.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "47604283563095",
+      "khata_no": "369",
+      "khatedar_name_mr": "विनायक थोरात",
+      "khatedar_name_en": "Vinayak Thorat",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "377",
+          "part": null
+        }
+      ],
+      "total_area": 0.39,
+      "cultivable_area": 0.37,
+      "non_cultivable_area": 0.02,
+      "area_unit": "hectare",
+      "land_revenue": 1046.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "99844422117049",
+      "khata_no": "21",
+      "khatedar_name_mr": "रुपाली भोयर",
+      "khatedar_name_en": "Rupali Bhoyar",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "151",
+          "part": "2"
+        }
+      ],
+      "total_area": 3.28,
+      "cultivable_area": 3.116,
+      "non_cultivable_area": 0.164,
+      "area_unit": "hectare",
+      "land_revenue": 2202.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "66538951962850",
+      "khata_no": "213",
+      "khatedar_name_mr": "स्वाती म्हात्रे",
+      "khatedar_name_en": "Swati Mhatre",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "471",
+          "part": "4"
+        }
+      ],
+      "total_area": 0.57,
+      "cultivable_area": 0.541,
+      "non_cultivable_area": 0.028,
+      "area_unit": "hectare",
+      "land_revenue": 1118.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "28936753230586",
+      "khata_no": "60",
+      "khatedar_name_mr": "संदीप म्हात्रे",
+      "khatedar_name_en": "Sandeep Mhatre",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "413",
+          "part": "1"
+        }
+      ],
+      "total_area": 1.07,
+      "cultivable_area": 1.016,
+      "non_cultivable_area": 0.054,
+      "area_unit": "hectare",
+      "land_revenue": 1318.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "12435794744411",
+      "khata_no": "274",
+      "khatedar_name_mr": "रोहित म्हात्रे",
+      "khatedar_name_en": "Rohit Mhatre",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "75",
+          "part": "3"
+        }
+      ],
+      "total_area": 1.82,
+      "cultivable_area": 1.729,
+      "non_cultivable_area": 0.091,
+      "area_unit": "hectare",
+      "land_revenue": 1618.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "93930405599009",
+      "khata_no": "124",
+      "khatedar_name_mr": "अक्षय माने",
+      "khatedar_name_en": "Akshay Mane",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "7",
+          "part": "1"
+        }
+      ],
+      "total_area": 0.62,
+      "cultivable_area": 0.589,
+      "non_cultivable_area": 0.031,
+      "area_unit": "hectare",
+      "land_revenue": 1138.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "35015245919721",
+      "khata_no": "294",
+      "khatedar_name_mr": "रुपाली देशपांडे",
+      "khatedar_name_en": "Rupali Deshpande",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "319",
+          "part": "2"
+        }
+      ],
+      "total_area": 2.36,
+      "cultivable_area": 2.242,
+      "non_cultivable_area": 0.118,
+      "area_unit": "hectare",
+      "land_revenue": 1834.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "70363810173958",
+      "khata_no": "412",
+      "khatedar_name_mr": "स्नेहा कदम",
+      "khatedar_name_en": "Sneha Kadam",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "113",
+          "part": "4"
+        }
+      ],
+      "total_area": 3.04,
+      "cultivable_area": 2.888,
+      "non_cultivable_area": 0.152,
+      "area_unit": "hectare",
+      "land_revenue": 2106.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "67530812751121",
+      "khata_no": "371",
+      "khatedar_name_mr": "रोहित देशपांडे",
+      "khatedar_name_en": "Rohit Deshpande",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "439",
+          "part": "1"
+        }
+      ],
+      "total_area": 2.02,
+      "cultivable_area": 1.919,
+      "non_cultivable_area": 0.101,
+      "area_unit": "hectare",
+      "land_revenue": 1698.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "25228215870561",
+      "khata_no": "196",
+      "khatedar_name_mr": "प्रिया भोसले",
+      "khatedar_name_en": "Priya Bhosale",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "540",
+          "part": "3"
+        }
+      ],
+      "total_area": 0.93,
+      "cultivable_area": 0.883,
+      "non_cultivable_area": 0.047,
+      "area_unit": "hectare",
+      "land_revenue": 1262.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "18977379747867",
+      "khata_no": "254",
+      "khatedar_name_mr": "ज्ञानेश्वर शेलार",
+      "khatedar_name_en": "Dnyaneshwar Shelar",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "589",
+          "part": "4"
+        }
+      ],
+      "total_area": 0.83,
+      "cultivable_area": 0.788,
+      "non_cultivable_area": 0.042,
+      "area_unit": "hectare",
+      "land_revenue": 1222.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "82457448470156",
+      "khata_no": "365",
+      "khatedar_name_mr": "शुभांगी कदम",
+      "khatedar_name_en": "Shubhangi Kadam",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "262",
+          "part": "1"
+        }
+      ],
+      "total_area": 2.67,
+      "cultivable_area": 2.536,
+      "non_cultivable_area": 0.134,
+      "area_unit": "hectare",
+      "land_revenue": 1958.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "53487044793581",
+      "khata_no": "215",
+      "khatedar_name_mr": "स्वाती थोरात",
+      "khatedar_name_en": "Swati Thorat",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "498",
+          "part": "4"
+        }
+      ],
+      "total_area": 2.76,
+      "cultivable_area": 2.622,
+      "non_cultivable_area": 0.138,
+      "area_unit": "hectare",
+      "land_revenue": 1994.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "47595297174613",
+      "khata_no": "21",
+      "khatedar_name_mr": "अक्षय देशमुख",
+      "khatedar_name_en": "Akshay Deshmukh",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "502",
+          "part": "4"
+        }
+      ],
+      "total_area": 0.36,
+      "cultivable_area": 0.342,
+      "non_cultivable_area": 0.018,
+      "area_unit": "hectare",
+      "land_revenue": 1034.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "40600806478676",
+      "khata_no": "114",
+      "khatedar_name_mr": "महेश सावंत",
+      "khatedar_name_en": "Mahesh Sawant",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "203",
+          "part": "2"
+        }
+      ],
+      "total_area": 3.25,
+      "cultivable_area": 3.087,
+      "non_cultivable_area": 0.163,
+      "area_unit": "hectare",
+      "land_revenue": 2190.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "65521013706346",
+      "khata_no": "338",
+      "khatedar_name_mr": "योगेश पाटील",
+      "khatedar_name_en": "Yogesh Patil",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "376",
+          "part": "4"
+        }
+      ],
+      "total_area": 3.17,
+      "cultivable_area": 3.011,
+      "non_cultivable_area": 0.159,
+      "area_unit": "hectare",
+      "land_revenue": 2158.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "68749696395584",
+      "khata_no": "36",
+      "khatedar_name_mr": "सचिन देशपांडे",
+      "khatedar_name_en": "Sachin Deshpande",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "624",
+          "part": null
+        }
+      ],
+      "total_area": 0.78,
+      "cultivable_area": 0.741,
+      "non_cultivable_area": 0.039,
+      "area_unit": "hectare",
+      "land_revenue": 1202.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "15887999767973",
+      "khata_no": "111",
+      "khatedar_name_mr": "योगेश देशमुख",
+      "khatedar_name_en": "Yogesh Deshmukh",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "5",
+          "part": "4"
+        }
+      ],
+      "total_area": 1.17,
+      "cultivable_area": 1.111,
+      "non_cultivable_area": 0.058,
+      "area_unit": "hectare",
+      "land_revenue": 1358.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "27928004829723",
+      "khata_no": "193",
+      "khatedar_name_mr": "अश्विनी कुलकर्णी",
+      "khatedar_name_en": "Ashwini Kulkarni",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "434",
+          "part": "3"
+        }
+      ],
+      "total_area": 1.03,
+      "cultivable_area": 0.978,
+      "non_cultivable_area": 0.052,
+      "area_unit": "hectare",
+      "land_revenue": 1302.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "75860089393535",
+      "khata_no": "280",
+      "khatedar_name_mr": "योगेश सावंत",
+      "khatedar_name_en": "Yogesh Sawant",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "599",
+          "part": "2"
+        }
+      ],
+      "total_area": 0.71,
+      "cultivable_area": 0.674,
+      "non_cultivable_area": 0.035,
+      "area_unit": "hectare",
+      "land_revenue": 1174.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "57020453293194",
+      "khata_no": "79",
+      "khatedar_name_mr": "तुकाराम पवार",
+      "khatedar_name_en": "Tukaram Pawar",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "351",
+          "part": "2"
+        }
+      ],
+      "total_area": 3.06,
+      "cultivable_area": 2.907,
+      "non_cultivable_area": 0.153,
+      "area_unit": "hectare",
+      "land_revenue": 2114.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "19146331749652",
+      "khata_no": "5",
+      "khatedar_name_mr": "प्रकाश निकम",
+      "khatedar_name_en": "Prakash Nikam",
+      "land_measurement_numbers": [
+        {
+          "type": "KHASRA_NO",
+          "number": "400",
+          "part": "1"
+        }
+      ],
+      "total_area": 2.88,
+      "cultivable_area": 2.736,
+      "non_cultivable_area": 0.144,
+      "area_unit": "hectare",
+      "land_revenue": 2042.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "66195609152858",
+      "khata_no": "64",
+      "khatedar_name_mr": "सविता मोरे",
+      "khatedar_name_en": "Savita More",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "206",
+          "part": "1"
+        }
+      ],
+      "total_area": 0.48,
+      "cultivable_area": 0.456,
+      "non_cultivable_area": 0.024,
+      "area_unit": "hectare",
+      "land_revenue": 1082.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "28417527147059",
+      "khata_no": "121",
+      "khatedar_name_mr": "मंगल भोयर",
+      "khatedar_name_en": "Mangal Bhoyar",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "488",
+          "part": null
+        }
+      ],
+      "total_area": 1.14,
+      "cultivable_area": 1.083,
+      "non_cultivable_area": 0.057,
+      "area_unit": "hectare",
+      "land_revenue": 1346.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "43074146192552",
+      "khata_no": "273",
+      "khatedar_name_mr": "नेहा माने",
+      "khatedar_name_en": "Neha Mane",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "622",
+          "part": "2"
+        }
+      ],
+      "total_area": 1.02,
+      "cultivable_area": 0.969,
+      "non_cultivable_area": 0.051,
+      "area_unit": "hectare",
+      "land_revenue": 1298.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "58968084994006",
+      "khata_no": "342",
+      "khatedar_name_mr": "सविता जोशी",
+      "khatedar_name_en": "Savita Joshi",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "512",
+          "part": null
+        }
+      ],
+      "total_area": 1.28,
+      "cultivable_area": 1.216,
+      "non_cultivable_area": 0.064,
+      "area_unit": "hectare",
+      "land_revenue": 1402.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "36689932338563",
+      "khata_no": "268",
+      "khatedar_name_mr": "कविता सावंत",
+      "khatedar_name_en": "Kavita Sawant",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "470",
+          "part": "2"
+        }
+      ],
+      "total_area": 1.45,
+      "cultivable_area": 1.377,
+      "non_cultivable_area": 0.072,
+      "area_unit": "hectare",
+      "land_revenue": 1470.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "17746198837477",
+      "khata_no": "307",
+      "khatedar_name_mr": "स्वाती जोशी",
+      "khatedar_name_en": "Swati Joshi",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "60",
+          "part": null
+        }
+      ],
+      "total_area": 0.36,
+      "cultivable_area": 0.342,
+      "non_cultivable_area": 0.018,
+      "area_unit": "hectare",
+      "land_revenue": 1034.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "78284416897777",
+      "khata_no": "279",
+      "khatedar_name_mr": "राजेश कांबळे",
+      "khatedar_name_en": "Rajesh Kamble",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "347",
+          "part": "4"
+        }
+      ],
+      "total_area": 2.23,
+      "cultivable_area": 2.119,
+      "non_cultivable_area": 0.112,
+      "area_unit": "hectare",
+      "land_revenue": 1782.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "26525070894457",
+      "khata_no": "21",
+      "khatedar_name_mr": "नितीन काळे",
+      "khatedar_name_en": "Nitin Kale",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "66",
+          "part": "3"
+        }
+      ],
+      "total_area": 3.35,
+      "cultivable_area": 3.183,
+      "non_cultivable_area": 0.168,
+      "area_unit": "hectare",
+      "land_revenue": 2230.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "23208402143010",
+      "khata_no": "379",
+      "khatedar_name_mr": "रोहित चव्हाण",
+      "khatedar_name_en": "Rohit Chavan",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "29",
+          "part": "3"
+        }
+      ],
+      "total_area": 1.81,
+      "cultivable_area": 1.72,
+      "non_cultivable_area": 0.091,
+      "area_unit": "hectare",
+      "land_revenue": 1614.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "64152781322393",
+      "khata_no": "409",
+      "khatedar_name_mr": "प्रणव गायकवाड",
+      "khatedar_name_en": "Pranav Gaikwad",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "227",
+          "part": "3"
+        }
+      ],
+      "total_area": 0.93,
+      "cultivable_area": 0.883,
+      "non_cultivable_area": 0.047,
+      "area_unit": "hectare",
+      "land_revenue": 1262.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "69818438297262",
+      "khata_no": "34",
+      "khatedar_name_mr": "अमोल पाटील",
+      "khatedar_name_en": "Amol Patil",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "355",
+          "part": "2"
+        }
+      ],
+      "total_area": 1.48,
+      "cultivable_area": 1.406,
+      "non_cultivable_area": 0.074,
+      "area_unit": "hectare",
+      "land_revenue": 1482.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "65403158845650",
+      "khata_no": "135",
+      "khatedar_name_mr": "प्रकाश भोयर",
+      "khatedar_name_en": "Prakash Bhoyar",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "487",
+          "part": "3"
+        }
+      ],
+      "total_area": 1.06,
+      "cultivable_area": 1.007,
+      "non_cultivable_area": 0.053,
+      "area_unit": "hectare",
+      "land_revenue": 1314.0,
+      "record_status": "active"
+    },
+    {
+      "ulpin": "52968557032552",
+      "khata_no": "73",
+      "khatedar_name_mr": "योगेश मोरे",
+      "khatedar_name_en": "Yogesh More",
+      "land_measurement_numbers": [
+        {
+          "type": "GAT_NO",
+          "number": "205",
+          "part": "1"
+        }
+      ],
+      "total_area": 0.6,
+      "cultivable_area": 0.57,
+      "non_cultivable_area": 0.03,
+      "area_unit": "hectare",
+      "land_revenue": 1130.0,
       "record_status": "active"
     }
   ]

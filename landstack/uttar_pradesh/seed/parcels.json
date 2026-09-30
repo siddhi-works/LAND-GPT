@@ -956,5 +956,5431 @@
     "issue": "GIS_AREA_MISMATCH",
     "geometry_type": "synthetic_cadastral_polygon",
     "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P016",
+    "ulpin": "71439163017407",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Jhansi",
+    "tehsil": "Moth",
+    "village": "Mau",
+    "gatta_khasra_no": "220",
+    "sub_division": null,
+    "khata_no": "08229",
+    "geometry_ref": "synthetic-p016",
+    "centroid": {
+      "lat": 25.4608,
+      "lon": 78.5651
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.5650558,
+            25.460391
+          ],
+          [
+            78.5653519,
+            25.4604867
+          ],
+          [
+            78.5655029,
+            25.4608168
+          ],
+          [
+            78.5653399,
+            25.4610922
+          ],
+          [
+            78.5650233,
+            25.4612381
+          ],
+          [
+            78.5646794,
+            25.4610085
+          ],
+          [
+            78.5648177,
+            25.4606335
+          ],
+          [
+            78.5650558,
+            25.460391
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.5,
+    "land_record_area_hectare": 0.5,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P017",
+    "ulpin": "48818684456214",
+    "state": "Uttar Pradesh",
+    "context": "mixed",
+    "district": "Ayodhya",
+    "tehsil": "Sadar",
+    "village": "Deokali",
+    "gatta_khasra_no": "182",
+    "sub_division": "1",
+    "khata_no": "04220",
+    "geometry_ref": "synthetic-p017",
+    "centroid": {
+      "lat": 26.8015,
+      "lon": 82.2005
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.1998922,
+            26.8014845
+          ],
+          [
+            82.200145,
+            26.8012448
+          ],
+          [
+            82.2003827,
+            26.8010695
+          ],
+          [
+            82.2009765,
+            26.8011929
+          ],
+          [
+            82.2009753,
+            26.8016791
+          ],
+          [
+            82.2006676,
+            26.8017959
+          ],
+          [
+            82.200349,
+            26.8018519
+          ],
+          [
+            82.1998922,
+            26.8014845
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.65,
+    "land_record_area_hectare": 0.65,
+    "quality_class": "messy",
+    "issue": "PARTIAL_LINKAGE",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P018",
+    "ulpin": "92093649964473",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Gautam Buddha Nagar",
+    "tehsil": "Dadri",
+    "village": "Barola",
+    "gatta_khasra_no": "224",
+    "sub_division": "3",
+    "khata_no": "02775",
+    "geometry_ref": "synthetic-p018",
+    "centroid": {
+      "lat": 28.4842,
+      "lon": 77.5012
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5011012,
+            28.4844955
+          ],
+          [
+            77.5009515,
+            28.4843272
+          ],
+          [
+            77.5009076,
+            28.4840869
+          ],
+          [
+            77.5010608,
+            28.4839869
+          ],
+          [
+            77.5012018,
+            28.483942
+          ],
+          [
+            77.5015591,
+            28.4840782
+          ],
+          [
+            77.5014659,
+            28.4842254
+          ],
+          [
+            77.5013706,
+            28.4843819
+          ],
+          [
+            77.5011012,
+            28.4844955
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.248,
+    "land_record_area_hectare": 0.248,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P019",
+    "ulpin": "56219552340114",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Gautam Buddha Nagar",
+    "tehsil": "Dadri",
+    "village": "Barola",
+    "gatta_khasra_no": "779",
+    "sub_division": null,
+    "khata_no": "03086",
+    "geometry_ref": "synthetic-p019",
+    "centroid": {
+      "lat": 28.4832,
+      "lon": 77.5011
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5013529,
+            28.4830038
+          ],
+          [
+            77.5014364,
+            28.4831265
+          ],
+          [
+            77.5013173,
+            28.4833768
+          ],
+          [
+            77.501031,
+            28.4834035
+          ],
+          [
+            77.5008495,
+            28.4833288
+          ],
+          [
+            77.5008026,
+            28.4831587
+          ],
+          [
+            77.5010018,
+            28.4830076
+          ],
+          [
+            77.5013529,
+            28.4830038
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.213,
+    "land_record_area_hectare": 0.213,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P020",
+    "ulpin": "10353800616643",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Meerut",
+    "tehsil": "Sardhana",
+    "village": "Daurala",
+    "gatta_khasra_no": "688",
+    "sub_division": null,
+    "khata_no": "08092",
+    "geometry_ref": "synthetic-p020",
+    "centroid": {
+      "lat": 28.9895,
+      "lon": 77.7016
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.7012037,
+            28.9902017
+          ],
+          [
+            77.7003821,
+            28.9896547
+          ],
+          [
+            77.7007277,
+            28.9888465
+          ],
+          [
+            77.7014903,
+            28.9886535
+          ],
+          [
+            77.7022776,
+            28.9888845
+          ],
+          [
+            77.7026665,
+            28.9897564
+          ],
+          [
+            77.7022762,
+            28.9901477
+          ],
+          [
+            77.7012037,
+            28.9902017
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.77,
+    "land_record_area_hectare": 2.77,
+    "quality_class": "messy",
+    "issue": "PENDING_NAMANTARAN+AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P021",
+    "ulpin": "39259003094680",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Lucknow",
+    "tehsil": "Bakshi Ka Talab",
+    "village": "Itaunja",
+    "gatta_khasra_no": "613",
+    "sub_division": "1",
+    "khata_no": "01667",
+    "geometry_ref": "synthetic-p021",
+    "centroid": {
+      "lat": 26.8568,
+      "lon": 80.9392
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9395242,
+            26.8566032
+          ],
+          [
+            80.9396013,
+            26.8567785
+          ],
+          [
+            80.9395021,
+            26.8570408
+          ],
+          [
+            80.9391297,
+            26.8570897
+          ],
+          [
+            80.9388456,
+            26.8570312
+          ],
+          [
+            80.9386636,
+            26.8568435
+          ],
+          [
+            80.9389083,
+            26.8565554
+          ],
+          [
+            80.9391467,
+            26.8564783
+          ],
+          [
+            80.9395242,
+            26.8566032
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.45,
+    "land_record_area_hectare": 0.45,
+    "quality_class": "messy",
+    "issue": "OWNER_MISMATCH+ENCUMBRANCE_LITIGATION",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P022",
+    "ulpin": "62577794759537",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Lucknow",
+    "tehsil": "Bakshi Ka Talab",
+    "village": "Itaunja",
+    "gatta_khasra_no": "136",
+    "sub_division": "2",
+    "khata_no": "09527",
+    "geometry_ref": "synthetic-p022",
+    "centroid": {
+      "lat": 26.8593,
+      "lon": 80.9406
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9401309,
+            26.8589459
+          ],
+          [
+            80.9406926,
+            26.8588372
+          ],
+          [
+            80.9411117,
+            26.8591293
+          ],
+          [
+            80.9410261,
+            26.8596409
+          ],
+          [
+            80.9406477,
+            26.8597658
+          ],
+          [
+            80.9402791,
+            26.8599072
+          ],
+          [
+            80.9401468,
+            26.8592126
+          ],
+          [
+            80.9401309,
+            26.8589459
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.83,
+    "land_record_area_hectare": 0.83,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P023",
+    "ulpin": "69166338351512",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Ghaziabad",
+    "tehsil": "Loni",
+    "village": "Mandola",
+    "gatta_khasra_no": "121",
+    "sub_division": "1",
+    "khata_no": "05246",
+    "geometry_ref": "synthetic-p023",
+    "centroid": {
+      "lat": 28.6788,
+      "lon": 77.4507
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.4509446,
+            28.6789883
+          ],
+          [
+            77.4506654,
+            28.6790222
+          ],
+          [
+            77.450516,
+            28.6789664
+          ],
+          [
+            77.4503326,
+            28.6788271
+          ],
+          [
+            77.4505464,
+            28.6785932
+          ],
+          [
+            77.4506846,
+            28.678605
+          ],
+          [
+            77.4509337,
+            28.6786959
+          ],
+          [
+            77.4509811,
+            28.6788214
+          ],
+          [
+            77.4509446,
+            28.6789883
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.211,
+    "land_record_area_hectare": 0.211,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P024",
+    "ulpin": "62430774868580",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Saharanpur",
+    "tehsil": "Behat",
+    "village": "Chilkana",
+    "gatta_khasra_no": "142",
+    "sub_division": "3",
+    "khata_no": "05377",
+    "geometry_ref": "synthetic-p024",
+    "centroid": {
+      "lat": 29.979,
+      "lon": 77.5453
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5445841,
+            29.9784584
+          ],
+          [
+            77.5454807,
+            29.9779887
+          ],
+          [
+            77.5459552,
+            29.9783452
+          ],
+          [
+            77.5462975,
+            29.9794533
+          ],
+          [
+            77.545833,
+            29.9795835
+          ],
+          [
+            77.5448966,
+            29.9798149
+          ],
+          [
+            77.5442692,
+            29.9793229
+          ],
+          [
+            77.5445841,
+            29.9784584
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.59,
+    "land_record_area_hectare": 2.59,
+    "quality_class": "messy",
+    "issue": "PARTIAL_LINKAGE",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P025",
+    "ulpin": "23152932955065",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "617",
+    "sub_division": "3",
+    "khata_no": "06036",
+    "geometry_ref": "synthetic-p025",
+    "centroid": {
+      "lat": 25.3215,
+      "lon": 82.9691
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9686324,
+            25.3214715
+          ],
+          [
+            82.9686625,
+            25.3208917
+          ],
+          [
+            82.9692014,
+            25.3209948
+          ],
+          [
+            82.9695383,
+            25.3210086
+          ],
+          [
+            82.9696759,
+            25.3217472
+          ],
+          [
+            82.9691495,
+            25.3221602
+          ],
+          [
+            82.9688056,
+            25.3221711
+          ],
+          [
+            82.9686324,
+            25.3214715
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.14,
+    "land_record_area_hectare": 1.14,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P026",
+    "ulpin": "80986328437127",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Jhansi",
+    "tehsil": "Moth",
+    "village": "Mau",
+    "gatta_khasra_no": "622",
+    "sub_division": "1",
+    "khata_no": "03898",
+    "geometry_ref": "synthetic-p026",
+    "centroid": {
+      "lat": 25.463,
+      "lon": 78.562
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.5610373,
+            25.4626124
+          ],
+          [
+            78.5617541,
+            25.462209
+          ],
+          [
+            78.5628314,
+            25.4626217
+          ],
+          [
+            78.5630896,
+            25.4633368
+          ],
+          [
+            78.5627291,
+            25.4637352
+          ],
+          [
+            78.5614558,
+            25.4636995
+          ],
+          [
+            78.5607545,
+            25.4631394
+          ],
+          [
+            78.5610373,
+            25.4626124
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.79,
+    "land_record_area_hectare": 2.79,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P027",
+    "ulpin": "40589052570710",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Lucknow",
+    "tehsil": "Mohanlalganj",
+    "village": "Bani",
+    "gatta_khasra_no": "371",
+    "sub_division": "2",
+    "khata_no": "09148",
+    "geometry_ref": "synthetic-p027",
+    "centroid": {
+      "lat": 26.8486,
+      "lon": 80.9466
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9473336,
+            26.8479533
+          ],
+          [
+            80.9477887,
+            26.8486229
+          ],
+          [
+            80.9472101,
+            26.8492454
+          ],
+          [
+            80.9459944,
+            26.849442
+          ],
+          [
+            80.9454816,
+            26.8486129
+          ],
+          [
+            80.945639,
+            26.8479857
+          ],
+          [
+            80.9467564,
+            26.8476935
+          ],
+          [
+            80.9473336,
+            26.8479533
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 3.1,
+    "land_record_area_hectare": 3.1,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P028",
+    "ulpin": "74415566534750",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Prayagraj",
+    "tehsil": "Soraon",
+    "village": "अरूआंव",
+    "gatta_khasra_no": "75",
+    "sub_division": "1",
+    "khata_no": "07847",
+    "geometry_ref": "synthetic-p028",
+    "centroid": {
+      "lat": 25.4383,
+      "lon": 81.8381
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            81.8389929,
+            25.4379952
+          ],
+          [
+            81.8388186,
+            25.4386428
+          ],
+          [
+            81.8385409,
+            25.4392796
+          ],
+          [
+            81.8376916,
+            25.4390458
+          ],
+          [
+            81.8369518,
+            25.4382354
+          ],
+          [
+            81.837397,
+            25.4378322
+          ],
+          [
+            81.837778,
+            25.4375143
+          ],
+          [
+            81.8385418,
+            25.4374227
+          ],
+          [
+            81.8389929,
+            25.4379952
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.72,
+    "land_record_area_hectare": 2.72,
+    "quality_class": "messy",
+    "issue": "ENCUMBRANCE_LITIGATION",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P029",
+    "ulpin": "61012373048524",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Lucknow",
+    "tehsil": "Bakshi Ka Talab",
+    "village": "Itaunja",
+    "gatta_khasra_no": "277",
+    "sub_division": null,
+    "khata_no": "04407",
+    "geometry_ref": "synthetic-p029",
+    "centroid": {
+      "lat": 26.8588,
+      "lon": 80.9391
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9388747,
+            26.8584907
+          ],
+          [
+            80.9390453,
+            26.8583973
+          ],
+          [
+            80.9394759,
+            26.8585503
+          ],
+          [
+            80.9394699,
+            26.8588662
+          ],
+          [
+            80.9392109,
+            26.8593643
+          ],
+          [
+            80.9389603,
+            26.8592305
+          ],
+          [
+            80.9386704,
+            26.8589308
+          ],
+          [
+            80.9388747,
+            26.8584907
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.56,
+    "land_record_area_hectare": 0.56,
+    "quality_class": "messy",
+    "issue": "PENDING_NAMANTARAN",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P030",
+    "ulpin": "94560729285880",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Gautam Buddha Nagar",
+    "tehsil": "Dadri",
+    "village": "Barola",
+    "gatta_khasra_no": "32",
+    "sub_division": null,
+    "khata_no": "05647",
+    "geometry_ref": "synthetic-p030",
+    "centroid": {
+      "lat": 28.4826,
+      "lon": 77.5024
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5023116,
+            28.4824097
+          ],
+          [
+            77.5025083,
+            28.4823462
+          ],
+          [
+            77.5027008,
+            28.4825969
+          ],
+          [
+            77.5026364,
+            28.4828014
+          ],
+          [
+            77.5023648,
+            28.4828451
+          ],
+          [
+            77.5021539,
+            28.482789
+          ],
+          [
+            77.502156,
+            28.4824284
+          ],
+          [
+            77.5023116,
+            28.4824097
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.228,
+    "land_record_area_hectare": 0.228,
+    "quality_class": "messy",
+    "issue": "OWNER_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P031",
+    "ulpin": "11341658782159",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Kanpur Nagar",
+    "tehsil": "Bilhaur",
+    "village": "Bilhaur",
+    "gatta_khasra_no": "582",
+    "sub_division": null,
+    "khata_no": "04491",
+    "geometry_ref": "synthetic-p031",
+    "centroid": {
+      "lat": 26.456,
+      "lon": 80.3284
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.3276607,
+            26.4565225
+          ],
+          [
+            80.3274519,
+            26.4558699
+          ],
+          [
+            80.327683,
+            26.4553179
+          ],
+          [
+            80.3283939,
+            26.4552464
+          ],
+          [
+            80.3290974,
+            26.4554178
+          ],
+          [
+            80.3292648,
+            26.4562511
+          ],
+          [
+            80.3291204,
+            26.4568007
+          ],
+          [
+            80.3281814,
+            26.4566918
+          ],
+          [
+            80.3276607,
+            26.4565225
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.48,
+    "land_record_area_hectare": 2.48,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P032",
+    "ulpin": "65656477190493",
+    "state": "Uttar Pradesh",
+    "context": "mixed",
+    "district": "Ayodhya",
+    "tehsil": "Sadar",
+    "village": "Deokali",
+    "gatta_khasra_no": "761",
+    "sub_division": null,
+    "khata_no": "03454",
+    "geometry_ref": "synthetic-p032",
+    "centroid": {
+      "lat": 26.8002,
+      "lon": 82.198
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.197659,
+            26.7997417
+          ],
+          [
+            82.1981757,
+            26.7998051
+          ],
+          [
+            82.1986038,
+            26.7999846
+          ],
+          [
+            82.1985382,
+            26.8005081
+          ],
+          [
+            82.1979781,
+            26.8007103
+          ],
+          [
+            82.1975478,
+            26.8004511
+          ],
+          [
+            82.1975016,
+            26.800081
+          ],
+          [
+            82.197659,
+            26.7997417
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.88,
+    "land_record_area_hectare": 0.88,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P033",
+    "ulpin": "34264773124337",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Saharanpur",
+    "tehsil": "Behat",
+    "village": "Chilkana",
+    "gatta_khasra_no": "218",
+    "sub_division": "1",
+    "khata_no": "08429",
+    "geometry_ref": "synthetic-p033",
+    "centroid": {
+      "lat": 29.9759,
+      "lon": 77.5462
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5457611,
+            29.975147
+          ],
+          [
+            77.5466283,
+            29.9751351
+          ],
+          [
+            77.5473505,
+            29.9758049
+          ],
+          [
+            77.5468999,
+            29.9762221
+          ],
+          [
+            77.5464233,
+            29.9766434
+          ],
+          [
+            77.5457349,
+            29.9764287
+          ],
+          [
+            77.5452888,
+            29.9761806
+          ],
+          [
+            77.5452876,
+            29.9753584
+          ],
+          [
+            77.5457611,
+            29.975147
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.36,
+    "land_record_area_hectare": 2.36,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P034",
+    "ulpin": "25519606164137",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Kanpur Nagar",
+    "tehsil": "Bilhaur",
+    "village": "Bilhaur",
+    "gatta_khasra_no": "19",
+    "sub_division": null,
+    "khata_no": "04981",
+    "geometry_ref": "synthetic-p034",
+    "centroid": {
+      "lat": 26.458,
+      "lon": 80.3277
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.3281717,
+            26.4578446
+          ],
+          [
+            80.3282318,
+            26.4581771
+          ],
+          [
+            80.3277999,
+            26.4586723
+          ],
+          [
+            80.327368,
+            26.4585529
+          ],
+          [
+            80.3271948,
+            26.4581294
+          ],
+          [
+            80.3271864,
+            26.4575191
+          ],
+          [
+            80.3278555,
+            26.4574071
+          ],
+          [
+            80.3281717,
+            26.4578446
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.09,
+    "land_record_area_hectare": 1.09,
+    "quality_class": "messy",
+    "issue": "OWNER_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P035",
+    "ulpin": "48847250957789",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Meerut",
+    "tehsil": "Sardhana",
+    "village": "Daurala",
+    "gatta_khasra_no": "72",
+    "sub_division": "1",
+    "khata_no": "09492",
+    "geometry_ref": "synthetic-p035",
+    "centroid": {
+      "lat": 28.9896,
+      "lon": 77.7075
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.7072733,
+            28.9902156
+          ],
+          [
+            77.7063719,
+            28.9897509
+          ],
+          [
+            77.70678,
+            28.9891495
+          ],
+          [
+            77.7074183,
+            28.9887868
+          ],
+          [
+            77.7081807,
+            28.989198
+          ],
+          [
+            77.7084161,
+            28.9897192
+          ],
+          [
+            77.7078009,
+            28.9903883
+          ],
+          [
+            77.7072733,
+            28.9902156
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.12,
+    "land_record_area_hectare": 2.12,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P036",
+    "ulpin": "17814404456934",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Lucknow",
+    "tehsil": "Bakshi Ka Talab",
+    "village": "Itaunja",
+    "gatta_khasra_no": "434",
+    "sub_division": "1",
+    "khata_no": "02792",
+    "geometry_ref": "synthetic-p036",
+    "centroid": {
+      "lat": 26.8568,
+      "lon": 80.9411
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.941242,
+            26.8565518
+          ],
+          [
+            80.9413456,
+            26.8566794
+          ],
+          [
+            80.9412802,
+            26.8569994
+          ],
+          [
+            80.9411,
+            26.8571672
+          ],
+          [
+            80.9408492,
+            26.8569499
+          ],
+          [
+            80.9408042,
+            26.8568047
+          ],
+          [
+            80.941016,
+            26.8564958
+          ],
+          [
+            80.941242,
+            26.8565518
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.26,
+    "land_record_area_hectare": 0.26,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P037",
+    "ulpin": "88146321860634",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Ghaziabad",
+    "tehsil": "Loni",
+    "village": "Mandola",
+    "gatta_khasra_no": "221",
+    "sub_division": null,
+    "khata_no": "05120",
+    "geometry_ref": "synthetic-p037",
+    "centroid": {
+      "lat": 28.6796,
+      "lon": 77.4508
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.4508086,
+            28.6794362
+          ],
+          [
+            77.4509703,
+            28.6794709
+          ],
+          [
+            77.4510453,
+            28.6795874
+          ],
+          [
+            77.4509226,
+            28.6796975
+          ],
+          [
+            77.4508323,
+            28.6797749
+          ],
+          [
+            77.4506901,
+            28.6797065
+          ],
+          [
+            77.4506203,
+            28.6796096
+          ],
+          [
+            77.4506624,
+            28.6794681
+          ],
+          [
+            77.4508086,
+            28.6794362
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.103,
+    "land_record_area_hectare": 0.103,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P038",
+    "ulpin": "74753304649313",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Jhansi",
+    "tehsil": "Moth",
+    "village": "Mau",
+    "gatta_khasra_no": "136",
+    "sub_division": null,
+    "khata_no": "06676",
+    "geometry_ref": "synthetic-p038",
+    "centroid": {
+      "lat": 25.4605,
+      "lon": 78.563
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.5628302,
+            25.4612569
+          ],
+          [
+            78.5625163,
+            25.4608365
+          ],
+          [
+            78.5622437,
+            25.4604195
+          ],
+          [
+            78.5626279,
+            25.4598496
+          ],
+          [
+            78.5631854,
+            25.4597643
+          ],
+          [
+            78.5637579,
+            25.4601777
+          ],
+          [
+            78.5638717,
+            25.4605407
+          ],
+          [
+            78.5634751,
+            25.4609646
+          ],
+          [
+            78.5628302,
+            25.4612569
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.73,
+    "land_record_area_hectare": 1.73,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P039",
+    "ulpin": "36463681895810",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Mathura",
+    "tehsil": "Chhata",
+    "village": "Kosi Kalan",
+    "gatta_khasra_no": "319",
+    "sub_division": null,
+    "khata_no": "09510",
+    "geometry_ref": "synthetic-p039",
+    "centroid": {
+      "lat": 27.5054,
+      "lon": 77.6739
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.674047,
+            27.5051859
+          ],
+          [
+            77.6741842,
+            27.5053512
+          ],
+          [
+            77.6742777,
+            27.5054608
+          ],
+          [
+            77.6739047,
+            27.5056485
+          ],
+          [
+            77.6735722,
+            27.5055657
+          ],
+          [
+            77.6735295,
+            27.5053547
+          ],
+          [
+            77.6736459,
+            27.5052355
+          ],
+          [
+            77.674047,
+            27.5051859
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.258,
+    "land_record_area_hectare": 0.258,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P040",
+    "ulpin": "52438618080617",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Jhansi",
+    "tehsil": "Moth",
+    "village": "Mau",
+    "gatta_khasra_no": "690",
+    "sub_division": "1",
+    "khata_no": "09189",
+    "geometry_ref": "synthetic-p040",
+    "centroid": {
+      "lat": 25.464,
+      "lon": 78.5658
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.5654942,
+            25.4635899
+          ],
+          [
+            78.5663271,
+            25.4634745
+          ],
+          [
+            78.5666745,
+            25.4639092
+          ],
+          [
+            78.5664076,
+            25.4644952
+          ],
+          [
+            78.5658361,
+            25.4644568
+          ],
+          [
+            78.5649947,
+            25.4641839
+          ],
+          [
+            78.5651208,
+            25.4638737
+          ],
+          [
+            78.5654942,
+            25.4635899
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.33,
+    "land_record_area_hectare": 1.33,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P041",
+    "ulpin": "59120566063893",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Jhansi",
+    "tehsil": "Moth",
+    "village": "Mau",
+    "gatta_khasra_no": "686",
+    "sub_division": "2",
+    "khata_no": "04801",
+    "geometry_ref": "synthetic-p041",
+    "centroid": {
+      "lat": 25.464,
+      "lon": 78.5638
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.5634451,
+            25.4642293
+          ],
+          [
+            78.563445,
+            25.4637955
+          ],
+          [
+            78.5637227,
+            25.4635294
+          ],
+          [
+            78.5640191,
+            25.4636366
+          ],
+          [
+            78.5641696,
+            25.4640206
+          ],
+          [
+            78.5640903,
+            25.4643642
+          ],
+          [
+            78.5636251,
+            25.4643963
+          ],
+          [
+            78.5634451,
+            25.4642293
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.55,
+    "land_record_area_hectare": 0.55,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P042",
+    "ulpin": "34363309502594",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Moradabad",
+    "tehsil": "Thakurdwara",
+    "village": "Surjan Nagar",
+    "gatta_khasra_no": "390",
+    "sub_division": "3",
+    "khata_no": "07136",
+    "geometry_ref": "synthetic-p042",
+    "centroid": {
+      "lat": 28.8542,
+      "lon": 78.7641
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.7630806,
+            28.8544693
+          ],
+          [
+            78.7632283,
+            28.8537029
+          ],
+          [
+            78.7636414,
+            28.8530844
+          ],
+          [
+            78.7647281,
+            28.8531869
+          ],
+          [
+            78.7649578,
+            28.854343
+          ],
+          [
+            78.764613,
+            28.8549496
+          ],
+          [
+            78.7640211,
+            28.8554878
+          ],
+          [
+            78.7630806,
+            28.8544693
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 3.36,
+    "land_record_area_hectare": 3.36,
+    "quality_class": "messy",
+    "issue": "GIS_GEOMETRY_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P043",
+    "ulpin": "83779962682001",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Moradabad",
+    "tehsil": "Thakurdwara",
+    "village": "Surjan Nagar",
+    "gatta_khasra_no": "87",
+    "sub_division": null,
+    "khata_no": "06645",
+    "geometry_ref": "synthetic-p043",
+    "centroid": {
+      "lat": 28.8514,
+      "lon": 78.767
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.7670758,
+            28.8507584
+          ],
+          [
+            78.767945,
+            28.851006
+          ],
+          [
+            78.7678376,
+            28.8516356
+          ],
+          [
+            78.7672367,
+            28.8522992
+          ],
+          [
+            78.7664206,
+            28.8519996
+          ],
+          [
+            78.76624,
+            28.8514508
+          ],
+          [
+            78.7666211,
+            28.8506828
+          ],
+          [
+            78.7670758,
+            28.8507584
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.05,
+    "land_record_area_hectare": 2.05,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P044",
+    "ulpin": "82316630180366",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Lucknow",
+    "tehsil": "Mohanlalganj",
+    "village": "Bani",
+    "gatta_khasra_no": "299",
+    "sub_division": "2",
+    "khata_no": "03124",
+    "geometry_ref": "synthetic-p044",
+    "centroid": {
+      "lat": 26.8498,
+      "lon": 80.9439
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9446776,
+            26.8494905
+          ],
+          [
+            80.9447744,
+            26.8499646
+          ],
+          [
+            80.9442224,
+            26.8503493
+          ],
+          [
+            80.943562,
+            26.8503502
+          ],
+          [
+            80.9432511,
+            26.8499281
+          ],
+          [
+            80.9432759,
+            26.8496237
+          ],
+          [
+            80.9437239,
+            26.8492267
+          ],
+          [
+            80.944152,
+            26.8492225
+          ],
+          [
+            80.9446776,
+            26.8494905
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.46,
+    "land_record_area_hectare": 1.46,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P045",
+    "ulpin": "82802709012644",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "6",
+    "sub_division": "1",
+    "khata_no": "02526",
+    "geometry_ref": "synthetic-p045",
+    "centroid": {
+      "lat": 25.3181,
+      "lon": 82.9687
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9687126,
+            25.3185779
+          ],
+          [
+            82.9683559,
+            25.3183452
+          ],
+          [
+            82.9682533,
+            25.3180365
+          ],
+          [
+            82.9683341,
+            25.317699
+          ],
+          [
+            82.9689429,
+            25.3175664
+          ],
+          [
+            82.9692137,
+            25.3180481
+          ],
+          [
+            82.9691333,
+            25.3184434
+          ],
+          [
+            82.9687126,
+            25.3185779
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.79,
+    "land_record_area_hectare": 0.79,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P046",
+    "ulpin": "99992586632260",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Saharanpur",
+    "tehsil": "Behat",
+    "village": "Chilkana",
+    "gatta_khasra_no": "331",
+    "sub_division": "2",
+    "khata_no": "06463",
+    "geometry_ref": "synthetic-p046",
+    "centroid": {
+      "lat": 29.9755,
+      "lon": 77.5416
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5427045,
+            29.9757878
+          ],
+          [
+            77.5420478,
+            29.9763328
+          ],
+          [
+            77.5409449,
+            29.976114
+          ],
+          [
+            77.5404778,
+            29.9755029
+          ],
+          [
+            77.5410757,
+            29.9748667
+          ],
+          [
+            77.5419319,
+            29.9746451
+          ],
+          [
+            77.5423986,
+            29.9751842
+          ],
+          [
+            77.5427045,
+            29.9757878
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.59,
+    "land_record_area_hectare": 2.59,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P047",
+    "ulpin": "15287848757245",
+    "state": "Uttar Pradesh",
+    "context": "mixed",
+    "district": "Ayodhya",
+    "tehsil": "Sadar",
+    "village": "Deokali",
+    "gatta_khasra_no": "512",
+    "sub_division": "3",
+    "khata_no": "07326",
+    "geometry_ref": "synthetic-p047",
+    "centroid": {
+      "lat": 26.7993,
+      "lon": 82.2011
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.2014936,
+            26.7990905
+          ],
+          [
+            82.2014624,
+            26.7993282
+          ],
+          [
+            82.20135,
+            26.7995033
+          ],
+          [
+            82.2009631,
+            26.7996862
+          ],
+          [
+            82.200725,
+            26.7994909
+          ],
+          [
+            82.2007771,
+            26.7991993
+          ],
+          [
+            82.2008546,
+            26.7990896
+          ],
+          [
+            82.2010777,
+            26.7989555
+          ],
+          [
+            82.2014936,
+            26.7990905
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.42,
+    "land_record_area_hectare": 0.52,
+    "quality_class": "messy",
+    "issue": "GIS_AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P048",
+    "ulpin": "85598143944471",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "562",
+    "sub_division": null,
+    "khata_no": "04684",
+    "geometry_ref": "synthetic-p048",
+    "centroid": {
+      "lat": 25.3195,
+      "lon": 82.9669
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9667798,
+            25.3184978
+          ],
+          [
+            82.9677003,
+            25.3190252
+          ],
+          [
+            82.9678185,
+            25.3196173
+          ],
+          [
+            82.9671636,
+            25.3206352
+          ],
+          [
+            82.9665049,
+            25.3204454
+          ],
+          [
+            82.965812,
+            25.3195642
+          ],
+          [
+            82.9660501,
+            25.3187897
+          ],
+          [
+            82.9667798,
+            25.3184978
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 3.19,
+    "land_record_area_hectare": 3.19,
+    "quality_class": "messy",
+    "issue": "PENDING_NAMANTARAN",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P049",
+    "ulpin": "75218059944189",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "344",
+    "sub_division": "3",
+    "khata_no": "02095",
+    "geometry_ref": "synthetic-p049",
+    "centroid": {
+      "lat": 25.322,
+      "lon": 82.9715
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9705469,
+            25.3217157
+          ],
+          [
+            82.9712465,
+            25.3213078
+          ],
+          [
+            82.9725154,
+            25.3213607
+          ],
+          [
+            82.9725576,
+            25.3218329
+          ],
+          [
+            82.9721662,
+            25.3225493
+          ],
+          [
+            82.9709997,
+            25.3228354
+          ],
+          [
+            82.9704933,
+            25.3223864
+          ],
+          [
+            82.9705469,
+            25.3217157
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.68,
+    "land_record_area_hectare": 2.68,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P050",
+    "ulpin": "28199986961077",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Mathura",
+    "tehsil": "Chhata",
+    "village": "Kosi Kalan",
+    "gatta_khasra_no": "552",
+    "sub_division": "2",
+    "khata_no": "04730",
+    "geometry_ref": "synthetic-p050",
+    "centroid": {
+      "lat": 27.5049,
+      "lon": 77.6728
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6725563,
+            27.5050062
+          ],
+          [
+            77.6725534,
+            27.5048255
+          ],
+          [
+            77.6727659,
+            27.5047265
+          ],
+          [
+            77.6729539,
+            27.5047344
+          ],
+          [
+            77.6729802,
+            27.5048295
+          ],
+          [
+            77.6729898,
+            27.5049369
+          ],
+          [
+            77.6728821,
+            27.5050739
+          ],
+          [
+            77.6727389,
+            27.5050706
+          ],
+          [
+            77.6725563,
+            27.5050062
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.135,
+    "land_record_area_hectare": 0.135,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P051",
+    "ulpin": "27855871869798",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Lucknow",
+    "tehsil": "Bakshi Ka Talab",
+    "village": "Itaunja",
+    "gatta_khasra_no": "363",
+    "sub_division": null,
+    "khata_no": "08767",
+    "geometry_ref": "synthetic-p051",
+    "centroid": {
+      "lat": 26.8575,
+      "lon": 80.9422
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9423303,
+            26.856942
+          ],
+          [
+            80.9426328,
+            26.8571758
+          ],
+          [
+            80.942677,
+            26.8577079
+          ],
+          [
+            80.9424672,
+            26.8579751
+          ],
+          [
+            80.9421014,
+            26.8579971
+          ],
+          [
+            80.9418325,
+            26.857739
+          ],
+          [
+            80.9418253,
+            26.8573465
+          ],
+          [
+            80.9419923,
+            26.857014
+          ],
+          [
+            80.9423303,
+            26.856942
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.79,
+    "land_record_area_hectare": 0.79,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P052",
+    "ulpin": "62371828697891",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Gautam Buddha Nagar",
+    "tehsil": "Dadri",
+    "village": "Barola",
+    "gatta_khasra_no": "448",
+    "sub_division": "2",
+    "khata_no": "07674",
+    "geometry_ref": "synthetic-p052",
+    "centroid": {
+      "lat": 28.4831,
+      "lon": 77.5033
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5032494,
+            28.4828915
+          ],
+          [
+            77.503411,
+            28.4829381
+          ],
+          [
+            77.5034818,
+            28.483059
+          ],
+          [
+            77.5035311,
+            28.4831871
+          ],
+          [
+            77.5033166,
+            28.4832921
+          ],
+          [
+            77.503139,
+            28.4832908
+          ],
+          [
+            77.5030778,
+            28.483171
+          ],
+          [
+            77.5030926,
+            28.4829587
+          ],
+          [
+            77.5032494,
+            28.4828915
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.148,
+    "land_record_area_hectare": 0.148,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P053",
+    "ulpin": "99155240289509",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "654",
+    "sub_division": "2",
+    "khata_no": "08386",
+    "geometry_ref": "synthetic-p053",
+    "centroid": {
+      "lat": 25.3174,
+      "lon": 82.9707
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9706415,
+            25.3167102
+          ],
+          [
+            82.9711791,
+            25.3170076
+          ],
+          [
+            82.9714191,
+            25.3174799
+          ],
+          [
+            82.971168,
+            25.3180679
+          ],
+          [
+            82.9707421,
+            25.3179369
+          ],
+          [
+            82.9702561,
+            25.3177497
+          ],
+          [
+            82.9699403,
+            25.3174355
+          ],
+          [
+            82.9702499,
+            25.3169288
+          ],
+          [
+            82.9706415,
+            25.3167102
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.4,
+    "land_record_area_hectare": 1.4,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P054",
+    "ulpin": "19468862980852",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Agra",
+    "tehsil": "Kiraoli",
+    "village": "Achhnera",
+    "gatta_khasra_no": "695",
+    "sub_division": "1",
+    "khata_no": "03609",
+    "geometry_ref": "synthetic-p054",
+    "centroid": {
+      "lat": 27.1791,
+      "lon": 78.0063
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.0064245,
+            27.1783206
+          ],
+          [
+            78.0075202,
+            27.1788154
+          ],
+          [
+            78.0073497,
+            27.17931
+          ],
+          [
+            78.0064924,
+            27.1800082
+          ],
+          [
+            78.005415,
+            27.179784
+          ],
+          [
+            78.0052846,
+            27.1791275
+          ],
+          [
+            78.005766,
+            27.1784891
+          ],
+          [
+            78.0064245,
+            27.1783206
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.82,
+    "land_record_area_hectare": 2.82,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P055",
+    "ulpin": "82662642934674",
+    "state": "Uttar Pradesh",
+    "context": "mixed",
+    "district": "Ayodhya",
+    "tehsil": "Sadar",
+    "village": "Deokali",
+    "gatta_khasra_no": "314",
+    "sub_division": null,
+    "khata_no": "06097",
+    "geometry_ref": "synthetic-p055",
+    "centroid": {
+      "lat": 26.8018,
+      "lon": 82.1981
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.1976447,
+            26.8017565
+          ],
+          [
+            82.1978499,
+            26.8012935
+          ],
+          [
+            82.1980975,
+            26.8011098
+          ],
+          [
+            82.1984811,
+            26.8014157
+          ],
+          [
+            82.1985449,
+            26.8018321
+          ],
+          [
+            82.1984669,
+            26.802162
+          ],
+          [
+            82.197969,
+            26.8023424
+          ],
+          [
+            82.1977625,
+            26.8021804
+          ],
+          [
+            82.1976447,
+            26.8017565
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.86,
+    "land_record_area_hectare": 0.86,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P056",
+    "ulpin": "54364071757293",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Lucknow",
+    "tehsil": "Bakshi Ka Talab",
+    "village": "Itaunja",
+    "gatta_khasra_no": "346",
+    "sub_division": "1",
+    "khata_no": "05931",
+    "geometry_ref": "synthetic-p056",
+    "centroid": {
+      "lat": 26.8592,
+      "lon": 80.9425
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9428824,
+            26.8592793
+          ],
+          [
+            80.942726,
+            26.8595073
+          ],
+          [
+            80.9422173,
+            26.8595264
+          ],
+          [
+            80.942059,
+            26.8593103
+          ],
+          [
+            80.942094,
+            26.8590764
+          ],
+          [
+            80.9422555,
+            26.8588752
+          ],
+          [
+            80.9427184,
+            26.8589357
+          ],
+          [
+            80.9429097,
+            26.8590895
+          ],
+          [
+            80.9428824,
+            26.8592793
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.48,
+    "land_record_area_hectare": 0.48,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P057",
+    "ulpin": "81682928163482",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Moradabad",
+    "tehsil": "Thakurdwara",
+    "village": "Surjan Nagar",
+    "gatta_khasra_no": "444",
+    "sub_division": "3",
+    "khata_no": "09388",
+    "geometry_ref": "synthetic-p057",
+    "centroid": {
+      "lat": 28.8546,
+      "lon": 78.7703
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.7691452,
+            28.8550202
+          ],
+          [
+            78.7694178,
+            28.8542826
+          ],
+          [
+            78.7702323,
+            28.8534855
+          ],
+          [
+            78.7712984,
+            28.8537984
+          ],
+          [
+            78.7713832,
+            28.8547406
+          ],
+          [
+            78.7709945,
+            28.855393
+          ],
+          [
+            78.7701615,
+            28.8554532
+          ],
+          [
+            78.7691452,
+            28.8550202
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 3.4,
+    "land_record_area_hectare": 3.4,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P058",
+    "ulpin": "81071361166936",
+    "state": "Uttar Pradesh",
+    "context": "mixed",
+    "district": "Ayodhya",
+    "tehsil": "Sadar",
+    "village": "Deokali",
+    "gatta_khasra_no": "224",
+    "sub_division": null,
+    "khata_no": "05487",
+    "geometry_ref": "synthetic-p058",
+    "centroid": {
+      "lat": 26.7984,
+      "lon": 82.1999
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.1998695,
+            26.7979954
+          ],
+          [
+            82.200232,
+            26.797985
+          ],
+          [
+            82.2003615,
+            26.7982868
+          ],
+          [
+            82.200358,
+            26.7987003
+          ],
+          [
+            82.1999829,
+            26.7988276
+          ],
+          [
+            82.1996316,
+            26.7987979
+          ],
+          [
+            82.1992046,
+            26.798511
+          ],
+          [
+            82.1994794,
+            26.7981402
+          ],
+          [
+            82.1998695,
+            26.7979954
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.8,
+    "land_record_area_hectare": 0.8,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P059",
+    "ulpin": "13147444376886",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "753",
+    "sub_division": null,
+    "khata_no": "02463",
+    "geometry_ref": "synthetic-p059",
+    "centroid": {
+      "lat": 25.3197,
+      "lon": 82.9728
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9738,
+            25.3191621
+          ],
+          [
+            82.9738819,
+            25.3195792
+          ],
+          [
+            82.9734473,
+            25.3203388
+          ],
+          [
+            82.9726409,
+            25.3203536
+          ],
+          [
+            82.9719893,
+            25.3200801
+          ],
+          [
+            82.9715419,
+            25.3197472
+          ],
+          [
+            82.9718534,
+            25.3190604
+          ],
+          [
+            82.9730523,
+            25.3189043
+          ],
+          [
+            82.9738,
+            25.3191621
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.85,
+    "land_record_area_hectare": 2.85,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P060",
+    "ulpin": "23036790649169",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Lucknow",
+    "tehsil": "Mohanlalganj",
+    "village": "Bani",
+    "gatta_khasra_no": "688",
+    "sub_division": "1",
+    "khata_no": "04327",
+    "geometry_ref": "synthetic-p060",
+    "centroid": {
+      "lat": 26.8458,
+      "lon": 80.9441
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9435265,
+            26.8454603
+          ],
+          [
+            80.9441612,
+            26.8452
+          ],
+          [
+            80.9445516,
+            26.845334
+          ],
+          [
+            80.9448028,
+            26.845619
+          ],
+          [
+            80.9446975,
+            26.8461991
+          ],
+          [
+            80.9442342,
+            26.8464374
+          ],
+          [
+            80.9436844,
+            26.846293
+          ],
+          [
+            80.9433419,
+            26.8458065
+          ],
+          [
+            80.9435265,
+            26.8454603
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.4,
+    "land_record_area_hectare": 1.4,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P061",
+    "ulpin": "16739825820558",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Jhansi",
+    "tehsil": "Moth",
+    "village": "Mau",
+    "gatta_khasra_no": "678",
+    "sub_division": null,
+    "khata_no": "05539",
+    "geometry_ref": "synthetic-p061",
+    "centroid": {
+      "lat": 25.4615,
+      "lon": 78.568
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.5680571,
+            25.4604836
+          ],
+          [
+            78.5686664,
+            25.4608969
+          ],
+          [
+            78.5689343,
+            25.4615527
+          ],
+          [
+            78.5685438,
+            25.462277
+          ],
+          [
+            78.5677718,
+            25.4624134
+          ],
+          [
+            78.5670953,
+            25.4621988
+          ],
+          [
+            78.5670516,
+            25.4613729
+          ],
+          [
+            78.5670887,
+            25.4605633
+          ],
+          [
+            78.5680571,
+            25.4604836
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 3.25,
+    "land_record_area_hectare": 3.25,
+    "quality_class": "messy",
+    "issue": "OWNER_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P062",
+    "ulpin": "93714927605921",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Moradabad",
+    "tehsil": "Thakurdwara",
+    "village": "Surjan Nagar",
+    "gatta_khasra_no": "613",
+    "sub_division": "3",
+    "khata_no": "07323",
+    "geometry_ref": "synthetic-p062",
+    "centroid": {
+      "lat": 28.8566,
+      "lon": 78.7668
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.7661495,
+            28.8561574
+          ],
+          [
+            78.7666761,
+            28.8558725
+          ],
+          [
+            78.7674395,
+            28.8560576
+          ],
+          [
+            78.76779,
+            28.8565213
+          ],
+          [
+            78.7672405,
+            28.8572261
+          ],
+          [
+            78.7667574,
+            28.8572417
+          ],
+          [
+            78.7661051,
+            28.8572689
+          ],
+          [
+            78.7659428,
+            28.8564596
+          ],
+          [
+            78.7661495,
+            28.8561574
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.05,
+    "land_record_area_hectare": 2.05,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P063",
+    "ulpin": "30160190323179",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Mathura",
+    "tehsil": "Chhata",
+    "village": "Kosi Kalan",
+    "gatta_khasra_no": "620",
+    "sub_division": "2",
+    "khata_no": "04546",
+    "geometry_ref": "synthetic-p063",
+    "centroid": {
+      "lat": 27.5043,
+      "lon": 77.6747
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6748231,
+            27.5041612
+          ],
+          [
+            77.6749516,
+            27.5042323
+          ],
+          [
+            77.6748265,
+            27.5044278
+          ],
+          [
+            77.6746922,
+            27.5044566
+          ],
+          [
+            77.6744938,
+            27.5043788
+          ],
+          [
+            77.6744704,
+            27.5042328
+          ],
+          [
+            77.6745235,
+            27.5041315
+          ],
+          [
+            77.6748231,
+            27.5041612
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.123,
+    "land_record_area_hectare": 0.123,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P064",
+    "ulpin": "16589180056299",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Jhansi",
+    "tehsil": "Moth",
+    "village": "Mau",
+    "gatta_khasra_no": "654",
+    "sub_division": "1",
+    "khata_no": "03809",
+    "geometry_ref": "synthetic-p064",
+    "centroid": {
+      "lat": 25.4655,
+      "lon": 78.5639
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.5643503,
+            25.4656217
+          ],
+          [
+            78.5641328,
+            25.4658469
+          ],
+          [
+            78.5637395,
+            25.4658755
+          ],
+          [
+            78.5633673,
+            25.4656916
+          ],
+          [
+            78.5633956,
+            25.4652901
+          ],
+          [
+            78.5637609,
+            25.4650852
+          ],
+          [
+            78.5642259,
+            25.4650798
+          ],
+          [
+            78.5643503,
+            25.4656217
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.7,
+    "land_record_area_hectare": 0.7,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P065",
+    "ulpin": "13466612306569",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Lucknow",
+    "tehsil": "Mohanlalganj",
+    "village": "Bani",
+    "gatta_khasra_no": "320",
+    "sub_division": "3",
+    "khata_no": "04610",
+    "geometry_ref": "synthetic-p065",
+    "centroid": {
+      "lat": 26.8479,
+      "lon": 80.9416
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9408218,
+            26.8478236
+          ],
+          [
+            80.9409726,
+            26.8471591
+          ],
+          [
+            80.941975,
+            26.8468679
+          ],
+          [
+            80.9425628,
+            26.8475875
+          ],
+          [
+            80.9424842,
+            26.848205
+          ],
+          [
+            80.9417588,
+            26.8487211
+          ],
+          [
+            80.9411486,
+            26.8486875
+          ],
+          [
+            80.9408218,
+            26.8478236
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.61,
+    "land_record_area_hectare": 2.61,
+    "quality_class": "messy",
+    "issue": "ENCUMBRANCE_LITIGATION",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P066",
+    "ulpin": "68447703752985",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "724",
+    "sub_division": "1",
+    "khata_no": "07108",
+    "geometry_ref": "synthetic-p066",
+    "centroid": {
+      "lat": 25.3226,
+      "lon": 82.9675
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9679403,
+            25.3224588
+          ],
+          [
+            82.9680241,
+            25.3227795
+          ],
+          [
+            82.9675436,
+            25.3230008
+          ],
+          [
+            82.9670864,
+            25.3230673
+          ],
+          [
+            82.9670745,
+            25.322763
+          ],
+          [
+            82.9670597,
+            25.3223454
+          ],
+          [
+            82.967256,
+            25.3221124
+          ],
+          [
+            82.9679604,
+            25.3221888
+          ],
+          [
+            82.9679403,
+            25.3224588
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.81,
+    "land_record_area_hectare": 0.81,
+    "quality_class": "messy",
+    "issue": "GIS_GEOMETRY_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P067",
+    "ulpin": "12389153749748",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Kanpur Nagar",
+    "tehsil": "Bilhaur",
+    "village": "Bilhaur",
+    "gatta_khasra_no": "266",
+    "sub_division": "2",
+    "khata_no": "06281",
+    "geometry_ref": "synthetic-p067",
+    "centroid": {
+      "lat": 26.4596,
+      "lon": 80.3248
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.3244217,
+            26.4586862
+          ],
+          [
+            80.3255999,
+            26.4588859
+          ],
+          [
+            80.3260482,
+            26.4592047
+          ],
+          [
+            80.3257008,
+            26.4598528
+          ],
+          [
+            80.3249945,
+            26.46054
+          ],
+          [
+            80.3242586,
+            26.4604333
+          ],
+          [
+            80.323607,
+            26.4598171
+          ],
+          [
+            80.323688,
+            26.4590591
+          ],
+          [
+            80.3244217,
+            26.4586862
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 3.49,
+    "land_record_area_hectare": 3.11,
+    "quality_class": "messy",
+    "issue": "GIS_AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P068",
+    "ulpin": "25530924299578",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Saharanpur",
+    "tehsil": "Behat",
+    "village": "Chilkana",
+    "gatta_khasra_no": "438",
+    "sub_division": "1",
+    "khata_no": "04679",
+    "geometry_ref": "synthetic-p068",
+    "centroid": {
+      "lat": 29.9787,
+      "lon": 77.5412
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5405875,
+            29.9776561
+          ],
+          [
+            77.5412473,
+            29.9777773
+          ],
+          [
+            77.5421423,
+            29.978009
+          ],
+          [
+            77.5420302,
+            29.9790142
+          ],
+          [
+            77.541851,
+            29.9795409
+          ],
+          [
+            77.5407845,
+            29.9797892
+          ],
+          [
+            77.5404464,
+            29.9793249
+          ],
+          [
+            77.5401976,
+            29.9782733
+          ],
+          [
+            77.5405875,
+            29.9776561
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 3.31,
+    "land_record_area_hectare": 3.31,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P069",
+    "ulpin": "45775327364096",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Mathura",
+    "tehsil": "Chhata",
+    "village": "Kosi Kalan",
+    "gatta_khasra_no": "505",
+    "sub_division": "1",
+    "khata_no": "06965",
+    "geometry_ref": "synthetic-p069",
+    "centroid": {
+      "lat": 27.5034,
+      "lon": 77.6742
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6740275,
+            27.5032584
+          ],
+          [
+            77.6741957,
+            27.503173
+          ],
+          [
+            77.6743637,
+            27.5032412
+          ],
+          [
+            77.6744426,
+            27.5034191
+          ],
+          [
+            77.6743257,
+            27.5035461
+          ],
+          [
+            77.6742261,
+            27.5036682
+          ],
+          [
+            77.6740182,
+            27.5035807
+          ],
+          [
+            77.6739947,
+            27.5034391
+          ],
+          [
+            77.6740275,
+            27.5032584
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.165,
+    "land_record_area_hectare": 0.165,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P070",
+    "ulpin": "35203682636459",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Agra",
+    "tehsil": "Kiraoli",
+    "village": "Achhnera",
+    "gatta_khasra_no": "32",
+    "sub_division": "2",
+    "khata_no": "06910",
+    "geometry_ref": "synthetic-p070",
+    "centroid": {
+      "lat": 27.1795,
+      "lon": 78.0098
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.0097973,
+            27.1801478
+          ],
+          [
+            78.0089278,
+            27.1798006
+          ],
+          [
+            78.0090303,
+            27.1793807
+          ],
+          [
+            78.009539,
+            27.1789555
+          ],
+          [
+            78.0100378,
+            27.1788122
+          ],
+          [
+            78.0108394,
+            27.1793046
+          ],
+          [
+            78.010767,
+            27.1798171
+          ],
+          [
+            78.0097973,
+            27.1801478
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.88,
+    "land_record_area_hectare": 1.88,
+    "quality_class": "messy",
+    "issue": "PENDING_NAMANTARAN",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P071",
+    "ulpin": "43027620981193",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Ghaziabad",
+    "tehsil": "Loni",
+    "village": "Mandola",
+    "gatta_khasra_no": "503",
+    "sub_division": null,
+    "khata_no": "04997",
+    "geometry_ref": "synthetic-p071",
+    "centroid": {
+      "lat": 28.679,
+      "lon": 77.449
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.4488697,
+            28.6790976
+          ],
+          [
+            77.4488449,
+            28.6788906
+          ],
+          [
+            77.4489958,
+            28.6788347
+          ],
+          [
+            77.4490883,
+            28.6788942
+          ],
+          [
+            77.4491887,
+            28.6789545
+          ],
+          [
+            77.4491221,
+            28.6791252
+          ],
+          [
+            77.4489473,
+            28.6791301
+          ],
+          [
+            77.4488697,
+            28.6790976
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.081,
+    "land_record_area_hectare": 0.081,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P072",
+    "ulpin": "30238706955428",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Agra",
+    "tehsil": "Kiraoli",
+    "village": "Achhnera",
+    "gatta_khasra_no": "396",
+    "sub_division": null,
+    "khata_no": "03026",
+    "geometry_ref": "synthetic-p072",
+    "centroid": {
+      "lat": 27.1826,
+      "lon": 78.0089
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.0077537,
+            27.1825591
+          ],
+          [
+            78.0083217,
+            27.181952
+          ],
+          [
+            78.0094785,
+            27.1819099
+          ],
+          [
+            78.0098571,
+            27.1825164
+          ],
+          [
+            78.0095459,
+            27.1829957
+          ],
+          [
+            78.0090855,
+            27.1832717
+          ],
+          [
+            78.0079765,
+            27.1828718
+          ],
+          [
+            78.0077537,
+            27.1825591
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.16,
+    "land_record_area_hectare": 2.16,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P073",
+    "ulpin": "29787522454158",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Lucknow",
+    "tehsil": "Bakshi Ka Talab",
+    "village": "Itaunja",
+    "gatta_khasra_no": "12",
+    "sub_division": "3",
+    "khata_no": "07181",
+    "geometry_ref": "synthetic-p073",
+    "centroid": {
+      "lat": 26.8568,
+      "lon": 80.9378
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9376882,
+            26.8564298
+          ],
+          [
+            80.9381454,
+            26.8565703
+          ],
+          [
+            80.9382318,
+            26.8568871
+          ],
+          [
+            80.9381043,
+            26.8570653
+          ],
+          [
+            80.9374594,
+            26.857102
+          ],
+          [
+            80.9372908,
+            26.8568758
+          ],
+          [
+            80.9375189,
+            26.8565988
+          ],
+          [
+            80.9376882,
+            26.8564298
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.49,
+    "land_record_area_hectare": 0.49,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P074",
+    "ulpin": "45999007026390",
+    "state": "Uttar Pradesh",
+    "context": "mixed",
+    "district": "Ayodhya",
+    "tehsil": "Sadar",
+    "village": "Deokali",
+    "gatta_khasra_no": "617",
+    "sub_division": "3",
+    "khata_no": "03359",
+    "geometry_ref": "synthetic-p074",
+    "centroid": {
+      "lat": 26.8006,
+      "lon": 82.2014
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.2016918,
+            26.8007136
+          ],
+          [
+            82.2015662,
+            26.8008651
+          ],
+          [
+            82.2012902,
+            26.8009344
+          ],
+          [
+            82.2009665,
+            26.8007276
+          ],
+          [
+            82.2009867,
+            26.8005403
+          ],
+          [
+            82.2012446,
+            26.8003863
+          ],
+          [
+            82.2016161,
+            26.8003074
+          ],
+          [
+            82.2016911,
+            26.8004775
+          ],
+          [
+            82.2016918,
+            26.8007136
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.36,
+    "land_record_area_hectare": 0.36,
+    "quality_class": "messy",
+    "issue": "AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P075",
+    "ulpin": "63331074641600",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Lucknow",
+    "tehsil": "Bakshi Ka Talab",
+    "village": "Itaunja",
+    "gatta_khasra_no": "73",
+    "sub_division": "2",
+    "khata_no": "05070",
+    "geometry_ref": "synthetic-p075",
+    "centroid": {
+      "lat": 26.8558,
+      "lon": 80.9413
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9417112,
+            26.8558021
+          ],
+          [
+            80.9414978,
+            26.8561901
+          ],
+          [
+            80.9410533,
+            26.8561849
+          ],
+          [
+            80.9409431,
+            26.8559645
+          ],
+          [
+            80.9408989,
+            26.8555979
+          ],
+          [
+            80.941311,
+            26.8554256
+          ],
+          [
+            80.9415435,
+            26.8554768
+          ],
+          [
+            80.9417112,
+            26.8558021
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.52,
+    "land_record_area_hectare": 0.52,
+    "quality_class": "messy",
+    "issue": "AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P076",
+    "ulpin": "91224844741079",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Gautam Buddha Nagar",
+    "tehsil": "Dadri",
+    "village": "Barola",
+    "gatta_khasra_no": "654",
+    "sub_division": null,
+    "khata_no": "04691",
+    "geometry_ref": "synthetic-p076",
+    "centroid": {
+      "lat": 28.4838,
+      "lon": 77.5033
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5031024,
+            28.4836406
+          ],
+          [
+            77.5033221,
+            28.4836169
+          ],
+          [
+            77.5035744,
+            28.4836907
+          ],
+          [
+            77.5036332,
+            28.4838061
+          ],
+          [
+            77.5035121,
+            28.4839574
+          ],
+          [
+            77.5031818,
+            28.4840031
+          ],
+          [
+            77.5030415,
+            28.4839383
+          ],
+          [
+            77.5029424,
+            28.483784
+          ],
+          [
+            77.5031024,
+            28.4836406
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.208,
+    "land_record_area_hectare": 0.208,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P077",
+    "ulpin": "12353116498436",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Jhansi",
+    "tehsil": "Moth",
+    "village": "Mau",
+    "gatta_khasra_no": "752",
+    "sub_division": null,
+    "khata_no": "03139",
+    "geometry_ref": "synthetic-p077",
+    "centroid": {
+      "lat": 25.4641,
+      "lon": 78.5686
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.5698329,
+            25.4641459
+          ],
+          [
+            78.5690668,
+            25.4648892
+          ],
+          [
+            78.5685221,
+            25.4651055
+          ],
+          [
+            78.5677504,
+            25.4644391
+          ],
+          [
+            78.5676352,
+            25.4637571
+          ],
+          [
+            78.5681833,
+            25.4631768
+          ],
+          [
+            78.5688345,
+            25.4632771
+          ],
+          [
+            78.5694862,
+            25.4638141
+          ],
+          [
+            78.5698329,
+            25.4641459
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.96,
+    "land_record_area_hectare": 2.96,
+    "quality_class": "messy",
+    "issue": "AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P078",
+    "ulpin": "97763114132548",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "397",
+    "sub_division": "1",
+    "khata_no": "01671",
+    "geometry_ref": "synthetic-p078",
+    "centroid": {
+      "lat": 25.316,
+      "lon": 82.9676
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9671239,
+            25.316566
+          ],
+          [
+            82.9665226,
+            25.3161823
+          ],
+          [
+            82.9668954,
+            25.3152123
+          ],
+          [
+            82.9674849,
+            25.3151155
+          ],
+          [
+            82.968411,
+            25.3153066
+          ],
+          [
+            82.9684182,
+            25.3160554
+          ],
+          [
+            82.9685319,
+            25.3165505
+          ],
+          [
+            82.9677602,
+            25.3169729
+          ],
+          [
+            82.9671239,
+            25.316566
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.92,
+    "land_record_area_hectare": 2.92,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P079",
+    "ulpin": "91447453014029",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Lucknow",
+    "tehsil": "Bakshi Ka Talab",
+    "village": "Itaunja",
+    "gatta_khasra_no": "394",
+    "sub_division": "3",
+    "khata_no": "05439",
+    "geometry_ref": "synthetic-p079",
+    "centroid": {
+      "lat": 26.8599,
+      "lon": 80.938
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9375501,
+            26.8601108
+          ],
+          [
+            80.9376473,
+            26.8596991
+          ],
+          [
+            80.9379244,
+            26.8593281
+          ],
+          [
+            80.9382058,
+            26.8594618
+          ],
+          [
+            80.9383293,
+            26.8596516
+          ],
+          [
+            80.9384858,
+            26.8600974
+          ],
+          [
+            80.9381994,
+            26.8603757
+          ],
+          [
+            80.9378634,
+            26.8604359
+          ],
+          [
+            80.9375501,
+            26.8601108
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.75,
+    "land_record_area_hectare": 0.75,
+    "quality_class": "messy",
+    "issue": "PARTIAL_LINKAGE",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P080",
+    "ulpin": "35911262579027",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "358",
+    "sub_division": "3",
+    "khata_no": "08961",
+    "geometry_ref": "synthetic-p080",
+    "centroid": {
+      "lat": 25.3244,
+      "lon": 82.9695
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9685504,
+            25.324958
+          ],
+          [
+            82.9684103,
+            25.3242014
+          ],
+          [
+            82.9693636,
+            25.323665
+          ],
+          [
+            82.9698698,
+            25.32355
+          ],
+          [
+            82.9705001,
+            25.3241291
+          ],
+          [
+            82.9704656,
+            25.3248555
+          ],
+          [
+            82.9695261,
+            25.3252578
+          ],
+          [
+            82.9685504,
+            25.324958
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.84,
+    "land_record_area_hectare": 2.28,
+    "quality_class": "messy",
+    "issue": "GIS_AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P081",
+    "ulpin": "21929776561186",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Mathura",
+    "tehsil": "Chhata",
+    "village": "Kosi Kalan",
+    "gatta_khasra_no": "321",
+    "sub_division": "3",
+    "khata_no": "09159",
+    "geometry_ref": "synthetic-p081",
+    "centroid": {
+      "lat": 27.504,
+      "lon": 77.6723
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6721882,
+            27.5038316
+          ],
+          [
+            77.6724487,
+            27.5038367
+          ],
+          [
+            77.6726036,
+            27.5039821
+          ],
+          [
+            77.6725266,
+            27.5041895
+          ],
+          [
+            77.6722491,
+            27.5042376
+          ],
+          [
+            77.6719902,
+            27.5040947
+          ],
+          [
+            77.6720043,
+            27.5039529
+          ],
+          [
+            77.6721882,
+            27.5038316
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.204,
+    "land_record_area_hectare": 0.204,
+    "quality_class": "messy",
+    "issue": "PENDING_NAMANTARAN",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P082",
+    "ulpin": "30647522075536",
+    "state": "Uttar Pradesh",
+    "context": "mixed",
+    "district": "Ayodhya",
+    "tehsil": "Sadar",
+    "village": "Deokali",
+    "gatta_khasra_no": "355",
+    "sub_division": "2",
+    "khata_no": "05900",
+    "geometry_ref": "synthetic-p082",
+    "centroid": {
+      "lat": 26.7985,
+      "lon": 82.2023
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.2017933,
+            26.7985236
+          ],
+          [
+            82.2018899,
+            26.7982542
+          ],
+          [
+            82.2022668,
+            26.7981208
+          ],
+          [
+            82.2026811,
+            26.7981841
+          ],
+          [
+            82.2028803,
+            26.7985392
+          ],
+          [
+            82.2025534,
+            26.7987986
+          ],
+          [
+            82.2019989,
+            26.798911
+          ],
+          [
+            82.2017933,
+            26.7985236
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.66,
+    "land_record_area_hectare": 0.66,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P083",
+    "ulpin": "19806758399039",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Jhansi",
+    "tehsil": "Moth",
+    "village": "Mau",
+    "gatta_khasra_no": "368",
+    "sub_division": "2",
+    "khata_no": "09297",
+    "geometry_ref": "synthetic-p083",
+    "centroid": {
+      "lat": 25.459,
+      "lon": 78.5661
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.565844,
+            25.4597059
+          ],
+          [
+            78.5652186,
+            25.4593821
+          ],
+          [
+            78.5652413,
+            25.4583714
+          ],
+          [
+            78.5658006,
+            25.4580469
+          ],
+          [
+            78.5667776,
+            25.4584179
+          ],
+          [
+            78.5668391,
+            25.4591928
+          ],
+          [
+            78.5664939,
+            25.4597093
+          ],
+          [
+            78.565844,
+            25.4597059
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.42,
+    "land_record_area_hectare": 2.42,
+    "quality_class": "messy",
+    "issue": "AREA_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P084",
+    "ulpin": "17055935228203",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Gorakhpur",
+    "tehsil": "Sahjanwa",
+    "village": "अकुआपार",
+    "gatta_khasra_no": "628",
+    "sub_division": "2",
+    "khata_no": "03038",
+    "geometry_ref": "synthetic-p084",
+    "centroid": {
+      "lat": 26.7669,
+      "lon": 83.3714
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            83.3707972,
+            26.766852
+          ],
+          [
+            83.3711125,
+            26.7664082
+          ],
+          [
+            83.3714898,
+            26.7664041
+          ],
+          [
+            83.3720402,
+            26.7666705
+          ],
+          [
+            83.3721153,
+            26.7669402
+          ],
+          [
+            83.3719033,
+            26.7673149
+          ],
+          [
+            83.3711939,
+            26.7674729
+          ],
+          [
+            83.3709198,
+            26.767202
+          ],
+          [
+            83.3707972,
+            26.766852
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.12,
+    "land_record_area_hectare": 1.12,
+    "quality_class": "messy",
+    "issue": "ENCUMBRANCE_LITIGATION",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P085",
+    "ulpin": "86082033388262",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Meerut",
+    "tehsil": "Sardhana",
+    "village": "Daurala",
+    "gatta_khasra_no": "708",
+    "sub_division": "1",
+    "khata_no": "07960",
+    "geometry_ref": "synthetic-p085",
+    "centroid": {
+      "lat": 28.9875,
+      "lon": 77.703
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.70214,
+            28.9878946
+          ],
+          [
+            77.7019216,
+            28.9873548
+          ],
+          [
+            77.7024252,
+            28.9870262
+          ],
+          [
+            77.7031497,
+            28.9868691
+          ],
+          [
+            77.7036525,
+            28.9869309
+          ],
+          [
+            77.7039623,
+            28.9875793
+          ],
+          [
+            77.7037288,
+            28.9880231
+          ],
+          [
+            77.7028431,
+            28.9880119
+          ],
+          [
+            77.70214,
+            28.9878946
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.96,
+    "land_record_area_hectare": 1.96,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P086",
+    "ulpin": "38536533355204",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Gautam Buddha Nagar",
+    "tehsil": "Dadri",
+    "village": "Barola",
+    "gatta_khasra_no": "669",
+    "sub_division": "3",
+    "khata_no": "03028",
+    "geometry_ref": "synthetic-p086",
+    "centroid": {
+      "lat": 28.4849,
+      "lon": 77.5028
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5024657,
+            28.4849571
+          ],
+          [
+            77.5025015,
+            28.4848152
+          ],
+          [
+            77.5026144,
+            28.4846861
+          ],
+          [
+            77.5028858,
+            28.4847065
+          ],
+          [
+            77.5030396,
+            28.4847889
+          ],
+          [
+            77.5031829,
+            28.4849468
+          ],
+          [
+            77.5030288,
+            28.4851079
+          ],
+          [
+            77.5027588,
+            28.4850802
+          ],
+          [
+            77.5024657,
+            28.4849571
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.226,
+    "land_record_area_hectare": 0.226,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P087",
+    "ulpin": "65782507281130",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Saharanpur",
+    "tehsil": "Behat",
+    "village": "Chilkana",
+    "gatta_khasra_no": "145",
+    "sub_division": "2",
+    "khata_no": "07827",
+    "geometry_ref": "synthetic-p087",
+    "centroid": {
+      "lat": 29.9781,
+      "lon": 77.5474
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5468768,
+            29.9782675
+          ],
+          [
+            77.5468747,
+            29.9780909
+          ],
+          [
+            77.5471216,
+            29.9777882
+          ],
+          [
+            77.5476667,
+            29.9776308
+          ],
+          [
+            77.5480277,
+            29.9779191
+          ],
+          [
+            77.5478674,
+            29.9781704
+          ],
+          [
+            77.5476276,
+            29.9785451
+          ],
+          [
+            77.5473417,
+            29.9785613
+          ],
+          [
+            77.5468768,
+            29.9782675
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.75,
+    "land_record_area_hectare": 0.75,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P088",
+    "ulpin": "20204228224061",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Gautam Buddha Nagar",
+    "tehsil": "Dadri",
+    "village": "Barola",
+    "gatta_khasra_no": "382",
+    "sub_division": "2",
+    "khata_no": "06590",
+    "geometry_ref": "synthetic-p088",
+    "centroid": {
+      "lat": 28.4822,
+      "lon": 77.5014
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5013915,
+            28.4824886
+          ],
+          [
+            77.5011726,
+            28.4824192
+          ],
+          [
+            77.5010535,
+            28.4822001
+          ],
+          [
+            77.5012216,
+            28.4819915
+          ],
+          [
+            77.5015047,
+            28.4819576
+          ],
+          [
+            77.5016464,
+            28.482053
+          ],
+          [
+            77.5016784,
+            28.482315
+          ],
+          [
+            77.5013915,
+            28.4824886
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.257,
+    "land_record_area_hectare": 0.257,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P089",
+    "ulpin": "80584061916484",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Lucknow",
+    "tehsil": "Bakshi Ka Talab",
+    "village": "Itaunja",
+    "gatta_khasra_no": "168",
+    "sub_division": "3",
+    "khata_no": "01666",
+    "geometry_ref": "synthetic-p089",
+    "centroid": {
+      "lat": 26.8561,
+      "lon": 80.9403
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.9406202,
+            26.8562388
+          ],
+          [
+            80.9402972,
+            26.8564165
+          ],
+          [
+            80.9401148,
+            26.8562846
+          ],
+          [
+            80.9399702,
+            26.8559766
+          ],
+          [
+            80.9401676,
+            26.8558234
+          ],
+          [
+            80.940348,
+            26.8558751
+          ],
+          [
+            80.9405289,
+            26.856006
+          ],
+          [
+            80.9406202,
+            26.8562388
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.26,
+    "land_record_area_hectare": 0.26,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P090",
+    "ulpin": "22429150401008",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Kanpur Nagar",
+    "tehsil": "Bilhaur",
+    "village": "Bilhaur",
+    "gatta_khasra_no": "190",
+    "sub_division": "1",
+    "khata_no": "09514",
+    "geometry_ref": "synthetic-p090",
+    "centroid": {
+      "lat": 26.455,
+      "lon": 80.3245
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.3239978,
+            26.4543551
+          ],
+          [
+            80.3248164,
+            26.4541765
+          ],
+          [
+            80.3251609,
+            26.4544647
+          ],
+          [
+            80.325377,
+            26.4554944
+          ],
+          [
+            80.3247706,
+            26.4559737
+          ],
+          [
+            80.3242703,
+            26.4556763
+          ],
+          [
+            80.3237458,
+            26.4549335
+          ],
+          [
+            80.3239978,
+            26.4543551
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.16,
+    "land_record_area_hectare": 2.16,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P091",
+    "ulpin": "67278398652742",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Jhansi",
+    "tehsil": "Moth",
+    "village": "Mau",
+    "gatta_khasra_no": "729",
+    "sub_division": "3",
+    "khata_no": "09127",
+    "geometry_ref": "synthetic-p091",
+    "centroid": {
+      "lat": 25.4586,
+      "lon": 78.5638
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.5635395,
+            25.4592064
+          ],
+          [
+            78.5630469,
+            25.4589608
+          ],
+          [
+            78.5631071,
+            25.4583208
+          ],
+          [
+            78.5637954,
+            25.45796
+          ],
+          [
+            78.56425,
+            25.4578359
+          ],
+          [
+            78.5646044,
+            25.4586622
+          ],
+          [
+            78.5642493,
+            25.4592425
+          ],
+          [
+            78.5635395,
+            25.4592064
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.75,
+    "land_record_area_hectare": 1.75,
+    "quality_class": "messy",
+    "issue": "PENDING_NAMANTARAN",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P092",
+    "ulpin": "82218266755506",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "24",
+    "sub_division": "3",
+    "khata_no": "06347",
+    "geometry_ref": "synthetic-p092",
+    "centroid": {
+      "lat": 25.3157,
+      "lon": 82.972
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9727046,
+            25.3158022
+          ],
+          [
+            82.9723432,
+            25.3161963
+          ],
+          [
+            82.9720391,
+            25.3162452
+          ],
+          [
+            82.9716163,
+            25.3160954
+          ],
+          [
+            82.9713118,
+            25.3156057
+          ],
+          [
+            82.971637,
+            25.3152278
+          ],
+          [
+            82.9721352,
+            25.3150041
+          ],
+          [
+            82.9724145,
+            25.3153362
+          ],
+          [
+            82.9727046,
+            25.3158022
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.21,
+    "land_record_area_hectare": 1.21,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P093",
+    "ulpin": "38836162891505",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Agra",
+    "tehsil": "Kiraoli",
+    "village": "Achhnera",
+    "gatta_khasra_no": "308",
+    "sub_division": "3",
+    "khata_no": "07805",
+    "geometry_ref": "synthetic-p093",
+    "centroid": {
+      "lat": 27.1815,
+      "lon": 78.0065
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            78.0064757,
+            27.1809734
+          ],
+          [
+            78.0070704,
+            27.1811414
+          ],
+          [
+            78.0070773,
+            27.1816175
+          ],
+          [
+            78.0067247,
+            27.1819227
+          ],
+          [
+            78.0062349,
+            27.181984
+          ],
+          [
+            78.0059869,
+            27.1816892
+          ],
+          [
+            78.0061379,
+            27.1811108
+          ],
+          [
+            78.0064757,
+            27.1809734
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.92,
+    "land_record_area_hectare": 0.92,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P094",
+    "ulpin": "31039051969579",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "564",
+    "sub_division": null,
+    "khata_no": "08266",
+    "geometry_ref": "synthetic-p094",
+    "centroid": {
+      "lat": 25.3168,
+      "lon": 82.9734
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9736037,
+            25.3164489
+          ],
+          [
+            82.9740352,
+            25.3165013
+          ],
+          [
+            82.9740734,
+            25.3169305
+          ],
+          [
+            82.9737914,
+            25.3171373
+          ],
+          [
+            82.9731321,
+            25.3171234
+          ],
+          [
+            82.9727999,
+            25.3171078
+          ],
+          [
+            82.9728804,
+            25.3166583
+          ],
+          [
+            82.9731849,
+            25.3163433
+          ],
+          [
+            82.9736037,
+            25.3164489
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.88,
+    "land_record_area_hectare": 1.07,
+    "quality_class": "messy",
+    "issue": "GIS_AREA_MISMATCH+ENCUMBRANCE_LITIGATION",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P095",
+    "ulpin": "96437444751753",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Gorakhpur",
+    "tehsil": "Sahjanwa",
+    "village": "अकुआपार",
+    "gatta_khasra_no": "147",
+    "sub_division": null,
+    "khata_no": "05302",
+    "geometry_ref": "synthetic-p095",
+    "centroid": {
+      "lat": 26.7676,
+      "lon": 83.3667
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            83.3671555,
+            26.7681097
+          ],
+          [
+            83.3667161,
+            26.7684528
+          ],
+          [
+            83.3661317,
+            26.7681948
+          ],
+          [
+            83.3657237,
+            26.7676552
+          ],
+          [
+            83.3660273,
+            26.7668974
+          ],
+          [
+            83.3667824,
+            26.766663
+          ],
+          [
+            83.3671928,
+            26.766846
+          ],
+          [
+            83.3674753,
+            26.7675271
+          ],
+          [
+            83.3671555,
+            26.7681097
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.33,
+    "land_record_area_hectare": 2.33,
+    "quality_class": "messy",
+    "issue": "ENCUMBRANCE_LITIGATION",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P096",
+    "ulpin": "56429336172390",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Gorakhpur",
+    "tehsil": "Sahjanwa",
+    "village": "अकुआपार",
+    "gatta_khasra_no": "75",
+    "sub_division": "2",
+    "khata_no": "08437",
+    "geometry_ref": "synthetic-p096",
+    "centroid": {
+      "lat": 26.764,
+      "lon": 83.368
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            83.3670891,
+            26.7638716
+          ],
+          [
+            83.3673807,
+            26.7634686
+          ],
+          [
+            83.3681331,
+            26.7630437
+          ],
+          [
+            83.3686653,
+            26.7632424
+          ],
+          [
+            83.3689268,
+            26.7640789
+          ],
+          [
+            83.3684954,
+            26.764951
+          ],
+          [
+            83.3679932,
+            26.764947
+          ],
+          [
+            83.3671649,
+            26.7643795
+          ],
+          [
+            83.3670891,
+            26.7638716
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.72,
+    "land_record_area_hectare": 2.72,
+    "quality_class": "messy",
+    "issue": "PENDING_NAMANTARAN",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
+  },
+  {
+    "prototype_ref": "P097",
+    "ulpin": "37996228984635",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Varanasi",
+    "tehsil": "Pindra",
+    "village": "Lakhanpur",
+    "gatta_khasra_no": "404",
+    "sub_division": "3",
+    "khata_no": "04475",
+    "geometry_ref": "synthetic-p097",
+    "centroid": {
+      "lat": 25.3218,
+      "lon": 82.9656
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            82.9655231,
+            25.3225628
+          ],
+          [
+            82.9650991,
+            25.3220924
+          ],
+          [
+            82.9649585,
+            25.3213216
+          ],
+          [
+            82.9655128,
+            25.3211837
+          ],
+          [
+            82.96619,
+            25.3212562
+          ],
+          [
+            82.9663535,
+            25.3217779
+          ],
+          [
+            82.9659169,
+            25.3223797
+          ],
+          [
+            82.9655231,
+            25.3225628
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.5,
+    "land_record_area_hectare": 1.5,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P098",
+    "ulpin": "45758083590992",
+    "state": "Uttar Pradesh",
+    "context": "urban",
+    "district": "Mathura",
+    "tehsil": "Chhata",
+    "village": "Kosi Kalan",
+    "gatta_khasra_no": "439",
+    "sub_division": null,
+    "khata_no": "08774",
+    "geometry_ref": "synthetic-p098",
+    "centroid": {
+      "lat": 27.5035,
+      "lon": 77.6729
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.6727881,
+            27.5032753
+          ],
+          [
+            77.6730113,
+            27.5032945
+          ],
+          [
+            77.6730928,
+            27.5034082
+          ],
+          [
+            77.6730958,
+            27.5036173
+          ],
+          [
+            77.6729477,
+            27.5037174
+          ],
+          [
+            77.6727081,
+            27.5036078
+          ],
+          [
+            77.6726662,
+            27.5034001
+          ],
+          [
+            77.6727881,
+            27.5032753
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 0.158,
+    "land_record_area_hectare": 0.158,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P099",
+    "ulpin": "48995440653870",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Saharanpur",
+    "tehsil": "Behat",
+    "village": "Chilkana",
+    "gatta_khasra_no": "520",
+    "sub_division": "3",
+    "khata_no": "04385",
+    "geometry_ref": "synthetic-p099",
+    "centroid": {
+      "lat": 29.9746,
+      "lon": 77.5441
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.5435724,
+            29.9740985
+          ],
+          [
+            77.5443708,
+            29.9741456
+          ],
+          [
+            77.5448297,
+            29.9743778
+          ],
+          [
+            77.5447295,
+            29.9749408
+          ],
+          [
+            77.544117,
+            29.9752342
+          ],
+          [
+            77.5437333,
+            29.9750305
+          ],
+          [
+            77.543232,
+            29.9747167
+          ],
+          [
+            77.5435724,
+            29.9740985
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 1.34,
+    "land_record_area_hectare": 1.34,
+    "quality_class": "messy",
+    "issue": "OWNER_MISMATCH",
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 7
+  },
+  {
+    "prototype_ref": "P100",
+    "ulpin": "43048816731768",
+    "state": "Uttar Pradesh",
+    "context": "rural",
+    "district": "Kanpur Nagar",
+    "tehsil": "Bilhaur",
+    "village": "Bilhaur",
+    "gatta_khasra_no": "710",
+    "sub_division": "3",
+    "khata_no": "02344",
+    "geometry_ref": "synthetic-p100",
+    "centroid": {
+      "lat": 26.4577,
+      "lon": 80.3229
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            80.3227376,
+            26.45686
+          ],
+          [
+            80.3232901,
+            26.4570735
+          ],
+          [
+            80.3238077,
+            26.457559
+          ],
+          [
+            80.3237347,
+            26.4581586
+          ],
+          [
+            80.3231044,
+            26.4584257
+          ],
+          [
+            80.322424,
+            26.4583878
+          ],
+          [
+            80.3221564,
+            26.4579303
+          ],
+          [
+            80.3221346,
+            26.4571735
+          ],
+          [
+            80.3227376,
+            26.45686
+          ]
+        ]
+      ]
+    },
+    "geometry_area_hectare": 2.22,
+    "land_record_area_hectare": 2.22,
+    "quality_class": "clean",
+    "issue": null,
+    "geometry_type": "synthetic_cadastral_polygon",
+    "boundary_vertices": 8
   }
 ]

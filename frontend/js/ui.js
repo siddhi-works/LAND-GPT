@@ -1,4 +1,5 @@
 import { LANGS, getLang, setLang, t } from "./i18n.js";
+import { accountHtml } from "./auth.js";
 
 // ============================================================
 // GENERAL HELPERS
@@ -219,30 +220,10 @@ export const icon = {
 
 
 // ============================================================
-// LAND STACK MARK
+// BHUSAMHITA MARK
 // ============================================================
 
-export const MARK = `
-<svg viewBox="0 0 32 32" aria-hidden="true">
-  <circle cx="16" cy="16" r="14.5" fill="#fff"/>
-  <circle cx="16" cy="16" r="13"
-    fill="none"
-    stroke="#0b2545"
-    stroke-width="1.6"/>
-  <path
-    d="M8.5 20.5 11.5 9.5l10-1 3 8.5-7.5 6z"
-    fill="#e8eef7"
-    stroke="#0b2545"
-    stroke-width="1.4"
-    stroke-linejoin="round"/>
-  <path
-    d="M11.5 9.5 16 15l5.5-6.5M16 15l1 8"
-    fill="none"
-    stroke="#0b2545"
-    stroke-width="1"/>
-  <circle cx="16" cy="15" r="1.7" fill="#e07a1f"/>
-</svg>
-`;
+export const MARK = `<img class="bs-logo" src="./assets/bhusamhita-logo.svg" alt="" width="36" height="36">`;
 
 
 // ============================================================
@@ -282,19 +263,17 @@ function citizenNav(active, cls) {
   return `
     <nav class="${cls}" aria-label="Main">
       ${link("#/", "home", "home")}
-      ${link("#/citizen", "citizenPortal", "citizen")}
       ${link("#/map", "landMap", "map")}
-      ${link("#/state", "landRecords", "records")}
-      ${link("#/dashboard", "navDashboard", "dashboard")}
       ${link("#/services", "navServices", "services")}
-      ${link("#/officer/login", "officerLogin", "officer")}
+      <a href="#/faq" class="${active === "faq" ? "on" : ""}">${esc(t("navFaq"))}</a>
+      <a href="#/contact" class="${active === "contact" ? "on" : ""}">${esc(t("navContact"))}</a>
     </nav>
   `;
 }
 
 export function citizenHeader(active = "home") {
 
-  if (!["home", "records", "citizen", "dashboard", "services"].includes(active)) {
+  if (false) {   // one common government header on every page
     return `
       <header class="site-header">
         <div class="gov-strip" aria-hidden="true"></div>
@@ -303,12 +282,13 @@ export function citizenHeader(active = "home") {
             <span class="brand-mark">${MARK}</span>
             <span class="brand-text">
               <b>${esc(t("brand"))}</b>
-              <span>Maharashtra · Uttar Pradesh · Gujarat</span>
+              <span>${esc(t("tagline"))}</span>
             </span>
           </a>
           <span class="grow"></span>
           ${citizenNav(active, "topnav")}
           ${langSelect()}
+          <span class="acct-slot">${accountHtml()}</span>
         </div>
       </header>
     `;
@@ -319,65 +299,27 @@ export function citizenHeader(active = "home") {
 
       <div class="ph-strip">
         <div class="ph-strip-inner">
-          <span>${esc(t("govIndia"))}</span>
-          <span class="ph-sep" aria-hidden="true">|</span>
           <span>${esc(t("ministry"))}</span>
+          <span class="ph-sep" aria-hidden="true">|</span>
+          <span>${esc(t("govIndia"))}</span>
           <span class="ph-sep" aria-hidden="true">|</span>
           <span>${esc(t("dolr"))}</span>
         </div>
       </div>
 
-      <div class="ph-brand">
-
-        <div class="ph-side ph-left">
-          <span class="ph-icon">${icon.parcelLg}</span>
-          <span class="ph-side-copy">
-            <b>${esc(t("hdrInfo"))}</b>
-            <span>${esc(t("hdrInfoSub"))}</span>
-          </span>
-        </div>
-
-        <div class="ph-gov">
-          <img
-            class="ph-emblem"
-            src="./assets/national-emblem-mark.png"
-            width="312"
-            height="519"
-            alt="National Emblem of India"
-          />
-          <div class="ph-gov-copy">
-            <span class="ph-hi" lang="hi">भारत सरकार</span>
-            <span class="ph-en" lang="en">Government of India</span>
-            <b>${esc(t("ministry"))}</b>
-            <span class="ph-dept">${esc(t("dolr"))}</span>
-          </div>
-        </div>
-
-        <div class="ph-side ph-right">
-          <span class="ph-side-copy">
-            <b>${esc(t("hdrServices"))}</b>
-            <span>${esc(t("hdrServicesSub"))}</span>
-          </span>
-          <span class="ph-icon">${icon.mapLg}</span>
-        </div>
-
+      <div class="ph-brand ph-logos">
+        <img class="ph-logo side mord" src="./assets/logo-mord.jpg" alt="Ministry of Rural Development, Government of India">
+        <img class="ph-logo goi" src="./assets/logo-goi.svg" alt="Government of India">
+        <img class="ph-logo side dolr" src="./assets/logo-dolr.jpg" alt="Department of Land Resources">
       </div>
 
       <div class="ph-tricolor" aria-hidden="true"></div>
 
-      <div class="ph-stackbar">
-        <a class="ph-stack-logo" href="#/" aria-label="LAND-GPT · ${esc(t("brand"))}">
-          <span class="ph-land">LAND</span>
-          <span class="ph-stack-name">${esc(t("brand"))}</span>
-        </a>
-        <span class="ph-sep" aria-hidden="true">|</span>
-        <span class="ph-states">Maharashtra · Uttar Pradesh · Gujarat</span>
-      </div>
-
       <div class="ph-navrow">
         <div class="ph-navrow-inner">
+          <a class="bs-brand" href="#/">${MARK}<span>${esc(t("brand"))}</span></a>
           ${citizenNav(active, "ph-nav")}
-          ${langSelect()}
+          <span class="ph-right">${langSelect()}<span class="acct-slot">${accountHtml()}</span></span>
         </div>
       </div>
 
@@ -408,14 +350,8 @@ export function bindLang(root, rerender) {
 // DISCLAIMER
 // ============================================================
 
-export const disclaimer = () => `
-  <div
-    class="disclaimer"
-    role="note"
-  >
-    ${esc(t("disclaimer"))}
-  </div>
-`;
+// Kept as a no-op so every page's layout call stays the same; the product shows no environment banner.
+export const disclaimer = () => "";
 
 
 // ============================================================
@@ -547,7 +483,7 @@ export const emptyState = (msg, sub = "", svgIcon = icon.info) =>
 
 // ============================================================
 // FOOTER
-// Elements with [data-chat] open the LandGPT Assistant (see chat.js).
+// Elements with [data-chat] open the BhuSamhita Assistant (see chat.js).
 // ============================================================
 
 export function siteFooter() {
@@ -558,36 +494,27 @@ export function siteFooter() {
     <footer class="site-footer">
       <div class="sf-inner">
         <div class="sf-brand">
-          <div class="sf-logo"><span class="ph-land">LAND</span><b>LAND-GPT</b></div>
-          <p>${esc(t("brand"))} · ${esc(t("hdrInfo"))}</p>
+          <div class="sf-logo">${MARK}<b>${esc(t("brand"))}</b></div>
+          <p>${esc(t("tagline"))}</p>
           <p class="sf-muted">${esc(t("footerAbout"))}</p>
         </div>
         <div>
           <h4>${esc(t("quickLinks"))}</h4>
           <ul>
-            ${link("#/citizen", "citizenPortal")}
             ${link("#/map", "landMap")}
-            ${link("#/state", "landRecords")}
-            ${link("#/dashboard", "dashTitle")}
             ${link("#/services", "digitalServices")}
             ${link("#/officer/login", "officerConsole")}
             <li><button class="sf-linkbtn" data-chat="${esc(t("qServices"))}">${esc(t("help"))}</button></li>
             <li><button class="sf-linkbtn" data-chat="">${esc(t("chatTitle"))}</button></li>
           </ul>
         </div>
-        <div>
-          <h4>${esc(t("stateLandInfo"))}</h4>
-          <ul>
-            <li><a href="#/state/MH">Maharashtra · महाराष्ट्र</a></li>
-            <li><a href="#/state/UP">Uttar Pradesh · उत्तर प्रदेश</a></li>
-            <li><a href="#/state/GJ">Gujarat · ગુજરાત</a></li>
-          </ul>
-        </div>
-        <div class="sf-demo">
-          <h4>${esc(t("demoEnv"))}</h4>
-          <p>${esc(t("footerDemo"))}</p>
-        </div>
       </div>
+      <div class="sf-copy">© 2026 ${esc(t("brand"))} · Brought to you by <b>AIgniters</b></div>
     </footer>
   `;
+}
+/** Government identity rows (strip + logos + tricolour) shared by the officer portal header. */
+export function govIdentity() {
+  const h = citizenHeader("home");
+  return h.slice(h.indexOf('<div class="ph-strip">'), h.indexOf('<div class="ph-navrow">'));
 }

@@ -22,5 +22,101 @@
     "restriction_type": "None",
     "zone_name": "General",
     "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-026",
+    "ulpin": "80986328437127",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-028",
+    "ulpin": "74415566534750",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-035",
+    "ulpin": "48847250957789",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-038",
+    "ulpin": "74753304649313",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-045",
+    "ulpin": "82802709012644",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-049",
+    "ulpin": "75218059944189",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-061",
+    "ulpin": "16739825820558",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-062",
+    "ulpin": "93714927605921",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-065",
+    "ulpin": "13466612306569",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-084",
+    "ulpin": "17055935228203",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-085",
+    "ulpin": "86082033388262",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
+  },
+  {
+    "environment_id": "ENV-UP-087",
+    "ulpin": "65782507281130",
+    "source_authority": "Uttar Pradesh environmental authority (Synthetic)",
+    "restriction_type": "None",
+    "zone_name": "General",
+    "status": "clear"
   }
 ]

@@ -169,3 +169,25 @@ def test_as_of_controls_lag_severity(store):
     svc = LandStackService(store, settings=Settings(as_of=date(2025, 10, 1)))
     f = [f for f in svc.verification(P[("GJ", "P013")]).findings if f.rule_id == "MUT-001"][0]
     assert f.severity == "medium" and f.metrics["days_since_registration"] == 54
+
+
+def test_each_state_exposes_p001_to_p100(service):
+    for code in ("MH", "UP", "GJ"):
+        refs = sorted(i.dataset_label.prototype_ref for i in service.registry.identities(code))
+        assert refs == [f"P{n:03d}" for n in range(1, 101)], code
+
+
+def test_generated_parcels_consistent_or_detected(service):
+    """P016–P100: parcels generated consistent carry no findings; every seeded issue is detected by the
+    engine (labels are dataset fixtures; the engine never reads them)."""
+    from interop.analytics import _label_detected
+
+    for rep in service.verifications():
+        label = service.bundle(rep.ulpin).identity.dataset_label
+        if int(label.prototype_ref[1:]) <= 15:
+            continue
+        fired = {f.rule_id for f in rep.findings}
+        if label.quality_class == "clean":
+            assert not rep.findings, (label.prototype_ref, rep.state_code, sorted(fired))
+        else:
+            assert _label_detected(label.issue, fired)[2], (label.prototype_ref, label.issue, sorted(fired))

@@ -69,6 +69,596 @@
       "consumer_account_no": "GJMOCK0159021",
       "connection_status": "connected",
       "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-016",
+      "ulpin": "35876424324908",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00167967",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-018",
+      "ulpin": "49228928380512",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00187265",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-019",
+      "ulpin": "99959285949041",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "DGVCL",
+      "consumer_account_no": "GJE00193558",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-020",
+      "ulpin": "25270017018332",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00208974",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-022",
+      "ulpin": "82981536706345",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00225851",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-023",
+      "ulpin": "15468685050692",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00234300",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-025",
+      "ulpin": "70271092780579",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00258802",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-027",
+      "ulpin": "78684089980721",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00273112",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-028",
+      "ulpin": "23030544152757",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00289389",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-029",
+      "ulpin": "47210891944247",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00298492",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-030",
+      "ulpin": "71228997323343",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00307336",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-033",
+      "ulpin": "99880098340756",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00334219",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-035",
+      "ulpin": "65483635771832",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00357941",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-036",
+      "ulpin": "14536117059612",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00363238",
+      "connection_status": "connected",
+      "supply_category": "commercial"
+    },
+    {
+      "utility_id": "ELEC-GJ-037",
+      "ulpin": "22378075927058",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00379053",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-039",
+      "ulpin": "81412842762428",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00396459",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-042",
+      "ulpin": "83213523673104",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00427301",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-043",
+      "ulpin": "79111546123694",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00431672",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-044",
+      "ulpin": "38227807650143",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00441807",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-045",
+      "ulpin": "36761252543603",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "DGVCL",
+      "consumer_account_no": "GJE00452693",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-046",
+      "ulpin": "65566429278584",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00467151",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-047",
+      "ulpin": "48512879092925",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00475198",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-048",
+      "ulpin": "73626530613369",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "DGVCL",
+      "consumer_account_no": "GJE00489372",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-050",
+      "ulpin": "75753242959627",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00505223",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-051",
+      "ulpin": "68815875513847",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "DGVCL",
+      "consumer_account_no": "GJE00515351",
+      "connection_status": "connected",
+      "supply_category": "commercial"
+    },
+    {
+      "utility_id": "ELEC-GJ-053",
+      "ulpin": "34232813719489",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00536548",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-055",
+      "ulpin": "53758524411651",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00558783",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-056",
+      "ulpin": "41160016532996",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00565370",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-059",
+      "ulpin": "80794748562309",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00599710",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-060",
+      "ulpin": "62770526046928",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00601666",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-061",
+      "ulpin": "51923934921393",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00613759",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-062",
+      "ulpin": "97155143702785",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00629706",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-063",
+      "ulpin": "24501992922092",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00632409",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-065",
+      "ulpin": "26533065367316",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00652431",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-066",
+      "ulpin": "15453893537035",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "DGVCL",
+      "consumer_account_no": "GJE00661248",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-067",
+      "ulpin": "73284008138699",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00673696",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-069",
+      "ulpin": "17131710217983",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00692119",
+      "connection_status": "connected",
+      "supply_category": "commercial"
+    },
+    {
+      "utility_id": "ELEC-GJ-070",
+      "ulpin": "14539063082236",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00706650",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-072",
+      "ulpin": "72325137181745",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00729616",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-073",
+      "ulpin": "86399501365603",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00734951",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-074",
+      "ulpin": "93524168006467",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "DGVCL",
+      "consumer_account_no": "GJE00745233",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-075",
+      "ulpin": "59341082858314",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00754863",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-076",
+      "ulpin": "41612574773564",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00765320",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-077",
+      "ulpin": "75080085123871",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00773732",
+      "connection_status": "connected",
+      "supply_category": "commercial"
+    },
+    {
+      "utility_id": "ELEC-GJ-078",
+      "ulpin": "96791296646060",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00782695",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-081",
+      "ulpin": "19351633112881",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00816729",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-082",
+      "ulpin": "68549432341674",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00823835",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-085",
+      "ulpin": "56089298058011",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00852932",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-088",
+      "ulpin": "20663080683371",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00882027",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-089",
+      "ulpin": "99432149363188",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00896439",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-091",
+      "ulpin": "40457818191814",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00915739",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-092",
+      "ulpin": "35302209186023",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00929804",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-093",
+      "ulpin": "60043243987135",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00933938",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-094",
+      "ulpin": "77419974689972",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00949094",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-095",
+      "ulpin": "98114847024329",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00957457",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-096",
+      "ulpin": "16477371158490",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "PGVCL",
+      "consumer_account_no": "GJE00965756",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-097",
+      "ulpin": "84894228232063",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "UGVCL",
+      "consumer_account_no": "GJE00975328",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
+    },
+    {
+      "utility_id": "ELEC-GJ-098",
+      "ulpin": "80849613220477",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE00983993",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "ELEC-GJ-100",
+      "ulpin": "30158445084938",
+      "service_type": "electricity",
+      "provider": "Gujarat Urja Vikas Nigam Ltd.",
+      "distribution_company": "MGVCL",
+      "consumer_account_no": "GJE01002704",
+      "connection_status": "connected",
+      "supply_category": "agricultural"
     }
   ],
   "water": [
@@ -119,6 +709,296 @@
       "provider": "Local Urban Body / Water Supply",
       "distribution_company": null,
       "consumer_account_no": "WATGJ012771",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-016",
+      "ulpin": "35876424324908",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ016119",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-019",
+      "ulpin": "99959285949041",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ019520",
+      "connection_status": "pending",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-023",
+      "ulpin": "15468685050692",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ023838",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-029",
+      "ulpin": "47210891944247",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ029652",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-033",
+      "ulpin": "99880098340756",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ033116",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-036",
+      "ulpin": "14536117059612",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ036522",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-037",
+      "ulpin": "22378075927058",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ037560",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-039",
+      "ulpin": "81412842762428",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ039825",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-042",
+      "ulpin": "83213523673104",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ042991",
+      "connection_status": "pending",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-043",
+      "ulpin": "79111546123694",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ043824",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-045",
+      "ulpin": "36761252543603",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ045523",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-046",
+      "ulpin": "65566429278584",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ046497",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-048",
+      "ulpin": "73626530613369",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ048315",
+      "connection_status": "pending",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-051",
+      "ulpin": "68815875513847",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ051848",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-062",
+      "ulpin": "97155143702785",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ062294",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-065",
+      "ulpin": "26533065367316",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ065174",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-066",
+      "ulpin": "15453893537035",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ066895",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-067",
+      "ulpin": "73284008138699",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ067454",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-069",
+      "ulpin": "17131710217983",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ069112",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-073",
+      "ulpin": "86399501365603",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ073945",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-074",
+      "ulpin": "93524168006467",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ074601",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-077",
+      "ulpin": "75080085123871",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ077507",
+      "connection_status": "pending",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-081",
+      "ulpin": "19351633112881",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ081270",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-088",
+      "ulpin": "20663080683371",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ088921",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-089",
+      "ulpin": "99432149363188",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ089415",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-091",
+      "ulpin": "40457818191814",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ091427",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-093",
+      "ulpin": "60043243987135",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ093360",
+      "connection_status": "pending",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-095",
+      "ulpin": "98114847024329",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ095834",
+      "connection_status": "connected",
+      "supply_category": "domestic"
+    },
+    {
+      "utility_id": "WATER-GJ-098",
+      "ulpin": "80849613220477",
+      "service_type": "water",
+      "provider": "Local Urban Body / Water Supply",
+      "distribution_company": null,
+      "consumer_account_no": "WATGJ098667",
       "connection_status": "connected",
       "supply_category": "domestic"
     }

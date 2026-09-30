@@ -20,8 +20,23 @@ LABEL_EXPECTATIONS: dict[str, list[str]] = {
     "PENDING_VF6": ["MUT-001"],
     "ENCUMBRANCE_LITIGATION": ["ENC-001", "LIT-001"],
     "GIS_AREA_MISMATCH": ["GIS-001"],
+    "GIS_GEOMETRY_MISMATCH": ["GIS-003"],
+    "PARTIAL_LINKAGE": ["LNK-001", "LNK-002"],
 }
 _ALL_REQUIRED = {"ENCUMBRANCE_LITIGATION"}  # every listed rule must fire; otherwise any one suffices
+
+
+def _label_detected(label: str, rules_fired: set[str]) -> tuple[list[str], list[str], bool]:
+    """Expected rules, rules that fired, and whether the label was detected. A combined label
+    ("A+B") is detected only when each of its components is."""
+    expected: list[str] = []
+    ok = True
+    for part in label.split("+"):
+        exp = LABEL_EXPECTATIONS.get(part, [])
+        hit = rules_fired & set(exp)
+        expected += [r for r in exp if r not in expected]
+        ok = ok and (hit == set(exp) if part in _ALL_REQUIRED else bool(hit))
+    return expected, sorted(rules_fired & set(expected)), ok
 
 
 def data_quality(svc: LandStackService) -> dict[str, Any]:
@@ -94,9 +109,7 @@ def data_quality(svc: LandStackService) -> dict[str, Any]:
         label = svc.bundle(r.ulpin).identity.dataset_label
         if not label.issue:
             continue
-        expected = LABEL_EXPECTATIONS.get(label.issue, [])
-        fired = sorted({f.rule_id for f in r.findings} & set(expected))
-        ok = set(fired) == set(expected) if label.issue in _ALL_REQUIRED else bool(fired)
+        expected, fired, ok = _label_detected(label.issue, {f.rule_id for f in r.findings})
         detection.append({"state_code": r.state_code, "ulpin": r.ulpin, "prototype_ref": label.prototype_ref,
                           "label": label.issue, "expected_rules": expected, "detected_by": fired, "detected": ok})
     clean_with_findings = [

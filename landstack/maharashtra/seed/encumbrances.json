@@ -20,5 +20,170 @@
     "status": "active",
     "litigation_flag": true,
     "court_case_reference": "MOCK-CIVIL-014"
+  },
+  {
+    "ulpin": "98604400119014",
+    "encumbrance_type_mr": "बोजा",
+    "encumbrance_type_en": "Charge",
+    "reference_no": "ENC-MH-035-01",
+    "holder_name_mr": "सिंथेटिक सहकारी बँक",
+    "holder_name_en": "Synthetic Cooperative Bank",
+    "status": "released",
+    "litigation_flag": false,
+    "court_case_reference": null
+  },
+  {
+    "ulpin": "34665783827821",
+    "encumbrance_type_mr": "बोजा",
+    "encumbrance_type_en": "Charge",
+    "reference_no": "ENC-MH-038-01",
+    "holder_name_mr": "सिंथेटिक सहकारी बँक",
+    "holder_name_en": "Synthetic Cooperative Bank",
+    "status": "released",
+    "litigation_flag": false,
+    "court_case_reference": null
+  },
+  {
+    "ulpin": "21657675971113",
+    "encumbrance_type_mr": "बोजा",
+    "encumbrance_type_en": "Charge",
+    "reference_no": "ENC-MH-041-01",
+    "holder_name_mr": "सिंथेटिक सहकारी बँक",
+    "holder_name_en": "Synthetic Cooperative Bank",
+    "status": "released",
+    "litigation_flag": false,
+    "court_case_reference": null
+  },
+  {
+    "ulpin": "33752455881751",
+    "encumbrance_type_mr": "गहाणखत / बोजा",
+    "encumbrance_type_en": "Mortgage / Charge",
+    "reference_no": "ENC-MH-042-01",
+    "holder_name_mr": "सिंथेटिक बँक",
+    "holder_name_en": "Synthetic Bank",
+    "status": "active",
+    "litigation_flag": true,
+    "court_case_reference": "RCS-042-2025"
+  },
+  {
+    "ulpin": "79831109879032",
+    "encumbrance_type_mr": "गहाणखत / बोजा",
+    "encumbrance_type_en": "Mortgage / Charge",
+    "reference_no": "ENC-MH-046-01",
+    "holder_name_mr": "सिंथेटिक बँक",
+    "holder_name_en": "Synthetic Bank",
+    "status": "active",
+    "litigation_flag": true,
+    "court_case_reference": "RCS-046-2023"
+  },
+  {
+    "ulpin": "22735160780301",
+    "encumbrance_type_mr": "गहाणखत / बोजा",
+    "encumbrance_type_en": "Mortgage / Charge",
+    "reference_no": "ENC-MH-050-01",
+    "holder_name_mr": "सिंथेटिक बँक",
+    "holder_name_en": "Synthetic Bank",
+    "status": "active",
+    "litigation_flag": true,
+    "court_case_reference": "RCS-050-2023"
+  },
+  {
+    "ulpin": "20734454606222",
+    "encumbrance_type_mr": "बोजा",
+    "encumbrance_type_en": "Charge",
+    "reference_no": "ENC-MH-053-01",
+    "holder_name_mr": "सिंथेटिक सहकारी बँक",
+    "holder_name_en": "Synthetic Cooperative Bank",
+    "status": "released",
+    "litigation_flag": false,
+    "court_case_reference": null
+  },
+  {
+    "ulpin": "47604283563095",
+    "encumbrance_type_mr": "गहाणखत / बोजा",
+    "encumbrance_type_en": "Mortgage / Charge",
+    "reference_no": "ENC-MH-062-01",
+    "holder_name_mr": "सिंथेटिक बँक",
+    "holder_name_en": "Synthetic Bank",
+    "status": "active",
+    "litigation_flag": true,
+    "court_case_reference": "RCS-062-2025"
+  },
+  {
+    "ulpin": "28936753230586",
+    "encumbrance_type_mr": "गहाणखत / बोजा",
+    "encumbrance_type_en": "Mortgage / Charge",
+    "reference_no": "ENC-MH-065-01",
+    "holder_name_mr": "सिंथेटिक बँक",
+    "holder_name_en": "Synthetic Bank",
+    "status": "active",
+    "litigation_flag": true,
+    "court_case_reference": "RCS-065-2026"
+  },
+  {
+    "ulpin": "35015245919721",
+    "encumbrance_type_mr": "बोजा",
+    "encumbrance_type_en": "Charge",
+    "reference_no": "ENC-MH-068-01",
+    "holder_name_mr": "सिंथेटिक सहकारी बँक",
+    "holder_name_en": "Synthetic Cooperative Bank",
+    "status": "released",
+    "litigation_flag": false,
+    "court_case_reference": null
+  },
+  {
+    "ulpin": "82457448470156",
+    "encumbrance_type_mr": "बोजा",
+    "encumbrance_type_en": "Charge",
+    "reference_no": "ENC-MH-073-01",
+    "holder_name_mr": "सिंथेटिक सहकारी बँक",
+    "holder_name_en": "Synthetic Cooperative Bank",
+    "status": "released",
+    "litigation_flag": false,
+    "court_case_reference": null
+  },
+  {
+    "ulpin": "65521013706346",
+    "encumbrance_type_mr": "गहाणखत / बोजा",
+    "encumbrance_type_en": "Mortgage / Charge",
+    "reference_no": "ENC-MH-078-01",
+    "holder_name_mr": "सिंथेटिक बँक",
+    "holder_name_en": "Synthetic Bank",
+    "status": "active",
+    "litigation_flag": true,
+    "court_case_reference": "RCS-078-2026"
+  },
+  {
+    "ulpin": "27928004829723",
+    "encumbrance_type_mr": "बोजा",
+    "encumbrance_type_en": "Charge",
+    "reference_no": "ENC-MH-081-01",
+    "holder_name_mr": "सिंथेटिक सहकारी बँक",
+    "holder_name_en": "Synthetic Cooperative Bank",
+    "status": "released",
+    "litigation_flag": false,
+    "court_case_reference": null
+  },
+  {
+    "ulpin": "75860089393535",
+    "encumbrance_type_mr": "बोजा",
+    "encumbrance_type_en": "Charge",
+    "reference_no": "ENC-MH-082-01",
+    "holder_name_mr": "सिंथेटिक सहकारी बँक",
+    "holder_name_en": "Synthetic Cooperative Bank",
+    "status": "released",
+    "litigation_flag": false,
+    "court_case_reference": null
+  },
+  {
+    "ulpin": "78284416897777",
+    "encumbrance_type_mr": "बोजा",
+    "encumbrance_type_en": "Charge",
+    "reference_no": "ENC-MH-094-01",
+    "holder_name_mr": "सिंथेटिक सहकारी बँक",
+    "holder_name_en": "Synthetic Cooperative Bank",
+    "status": "released",
+    "litigation_flag": false,
+    "court_case_reference": null
   }
 ]

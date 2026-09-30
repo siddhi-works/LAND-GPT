@@ -1,8 +1,8 @@
 {
   "validation_status": "PASS",
-  "record_count": 15,
-  "clean": 10,
-  "messy": 5,
+  "record_count": 100,
+  "clean": 66,
+  "messy": 34,
   "messy_cases": [
     {
       "prototype_ref": "P011",
@@ -33,5 +33,17 @@
     "clean registration↔owner",
     "clean Ferfar status",
     "intentional messy-case detection"
-  ]
+  ],
+  "generated_issue_labels": {
+    "AREA_MISMATCH": 4,
+    "ENCUMBRANCE_LITIGATION": 4,
+    "GIS_AREA_MISMATCH": 3,
+    "GIS_AREA_MISMATCH+ENCUMBRANCE_LITIGATION": 1,
+    "GIS_GEOMETRY_MISMATCH": 2,
+    "OWNER_MISMATCH": 4,
+    "OWNER_MISMATCH+ENCUMBRANCE_LITIGATION": 1,
+    "PARTIAL_LINKAGE": 3,
+    "PENDING_MUTATION": 6,
+    "PENDING_MUTATION+AREA_MISMATCH": 1
+  }
 }

@@ -1,8 +1,8 @@
 import { api } from "./api.js";
 import { rememberParcel, setContext } from "./context.js";
 import { createMap } from "./map.js";
-import { t, localText } from "./i18n.js";
-import { REGION, STATES } from "./states.js";
+import { t, localText, recType } from "./i18n.js";
+import { STATES } from "./states.js";
 import { citizenHeader, bindLang, disclaimer, esc, fmtHa, fmtInr, fmtUlpin, fmtDate, icon, statusBadge, sev, errorBox, title, riskStatus, siteFooter, skeleton, toast } from "./ui.js";
 
 export function parcelSvg(ring, w = 132, h = 92, stroke = "#0b3d91", fill = "#e3ecfa") {
@@ -14,7 +14,7 @@ export function parcelSvg(ring, w = 132, h = 92, stroke = "#0b3d91", fill = "#e3
   return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Parcel boundary"><path d="${d}" fill="${fill}" stroke="${stroke}" stroke-width="2" stroke-linejoin="round"/></svg>`;
 }
 
-export const prov = (r) => `<div class="prov">${icon.link}<span>${esc(r.provenance.source_system)}</span><code>${esc(r.provenance.source_table)}</code><code>${esc(Object.values(r.provenance.record_key).join(" / "))}</code></div>`;
+export const prov = (r) => `<div class="prov" title="${esc(`${r.provenance.source_table} · ${Object.values(r.provenance.record_key).join(" / ")}`)}">${icon.link}<span>${esc(t("source"))}: ${esc(recType(r.native_record_type || r.provenance.native_record_type || ""))}${r.provenance.source_system ? ` · ${esc(r.provenance.source_system)}` : ""}</span></div>`;
 const kv = (rows) => `<dl class="kv">${rows.filter(Boolean).filter(r => r[1] != null && r[1] !== "" && r[1] !== "—").map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v}</dd>`).join("")}</dl>`;
 const lt = (v, st) => esc(localText(v, st));
 const DEPTS = [
@@ -35,7 +35,7 @@ export function flowHtml(reg, ring, gisHa) {
       <small>${reg.native_identifiers.map(i => esc(`${i.scheme.replaceAll("_", " ")} ${i.value}${i.part ? "/" + i.part : ""}`)).join("<br>")}</small></div>
     <div class="flow-arrow" aria-hidden="true"></div>
     <div class="dept-grid">${groups.map(g => `<div class="dept"><h4>${esc(g.label)}</h4>${g.rows.map(r =>
-      `<div class="rec ${r.record_count ? "" : "empty"}" title="${esc(r.source_system)} · ${esc(r.source_table)}"><b>${esc(r.native_record_type)}</b><span>${r.record_count ? `${r.record_count} record${r.record_count > 1 ? "s" : ""}` : "none"}</span></div>`).join("")}</div>`).join("")}</div>
+      `<div class="rec ${r.record_count ? "" : "empty"}" title="${esc(r.source_system)} · ${esc(r.source_table)}"><b>${esc(recType(r.native_record_type))}</b><span>${r.record_count ? `${r.record_count} record${r.record_count > 1 ? "s" : ""}` : "none"}</span></div>`).join("")}</div>`).join("")}</div>
   </div>`;
 }
 
@@ -55,53 +55,54 @@ export function renderProfile(root, rerender, { ulpin, section: jump }) {
     const b = pf.canonical, reg = pf.registry, ver = pf.verification, st = b.identity.state_code, S = STATES[st];
     const ring = b.geometry[0]?.geometry.coordinates[0];
     const ror = b.land_records.find(l => l.record_class === "record_of_rights") || b.land_records.find(l => l.record_class === "urban_property_record");
-    const terms = (concept) => [...new Set(b.sources.filter(s => s.concepts.includes(concept) && s.record_count).map(s => s.native_record_type))].join(" · ");
+    const terms = (concept) => [...new Set(b.sources.filter(s => s.concepts.includes(concept) && s.record_count).map(s => recType(s.native_record_type)))].join(" · ");
     const C = pf.concepts;
 
-    const land = b.land_records.map(lr => `<div class="rec-block"><h3>${esc(lr.native_record_type)} <span class="muted">${esc(title(lr.record_class))}</span></h3>${kv([
+    const land = b.land_records.map(lr => `<div class="rec-block"><h3>${esc(recType(lr.native_record_type))} <span class="muted">${esc(t("rc_" + lr.record_class))}</span></h3>${kv([
       [t("owner"), lr.holders.map(h => `${lt(h, st)}${h.native ? `<span class="sub">${esc(h.native)}</span>` : ""}`).join("") || null],
       [t("area"), lr.area ? `${fmtHa(lr.area.value_ha)} <span class="muted">(${lr.area.native_value} ${esc(lr.area.native_unit)})</span>` : null],
       [t("landUse"), lr.land_use_label ? lt(lr.land_use_label, st) : null],
-      ["Parcel no.", lr.parcel_identifiers.map(i => esc(`${i.scheme.replaceAll("_", " ")} ${i.value}${i.part ? "/" + i.part : ""}`)).join(", ") || null],
-      ["Account", lr.account_identifiers.map(i => esc(`${i.scheme.replaceAll("_", " ")} ${i.value}`)).join(", ") || null],
-      ["Record status", esc(lr.record_status)],
+      [t("pf_parcelNo"), lr.parcel_identifiers.map(i => esc(`${i.scheme.replaceAll("_", " ")} ${i.value}${i.part ? "/" + i.part : ""}`)).join(", ") || null],
+      [t("account"), lr.account_identifiers.map(i => esc(`${i.scheme.replaceAll("_", " ")} ${i.value}`)).join(", ") || null],
+      [t("recordStatus"), esc(lr.record_status)],
     ])}${prov(lr)}</div>`).join("");
     const regs = b.registrations.map(r => `<div class="rec-block"><h3>${esc(r.document_no)} <span class="muted">${lt(r.document_type_label, st)}</span></h3>${kv([
-      ["Registered on", fmtDate(r.registration_date)], ["Sub-Registrar", esc(r.sub_registrar_office)],
-      ["Executant", r.executants.map(p => lt(p, st)).join(", ")], ["Claimant", r.claimants.map(p => lt(p, st)).join(", ")],
-      ["Consideration", fmtInr(r.consideration_inr)], r.stamp_duty_inr != null && ["Stamp duty", fmtInr(r.stamp_duty_inr)],
-      r.registration_fee_inr != null && ["Registration fee", fmtInr(r.registration_fee_inr)], ["Status", esc(r.status)],
+      [t("pf_regOn"), fmtDate(r.registration_date)], [t("pf_sro"), esc(r.sub_registrar_office)],
+      [t("pf_executant"), r.executants.map(p => lt(p, st)).join(", ")], [t("pf_claimant"), r.claimants.map(p => lt(p, st)).join(", ")],
+      [t("pf_consideration"), fmtInr(r.consideration_inr)], r.stamp_duty_inr != null && [t("pf_stamp"), fmtInr(r.stamp_duty_inr)],
+      r.registration_fee_inr != null && [t("pf_regfee"), fmtInr(r.registration_fee_inr)], [t("pf_status"), esc(r.status)],
     ])}${prov(r)}</div>`).join("");
     const muts = b.mutations.length ? `<ul class="timeline">${b.mutations.map(m => `<li class="${m.status}"><div><b>${esc(m.register_name)} ${esc(m.mutation_no)}</b> — ${lt(m.kind_label, st)}
       <span class="badge ${m.status === "pending" ? "warn" : "ok"}">${lt(m.status_label, st)}</span></div>
-      <small>Applied ${fmtDate(m.application_date)}${m.linked_document_no ? ` · basis ${esc(m.linked_document_no)}` : ""}${m.order_no ? ` · order ${esc(m.order_no)}` : ""}${m.basis ? ` · ${esc(title(m.basis))}` : ""}</small>${prov(m)}</li>`).join("")}</ul>` : "";
+      <small>${esc(t("applied"))} ${fmtDate(m.application_date)}${m.linked_document_no ? ` · ${esc(t("pf_basis"))} ${esc(m.linked_document_no)}` : ""}${m.order_no ? ` · ${esc(t("pf_order"))} ${esc(m.order_no)}` : ""}${m.basis ? ` · ${esc(title(m.basis))}` : ""}</small>${prov(m)}</li>`).join("")}</ul>` : "";
     const ac = gis.area_comparison;
     const gisBody = `<div class="gis-grid"><div class="mini-map"><div id="mini" class="map"></div></div><div>${kv([
-      ["Computed polygon area", fmtHa(ac.computed_gis_area?.value_ha)], ["Recorded area", `${fmtHa(ac.record_area?.value_ha)} <span class="muted">(${esc(ac.record_area_source)})</span>`],
-      ac.cadastral_map_area && ["Cadastral map area", fmtHa(ac.cadastral_map_area.value_ha)], ["Registry declared GIS area", fmtHa(ac.declared_gis_area?.value_ha)],
-      ["Difference", ac.relative_difference != null ? `${(ac.relative_difference * 100).toFixed(1)}% ${ac.within_tolerance ? '<span class="badge ok">within 5%</span>' : '<span class="badge warn">exceeds 5%</span>'}` : null],
-      ["Boundary vertices", b.geometry[0]?.vertex_count], ["Centroid", b.identity.centroid ? `${b.identity.centroid.lat}, ${b.identity.centroid.lon}` : null],
-    ])}${b.cadastral_maps.map(cm => `<div class="rec-block"><h3>${esc(cm.native_record_type)} ${esc(cm.map_ref)}</h3>${kv([["Plot no.", esc(cm.plot_no + (cm.sub_division ? "/" + cm.sub_division : ""))], ["Map area", fmtHa(cm.map_area?.value_ha)], ["Map status", esc(cm.map_status)], ["Layers", esc(cm.layers.join(", "))]])}${prov(cm)}</div>`).join("")}
+      [t("pf_gisArea"), fmtHa(ac.computed_gis_area?.value_ha)], [t("pf_recArea"), `${fmtHa(ac.record_area?.value_ha)} <span class="muted">(${esc(ac.record_area_source)})</span>`],
+      ac.cadastral_map_area && [t("pf_mapArea"), fmtHa(ac.cadastral_map_area.value_ha)], [t("pf_declArea"), fmtHa(ac.declared_gis_area?.value_ha)],
+      [t("pf_diff"), ac.relative_difference != null ? `${(ac.relative_difference * 100).toFixed(1)}% ${ac.within_tolerance ? `<span class="badge ok">${esc(t("pf_within"))}</span>` : `<span class="badge warn">${esc(t("pf_exceeds"))}</span>`}` : null],
+      [t("pf_vertices"), b.geometry[0]?.vertex_count], [t("pf_centroid"), b.identity.centroid ? `${b.identity.centroid.lat}, ${b.identity.centroid.lon}` : null],
+    ])}${b.cadastral_maps.map(cm => `<div class="rec-block"><h3>${esc(recType(cm.native_record_type))} ${esc(cm.map_ref)}</h3>${kv([[t("plotNo"), esc(cm.plot_no + (cm.sub_division ? "/" + cm.sub_division : ""))], [t("mapArea"), fmtHa(cm.map_area?.value_ha)], [t("pf_mapStatus"), esc(cm.map_status)], [t("layers"), esc(cm.layers.join(", "))]])}${prov(cm)}</div>`).join("")}
       ${b.geometry[0] ? prov(b.geometry[0]) : ""}</div></div>`;
-    const landUse = b.land_use.map(u => `<div class="rec-block">${kv([[u.native_record_type, lt(u.label, st)], ["Canonical class", esc(u.use)]])}${prov(u)}</div>`).join("");
-    const plan = b.planning.map(p => `<div class="rec-block"><h3>${esc(p.plan_name)}</h3>${kv([["Authority", esc(p.planning_authority)], ["Zone", `${esc(p.zone_code)} · ${lt(p.zone_name, st)}`], ["Permitted use", esc(title(p.permitted_use))], ["Restriction", esc(p.native.restriction_status)]])}${prov(p)}</div>`).join("");
-    const bld = b.building_permissions.map(p => `<div class="rec-block"><h3>${esc(p.permission_no)}</h3>${kv([["Authority", esc(p.authority)], p.department && ["Department", esc(p.department)], ["Use", esc(title(p.building_use))], ["Built-up area", p.built_up_area_sqm ? `${p.built_up_area_sqm} m²` : null], ["Approved on", fmtDate(p.approval_date)], ["Status", esc(p.status)]])}${prov(p)}</div>`).join("");
-    const enc = b.encumbrances.map(e => `<div class="rec-block"><h3>${lt(e.type_label, st)} <span class="badge ${e.status === "active" ? "bad" : "ok"}">${esc(e.status)}</span></h3>${kv([["Reference", `<code>${esc(e.reference_no)}</code>`], ["In favour of", lt(e.holder, st)], e.litigation_flag && ["Litigation", `<span class="badge bad">Case ${esc(e.court_case_reference)}</span>`]])}${prov(e)}</div>`).join("");
-    const tax = b.property_tax.map(x => `<div class="rec-block"><h3>${esc(x.account_id)} <span class="muted">${esc(x.assessment_year)}</span></h3>${kv([x.local_body && ["Local body", esc(x.local_body)], ["Assessed value", fmtInr(x.assessed_value_inr)], ["Demand", fmtInr(x.demand_inr)], ["Paid", fmtInr(x.paid_inr)], ["Outstanding", x.outstanding_inr ? `<b class="t-bad">${fmtInr(x.outstanding_inr)}</b>` : fmtInr(0)], ["Status", esc(title(x.status))]])}${prov(x)}</div>`).join("");
-    const util = b.utilities.length ? `<table class="tbl"><thead><tr><th>Service</th><th>Status</th><th>Provider</th><th>Account</th><th>${esc(t("source"))}</th></tr></thead><tbody>${b.utilities.map(u =>
+    const landUse = b.land_use.map(u => `<div class="rec-block">${kv([[recType(u.native_record_type), lt(u.label, st)]])}${prov(u)}</div>`).join("");
+    const plan = b.planning.map(p => `<div class="rec-block"><h3>${esc(p.plan_name)}</h3>${kv([[t("pf_authority"), esc(p.planning_authority)], [t("pf_zone"), `${esc(p.zone_code)} · ${lt(p.zone_name, st)}`], [t("pf_permitted"), esc(title(p.permitted_use))], [t("pf_restriction"), esc(p.native.restriction_status)]])}${prov(p)}</div>`).join("");
+    const bld = b.building_permissions.map(p => `<div class="rec-block"><h3>${esc(p.permission_no)}</h3>${kv([[t("pf_authority"), esc(p.authority)], p.department && [t("pf_dept"), esc(p.department)], [t("pf_use"), esc(title(p.building_use))], [t("pf_builtup"), p.built_up_area_sqm ? `${p.built_up_area_sqm} m²` : null], [t("pf_approved"), fmtDate(p.approval_date)], [t("pf_status"), esc(p.status)]])}${prov(p)}</div>`).join("");
+    const enc = b.encumbrances.map(e => `<div class="rec-block"><h3>${lt(e.type_label, st)} <span class="badge ${e.status === "active" ? "bad" : "ok"}">${esc(e.status)}</span></h3>${kv([[t("pf_reference"), `<code>${esc(e.reference_no)}</code>`], [t("pf_favour"), lt(e.holder, st)], e.litigation_flag && [t("pf_litigation"), `<span class="badge bad">${esc(t("pf_case"))} ${esc(e.court_case_reference)}</span>`]])}${prov(e)}</div>`).join("");
+    const tax = b.property_tax.map(x => `<div class="rec-block"><h3>${esc(x.account_id)} <span class="muted">${esc(x.assessment_year)}</span></h3>${kv([x.local_body && [t("pf_localBody"), esc(x.local_body)], [t("pf_assessed"), fmtInr(x.assessed_value_inr)], [t("pf_demand"), fmtInr(x.demand_inr)], [t("pf_paid"), fmtInr(x.paid_inr)], [t("pf_outstanding"), x.outstanding_inr ? `<b class="t-bad">${fmtInr(x.outstanding_inr)}</b>` : fmtInr(0)], [t("pf_status"), esc(title(x.status))]])}${prov(x)}</div>`).join("");
+    const util = b.utilities.length ? `<table class="tbl"><thead><tr><th>${esc(t("pf_service"))}</th><th>${esc(t("pf_status"))}</th><th>${esc(t("pf_provider"))}</th><th>${esc(t("account"))}</th><th>${esc(t("source"))}</th></tr></thead><tbody>${b.utilities.map(u =>
       `<tr><td>${esc(title(u.service))}</td><td>${esc(title(u.status))}</td><td>${esc([u.provider, u.distribution_company].filter(Boolean).join(" · ") || "—")}</td><td class="mono">${esc(u.account_no || "—")}</td><td><code>${esc(u.provenance.source_table)}</code></td></tr>`).join("")}</tbody></table>` : "";
-    const env = b.environmental_restrictions.map(e => `<div class="rec-block"><h3>${esc(e.restriction_label)} <span class="badge ${e.is_restrictive ? (e.status === "active" ? "bad" : "warn") : "ok"}">${esc(title(e.status))}</span></h3>${kv([["Zone", esc(e.zone_name)], e.authority && ["Authority", esc(e.authority)]])}${prov(e)}</div>`).join("");
+    const env = b.environmental_restrictions.map(e => `<div class="rec-block"><h3>${esc(e.restriction_label)} <span class="badge ${e.is_restrictive ? (e.status === "active" ? "bad" : "warn") : "ok"}">${esc(title(e.status))}</span></h3>${kv([[t("pf_zone"), esc(e.zone_name)], e.authority && [t("pf_authority"), esc(e.authority)]])}${prov(e)}</div>`).join("");
     const lastReg = b.registrations[b.registrations.length - 1], lastTax = b.property_tax[b.property_tax.length - 1];
     const val = (lastReg?.consideration_inr || lastTax?.assessed_value_inr) ? kv([
-      lastReg && ["Consideration (last registration)", `${fmtInr(lastReg.consideration_inr)} <span class="muted">${esc(lastReg.document_no)}</span>`],
-      lastTax && ["Assessed value (property tax)", `${fmtInr(lastTax.assessed_value_inr)} <span class="muted">${esc(lastTax.assessment_year)}</span>`],
-      lastReg && lastTax && ["Ratio", `${(lastReg.consideration_inr / lastTax.assessed_value_inr).toFixed(2)}×`],
+      lastReg && [t("pf_lastCons"), `${fmtInr(lastReg.consideration_inr)} <span class="muted">${esc(lastReg.document_no)}</span>`],
+      lastTax && [t("pf_taxAssessed"), `${fmtInr(lastTax.assessed_value_inr)} <span class="muted">${esc(lastTax.assessment_year)}</span>`],
+      lastReg && lastTax && [t("pf_ratio"), `${(lastReg.consideration_inr / lastTax.assessed_value_inr).toFixed(2)}×`],
     ]) : "";
     const checks = ver.summary.checks;
     const findings = ver.findings.map(f => findingHtml(f)).join("");
 
     root.querySelector("#main").innerHTML = `
       <a class="back" href="#/map/${ulpin}">${icon.chevron}${esc(t("backToMap"))}</a>
+      ${riskStatus(ver.risk_level) === "bad" ? `<div class="disc-alert" role="alert">${icon.alert}<div><b>${esc(t("discAlertT"))}</b><p>${esc(t("discAlertD"))}</p></div></div>` : ""}
       <div class="page-title">
         <div><div class="eyebrow">${esc(t("profileTitle"))}</div><h1 class="mono">${fmtUlpin(ulpin)}</h1>
           <p>${esc(reg.native_identifiers.map(i => `${i.scheme.replaceAll("_", " ")} ${i.value}${i.part ? "/" + i.part : ""}`).join(" · "))} · ${esc(b.identity.jurisdiction.village)}, ${esc(t(b.identity.jurisdiction.sub_district_type))} ${esc(b.identity.jurisdiction.sub_district)}, ${esc(b.identity.jurisdiction.district)} · ${esc(S.name)}</p></div>
@@ -117,8 +118,7 @@ export function renderProfile(root, rerender, { ulpin, section: jump }) {
       ${dossierHtml(b, reg, ver, ac, S, st)}
       <section class="panel" id="sec-records"><header><h2>${icon.link} ${esc(t("connectedRecords"))}</h2><span class="terms">${esc(t("hubHint"))}</span></header>
         ${hubHtml(b, ver, C, ring, terms)}</section>
-      ${timelineHtml(b, ver, st)}
-      <nav class="toc" aria-label="Sections">${[["land", t("secLand")], ["registration", t("secRegistration")], ["mutation", t("secMutation")], ["gis", t("secGis")], ["landuse", t("secLandUse")], ["planning", t("secPlanning")], ["building", t("secBuilding")], ["encumbrance", t("secEncumbrance")], ["tax", t("secTax")], ["utilities", t("secUtilities")], ["environment", t("secEnvironment")], ["checks", t("secChecks")]].map(([k, l]) => `<a href="#sec-${k}" data-jump="sec-${k}">${esc(l)}</a>`).join("")}</nav>
+      <nav class="toc" aria-label="Sections">${[["land", t("secLand")], ["registration", t("secRegistration")], ["mutation", t("secMutation")], ["gis", t("secGis")], ["landuse", t("secLandUse")], ["planning", t("secPlanning")], ["building", t("secBuilding")], ["encumbrance", t("secEncumbrance")], ["tax", t("secTax")], ["utilities", t("secUtilities")], ["environment", t("secEnvironment")]].map(([k, l]) => `<a href="#sec-${k}" data-jump="sec-${k}">${esc(l)}</a>`).join("")}</nav>
       <div class="profile-grid">
         <div class="stack">
           ${section("land", t("secLand"), terms("land_record"), "land_record", C, land)}
@@ -132,21 +132,14 @@ export function renderProfile(root, rerender, { ulpin, section: jump }) {
           ${section("tax", t("secTax"), terms("property_tax"), "property_tax", C, tax)}
           ${section("utilities", t("secUtilities"), terms("utilities"), "utilities", C, util)}
           ${section("environment", t("secEnvironment"), terms("environmental_restriction"), "environmental_restriction", C, env)}
-          ${val ? section("valuation", t("secValuation"), "Registration · Property tax", "registration", C, val) : ""}
+          ${val ? section("valuation", t("secValuation"), `${t("secRegistration")} · ${t("secTax")}`, "registration", C, val) : ""}
         </div>
         <aside class="stack sticky">
-          <section class="panel" id="sec-checks"><header><h2>${esc(t("secChecks"))}</h2></header><div class="body">
-            <div class="check-sum"><span><b>${checks.pass}</b> ${esc(t("checksPassed"))}</span><span><b>${checks.fail}</b> failed</span><span><b>${checks.not_applicable}</b> n/a</span></div>
-            ${findings || `<div class="notice ok">${icon.check}<span>All cross-record checks passed.</span></div>`}
-            <p class="fine">Validation engine ${esc(ver.engine_version)} · glossary ${esc(ver.glossary_version)} · as of ${fmtDate(ver.as_of)}</p>
-          </div></section>
           <section class="panel ask-card" id="assist"><header><h2>${icon.spark} ${esc(t("askAboutParcel"))}</h2></header><div class="body">
             <p class="fine">${esc(t("askCardD"))}</p>
             <div class="chips">${["qIsVerified", "qConnected", "qOwner", "qAreaDiff"].map((k) => `<button class="chip btn-chip" data-chat="${esc(t(k))}">${esc(t(k))}</button>`).join("")}</div>
             <button class="btn primary" data-chat="${esc(t("qExplain"))}">${icon.spark} ${esc(t("qExplain"))}</button>
-            <details class="grounding"><summary>${esc(t("groundingData"))}</summary><pre id="as-ctx">…</pre></details>
           </div></section>
-          ${relatedHtml(b, st, ulpin)}
         </aside>
       </div>`;
     root.querySelectorAll("[data-jump]").forEach(a => a.onclick = (e) => { e.preventDefault(); root.querySelector("#" + a.dataset.jump)?.scrollIntoView({ behavior: "smooth", block: "start" }); });
@@ -155,11 +148,6 @@ export function renderProfile(root, rerender, { ulpin, section: jump }) {
     root.querySelector("#pa-copy").onclick = () => { navigator.clipboard?.writeText(ulpin); toast(`${t("copied")}: ${fmtUlpin(ulpin)}`, "ok"); };
     root.querySelector("#pa-print").onclick = () => window.print();
     root.querySelectorAll("[data-node]").forEach((n) => n.onclick = () => root.querySelector("#sec-" + n.dataset.node)?.scrollIntoView({ behavior: "smooth", block: "start" }));
-    root.querySelector(".grounding").addEventListener("toggle", async (e) => {
-      const pre = root.querySelector("#as-ctx");
-      if (!e.target.open || pre.dataset.loaded) return;
-      try { pre.textContent = JSON.stringify(await api.assistantContext(ulpin), null, 2); pre.dataset.loaded = "1"; } catch (err) { pre.textContent = err.message; }
-    });
     toast(t("recordLoaded"), "ok");
     if (jump) setTimeout(() => root.querySelector("#sec-" + jump)?.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
     ctl = createMap(root.querySelector("#mini"), { features: fc, basemap: "sat" });
@@ -192,8 +180,8 @@ function dossierHtml(b, reg, ver, ac, S, st) {
     ${card("pin", t("location"), `<b>${esc(j.village)}</b><small>${esc(t(j.sub_district_type))} ${esc(j.sub_district)} › ${esc(j.district)} › ${esc(S.name)}</small>`)}
     ${card("area", t("area"), ac.record_area ? `<b>${fmtHa(ac.record_area.value_ha)}</b><small>${esc(t("mapped"))}: ${fmtHa(ac.computed_gis_area?.value_ha)}</small>` : "—",
       areaOk == null ? unavailable : areaOk ? tag("ok", t("stVerified")) : tag("warn", t("stNeedsReview")))}
-    ${card("layers", t("landUse"), ror?.land_use_label ? `<b>${esc(localText(ror.land_use_label, st))}</b><small>${esc(ror.native_record_type)}</small>` : "—", ror?.land_use_label ? "" : unavailable)}
-    ${card("home", t("owner"), ror?.holders.length ? `<b>${ror.holders.map((h) => esc(localText(h, st))).join(", ")}</b><small>${esc(ror.native_record_type)}</small>` : "—", ror?.holders.length ? "" : unavailable)}
+    ${card("layers", t("landUse"), ror?.land_use_label ? `<b>${esc(localText(ror.land_use_label, st))}</b><small>${esc(recType(ror.native_record_type))}</small>` : "—", ror?.land_use_label ? "" : unavailable)}
+    ${card("home", t("owner"), ror?.holders.length ? `<b>${ror.holders.map((h) => esc(localText(h, st))).join(", ")}</b><small>${esc(recType(ror.native_record_type))}</small>` : "—", ror?.holders.length ? "" : unavailable)}
     ${card("shield", t("verification"), `<b>${ver.summary.checks.pass} ${esc(t("checksPassed"))}</b><small>${ver.findings.length} ${esc(t("findings"))} · ${esc(t("risk"))} ${esc(ver.risk_level)}</small>`,
       tag(rs, { ok: t("stVerified"), warn: t("stNeedsReview"), bad: t("stWarning") }[rs]))}
   </div>`;
@@ -218,7 +206,6 @@ function hubHtml(b, ver, C, ring, terms) {
     const n = count(b), supported = C[concept]?.supported !== false;
     return { id, label: t(key), n, sub: n ? terms(concept) : supported ? t("hubNone") : t("hubNotConnected"), cls: n ? "has" : supported ? "none" : "na" };
   });
-  nodes.push({ id: "checks", label: t("secChecks"), n: ver.findings.length, sub: `${ver.summary.checks.pass} ${t("checksPassed")}`, cls: `check ${riskStatus(ver.risk_level)}` });
   const N = nodes.length;
   const pos = nodes.map((_, i) => { const a = (i / N) * 2 * Math.PI - Math.PI / 2; return [50 + 40 * Math.cos(a), 50 + 38 * Math.sin(a)]; });
   return `<div class="hub">
@@ -228,21 +215,6 @@ function hubHtml(b, ver, C, ring, terms) {
     ${nodes.map((nd, i) => `<button class="hub-node ${nd.cls}" data-node="${nd.id}" style="left:${pos[i][0].toFixed(2)}%;top:${pos[i][1].toFixed(2)}%">
       <b>${esc(nd.label)}</b><small>${nd.n ? `<span class="hn-count">${nd.n}</span>` : ""}${esc(nd.sub)}</small></button>`).join("")}
   </div>`;
-}
-
-// Services connected to this parcel: its own state records (opened with this parcel selected), the district
-// dashboard, the services hub and, for officers, the inspection workspace (sign-in required).
-function relatedHtml(b, st, ulpin) {
-  const have = new Set(b.sources.filter((s) => s.record_count).map((s) => s.native_record_type));
-  const recs = REGION[st].records.filter((r) => r.connected !== false && have.has(r.native));
-  const j = b.identity.jurisdiction;
-  const row = (href, ic, label, sub) => `<a class="rel-row" href="${href}">${icon[ic]}<span><b>${esc(label)}</b>${sub ? `<small>${esc(sub)}</small>` : ""}</span>${icon.right}</a>`;
-  return `<section class="panel related"><header><h2>${icon.grid} ${esc(t("relatedServices"))}</h2></header><div class="body">
-    ${recs.map((r) => row(`#/state/${st}/${r.key}/${ulpin}`, "register", r.en, `${STATES[st].name} · ${r.label}`)).join("")}
-    ${row(`#/dashboard/${st}/${encodeURIComponent(j.district)}`, "chart", t("dashTitle"), `${j.district} · ${STATES[st].name}`)}
-    ${row("#/services", "grid", t("digitalServices"), t("relServicesD"))}
-    ${row(`#/officer/parcel/${ulpin}`, "shield", t("relOfficer"), t("relOfficerD"))}
-  </div></section>`;
 }
 
 function timelineHtml(b, ver, st) {
@@ -263,7 +235,7 @@ export function findingHtml(f, { detailed = false } = {}) {
   return `<details class="finding" ${detailed ? "open" : ""}><summary><span class="top">${sev(f.severity)}<span class="rule">${esc(f.rule_id)} · ${esc(title(f.rule_name))}</span>
       ${f.status === "explained" ? '<span class="badge info">explained by pending mutation</span>' : ""}</span><p>${esc(f.message)}</p></summary>
     <table class="tbl obs"><thead><tr><th>Source record</th><th>Field</th><th>Value</th></tr></thead><tbody>${obs.map(o =>
-      `<tr><td><b>${esc(o.native_record_type)}</b><small>${esc(o.source_system)} · <code>${esc(o.source_table)}</code></small></td><td><code>${esc(o.field)}</code></td><td>${esc(fmtVal(o.value))}</td></tr>`).join("")}</tbody></table>
+      `<tr><td><b>${esc(recType(o.native_record_type))}</b><small>${esc(o.source_system)} · <code>${esc(o.source_table)}</code></small></td><td><code>${esc(o.field)}</code></td><td>${esc(fmtVal(o.value))}</td></tr>`).join("")}</tbody></table>
     <p class="fine">Expected: ${esc(f.expectation)}</p></details>`;
 }
 function fmtVal(v) {
